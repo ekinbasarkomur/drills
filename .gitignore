@@ -1,0 +1,15 @@
+# Rust
+target/
+
+# Python
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# C++
+build/
+
+# Stray binaries from `rustc -o` / `g++ -o` experiments
+/test
+/rust-solutions/neetcode

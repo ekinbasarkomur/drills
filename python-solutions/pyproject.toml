@@ -1,0 +1,13 @@
+[project]
+name = "python-solutions"
+version = "0.1.0"
+description = "NeetCode 150 solutions in Python"
+requires-python = ">=3.11"
+dependencies = []
+
+[dependency-groups]
+dev = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["solutions"]
+python_files = ["*.py"]
