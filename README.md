@@ -9,7 +9,6 @@ watching the same idea come out differently in three type systems.
 ```
 neetcode150/
 ├── README.md            you are here
-├── NOTES.md             Rust learning notebook, §1-106
 ├── rust-solutions/      cargo
 ├── python-solutions/    uv + pytest
 └── cpp-solutions/       make + a hand-rolled test header
@@ -126,9 +125,13 @@ something by hand, put the `printf` inside a `TEST`.
 | 347 | Top K Frequent Elements | ✅ | | |
 | 271 | Encode and Decode Strings | ✅ | | |
 
-## NOTES.md
+## The Rust notebook
 
-A separate thing: a running Rust notebook, currently §1 through §106, covering
-the language from `println!` being a macro through ownership, borrowing,
-collections, structs and enums. Each entry is deliberately one line of rule plus
-one minimal example — it is a lookup table, not a tutorial.
+Kept outside this repo, in the Obsidian vault:
+
+    ~/Archive/Sources/Courses/W3 Schools Rust Tutorial/Notes.md
+
+A running reference, currently §1 through §106, covering the language from
+`println!` being a macro through ownership, borrowing, collections, structs and
+enums. Each entry is deliberately one line of rule plus one minimal example — a
+lookup table, not a tutorial.
