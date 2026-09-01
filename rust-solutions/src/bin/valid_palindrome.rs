@@ -5,17 +5,46 @@
 // Approach:
 // Time O(?), space O(?)
 
+//use std::mem::{align_of, size_of, size_of_val};
+//use std::ops::Index;
+
 struct Solution;
 
 impl Solution {
     pub fn is_palindrome(s: String) -> bool {
-        let _ = s;
-        todo!()
+        let mut clean: Vec<char> = Vec::new();
+
+        for c in s.chars() {
+            if c.is_alphanumeric() {
+                clean.push(c.to_ascii_lowercase());
+            }
+        }
+
+        if clean.len() == 0 {
+            return true;
+        }
+
+        //let ic: usize = (clean.len() / 2) as usize;
+        let mut left = 0;
+        let mut right = clean.len() - 1;
+
+        while right > left {
+            //println!("{} - {}", left, right);
+            if clean[left] != clean[right] {
+                return false;
+            }
+            left += 1;
+            right -= 1;
+        }
+        true
     }
 }
 
 fn main() {
-    println!("{}", Solution::is_palindrome("Was it a car or a cat I saw?".into()));
+    println!(
+        "{}",
+        Solution::is_palindrome("Was it a car or a cat I saw?".into())
+    );
     println!("{}", Solution::is_palindrome("tab a cat".into()));
 }
 

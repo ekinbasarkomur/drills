@@ -131,6 +131,7 @@ solution function is still a stub
 | 36 | Valid Sudoku | ✅ | ✅ | ▢ |
 | 128 | Longest Consecutive Sequence | ✅ | ✅ | ▢ |
 | 125 | Valid Palindrome | ▢ | ✅ | ▢ |
+| 167 | Two Sum II - Input Array Is Sorted | ▢ | ▢ | ▢ |
 
 A scaffolded file is ready to be solved: the problem statement, the approach
 placeholder, and every test case are already written, including the edge cases
