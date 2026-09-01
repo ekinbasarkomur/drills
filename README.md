@@ -127,9 +127,9 @@ solution function is still a stub
 | 49 | Group Anagrams | ✅ | ▢ | ▢ |
 | 347 | Top K Frequent Elements | ✅ | ▢ | ▢ |
 | 271 | Encode and Decode Strings | ✅ | ▢ | ▢ |
-| 238 | Product of Array Except Self | ▢ | ▢ | ▢ |
-| 36 | Valid Sudoku | ▢ | ✅ | ▢ |
-| 128 | Longest Consecutive Sequence | ▢ | ✅ | ▢ |
+| 238 | Product of Array Except Self | ✅ | ✅ | ▢ |
+| 36 | Valid Sudoku | ✅ | ✅ | ▢ |
+| 128 | Longest Consecutive Sequence | ✅ | ✅ | ▢ |
 | 125 | Valid Palindrome | ▢ | ✅ | ▢ |
 
 A scaffolded file is ready to be solved: the problem statement, the approach

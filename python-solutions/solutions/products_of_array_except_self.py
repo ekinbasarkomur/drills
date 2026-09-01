@@ -3,33 +3,42 @@
 https://leetcode.com/problems/product-of-array-except-self/
 
 Problem: output[i] is the product of every element of nums except nums[i].
-Approach:
-Time O(?), space O(?)
+Approach: build a prefix table (product of everything to the left of i) and a
+          suffix table (product of everything to the right), then multiply them
+          position by position. No division, so a zero in the input is harmless.
+          Time O(n), space O(n).
 """
 
+from typing import List
 
-def productExceptSelf(self, nums: list[int]) -> list[int]:
-    output = []
-    prefix = [1]
-    suffix = [1]
 
-    number_len = len(nums)
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        output = []
+        prefix = [1]
+        suffix = [1]
 
-    for index, number in enumerate(nums):
-        prefix.append(prefix[index] * number)
-        suffix.append(suffix[index] * nums[number_len - index - 1])
+        number_len = len(nums)
 
-    prefix = prefix[:-1]
-    suffix = suffix[:-1]
-    suffix = list(reversed(suffix))
+        for index, number in enumerate(nums):
+            prefix.append(prefix[index] * number)
+            suffix.append(suffix[index] * nums[number_len - index - 1])
 
-    for i in range(0, number_len):
-        output.append(prefix[i] * suffix[i])
+        prefix = prefix[:-1]
+        suffix = suffix[:-1]
+        suffix = list(reversed(suffix))
 
-    return output
+        for i in range(0, number_len):
+            output.append(prefix[i] * suffix[i])
+
+        return output
 
 
 # ---------------------------------------------------------------- tests
+
+
+def product_except_self(nums: list[int]) -> list[int]:
+    return Solution().productExceptSelf(nums)
 
 
 def test_example_1():
