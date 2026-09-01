@@ -128,6 +128,7 @@ solution function is still a stub
 | 347 | Top K Frequent Elements | ✅ | ▢ | ▢ |
 | 271 | Encode and Decode Strings | ✅ | ▢ | ▢ |
 | 238 | Product of Array Except Self | ▢ | ▢ | ▢ |
+| 36 | Valid Sudoku | ▢ | ✅ | ▢ |
 
 A scaffolded file is ready to be solved: the problem statement, the approach
 placeholder, and every test case are already written, including the edge cases
