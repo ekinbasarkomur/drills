@@ -21,7 +21,8 @@ $(NAMES): %: build/%
 
 # `make` or `make test` builds and runs everything
 test: $(BINS)
-	@for b in $(BINS); do echo "== $$b"; ./$$b || exit 1; done
+	@fail=0; for b in $(BINS); do echo "== $$b"; ./$$b || fail=1; done; \
+	 if [ $$fail -ne 0 ]; then echo ""; echo "some problems are still failing"; exit 1; fi
 
 clean:
 	rm -rf build

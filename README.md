@@ -114,16 +114,24 @@ test result: ok. 6 passed; 0 failed
 **It defines `main()` for you**, so a solution file must not define one. To print
 something by hand, put the `printf` inside a `TEST`.
 
-## Solved so far
+## Progress
+
+✅ solved &nbsp;&nbsp; ▢ scaffolded — file, header and tests are in place, the
+solution function is still a stub
 
 | # | Problem | Rust | Python | C++ |
-| --- | --- | --- | --- | --- |
+| --- | --- | :---: | :---: | :---: |
 | 217 | Contains Duplicate | ✅ | ✅ | ✅ |
-| 242 | Valid Anagram | ✅ | | |
-| 1 | Two Sum | ✅ | | |
-| 49 | Group Anagrams | ✅ | | |
-| 347 | Top K Frequent Elements | ✅ | | |
-| 271 | Encode and Decode Strings | ✅ | | |
+| 242 | Valid Anagram | ✅ | ▢ | ▢ |
+| 1 | Two Sum | ✅ | ▢ | ▢ |
+| 49 | Group Anagrams | ✅ | ▢ | ▢ |
+| 347 | Top K Frequent Elements | ✅ | ▢ | ▢ |
+| 271 | Encode and Decode Strings | ✅ | ▢ | ▢ |
+| 238 | Product of Array Except Self | ▢ | ▢ | ▢ |
+
+A scaffolded file is ready to be solved: the problem statement, the approach
+placeholder, and every test case are already written, including the edge cases
+the LeetCode statement does not show you. Only the function body is missing.
 
 ## The Rust notebook
 
