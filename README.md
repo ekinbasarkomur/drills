@@ -129,6 +129,7 @@ solution function is still a stub
 | 271 | Encode and Decode Strings | ✅ | ▢ | ▢ |
 | 238 | Product of Array Except Self | ▢ | ▢ | ▢ |
 | 36 | Valid Sudoku | ▢ | ✅ | ▢ |
+| 128 | Longest Consecutive Sequence | ▢ | ✅ | ▢ |
 
 A scaffolded file is ready to be solved: the problem statement, the approach
 placeholder, and every test case are already written, including the edge cases
