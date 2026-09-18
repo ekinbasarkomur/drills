@@ -1,13 +1,13 @@
 """
 20. Valid Parentheses
- https://leetcode.com/problems/valid-parentheses/
+https://leetcode.com/problems/valid-parentheses/
 
- Problem: every bracket closed by its own kind, in the right order,
-          and nothing left open at the end.
- Note: The most recently opened bracket is the first that has to close --
-       that is exactly what a stack gives you.
- Approach:
- Time O(?), space O(?)
+Problem: every bracket closed by its own kind, in the right order,
+         and nothing left open at the end.
+Note: The most recently opened bracket is the first that has to close --
+      that is exactly what a stack gives you.
+Approach:
+Time O(?), space O(?)
 """
 
 from typing import List

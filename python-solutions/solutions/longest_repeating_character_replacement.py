@@ -1,13 +1,13 @@
 """
 424. Longest Repeating Character Replacement
- https://leetcode.com/problems/longest-repeating-character-replacement/
+https://leetcode.com/problems/longest-repeating-character-replacement/
 
- Problem: after replacing at most k characters of s with any uppercase
-          letter, how long can a run of one single letter get?
- Note: A window is usable when (its length - the count of its most common
-       letter) <= k: that difference is how many replacements it costs.
- Approach:
- Time O(?), space O(?)
+Problem: after replacing at most k characters of s with any uppercase
+         letter, how long can a run of one single letter get?
+Note: A window is usable when (its length - the count of its most common
+      letter) <= k: that difference is how many replacements it costs.
+Approach:
+Time O(?), space O(?)
 """
 
 from typing import List

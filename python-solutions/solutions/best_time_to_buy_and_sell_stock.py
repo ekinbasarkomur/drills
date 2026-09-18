@@ -1,13 +1,13 @@
 """
 121. Best Time to Buy and Sell Stock
- https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 
- Problem: buy on one day and sell on a LATER day. Return the best profit,
-          or 0 if every later price is lower.
- Note: You never need to look ahead: the best sale on day i is against the
-       cheapest price seen so far, so one pass is enough.
- Approach:
- Time O(?), space O(?)
+Problem: buy on one day and sell on a LATER day. Return the best profit,
+         or 0 if every later price is lower.
+Note: You never need to look ahead: the best sale on day i is against the
+      cheapest price seen so far, so one pass is enough.
+Approach:
+Time O(?), space O(?)
 """
 
 from typing import List

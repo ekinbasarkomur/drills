@@ -1,13 +1,13 @@
 """
 200. Number of Islands
- https://leetcode.com/problems/number-of-islands/
+https://leetcode.com/problems/number-of-islands/
 
- Problem: count the connected groups of '1' cells in the grid. Cells join
-          horizontally and vertically only, never diagonally.
- Note: Once you reach a land cell, sink the whole island before moving on --
-       otherwise you count the same island once per cell.
- Approach:
- Time O(?), space O(?)
+Problem: count the connected groups of '1' cells in the grid. Cells join
+         horizontally and vertically only, never diagonally.
+Note: Once you reach a land cell, sink the whole island before moving on --
+      otherwise you count the same island once per cell.
+Approach:
+Time O(?), space O(?)
 """
 
 from typing import List

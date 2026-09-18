@@ -1,13 +1,13 @@
 """
 3. Longest Substring Without Repeating Characters
- https://leetcode.com/problems/longest-substring-without-repeating-characters/
+https://leetcode.com/problems/longest-substring-without-repeating-characters/
 
- Problem: length of the longest contiguous stretch of s in which no
-          character repeats. s may contain any printable ASCII.
- Note: A window that only ever grows from the right and shrinks from the
-       left visits each character twice at most.
- Approach:
- Time O(?), space O(?)
+Problem: length of the longest contiguous stretch of s in which no
+         character repeats. s may contain any printable ASCII.
+Note: A window that only ever grows from the right and shrinks from the
+      left visits each character twice at most.
+Approach:
+Time O(?), space O(?)
 """
 
 from typing import List

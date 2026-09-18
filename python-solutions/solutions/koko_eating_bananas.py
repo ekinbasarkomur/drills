@@ -1,15 +1,15 @@
 """
 875. Koko Eating Bananas
- https://leetcode.com/problems/koko-eating-bananas/
+https://leetcode.com/problems/koko-eating-bananas/
 
- Problem: find the smallest eating rate k such that every pile is
-          finished within h hours. A pile takes ceil(pile / k) hours, and
-          leftover time in an hour is wasted -- no starting the next pile.
- Note: You are not searching the array, you are searching the ANSWER: every
-       rate from 1 to max(piles) either works or does not, and once one
-       works every larger one does too.
- Approach:
- Time O(?), space O(?)
+Problem: find the smallest eating rate k such that every pile is
+         finished within h hours. A pile takes ceil(pile / k) hours, and
+         leftover time in an hour is wasted -- no starting the next pile.
+Note: You are not searching the array, you are searching the ANSWER: every
+      rate from 1 to max(piles) either works or does not, and once one
+      works every larger one does too.
+Approach:
+Time O(?), space O(?)
 """
 
 from typing import List

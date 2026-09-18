@@ -1,13 +1,13 @@
 """
 739. Daily Temperatures
- https://leetcode.com/problems/daily-temperatures/
+https://leetcode.com/problems/daily-temperatures/
 
- Problem: result[i] is how many days you wait after day i for a warmer
-          temperature, or 0 if none ever comes.
- Note: Days waiting for a warmer day pile up in the order they arrived, and
-       the newest one is always resolved first -- a stack of pending indices.
- Approach:
- Time O(?), space O(?)
+Problem: result[i] is how many days you wait after day i for a warmer
+         temperature, or 0 if none ever comes.
+Note: Days waiting for a warmer day pile up in the order they arrived, and
+      the newest one is always resolved first -- a stack of pending indices.
+Approach:
+Time O(?), space O(?)
 """
 
 from typing import List

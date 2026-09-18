@@ -1,13 +1,13 @@
 """
 33. Search in Rotated Sorted Array
- https://leetcode.com/problems/search-in-rotated-sorted-array/
+https://leetcode.com/problems/search-in-rotated-sorted-array/
 
- Problem: nums was sorted ascending, then rotated some number of times.
-          Return the index of target, or -1. O(log n) is the point.
- Note: At any midpoint one of the two halves is still properly sorted.
-       Work out which, and you know whether target can be in it.
- Approach:
- Time O(?), space O(?)
+Problem: nums was sorted ascending, then rotated some number of times.
+         Return the index of target, or -1. O(log n) is the point.
+Note: At any midpoint one of the two halves is still properly sorted.
+      Work out which, and you know whether target can be in it.
+Approach:
+Time O(?), space O(?)
 """
 
 from typing import List

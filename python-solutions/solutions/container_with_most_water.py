@@ -1,14 +1,14 @@
 """
 11. Container With Most Water
- https://leetcode.com/problems/container-with-most-water/
+https://leetcode.com/problems/container-with-most-water/
 
- Problem: pick two bars; the container they form holds
-          (distance between them) * (the shorter of the two). Return the most
-          water any pair can hold.
- Note: The taller bar never sets the height -- the shorter one does, so a
-       wide pair of short bars can beat a narrow pair of tall ones.
- Approach:
- Time O(?), space O(?)
+Problem: pick two bars; the container they form holds
+         (distance between them) * (the shorter of the two). Return the most
+         water any pair can hold.
+Note: The taller bar never sets the height -- the shorter one does, so a
+      wide pair of short bars can beat a narrow pair of tall ones.
+Approach:
+Time O(?), space O(?)
 """
 
 from typing import List

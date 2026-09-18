@@ -1,13 +1,13 @@
 """
 53. Maximum Subarray
- https://leetcode.com/problems/maximum-subarray/
+https://leetcode.com/problems/maximum-subarray/
 
- Problem: the largest sum any contiguous non-empty stretch of nums can
-          reach. Every value may be negative.
- Note: At each position you only ever choose between extending the run so
-       far and starting fresh -- whichever sum is larger.
- Approach:
- Time O(?), space O(?)
+Problem: the largest sum any contiguous non-empty stretch of nums can
+         reach. Every value may be negative.
+Note: At each position you only ever choose between extending the run so
+      far and starting fresh -- whichever sum is larger.
+Approach:
+Time O(?), space O(?)
 """
 
 from typing import List

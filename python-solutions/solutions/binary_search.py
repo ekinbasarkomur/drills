@@ -1,13 +1,13 @@
 """
 704. Binary Search
- https://leetcode.com/problems/binary-search/
+https://leetcode.com/problems/binary-search/
 
- Problem: nums is sorted ascending and every value is distinct. Return the
-          index of target, or -1. Must run in O(log n).
- Note: The classic bug is the loop bound: <= vs <, and whether the midpoint
-       moves. Get those wrong and it either misses the answer or hangs.
- Approach:
- Time O(?), space O(?)
+Problem: nums is sorted ascending and every value is distinct. Return the
+         index of target, or -1. Must run in O(log n).
+Note: The classic bug is the loop bound: <= vs <, and whether the midpoint
+      moves. Get those wrong and it either misses the answer or hangs.
+Approach:
+Time O(?), space O(?)
 """
 
 from typing import List

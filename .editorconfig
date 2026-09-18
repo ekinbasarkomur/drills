@@ -1,0 +1,14 @@
+# Indentation is 4 spaces everywhere, with one unavoidable exception: make
+# requires a literal tab to start a recipe line.
+root = true
+
+[*]
+indent_style = space
+indent_size = 4
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[Makefile]
+indent_style = tab

@@ -1,14 +1,14 @@
 """
 1046. Last Stone Weight
- https://leetcode.com/problems/last-stone-weight/
+https://leetcode.com/problems/last-stone-weight/
 
- Problem: repeatedly smash the two heaviest stones together. Equal weights
-          destroy each other; otherwise the difference goes back in. Return
-          what is left, or 0.
- Note: You need the two largest values over and over, and the result goes
-       straight back into the pool -- that is a max-heap, not a sort.
- Approach:
- Time O(?), space O(?)
+Problem: repeatedly smash the two heaviest stones together. Equal weights
+         destroy each other; otherwise the difference goes back in. Return
+         what is left, or 0.
+Note: You need the two largest values over and over, and the result goes
+      straight back into the pool -- that is a max-heap, not a sort.
+Approach:
+Time O(?), space O(?)
 """
 
 from typing import List
