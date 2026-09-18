@@ -21,7 +21,7 @@ public:
     }
 
     void push(int val) {
-        (void)val;  // TODO
+        (void)val; // TODO
     }
 
     void pop() {
@@ -29,11 +29,11 @@ public:
     }
 
     int top() {
-        return 0;  // TODO
+        return 0; // TODO
     }
 
     int getMin() {
-        return 0;  // TODO
+        return 0; // TODO
     }
 };
 
@@ -146,7 +146,8 @@ TEST(many_operations_stay_constant_time) {
     // 30_000 pushes then 30_000 pops, the constraint's ceiling.
     // An O(n) getMin will crawl here.
     MinStack s;
-    for (int i = 30000; i > 0; --i) s.push(i);
+    for (int i = 30000; i > 0; --i)
+        s.push(i);
     for (int i = 1; i <= 30000; ++i) {
         CHECK((s.getMin() == i));
         s.pop();

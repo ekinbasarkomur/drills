@@ -14,17 +14,16 @@ using namespace std;
 
 class Solution {
 public:
-    bool hasDuplicate(vector<int>& nums) {
+    bool hasDuplicate(vector<int> &nums) {
         unordered_set<int> seen;
 
-        for(int i : nums){
-            if(seen.contains(i)){
+        for (int i : nums) {
+            if (seen.contains(i)) {
                 return true;
             }
             seen.insert(i);
         }
         return false;
-
     }
 };
 

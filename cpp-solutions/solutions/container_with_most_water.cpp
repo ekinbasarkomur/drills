@@ -17,35 +17,24 @@ using namespace std;
 
 class Solution {
 public:
-    int maxArea(vector<int>& height) {
+    int maxArea(vector<int> &height) {
         (void)height;
-        return 0;  // TODO
+        return 0; // TODO
     }
 };
 
 // ---------------------------------------------------------------- tests
 // maxArea takes a non-const reference, so it cannot be handed a temporary.
 
+static int maxArea(vector<int> height) { return Solution().maxArea(height); }
 
-static int maxArea(vector<int> height) {
-    return Solution().maxArea(height);
-}
+TEST(example_1) { CHECK((maxArea({1, 7, 2, 5, 4, 7, 3, 6}) == 36)); }
 
-TEST(example_1) {
-    CHECK((maxArea({1, 7, 2, 5, 4, 7, 3, 6}) == 36));
-}
+TEST(example_2) { CHECK((maxArea({2, 2, 2}) == 4)); }
 
-TEST(example_2) {
-    CHECK((maxArea({2, 2, 2}) == 4));
-}
+TEST(shortest_possible_input) { CHECK((maxArea({1, 1}) == 1)); }
 
-TEST(shortest_possible_input) {
-    CHECK((maxArea({1, 1}) == 1));
-}
-
-TEST(two_zero_bars_hold_nothing) {
-    CHECK((maxArea({0, 0}) == 0));
-}
+TEST(two_zero_bars_hold_nothing) { CHECK((maxArea({0, 0}) == 0)); }
 
 TEST(the_classic_leetcode_case) {
     CHECK((maxArea({1, 8, 6, 2, 5, 4, 8, 3, 7}) == 49));
@@ -56,17 +45,11 @@ TEST(wide_beats_tall) {
     CHECK((maxArea({3, 0, 3}) == 6));
 }
 
-TEST(strictly_ascending) {
-    CHECK((maxArea({1, 2, 3, 4, 5}) == 6));
-}
+TEST(strictly_ascending) { CHECK((maxArea({1, 2, 3, 4, 5}) == 6)); }
 
-TEST(strictly_descending) {
-    CHECK((maxArea({5, 4, 3, 2, 1}) == 6));
-}
+TEST(strictly_descending) { CHECK((maxArea({5, 4, 3, 2, 1}) == 6)); }
 
-TEST(one_zero_bar_kills_the_pair) {
-    CHECK((maxArea({0, 10000}) == 0));
-}
+TEST(one_zero_bar_kills_the_pair) { CHECK((maxArea({0, 10000}) == 0)); }
 
 TEST(value_range_extremes) {
     CHECK((maxArea({10000, 0, 0, 0, 10000}) == 40000));

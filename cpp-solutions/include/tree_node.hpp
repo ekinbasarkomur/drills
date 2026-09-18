@@ -22,7 +22,8 @@ struct TreeNode {
 using Level = std::vector<std::optional<int>>;
 
 inline TreeNode *build_tree(const Level &values) {
-    if (values.empty() || !values[0].has_value()) return nullptr;
+    if (values.empty() || !values[0].has_value())
+        return nullptr;
 
     TreeNode *root = new TreeNode(*values[0]);
     std::queue<TreeNode *> q;
@@ -53,7 +54,8 @@ inline TreeNode *build_tree(const Level &values) {
 
 inline Level to_level_order(TreeNode *root) {
     Level out;
-    if (!root) return out;
+    if (!root)
+        return out;
 
     std::queue<TreeNode *> q;
     q.push(root);
@@ -68,12 +70,14 @@ inline Level to_level_order(TreeNode *root) {
         q.push(node->left);
         q.push(node->right);
     }
-    while (!out.empty() && !out.back().has_value()) out.pop_back();
+    while (!out.empty() && !out.back().has_value())
+        out.pop_back();
     return out;
 }
 
 inline void free_tree(TreeNode *root) {
-    if (!root) return;
+    if (!root)
+        return;
     free_tree(root->left);
     free_tree(root->right);
     delete root;

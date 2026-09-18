@@ -17,9 +17,9 @@ using namespace std;
 
 class Solution {
 public:
-    vector<int> dailyTemperatures(vector<int>& temperatures) {
+    vector<int> dailyTemperatures(vector<int> &temperatures) {
         (void)temperatures;
-        return {};  // TODO
+        return {}; // TODO
     }
 };
 
@@ -33,7 +33,8 @@ static vector<int> dailyTemperatures(vector<int> temperatures) {
 }
 
 TEST(example_1) {
-    CHECK_EQ(dailyTemperatures({30, 38, 30, 36, 35, 40, 28}), (vi{1, 4, 1, 2, 1, 0, 0}));
+    CHECK_EQ(dailyTemperatures({30, 38, 30, 36, 35, 40, 28}),
+             (vi{1, 4, 1, 2, 1, 0, 0}));
 }
 
 TEST(example_2) {
@@ -41,17 +42,11 @@ TEST(example_2) {
     CHECK_EQ(dailyTemperatures({22, 21, 20}), (vi{0, 0, 0}));
 }
 
-TEST(single_day) {
-    CHECK_EQ(dailyTemperatures({50}), (vi{0}));
-}
+TEST(single_day) { CHECK_EQ(dailyTemperatures({50}), (vi{0})); }
 
-TEST(two_days_warming) {
-    CHECK_EQ(dailyTemperatures({1, 2}), (vi{1, 0}));
-}
+TEST(two_days_warming) { CHECK_EQ(dailyTemperatures({1, 2}), (vi{1, 0})); }
 
-TEST(two_days_cooling) {
-    CHECK_EQ(dailyTemperatures({2, 1}), (vi{0, 0}));
-}
+TEST(two_days_cooling) { CHECK_EQ(dailyTemperatures({2, 1}), (vi{0, 0})); }
 
 TEST(flat_week) {
     // equal is not warmer
@@ -59,7 +54,8 @@ TEST(flat_week) {
 }
 
 TEST(the_classic_leetcode_case) {
-    CHECK_EQ(dailyTemperatures({73, 74, 75, 71, 69, 72, 76, 73}), (vi{1, 1, 4, 2, 1, 1, 0, 0}));
+    CHECK_EQ(dailyTemperatures({73, 74, 75, 71, 69, 72, 76, 73}),
+             (vi{1, 1, 4, 2, 1, 1, 0, 0}));
 }
 
 TEST(one_warm_day_resolves_everything) {
@@ -84,6 +80,7 @@ TEST(largest_allowed_input) {
     vi temperatures(100000, 50);
     temperatures[99999] = 100;
     vi expected(100000);
-    for (int i = 0; i < 100000; ++i) expected[i] = 99999 - i;
+    for (int i = 0; i < 100000; ++i)
+        expected[i] = 99999 - i;
     CHECK_EQ(dailyTemperatures(temperatures), expected);
 }

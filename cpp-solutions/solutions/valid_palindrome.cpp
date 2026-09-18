@@ -12,7 +12,7 @@
 
 bool isPalindrome(const std::string &s) {
     (void)s;
-    return false;  // TODO
+    return false; // TODO
 }
 
 // ---------------------------------------------------------------- tests
@@ -70,7 +70,8 @@ TEST(difference_only_at_the_very_ends) {
 
 TEST(long_palindrome_at_the_length_limit) {
     std::string half;
-    for (int i = 0; i < 100; ++i) half += "abcde";  // 500 chars
+    for (int i = 0; i < 100; ++i)
+        half += "abcde"; // 500 chars
     std::string reversed(half.rbegin(), half.rend());
     CHECK(isPalindrome(half + reversed));
 }

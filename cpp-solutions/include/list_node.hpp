@@ -28,7 +28,8 @@ inline ListNode *build(const std::vector<int> &values) {
 
 inline std::vector<int> to_vector(ListNode *head) {
     std::vector<int> out;
-    for (ListNode *p = head; p; p = p->next) out.push_back(p->val);
+    for (ListNode *p = head; p; p = p->next)
+        out.push_back(p->val);
     return out;
 }
 

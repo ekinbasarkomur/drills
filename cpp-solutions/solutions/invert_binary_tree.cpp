@@ -16,8 +16,8 @@ using namespace std;
 
 class Solution {
 public:
-    TreeNode* invertTree(TreeNode* root) {
-        return root;  // TODO
+    TreeNode *invertTree(TreeNode *root) {
+        return root; // TODO
     }
 };
 
@@ -55,9 +55,7 @@ TEST(lopsided_tree) {
     CHECK_EQ(inverted({1, 2, 3, X, 4}), (Level{1, 3, 2, X, X, 4}));
 }
 
-TEST(negative_values) {
-    CHECK_EQ(inverted({-1, -2, -3}), (Level{-1, -3, -2}));
-}
+TEST(negative_values) { CHECK_EQ(inverted({-1, -2, -3}), (Level{-1, -3, -2})); }
 
 TEST(inverting_twice_restores_the_original) {
     Level original = {1, 2, 3, 4, 5, 6, 7};

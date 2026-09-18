@@ -18,33 +18,28 @@ using namespace std;
 
 class Solution {
 public:
-    int minEatingSpeed(vector<int>& piles, int h) {
+    int minEatingSpeed(vector<int> &piles, int h) {
         (void)piles;
         (void)h;
-        return 0;  // TODO
+        return 0; // TODO
     }
 };
 
 // ---------------------------------------------------------------- tests
 // minEatingSpeed takes a non-const reference, so it cannot be handed a temporary.
 
-
 static int minEatingSpeed(vector<int> piles, int h) {
     return Solution().minEatingSpeed(piles, h);
 }
 
-TEST(example_1) {
-    CHECK((minEatingSpeed({1, 4, 3, 2}, 9) == 2));
-}
+TEST(example_1) { CHECK((minEatingSpeed({1, 4, 3, 2}, 9) == 2)); }
 
 TEST(example_2) {
     // h equals the pile count, so each pile must go in one hour
     CHECK((minEatingSpeed({25, 10, 23, 4}, 4) == 25));
 }
 
-TEST(single_pile_single_hour) {
-    CHECK((minEatingSpeed({1}, 1) == 1));
-}
+TEST(single_pile_single_hour) { CHECK((minEatingSpeed({1}, 1) == 1)); }
 
 TEST(time_to_spare) {
     // k never drops below 1
@@ -55,17 +50,13 @@ TEST(the_classic_leetcode_case) {
     CHECK((minEatingSpeed({3, 6, 7, 11}, 8) == 4));
 }
 
-TEST(tight_deadline) {
-    CHECK((minEatingSpeed({30, 11, 23, 4, 20}, 5) == 30));
-}
+TEST(tight_deadline) { CHECK((minEatingSpeed({30, 11, 23, 4, 20}, 5) == 30)); }
 
 TEST(one_hour_more_is_enough_to_slow_down) {
     CHECK((minEatingSpeed({30, 11, 23, 4, 20}, 6) == 23));
 }
 
-TEST(uniform_piles) {
-    CHECK((minEatingSpeed({1, 1, 1, 1}, 4) == 1));
-}
+TEST(uniform_piles) { CHECK((minEatingSpeed({1, 1, 1, 1}, 4) == 1)); }
 
 TEST(value_range_extremes) {
     // one pile of a billion in one hour -- the rate must match it exactly

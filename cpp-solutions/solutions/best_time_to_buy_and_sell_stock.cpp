@@ -16,23 +16,20 @@ using namespace std;
 
 class Solution {
 public:
-    int maxProfit(vector<int>& prices) {
+    int maxProfit(vector<int> &prices) {
         (void)prices;
-        return 0;  // TODO
+        return 0; // TODO
     }
 };
 
 // ---------------------------------------------------------------- tests
 // maxProfit takes a non-const reference, so it cannot be handed a temporary.
 
-
 static int maxProfit(vector<int> prices) {
     return Solution().maxProfit(prices);
 }
 
-TEST(example_1) {
-    CHECK((maxProfit({10, 1, 5, 6, 7, 1}) == 6));
-}
+TEST(example_1) { CHECK((maxProfit({10, 1, 5, 6, 7, 1}) == 6)); }
 
 TEST(example_2) {
     // prices only fall, so no transaction is made
@@ -44,25 +41,15 @@ TEST(single_day) {
     CHECK((maxProfit({1}) == 0));
 }
 
-TEST(two_days_rising) {
-    CHECK((maxProfit({1, 2}) == 1));
-}
+TEST(two_days_rising) { CHECK((maxProfit({1, 2}) == 1)); }
 
-TEST(two_days_falling) {
-    CHECK((maxProfit({2, 1}) == 0));
-}
+TEST(two_days_falling) { CHECK((maxProfit({2, 1}) == 0)); }
 
-TEST(flat_prices) {
-    CHECK((maxProfit({5, 5, 5}) == 0));
-}
+TEST(flat_prices) { CHECK((maxProfit({5, 5, 5}) == 0)); }
 
-TEST(all_zeros) {
-    CHECK((maxProfit({0, 0, 0}) == 0));
-}
+TEST(all_zeros) { CHECK((maxProfit({0, 0, 0}) == 0)); }
 
-TEST(buy_low_sell_high_at_the_ends) {
-    CHECK((maxProfit({0, 100}) == 100));
-}
+TEST(buy_low_sell_high_at_the_ends) { CHECK((maxProfit({0, 100}) == 100)); }
 
 TEST(the_low_comes_after_the_high) {
     // cannot sell before buying
@@ -78,7 +65,9 @@ TEST(largest_allowed_input) {
     // 100 days, the constraint's ceiling: the price slides from 50 down to 0,
     // then climbs to 98. Buy at the bottom, sell on the last day.
     vector<int> prices;
-    for (int i = 0; i < 50; ++i) prices.push_back(50 - i);
-    for (int i = 0; i < 50; ++i) prices.push_back(i * 2);
+    for (int i = 0; i < 50; ++i)
+        prices.push_back(50 - i);
+    for (int i = 0; i < 50; ++i)
+        prices.push_back(i * 2);
     CHECK((maxProfit(prices) == 98));
 }

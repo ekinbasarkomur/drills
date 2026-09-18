@@ -16,9 +16,9 @@ using namespace std;
 
 class Solution {
 public:
-    ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
+    ListNode *mergeTwoLists(ListNode *list1, ListNode *list2) {
         (void)list2;
-        return list1;  // TODO
+        return list1; // TODO
     }
 };
 
@@ -54,9 +54,7 @@ TEST(perfectly_interleaved) {
     CHECK_EQ(merged({1, 3, 5}, {2, 4, 6}), (vi{1, 2, 3, 4, 5, 6}));
 }
 
-TEST(all_values_equal) {
-    CHECK_EQ(merged({2, 2}, {2, 2}), (vi{2, 2, 2, 2}));
-}
+TEST(all_values_equal) { CHECK_EQ(merged({2, 2}, {2, 2}), (vi{2, 2, 2, 2})); }
 
 TEST(very_different_lengths) {
     CHECK_EQ(merged({1}, {2, 3, 4, 5}), (vi{1, 2, 3, 4, 5}));
@@ -77,6 +75,7 @@ TEST(largest_allowed_input) {
         a[i] = i * 2;
         b[i] = i * 2 + 1;
     }
-    for (int i = 0; i < 200; ++i) expected[i] = i;
+    for (int i = 0; i < 200; ++i)
+        expected[i] = i;
     CHECK_EQ(merged(a, b), expected);
 }

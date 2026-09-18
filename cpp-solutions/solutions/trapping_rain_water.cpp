@@ -15,9 +15,9 @@ using namespace std;
 
 class Solution {
 public:
-    int trap(vector<int>& height) {
+    int trap(vector<int> &height) {
         (void)height;
-        return 0;  // TODO
+        return 0; // TODO
     }
 };
 

@@ -16,9 +16,9 @@ using namespace std;
 
 class Solution {
 public:
-    int maxDepth(TreeNode* root) {
+    int maxDepth(TreeNode *root) {
         (void)root;
-        return 0;  // TODO
+        return 0; // TODO
     }
 };
 
@@ -63,7 +63,8 @@ TEST(largest_allowed_input) {
     Level values;
     for (int i = 0; i < 100; ++i) {
         values.push_back(i);
-        if (i < 99) values.push_back(X);
+        if (i < 99)
+            values.push_back(X);
     }
     CHECK((depth(values) == 100));
 }

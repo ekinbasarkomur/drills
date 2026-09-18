@@ -17,29 +17,25 @@ class Solution {
 public:
     bool isAnagram(string s, string t) {
 
-        if(s.size() != t.size()){
+        if (s.size() != t.size()) {
             return false;
         }
 
         unordered_map<char, int> s_map;
         unordered_map<char, int> t_map;
 
-        for(size_t i = 0; i < s.size(); i++){
+        for (size_t i = 0; i < s.size(); i++) {
             s_map[s[i]]++;
             t_map[t[i]]++;
-
         }
 
         return s_map == t_map;
-
     }
 };
 
 // ---------------------------------------------------------------- tests
 
-static bool isAnagram(string s, string t) {
-    return Solution().isAnagram(s, t);
-}
+static bool isAnagram(string s, string t) { return Solution().isAnagram(s, t); }
 
 TEST(example_1) { CHECK(isAnagram("racecar", "carrace")); }
 

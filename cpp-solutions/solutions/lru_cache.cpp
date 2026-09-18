@@ -20,17 +20,17 @@ using namespace std;
 class LRUCache {
 public:
     LRUCache(int capacity) {
-        (void)capacity;  // TODO
+        (void)capacity; // TODO
     }
 
     int get(int key) {
         (void)key;
-        return -1;  // TODO
+        return -1; // TODO
     }
 
     void put(int key, int value) {
         (void)key;
-        (void)value;  // TODO
+        (void)value; // TODO
     }
 };
 
@@ -41,7 +41,7 @@ TEST(example_1) {
     c.put(1, 10);
     CHECK((c.get(1) == 10));
     c.put(2, 20);
-    c.put(3, 30);       // evicts key 1
+    c.put(3, 30); // evicts key 1
     CHECK((c.get(2) == 20));
     CHECK((c.get(1) == -1));
 }
@@ -79,7 +79,7 @@ TEST(a_get_counts_as_use_and_saves_a_key) {
     LRUCache c(2);
     c.put(1, 10);
     c.put(2, 20);
-    c.get(1);           // 2 is now the least recently used
+    c.get(1); // 2 is now the least recently used
     c.put(3, 30);
     CHECK((c.get(2) == -1));
     CHECK((c.get(1) == 10));
@@ -90,7 +90,7 @@ TEST(a_put_on_an_existing_key_counts_as_use) {
     LRUCache c(2);
     c.put(1, 10);
     c.put(2, 20);
-    c.put(1, 11);       // 2 is now the least recently used
+    c.put(1, 11); // 2 is now the least recently used
     c.put(3, 30);
     CHECK((c.get(2) == -1));
     CHECK((c.get(1) == 11));
@@ -100,8 +100,8 @@ TEST(a_failed_get_does_not_change_the_order) {
     LRUCache c(2);
     c.put(1, 10);
     c.put(2, 20);
-    c.get(99);          // not present
-    c.put(3, 30);       // must still evict 1
+    c.get(99);    // not present
+    c.put(3, 30); // must still evict 1
     CHECK((c.get(1) == -1));
     CHECK((c.get(2) == 20));
 }
@@ -128,9 +128,11 @@ TEST(many_operations_stay_constant_time) {
     // 3000 keys held, then 100_000 more puts sweeping past them.
     // An O(n) eviction scan will crawl here.
     LRUCache c(3000);
-    for (int i = 0; i < 3000; ++i) c.put(i, i * 2);
-    CHECK((c.get(0) == 0));          // still present, and now most recent
-    for (int i = 3000; i < 10000; ++i) c.put(i, i);
-    CHECK((c.get(9999) == 9999));    // newest survived
-    CHECK((c.get(1) == -1));         // oldest was evicted
+    for (int i = 0; i < 3000; ++i)
+        c.put(i, i * 2);
+    CHECK((c.get(0) == 0)); // still present, and now most recent
+    for (int i = 3000; i < 10000; ++i)
+        c.put(i, i);
+    CHECK((c.get(9999) == 9999)); // newest survived
+    CHECK((c.get(1) == -1));      // oldest was evicted
 }

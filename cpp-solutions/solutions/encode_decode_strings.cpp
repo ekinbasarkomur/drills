@@ -14,12 +14,12 @@
 
 std::string encode(const std::vector<std::string> &strs) {
     (void)strs;
-    return {};  // TODO
+    return {}; // TODO
 }
 
 std::vector<std::string> decode(const std::string &s) {
     (void)s;
-    return {};  // TODO
+    return {}; // TODO
 }
 
 // ---------------------------------------------------------------- tests
@@ -65,6 +65,7 @@ TEST(long_strings_at_the_length_limit) {
 
 TEST(many_strings) {
     vs items;
-    for (int i = 0; i < 99; ++i) items.push_back("item" + std::to_string(i));
+    for (int i = 0; i < 99; ++i)
+        items.push_back("item" + std::to_string(i));
     roundtrip(items);
 }

@@ -18,14 +18,14 @@ using namespace std;
 
 class KthLargest {
 public:
-    KthLargest(int k, vector<int>& nums) {
+    KthLargest(int k, vector<int> &nums) {
         (void)k;
-        (void)nums;  // TODO
+        (void)nums; // TODO
     }
 
     int add(int val) {
         (void)val;
-        return 0;  // TODO
+        return 0; // TODO
     }
 };
 
@@ -116,6 +116,7 @@ TEST(many_operations) {
     vi nums{};
     KthLargest s(1000, nums);
     int last = 0;
-    for (int i = 1000; i >= 1; --i) last = s.add(i);
+    for (int i = 1000; i >= 1; --i)
+        last = s.add(i);
     CHECK((last == 1));
 }

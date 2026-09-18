@@ -16,8 +16,8 @@ using namespace std;
 
 class Solution {
 public:
-    ListNode* reverseList(ListNode* head) {
-        return head;  // TODO
+    ListNode *reverseList(ListNode *head) {
+        return head; // TODO
     }
 };
 
@@ -51,8 +51,10 @@ TEST(value_range_extremes) {
 TEST(largest_allowed_input) {
     // 1000 nodes, the constraint's ceiling.
     vi values(1000);
-    for (int i = 0; i < 1000; ++i) values[i] = i;
+    for (int i = 0; i < 1000; ++i)
+        values[i] = i;
     vi expected(1000);
-    for (int i = 0; i < 1000; ++i) expected[i] = 999 - i;
+    for (int i = 0; i < 1000; ++i)
+        expected[i] = 999 - i;
     CHECK_EQ(reversed(values), expected);
 }

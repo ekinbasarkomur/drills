@@ -16,9 +16,9 @@ using namespace std;
 
 class Solution {
 public:
-    vector<vector<int>> threeSum(vector<int>& nums) {
+    vector<vector<int>> threeSum(vector<int> &nums) {
         (void)nums;
-        return {};  // TODO
+        return {}; // TODO
     }
 };
 
@@ -26,11 +26,12 @@ public:
 // "You may return the output and the triplets in any order" -> sort both
 // levels before comparing.
 
-using vi  = vector<int>;
+using vi = vector<int>;
 using vvi = vector<vector<int>>;
 
 static vvi normalized(vvi triplets) {
-    for (auto &t : triplets) sort(t.begin(), t.end());
+    for (auto &t : triplets)
+        sort(t.begin(), t.end());
     sort(triplets.begin(), triplets.end());
     return triplets;
 }

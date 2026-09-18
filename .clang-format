@@ -1,0 +1,14 @@
+# clang-format defaults to LLVM style, which indents with 2 spaces. The rest of
+# this repo (Rust, Python, and .editorconfig) uses 4, so override that and the
+# two settings that follow from it.
+BasedOnStyle: LLVM
+IndentWidth: 4
+ColumnLimit: 80
+UseTab: Never
+
+# Keep `public:` flush against the class, the way LeetCode presents it.
+# LLVM's -2 would leave it hanging at column 2 once IndentWidth is 4.
+AccessModifierOffset: -4
+
+# Header comments line the URL up in a column; leave them alone.
+ReflowComments: false

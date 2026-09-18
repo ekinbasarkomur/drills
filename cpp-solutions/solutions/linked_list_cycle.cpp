@@ -18,7 +18,7 @@ class Solution {
 public:
     bool hasCycle(ListNode *head) {
         (void)head;
-        return false;  // TODO
+        return false; // TODO
     }
 };
 
@@ -31,18 +31,21 @@ using vi = vector<int>;
 static bool has_cycle(const vi &values, int index) {
     ListNode *head = build(values);
     ListNode *tail = head;
-    while (tail && tail->next) tail = tail->next;
+    while (tail && tail->next)
+        tail = tail->next;
 
     ListNode *target = nullptr;
     if (index >= 0) {
         target = head;
-        for (int i = 0; i < index; ++i) target = target->next;
+        for (int i = 0; i < index; ++i)
+            target = target->next;
         tail->next = target;
     }
 
     bool result = Solution().hasCycle(head);
 
-    if (tail) tail->next = nullptr;  // break the cycle before freeing
+    if (tail)
+        tail->next = nullptr; // break the cycle before freeing
     free_list(head);
     return result;
 }
@@ -70,12 +73,14 @@ TEST(repeated_values_are_not_a_cycle) {
 
 TEST(long_list_no_cycle) {
     vi values(1000);
-    for (int i = 0; i < 1000; ++i) values[i] = i;
+    for (int i = 0; i < 1000; ++i)
+        values[i] = i;
     CHECK(!has_cycle(values, -1));
 }
 
 TEST(long_list_with_a_late_cycle) {
     vi values(1000);
-    for (int i = 0; i < 1000; ++i) values[i] = i;
+    for (int i = 0; i < 1000; ++i)
+        values[i] = i;
     CHECK(has_cycle(values, 999));
 }

@@ -24,7 +24,9 @@ inline std::vector<Case> &registry() {
 }
 
 struct Register {
-    Register(const char *n, std::function<void()> f) { registry().push_back({n, f}); }
+    Register(const char *n, std::function<void()> f) {
+        registry().push_back({n, f});
+    }
 };
 
 inline int failures = 0;
@@ -34,18 +36,24 @@ inline void fail(const char *file, int line, const char *expr) {
     ++failures;
 }
 
-}  // namespace tinytest
+} // namespace tinytest
 
-#define TEST(name)                                                    \
-    static void name();                                               \
-    static tinytest::Register tinytest_reg_##name(#name, name);       \
+#define TEST(name)                                                             \
+    static void name();                                                        \
+    static tinytest::Register tinytest_reg_##name(#name, name);                \
     static void name()
 
-#define CHECK(expr) \
-    do { if (!(expr)) tinytest::fail(__FILE__, __LINE__, #expr); } while (0)
+#define CHECK(expr)                                                            \
+    do {                                                                       \
+        if (!(expr))                                                           \
+            tinytest::fail(__FILE__, __LINE__, #expr);                         \
+    } while (0)
 
-#define CHECK_EQ(a, b) \
-    do { if (!((a) == (b))) tinytest::fail(__FILE__, __LINE__, #a " == " #b); } while (0)
+#define CHECK_EQ(a, b)                                                         \
+    do {                                                                       \
+        if (!((a) == (b)))                                                     \
+            tinytest::fail(__FILE__, __LINE__, #a " == " #b);                  \
+    } while (0)
 
 int main() {
     int failed = 0;
@@ -55,7 +63,8 @@ int main() {
         c.fn();
         bool ok = tinytest::failures == before;
         std::printf("test %s ... %s\n", c.name.c_str(), ok ? "ok" : "FAILED");
-        if (!ok) ++failed;
+        if (!ok)
+            ++failed;
     }
     std::printf("\ntest result: %s. %d passed; %d failed\n",
                 failed ? "FAILED" : "ok", total - failed, failed);

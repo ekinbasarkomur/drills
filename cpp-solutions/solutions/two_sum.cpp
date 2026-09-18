@@ -15,17 +15,15 @@ using namespace std;
 
 class Solution {
 public:
-    vector<int> twoSum(vector<int>& nums, int target) {
+    vector<int> twoSum(vector<int> &nums, int target) {
 
         unordered_map<int, int> seen;
 
-        for(size_t i = 0; i < nums.size(); i++)
-        {
+        for (size_t i = 0; i < nums.size(); i++) {
             int diff = target - nums[i];
             //cout << i << " " << diff << endl;
 
-            if(seen.contains(diff))
-            {
+            if (seen.contains(diff)) {
                 return {seen[diff], static_cast<int>(i)};
             }
             seen[nums[i]] = i;

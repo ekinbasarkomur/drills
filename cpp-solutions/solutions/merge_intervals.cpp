@@ -18,9 +18,9 @@ using namespace std;
 
 class Solution {
 public:
-    vector<vector<int>> merge(vector<vector<int>>& intervals) {
+    vector<vector<int>> merge(vector<vector<int>> &intervals) {
         (void)intervals;
-        return {};  // TODO
+        return {}; // TODO
     }
 };
 
@@ -69,7 +69,9 @@ TEST(identical_intervals_collapse) {
     CHECK_EQ(merge({{1, 1}, {1, 1}}), expect({{1, 1}}));
 }
 
-TEST(value_range_extremes) { CHECK_EQ(merge({{0, 1000}}), expect({{0, 1000}})); }
+TEST(value_range_extremes) {
+    CHECK_EQ(merge({{0, 1000}}), expect({{0, 1000}}));
+}
 
 TEST(a_chain_that_merges_end_to_end) {
     CHECK_EQ(merge({{1, 2}, {2, 3}, {3, 4}, {4, 5}}), expect({{1, 5}}));
@@ -78,13 +80,15 @@ TEST(a_chain_that_merges_end_to_end) {
 TEST(largest_allowed_input_all_merge) {
     // 1000 intervals all starting at 0: they collapse to one.
     vvi intervals;
-    for (int i = 0; i < 1000; ++i) intervals.push_back({0, i});
+    for (int i = 0; i < 1000; ++i)
+        intervals.push_back({0, i});
     CHECK_EQ(merge(intervals), expect({{0, 999}}));
 }
 
 TEST(largest_allowed_input_none_merge) {
     // 500 intervals with a gap between each: nothing collapses.
     vvi intervals;
-    for (int i = 0; i < 500; ++i) intervals.push_back({i * 2, i * 2});
+    for (int i = 0; i < 500; ++i)
+        intervals.push_back({i * 2, i * 2});
     CHECK(merge(intervals).size() == 500);
 }

@@ -18,36 +18,25 @@ class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
         (void)s;
-        return 0;  // TODO
+        return 0; // TODO
     }
 };
 
 // ---------------------------------------------------------------- tests
 
-
 static int lengthOfLongestSubstring(string s) {
     return Solution().lengthOfLongestSubstring(s);
 }
 
-TEST(example_1) {
-    CHECK((lengthOfLongestSubstring("zxyzxyz") == 3));
-}
+TEST(example_1) { CHECK((lengthOfLongestSubstring("zxyzxyz") == 3)); }
 
-TEST(example_2) {
-    CHECK((lengthOfLongestSubstring("xxxx") == 1));
-}
+TEST(example_2) { CHECK((lengthOfLongestSubstring("xxxx") == 1)); }
 
-TEST(empty_string) {
-    CHECK((lengthOfLongestSubstring("") == 0));
-}
+TEST(empty_string) { CHECK((lengthOfLongestSubstring("") == 0)); }
 
-TEST(single_character) {
-    CHECK((lengthOfLongestSubstring("a") == 1));
-}
+TEST(single_character) { CHECK((lengthOfLongestSubstring("a") == 1)); }
 
-TEST(two_distinct_characters) {
-    CHECK((lengthOfLongestSubstring("ab") == 2));
-}
+TEST(two_distinct_characters) { CHECK((lengthOfLongestSubstring("ab") == 2)); }
 
 TEST(every_character_is_the_same) {
     CHECK((lengthOfLongestSubstring("bbbbb") == 1));
@@ -84,6 +73,7 @@ TEST(largest_allowed_input) {
     // 50_000 characters cycling through the 95 printable ASCII codes, so the
     // answer is one full cycle. An O(n^2) solution will hang here.
     string s;
-    for (int i = 0; i < 50000; ++i) s += char(32 + i % 95);
+    for (int i = 0; i < 50000; ++i)
+        s += char(32 + i % 95);
     CHECK((lengthOfLongestSubstring(s) == 95));
 }

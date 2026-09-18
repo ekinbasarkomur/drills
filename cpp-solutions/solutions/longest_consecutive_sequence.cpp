@@ -14,7 +14,7 @@
 
 int longestConsecutive(const std::vector<int> &nums) {
     (void)nums;
-    return 0;  // TODO
+    return 0; // TODO
 }
 
 // ---------------------------------------------------------------- tests
@@ -29,7 +29,9 @@ TEST(empty_array) { CHECK(longestConsecutive({}) == 0); }
 
 TEST(single_element) { CHECK(longestConsecutive({7}) == 1); }
 
-TEST(all_duplicates_of_one_value) { CHECK(longestConsecutive({5, 5, 5, 5}) == 1); }
+TEST(all_duplicates_of_one_value) {
+    CHECK(longestConsecutive({5, 5, 5, 5}) == 1);
+}
 
 TEST(no_two_numbers_are_consecutive) {
     CHECK(longestConsecutive({10, 30, 50, 70}) == 1);
@@ -37,7 +39,9 @@ TEST(no_two_numbers_are_consecutive) {
 
 TEST(already_sorted) { CHECK(longestConsecutive({1, 2, 3, 4, 5}) == 5); }
 
-TEST(given_in_descending_order) { CHECK(longestConsecutive({5, 4, 3, 2, 1}) == 5); }
+TEST(given_in_descending_order) {
+    CHECK(longestConsecutive({5, 4, 3, 2, 1}) == 5);
+}
 
 TEST(two_runs_and_the_longer_one_comes_second) {
     CHECK(longestConsecutive({1, 2, 3, 100, 101, 102, 103}) == 4);

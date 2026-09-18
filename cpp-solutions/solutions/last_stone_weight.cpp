@@ -18,43 +18,30 @@ using namespace std;
 
 class Solution {
 public:
-    int lastStoneWeight(vector<int>& stones) {
+    int lastStoneWeight(vector<int> &stones) {
         (void)stones;
-        return 0;  // TODO
+        return 0; // TODO
     }
 };
 
 // ---------------------------------------------------------------- tests
 // lastStoneWeight takes a non-const reference, so it cannot be handed a temporary.
 
-
 static int lastStoneWeight(vector<int> stones) {
     return Solution().lastStoneWeight(stones);
 }
 
-TEST(example_1) {
-    CHECK((lastStoneWeight({2, 3, 6, 2, 4}) == 1));
-}
+TEST(example_1) { CHECK((lastStoneWeight({2, 3, 6, 2, 4}) == 1)); }
 
-TEST(example_2) {
-    CHECK((lastStoneWeight({1, 2}) == 1));
-}
+TEST(example_2) { CHECK((lastStoneWeight({1, 2}) == 1)); }
 
-TEST(no_stones) {
-    CHECK((lastStoneWeight({}) == 0));
-}
+TEST(no_stones) { CHECK((lastStoneWeight({}) == 0)); }
 
-TEST(one_stone_survives_untouched) {
-    CHECK((lastStoneWeight({7}) == 7));
-}
+TEST(one_stone_survives_untouched) { CHECK((lastStoneWeight({7}) == 7)); }
 
-TEST(two_equal_stones_annihilate) {
-    CHECK((lastStoneWeight({1, 1}) == 0));
-}
+TEST(two_equal_stones_annihilate) { CHECK((lastStoneWeight({1, 1}) == 0)); }
 
-TEST(two_equal_heavy_stones) {
-    CHECK((lastStoneWeight({3, 3}) == 0));
-}
+TEST(two_equal_heavy_stones) { CHECK((lastStoneWeight({3, 3}) == 0)); }
 
 TEST(the_classic_leetcode_case) {
     CHECK((lastStoneWeight({2, 7, 4, 1, 8, 1}) == 1));
@@ -65,9 +52,7 @@ TEST(a_tie_then_a_leftover) {
     CHECK((lastStoneWeight({10, 4, 2, 10}) == 2));
 }
 
-TEST(odd_count_of_equal_stones) {
-    CHECK((lastStoneWeight({1, 1, 1}) == 1));
-}
+TEST(odd_count_of_equal_stones) { CHECK((lastStoneWeight({1, 1, 1}) == 1)); }
 
 TEST(value_range_extremes) {
     CHECK((lastStoneWeight({1000, 1000, 1000}) == 1000));

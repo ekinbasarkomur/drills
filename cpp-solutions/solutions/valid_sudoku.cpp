@@ -14,7 +14,7 @@
 
 bool isValidSudoku(const std::vector<std::vector<char>> &board) {
     (void)board;
-    return false;  // TODO
+    return false; // TODO
 }
 
 // ---------------------------------------------------------------- tests
@@ -33,7 +33,8 @@ static bool valid(const Rows &rows) {
 
 static Rows empty_board() {
     Rows rows;
-    for (auto &row : rows) row = ".........";
+    for (auto &row : rows)
+        row = ".........";
     return rows;
 }
 

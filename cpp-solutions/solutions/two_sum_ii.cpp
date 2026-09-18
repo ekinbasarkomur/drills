@@ -16,7 +16,7 @@
 std::vector<int> twoSum(const std::vector<int> &numbers, int target) {
     (void)numbers;
     (void)target;
-    return {};  // TODO
+    return {}; // TODO
 }
 
 // ---------------------------------------------------------------- tests
@@ -39,7 +39,9 @@ TEST(the_answer_sits_in_the_middle) {
     CHECK_EQ(twoSum({1, 4, 5, 6, 20}, 11), (vi{3, 4}));
 }
 
-TEST(equal_values_next_to_each_other) { CHECK_EQ(twoSum({3, 3}, 6), (vi{1, 2})); }
+TEST(equal_values_next_to_each_other) {
+    CHECK_EQ(twoSum({3, 3}, 6), (vi{1, 2}));
+}
 
 TEST(repeated_values_around_the_answer) {
     CHECK_EQ(twoSum({2, 2, 3, 7}, 10), (vi{3, 4}));
@@ -51,7 +53,9 @@ TEST(crossing_zero) { CHECK_EQ(twoSum({-5, -2, 0, 3, 8}, 6), (vi{2, 5})); }
 
 TEST(target_is_zero) { CHECK_EQ(twoSum({-4, -1, 0, 1, 5}, 0), (vi{2, 4})); }
 
-TEST(value_range_extremes) { CHECK_EQ(twoSum({-1000, 0, 1000}, 0), (vi{1, 3})); }
+TEST(value_range_extremes) {
+    CHECK_EQ(twoSum({-1000, 0, 1000}, 0), (vi{1, 3}));
+}
 
 TEST(largest_allowed_input) {
     // 1000 elements: the answer is the very first and the very last, so a scan
