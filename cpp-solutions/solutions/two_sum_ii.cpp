@@ -32,24 +32,24 @@ TEST(example_3) { CHECK_EQ(twoSum({2, 3, 4}, 6), (vi{1, 3})); }
 TEST(shortest_possible_input) { CHECK_EQ(twoSum({-1, 0}, -1), (vi{1, 2})); }
 
 TEST(the_two_ends_are_the_answer) {
-    CHECK_EQ(twoSum({1, 2, 3, 4, 5, 6, 7}, 8), (vi{1, 7}));
+    CHECK_EQ(twoSum({1, 5, 6, 7, 20}, 21), (vi{1, 5}));
 }
 
 TEST(the_answer_sits_in_the_middle) {
-    CHECK_EQ(twoSum({1, 2, 3, 4, 5, 6, 7}, 7), (vi{3, 4}));
+    CHECK_EQ(twoSum({1, 4, 5, 6, 20}, 11), (vi{3, 4}));
 }
 
 TEST(equal_values_next_to_each_other) { CHECK_EQ(twoSum({3, 3}, 6), (vi{1, 2})); }
 
 TEST(repeated_values_around_the_answer) {
-    CHECK_EQ(twoSum({1, 1, 1, 5, 9}, 6), (vi{3, 4}));
+    CHECK_EQ(twoSum({2, 2, 3, 7}, 10), (vi{3, 4}));
 }
 
-TEST(all_negative) { CHECK_EQ(twoSum({-9, -7, -3, -1}, -10), (vi{2, 3})); }
+TEST(all_negative) { CHECK_EQ(twoSum({-9, -7, -3, -1}, -4), (vi{3, 4})); }
 
-TEST(crossing_zero) { CHECK_EQ(twoSum({-5, -2, 0, 3, 8}, 3), (vi{2, 5})); }
+TEST(crossing_zero) { CHECK_EQ(twoSum({-5, -2, 0, 3, 8}, 6), (vi{2, 5})); }
 
-TEST(target_is_zero) { CHECK_EQ(twoSum({-4, -1, 0, 1, 4}, 0), (vi{2, 4})); }
+TEST(target_is_zero) { CHECK_EQ(twoSum({-4, -1, 0, 1, 5}, 0), (vi{2, 4})); }
 
 TEST(value_range_extremes) { CHECK_EQ(twoSum({-1000, 0, 1000}, 0), (vi{1, 3})); }
 
@@ -57,8 +57,8 @@ TEST(largest_allowed_input) {
     // 1000 elements: the answer is the very first and the very last, so a scan
     // that starts from both ends finds it immediately while a nested loop
     // grinds through the whole array.
-    const int n = 1000;
-    vi numbers(n);
+    vi numbers(1000);
     std::iota(numbers.begin(), numbers.end(), 0);
-    CHECK_EQ(twoSum(numbers, n - 1), (vi{1, n}));
+    // 998 + 999 is the only pair reaching 1997, and it sits at the far end
+    CHECK_EQ(twoSum(numbers, 1997), (vi{999, 1000}));
 }

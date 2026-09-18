@@ -42,11 +42,11 @@ def test_shortest_possible_input():
 
 
 def test_the_two_ends_are_the_answer():
-    assert two_sum([1, 2, 3, 4, 5, 6, 7], 8) == [1, 7]
+    assert two_sum([1, 5, 6, 7, 20], 21) == [1, 5]
 
 
 def test_the_answer_sits_in_the_middle():
-    assert two_sum([1, 2, 3, 4, 5, 6, 7], 7) == [3, 4]
+    assert two_sum([1, 4, 5, 6, 20], 11) == [3, 4]
 
 
 def test_equal_values_next_to_each_other():
@@ -54,19 +54,19 @@ def test_equal_values_next_to_each_other():
 
 
 def test_repeated_values_around_the_answer():
-    assert two_sum([1, 1, 1, 5, 9], 6) == [3, 4]
+    assert two_sum([2, 2, 3, 7], 10) == [3, 4]
 
 
 def test_all_negative():
-    assert two_sum([-9, -7, -3, -1], -10) == [2, 3]
+    assert two_sum([-9, -7, -3, -1], -4) == [3, 4]
 
 
 def test_crossing_zero():
-    assert two_sum([-5, -2, 0, 3, 8], 3) == [2, 5]
+    assert two_sum([-5, -2, 0, 3, 8], 6) == [2, 5]
 
 
 def test_target_is_zero():
-    assert two_sum([-4, -1, 0, 1, 4], 0) == [2, 4]
+    assert two_sum([-4, -1, 0, 1, 5], 0) == [2, 4]
 
 
 def test_value_range_extremes():
@@ -77,9 +77,9 @@ def test_largest_allowed_input():
     # 1000 elements: the answer is the very first and the very last, so a scan
     # that starts from both ends finds it immediately while a nested loop
     # grinds through the whole array.
-    n = 1000
-    numbers = list(range(n))
-    assert two_sum(numbers, n - 1) == [1, n]
+    numbers = list(range(1000))
+    # 998 + 999 is the only pair reaching 1997, and it sits at the far end
+    assert two_sum(numbers, 1997) == [999, 1000]
 
 
 if __name__ == "__main__":
