@@ -86,6 +86,9 @@ uv run pytest -x -q                  stop at first failure, quiet
 uv run python solutions/two_sum.py   run the __main__ scratch block
 ```
 
+`solutions/list_node.py` and `solutions/tree_node.py` are shared helpers, not
+problems; `pyproject.toml` excludes them from collection.
+
 pytest normally only collects files named `test_*.py`. `pyproject.toml` overrides
 that with `python_files = ["*.py"]` so it picks up the `test_*` functions living
 inside each solution file — that is what keeps the layout identical to Rust's.
@@ -100,6 +103,10 @@ make                 build and run every problem
 make two_sum         build and run just that one
 make clean           wipe build/
 ```
+
+`include/list_node.hpp` and `include/tree_node.hpp` hold the shared `ListNode`
+and `TreeNode` types plus builders, so linked-list and tree problems keep
+LeetCode's shape while the tests stay readable.
 
 `include/test.hpp` is a ~40 line dependency-free harness providing `TEST(name)`,
 `CHECK(expr)` and `CHECK_EQ(a, b)`, with output shaped to look like Rust's:
@@ -122,16 +129,39 @@ solution function is still a stub
 | # | Problem | Rust | Python | C++ |
 | --- | --- | :---: | :---: | :---: |
 | 217 | Contains Duplicate | ✅ | ✅ | ✅ |
-| 242 | Valid Anagram | ✅ | ▢ | ▢ |
-| 1 | Two Sum | ✅ | ▢ | ▢ |
-| 49 | Group Anagrams | ✅ | ▢ | ▢ |
+| 242 | Valid Anagram | ✅ | ▢ | ✅ |
+| 1 | Two Sum | ✅ | ▢ | ✅ |
+| 49 | Group Anagrams | ✅ | ▢ | ✅ |
 | 347 | Top K Frequent Elements | ✅ | ▢ | ▢ |
 | 271 | Encode and Decode Strings | ✅ | ▢ | ▢ |
 | 238 | Product of Array Except Self | ✅ | ✅ | ▢ |
 | 36 | Valid Sudoku | ✅ | ✅ | ▢ |
 | 128 | Longest Consecutive Sequence | ✅ | ✅ | ▢ |
 | 125 | Valid Palindrome | ✅ | ✅ | ▢ |
-| 167 | Two Sum II - Input Array Is Sorted | ✅ | ▢ | ▢ |
+| 167 | Two Sum II | ✅ | ▢ | ▢ |
+| 15 | 3Sum | ▢ | ▢ | ▢ |
+| 11 | Container With Most Water | ▢ | ▢ | ▢ |
+| 42 | Trapping Rain Water | ▢ | ▢ | ▢ |
+| 121 | Best Time to Buy and Sell Stock | ▢ | ▢ | ▢ |
+| 3 | Longest Substring Without Repeating | ▢ | ▢ | ▢ |
+| 424 | Longest Repeating Character Replacement | ▢ | ▢ | ▢ |
+| 20 | Valid Parentheses | ▢ | ▢ | ▢ |
+| 155 | Min Stack | ▢ | ▢ | ▢ |
+| 739 | Daily Temperatures | ▢ | ▢ | ▢ |
+| 704 | Binary Search | ▢ | ▢ | ▢ |
+| 33 | Search in Rotated Sorted Array | ▢ | ▢ | ▢ |
+| 875 | Koko Eating Bananas | ▢ | ▢ | ▢ |
+| 206 | Reverse Linked List | ▢ | ▢ | ▢ |
+| 21 | Merge Two Sorted Lists | ▢ | ▢ | ▢ |
+| 141 | Linked List Cycle | ▢ | ▢ | ▢ |
+| 146 | LRU Cache | ▢ | ▢ | ▢ |
+| 226 | Invert Binary Tree | ▢ | ▢ | ▢ |
+| 104 | Maximum Depth of Binary Tree | ▢ | ▢ | ▢ |
+| 703 | Kth Largest Element in a Stream | ▢ | ▢ | ▢ |
+| 1046 | Last Stone Weight | ▢ | ▢ | ▢ |
+| 200 | Number of Islands | ▢ | ▢ | ▢ |
+| 53 | Maximum Subarray | ▢ | ▢ | ▢ |
+| 56 | Merge Intervals | ▢ | ▢ | ▢ |
 
 A scaffolded file is ready to be solved: the problem statement, the approach
 placeholder, and every test case are already written, including the edge cases

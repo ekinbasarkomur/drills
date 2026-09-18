@@ -1,34 +1,61 @@
 // 49. Group Anagrams           https://leetcode.com/problems/group-anagrams/
 //
 // Problem: bucket the input strings so that anagrams end up in the same sublist.
-// Approach:
-// Time O(?), space O(?)
+// Approach: two words are anagrams exactly when their sorted letters match, so
+//           the sorted string is a canonical key. operator[] default-constructs
+//           the vector on first use, then the buckets are copied out.
+//           Time O(n * k log k) for n words of length k, space O(n * k).
 
 #include <algorithm>
 #include <string>
+#include <unordered_map>
 #include <vector>
 
 #include "test.hpp"
 
-std::vector<std::vector<std::string>> groupAnagrams(
-    const std::vector<std::string> &strs) {
-    (void)strs;
-    return {};  // TODO
-}
+using namespace std;
+
+class Solution {
+public:
+    vector<vector<string>> groupAnagrams(vector<string>& strs) {
+        vector<vector<string>> output;
+        unordered_map<string, vector<string>> sorted_strings;
+
+        for (string& str : strs)
+        {
+
+            string sorted_string = str;
+            sort(sorted_string.begin(), sorted_string.end());
+            sorted_strings[sorted_string].push_back(str);
+
+        }
+
+        for (auto& [sorted_string, arr] : sorted_strings)
+        {
+            (void)sorted_string;
+            output.push_back(arr);
+        }
+
+        return output;
+
+    }
+};
 
 // ---------------------------------------------------------------- tests
 // The output may come back in any order, so sort both levels before comparing.
 
-using vs  = std::vector<std::string>;
-using vvs = std::vector<std::vector<std::string>>;
+using vs  = vector<string>;
+using vvs = vector<vector<string>>;
 
 static vvs normalized(vvs groups) {
-    for (auto &g : groups) std::sort(g.begin(), g.end());
-    std::sort(groups.begin(), groups.end());
+    for (auto &g : groups) sort(g.begin(), g.end());
+    sort(groups.begin(), groups.end());
     return groups;
 }
 
-static vvs got(const vs &input) { return normalized(groupAnagrams(input)); }
+static vvs got(vs input) {
+    return normalized(Solution().groupAnagrams(input));
+}
 
 TEST(example_1) {
     CHECK_EQ(got({"act", "pots", "tops", "cat", "stop", "hat"}),

@@ -2,6 +2,7 @@
 //
 // Problem: return true if any value appears more than once in nums.
 // Approach: walk the array once, keep every number seen so far in a hash set.
+//           set::contains short-circuits as soon as a repeat shows up.
 //           Time O(n), space O(n).
 
 #include <unordered_set>
@@ -9,18 +10,31 @@
 
 #include "test.hpp"
 
-bool hasDuplicate(const std::vector<int> &nums) {
-    std::unordered_set<int> seen;
-    for (int num : nums) {
-        if (seen.count(num)) {
-            return true;
+using namespace std;
+
+class Solution {
+public:
+    bool hasDuplicate(vector<int>& nums) {
+        unordered_set<int> seen;
+
+        for(int i : nums){
+            if(seen.contains(i)){
+                return true;
+            }
+            seen.insert(i);
         }
-        seen.insert(num);
+        return false;
+
     }
-    return false;
-}
+};
 
 // ---------------------------------------------------------------- tests
+// hasDuplicate takes a non-const reference, so the test cannot hand it a
+// temporary -- each case names its vector first.
+
+static bool hasDuplicate(vector<int> nums) {
+    return Solution().hasDuplicate(nums);
+}
 
 TEST(example_1) { CHECK(hasDuplicate({1, 2, 3, 3})); }
 

@@ -1,20 +1,45 @@
 // 242. Valid Anagram           https://leetcode.com/problems/valid-anagram/
 //
 // Problem: return true if t is a rearrangement of s.
-// Approach:
-// Time O(?), space O(?)
+// Approach: lengths must match first -- the single loop that follows indexes
+//           both strings at once and relies on it. Then count how often each
+//           char occurs in each string and compare the two count maps.
+//           Time O(n), space O(n).
 
 #include <string>
+#include <unordered_map>
 
 #include "test.hpp"
 
-bool isAnagram(const std::string &s, const std::string &t) {
-    (void)s;
-    (void)t;
-    return false;  // TODO
-}
+using namespace std;
+
+class Solution {
+public:
+    bool isAnagram(string s, string t) {
+
+        if(s.size() != t.size()){
+            return false;
+        }
+
+        unordered_map<char, int> s_map;
+        unordered_map<char, int> t_map;
+
+        for(size_t i = 0; i < s.size(); i++){
+            s_map[s[i]]++;
+            t_map[t[i]]++;
+
+        }
+
+        return s_map == t_map;
+
+    }
+};
 
 // ---------------------------------------------------------------- tests
+
+static bool isAnagram(string s, string t) {
+    return Solution().isAnagram(s, t);
+}
 
 TEST(example_1) { CHECK(isAnagram("racecar", "carrace")); }
 

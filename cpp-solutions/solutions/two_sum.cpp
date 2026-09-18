@@ -1,22 +1,48 @@
 // 1. Two Sum                   https://leetcode.com/problems/two-sum/
 //
 // Problem: return the two indices whose values add up to target, smaller first.
-// Approach:
-// Time O(?), space O(?)
+// Approach: one pass. Before storing a number, look up whether the complement
+//           it needs is already on the map -- if so, that earlier index and the
+//           current one are the answer.
+//           Time O(n), space O(n).
 
+#include <unordered_map>
 #include <vector>
 
 #include "test.hpp"
 
-std::vector<int> twoSum(const std::vector<int> &nums, int target) {
-    (void)nums;
-    (void)target;
-    return {};  // TODO
-}
+using namespace std;
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+
+        unordered_map<int, int> seen;
+
+        for(size_t i = 0; i < nums.size(); i++)
+        {
+            int diff = target - nums[i];
+            //cout << i << " " << diff << endl;
+
+            if(seen.contains(diff))
+            {
+                return {seen[diff], static_cast<int>(i)};
+            }
+            seen[nums[i]] = i;
+        }
+
+        return {};
+    }
+};
 
 // ---------------------------------------------------------------- tests
+// twoSum takes a non-const reference, so it cannot be handed a temporary.
 
-using vi = std::vector<int>;
+using vi = vector<int>;
+
+static vi twoSum(vi nums, int target) {
+    return Solution().twoSum(nums, target);
+}
 
 TEST(example_1) { CHECK_EQ(twoSum({3, 4, 5, 6}, 7), (vi{0, 1})); }
 

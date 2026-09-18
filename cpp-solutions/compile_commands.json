@@ -1,0 +1,546 @@
+[
+  {
+    "file": "solutions/best_time_to_buy_and_sell_stock.cpp",
+    "arguments": [
+      "/usr/bin/c++",
+      "-std=c++20",
+      "-Wall",
+      "-Wextra",
+      "-O2",
+      "-Iinclude",
+      "-o",
+      "build/best_time_to_buy_and_sell_stock",
+      "solutions/best_time_to_buy_and_sell_stock.cpp"
+    ],
+    "directory": "/Users/ekinbasarkomur/projects/neetcode150/cpp-solutions",
+    "output": "build/best_time_to_buy_and_sell_stock"
+  },
+  {
+    "file": "solutions/binary_search.cpp",
+    "arguments": [
+      "/usr/bin/c++",
+      "-std=c++20",
+      "-Wall",
+      "-Wextra",
+      "-O2",
+      "-Iinclude",
+      "-o",
+      "build/binary_search",
+      "solutions/binary_search.cpp"
+    ],
+    "directory": "/Users/ekinbasarkomur/projects/neetcode150/cpp-solutions",
+    "output": "build/binary_search"
+  },
+  {
+    "file": "solutions/container_with_most_water.cpp",
+    "arguments": [
+      "/usr/bin/c++",
+      "-std=c++20",
+      "-Wall",
+      "-Wextra",
+      "-O2",
+      "-Iinclude",
+      "-o",
+      "build/container_with_most_water",
+      "solutions/container_with_most_water.cpp"
+    ],
+    "directory": "/Users/ekinbasarkomur/projects/neetcode150/cpp-solutions",
+    "output": "build/container_with_most_water"
+  },
+  {
+    "file": "solutions/contains_duplicate.cpp",
+    "arguments": [
+      "/usr/bin/c++",
+      "-std=c++20",
+      "-Wall",
+      "-Wextra",
+      "-O2",
+      "-Iinclude",
+      "-o",
+      "build/contains_duplicate",
+      "solutions/contains_duplicate.cpp"
+    ],
+    "directory": "/Users/ekinbasarkomur/projects/neetcode150/cpp-solutions",
+    "output": "build/contains_duplicate"
+  },
+  {
+    "file": "solutions/daily_temperatures.cpp",
+    "arguments": [
+      "/usr/bin/c++",
+      "-std=c++20",
+      "-Wall",
+      "-Wextra",
+      "-O2",
+      "-Iinclude",
+      "-o",
+      "build/daily_temperatures",
+      "solutions/daily_temperatures.cpp"
+    ],
+    "directory": "/Users/ekinbasarkomur/projects/neetcode150/cpp-solutions",
+    "output": "build/daily_temperatures"
+  },
+  {
+    "file": "solutions/encode_decode_strings.cpp",
+    "arguments": [
+      "/usr/bin/c++",
+      "-std=c++20",
+      "-Wall",
+      "-Wextra",
+      "-O2",
+      "-Iinclude",
+      "-o",
+      "build/encode_decode_strings",
+      "solutions/encode_decode_strings.cpp"
+    ],
+    "directory": "/Users/ekinbasarkomur/projects/neetcode150/cpp-solutions",
+    "output": "build/encode_decode_strings"
+  },
+  {
+    "file": "solutions/group_anagrams.cpp",
+    "arguments": [
+      "/usr/bin/c++",
+      "-std=c++20",
+      "-Wall",
+      "-Wextra",
+      "-O2",
+      "-Iinclude",
+      "-o",
+      "build/group_anagrams",
+      "solutions/group_anagrams.cpp"
+    ],
+    "directory": "/Users/ekinbasarkomur/projects/neetcode150/cpp-solutions",
+    "output": "build/group_anagrams"
+  },
+  {
+    "file": "solutions/invert_binary_tree.cpp",
+    "arguments": [
+      "/usr/bin/c++",
+      "-std=c++20",
+      "-Wall",
+      "-Wextra",
+      "-O2",
+      "-Iinclude",
+      "-o",
+      "build/invert_binary_tree",
+      "solutions/invert_binary_tree.cpp"
+    ],
+    "directory": "/Users/ekinbasarkomur/projects/neetcode150/cpp-solutions",
+    "output": "build/invert_binary_tree"
+  },
+  {
+    "file": "solutions/koko_eating_bananas.cpp",
+    "arguments": [
+      "/usr/bin/c++",
+      "-std=c++20",
+      "-Wall",
+      "-Wextra",
+      "-O2",
+      "-Iinclude",
+      "-o",
+      "build/koko_eating_bananas",
+      "solutions/koko_eating_bananas.cpp"
+    ],
+    "directory": "/Users/ekinbasarkomur/projects/neetcode150/cpp-solutions",
+    "output": "build/koko_eating_bananas"
+  },
+  {
+    "file": "solutions/kth_largest_element_in_a_stream.cpp",
+    "arguments": [
+      "/usr/bin/c++",
+      "-std=c++20",
+      "-Wall",
+      "-Wextra",
+      "-O2",
+      "-Iinclude",
+      "-o",
+      "build/kth_largest_element_in_a_stream",
+      "solutions/kth_largest_element_in_a_stream.cpp"
+    ],
+    "directory": "/Users/ekinbasarkomur/projects/neetcode150/cpp-solutions",
+    "output": "build/kth_largest_element_in_a_stream"
+  },
+  {
+    "file": "solutions/last_stone_weight.cpp",
+    "arguments": [
+      "/usr/bin/c++",
+      "-std=c++20",
+      "-Wall",
+      "-Wextra",
+      "-O2",
+      "-Iinclude",
+      "-o",
+      "build/last_stone_weight",
+      "solutions/last_stone_weight.cpp"
+    ],
+    "directory": "/Users/ekinbasarkomur/projects/neetcode150/cpp-solutions",
+    "output": "build/last_stone_weight"
+  },
+  {
+    "file": "solutions/linked_list_cycle.cpp",
+    "arguments": [
+      "/usr/bin/c++",
+      "-std=c++20",
+      "-Wall",
+      "-Wextra",
+      "-O2",
+      "-Iinclude",
+      "-o",
+      "build/linked_list_cycle",
+      "solutions/linked_list_cycle.cpp"
+    ],
+    "directory": "/Users/ekinbasarkomur/projects/neetcode150/cpp-solutions",
+    "output": "build/linked_list_cycle"
+  },
+  {
+    "file": "solutions/longest_consecutive_sequence.cpp",
+    "arguments": [
+      "/usr/bin/c++",
+      "-std=c++20",
+      "-Wall",
+      "-Wextra",
+      "-O2",
+      "-Iinclude",
+      "-o",
+      "build/longest_consecutive_sequence",
+      "solutions/longest_consecutive_sequence.cpp"
+    ],
+    "directory": "/Users/ekinbasarkomur/projects/neetcode150/cpp-solutions",
+    "output": "build/longest_consecutive_sequence"
+  },
+  {
+    "file": "solutions/longest_repeating_character_replacement.cpp",
+    "arguments": [
+      "/usr/bin/c++",
+      "-std=c++20",
+      "-Wall",
+      "-Wextra",
+      "-O2",
+      "-Iinclude",
+      "-o",
+      "build/longest_repeating_character_replacement",
+      "solutions/longest_repeating_character_replacement.cpp"
+    ],
+    "directory": "/Users/ekinbasarkomur/projects/neetcode150/cpp-solutions",
+    "output": "build/longest_repeating_character_replacement"
+  },
+  {
+    "file": "solutions/longest_substring_without_repeating.cpp",
+    "arguments": [
+      "/usr/bin/c++",
+      "-std=c++20",
+      "-Wall",
+      "-Wextra",
+      "-O2",
+      "-Iinclude",
+      "-o",
+      "build/longest_substring_without_repeating",
+      "solutions/longest_substring_without_repeating.cpp"
+    ],
+    "directory": "/Users/ekinbasarkomur/projects/neetcode150/cpp-solutions",
+    "output": "build/longest_substring_without_repeating"
+  },
+  {
+    "file": "solutions/lru_cache.cpp",
+    "arguments": [
+      "/usr/bin/c++",
+      "-std=c++20",
+      "-Wall",
+      "-Wextra",
+      "-O2",
+      "-Iinclude",
+      "-o",
+      "build/lru_cache",
+      "solutions/lru_cache.cpp"
+    ],
+    "directory": "/Users/ekinbasarkomur/projects/neetcode150/cpp-solutions",
+    "output": "build/lru_cache"
+  },
+  {
+    "file": "solutions/maximum_depth_of_binary_tree.cpp",
+    "arguments": [
+      "/usr/bin/c++",
+      "-std=c++20",
+      "-Wall",
+      "-Wextra",
+      "-O2",
+      "-Iinclude",
+      "-o",
+      "build/maximum_depth_of_binary_tree",
+      "solutions/maximum_depth_of_binary_tree.cpp"
+    ],
+    "directory": "/Users/ekinbasarkomur/projects/neetcode150/cpp-solutions",
+    "output": "build/maximum_depth_of_binary_tree"
+  },
+  {
+    "file": "solutions/maximum_subarray.cpp",
+    "arguments": [
+      "/usr/bin/c++",
+      "-std=c++20",
+      "-Wall",
+      "-Wextra",
+      "-O2",
+      "-Iinclude",
+      "-o",
+      "build/maximum_subarray",
+      "solutions/maximum_subarray.cpp"
+    ],
+    "directory": "/Users/ekinbasarkomur/projects/neetcode150/cpp-solutions",
+    "output": "build/maximum_subarray"
+  },
+  {
+    "file": "solutions/merge_intervals.cpp",
+    "arguments": [
+      "/usr/bin/c++",
+      "-std=c++20",
+      "-Wall",
+      "-Wextra",
+      "-O2",
+      "-Iinclude",
+      "-o",
+      "build/merge_intervals",
+      "solutions/merge_intervals.cpp"
+    ],
+    "directory": "/Users/ekinbasarkomur/projects/neetcode150/cpp-solutions",
+    "output": "build/merge_intervals"
+  },
+  {
+    "file": "solutions/merge_two_sorted_lists.cpp",
+    "arguments": [
+      "/usr/bin/c++",
+      "-std=c++20",
+      "-Wall",
+      "-Wextra",
+      "-O2",
+      "-Iinclude",
+      "-o",
+      "build/merge_two_sorted_lists",
+      "solutions/merge_two_sorted_lists.cpp"
+    ],
+    "directory": "/Users/ekinbasarkomur/projects/neetcode150/cpp-solutions",
+    "output": "build/merge_two_sorted_lists"
+  },
+  {
+    "file": "solutions/min_stack.cpp",
+    "arguments": [
+      "/usr/bin/c++",
+      "-std=c++20",
+      "-Wall",
+      "-Wextra",
+      "-O2",
+      "-Iinclude",
+      "-o",
+      "build/min_stack",
+      "solutions/min_stack.cpp"
+    ],
+    "directory": "/Users/ekinbasarkomur/projects/neetcode150/cpp-solutions",
+    "output": "build/min_stack"
+  },
+  {
+    "file": "solutions/number_of_islands.cpp",
+    "arguments": [
+      "/usr/bin/c++",
+      "-std=c++20",
+      "-Wall",
+      "-Wextra",
+      "-O2",
+      "-Iinclude",
+      "-o",
+      "build/number_of_islands",
+      "solutions/number_of_islands.cpp"
+    ],
+    "directory": "/Users/ekinbasarkomur/projects/neetcode150/cpp-solutions",
+    "output": "build/number_of_islands"
+  },
+  {
+    "file": "solutions/products_of_array_except_self.cpp",
+    "arguments": [
+      "/usr/bin/c++",
+      "-std=c++20",
+      "-Wall",
+      "-Wextra",
+      "-O2",
+      "-Iinclude",
+      "-o",
+      "build/products_of_array_except_self",
+      "solutions/products_of_array_except_self.cpp"
+    ],
+    "directory": "/Users/ekinbasarkomur/projects/neetcode150/cpp-solutions",
+    "output": "build/products_of_array_except_self"
+  },
+  {
+    "file": "solutions/reverse_linked_list.cpp",
+    "arguments": [
+      "/usr/bin/c++",
+      "-std=c++20",
+      "-Wall",
+      "-Wextra",
+      "-O2",
+      "-Iinclude",
+      "-o",
+      "build/reverse_linked_list",
+      "solutions/reverse_linked_list.cpp"
+    ],
+    "directory": "/Users/ekinbasarkomur/projects/neetcode150/cpp-solutions",
+    "output": "build/reverse_linked_list"
+  },
+  {
+    "file": "solutions/search_in_rotated_sorted_array.cpp",
+    "arguments": [
+      "/usr/bin/c++",
+      "-std=c++20",
+      "-Wall",
+      "-Wextra",
+      "-O2",
+      "-Iinclude",
+      "-o",
+      "build/search_in_rotated_sorted_array",
+      "solutions/search_in_rotated_sorted_array.cpp"
+    ],
+    "directory": "/Users/ekinbasarkomur/projects/neetcode150/cpp-solutions",
+    "output": "build/search_in_rotated_sorted_array"
+  },
+  {
+    "file": "solutions/three_sum.cpp",
+    "arguments": [
+      "/usr/bin/c++",
+      "-std=c++20",
+      "-Wall",
+      "-Wextra",
+      "-O2",
+      "-Iinclude",
+      "-o",
+      "build/three_sum",
+      "solutions/three_sum.cpp"
+    ],
+    "directory": "/Users/ekinbasarkomur/projects/neetcode150/cpp-solutions",
+    "output": "build/three_sum"
+  },
+  {
+    "file": "solutions/top_k_frequent.cpp",
+    "arguments": [
+      "/usr/bin/c++",
+      "-std=c++20",
+      "-Wall",
+      "-Wextra",
+      "-O2",
+      "-Iinclude",
+      "-o",
+      "build/top_k_frequent",
+      "solutions/top_k_frequent.cpp"
+    ],
+    "directory": "/Users/ekinbasarkomur/projects/neetcode150/cpp-solutions",
+    "output": "build/top_k_frequent"
+  },
+  {
+    "file": "solutions/trapping_rain_water.cpp",
+    "arguments": [
+      "/usr/bin/c++",
+      "-std=c++20",
+      "-Wall",
+      "-Wextra",
+      "-O2",
+      "-Iinclude",
+      "-o",
+      "build/trapping_rain_water",
+      "solutions/trapping_rain_water.cpp"
+    ],
+    "directory": "/Users/ekinbasarkomur/projects/neetcode150/cpp-solutions",
+    "output": "build/trapping_rain_water"
+  },
+  {
+    "file": "solutions/two_sum.cpp",
+    "arguments": [
+      "/usr/bin/c++",
+      "-std=c++20",
+      "-Wall",
+      "-Wextra",
+      "-O2",
+      "-Iinclude",
+      "-o",
+      "build/two_sum",
+      "solutions/two_sum.cpp"
+    ],
+    "directory": "/Users/ekinbasarkomur/projects/neetcode150/cpp-solutions",
+    "output": "build/two_sum"
+  },
+  {
+    "file": "solutions/two_sum_ii.cpp",
+    "arguments": [
+      "/usr/bin/c++",
+      "-std=c++20",
+      "-Wall",
+      "-Wextra",
+      "-O2",
+      "-Iinclude",
+      "-o",
+      "build/two_sum_ii",
+      "solutions/two_sum_ii.cpp"
+    ],
+    "directory": "/Users/ekinbasarkomur/projects/neetcode150/cpp-solutions",
+    "output": "build/two_sum_ii"
+  },
+  {
+    "file": "solutions/valid_anagram.cpp",
+    "arguments": [
+      "/usr/bin/c++",
+      "-std=c++20",
+      "-Wall",
+      "-Wextra",
+      "-O2",
+      "-Iinclude",
+      "-o",
+      "build/valid_anagram",
+      "solutions/valid_anagram.cpp"
+    ],
+    "directory": "/Users/ekinbasarkomur/projects/neetcode150/cpp-solutions",
+    "output": "build/valid_anagram"
+  },
+  {
+    "file": "solutions/valid_palindrome.cpp",
+    "arguments": [
+      "/usr/bin/c++",
+      "-std=c++20",
+      "-Wall",
+      "-Wextra",
+      "-O2",
+      "-Iinclude",
+      "-o",
+      "build/valid_palindrome",
+      "solutions/valid_palindrome.cpp"
+    ],
+    "directory": "/Users/ekinbasarkomur/projects/neetcode150/cpp-solutions",
+    "output": "build/valid_palindrome"
+  },
+  {
+    "file": "solutions/valid_parentheses.cpp",
+    "arguments": [
+      "/usr/bin/c++",
+      "-std=c++20",
+      "-Wall",
+      "-Wextra",
+      "-O2",
+      "-Iinclude",
+      "-o",
+      "build/valid_parentheses",
+      "solutions/valid_parentheses.cpp"
+    ],
+    "directory": "/Users/ekinbasarkomur/projects/neetcode150/cpp-solutions",
+    "output": "build/valid_parentheses"
+  },
+  {
+    "file": "solutions/valid_sudoku.cpp",
+    "arguments": [
+      "/usr/bin/c++",
+      "-std=c++20",
+      "-Wall",
+      "-Wextra",
+      "-O2",
+      "-Iinclude",
+      "-o",
+      "build/valid_sudoku",
+      "solutions/valid_sudoku.cpp"
+    ],
+    "directory": "/Users/ekinbasarkomur/projects/neetcode150/cpp-solutions",
+    "output": "build/valid_sudoku"
+  }
+]

@@ -11,3 +11,6 @@ dev = ["pytest>=8.0"]
 [tool.pytest.ini_options]
 testpaths = ["solutions"]
 python_files = ["*.py"]
+# list_node.py and tree_node.py are shared helpers, not problems
+norecursedirs = ["__pycache__"]
+addopts = "--ignore=solutions/list_node.py --ignore=solutions/tree_node.py"

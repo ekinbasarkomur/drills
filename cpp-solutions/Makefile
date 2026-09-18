@@ -5,7 +5,7 @@ SRCS := $(wildcard solutions/*.cpp)
 BINS := $(patsubst solutions/%.cpp,build/%,$(SRCS))
 NAMES := $(notdir $(BINS))
 
-.PHONY: all test clean $(NAMES)
+.PHONY: all test clean compdb $(NAMES)
 
 all: test
 
@@ -23,6 +23,11 @@ $(NAMES): %: build/%
 test: $(BINS)
 	@fail=0; for b in $(BINS); do echo "== $$b"; ./$$b || fail=1; done; \
 	 if [ $$fail -ne 0 ]; then echo ""; echo "some problems are still failing"; exit 1; fi
+
+# `make compdb` — regenerate compile_commands.json for clangd
+# Test failures are irrelevant here; bear only needs compilation to succeed
+compdb:
+	bear -- $(MAKE) clean all; true
 
 clean:
 	rm -rf build
