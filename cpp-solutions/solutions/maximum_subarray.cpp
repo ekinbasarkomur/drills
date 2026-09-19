@@ -8,6 +8,9 @@
 // Approach:
 // Time O(?), space O(?)
 
+#include <algorithm>
+#include <climits>
+#include <iostream>
 #include <vector>
 
 #include "test.hpp"

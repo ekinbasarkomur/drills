@@ -7,6 +7,7 @@
 //           Time O(n * k log k) for n words of length k, space O(n * k).
 
 #include <algorithm>
+#include <iostream>
 #include <string>
 #include <unordered_map>
 #include <vector>

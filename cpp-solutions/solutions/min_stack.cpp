@@ -8,6 +8,9 @@
 // Approach:
 // Time O(?) per operation, space O(?)
 
+#include <algorithm>
+#include <iostream>
+#include <stack>
 #include <vector>
 
 #include "test.hpp"

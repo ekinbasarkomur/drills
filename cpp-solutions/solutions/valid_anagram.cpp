@@ -6,8 +6,11 @@
 //           char occurs in each string and compare the two count maps.
 //           Time O(n), space O(n).
 
+#include <algorithm>
+#include <iostream>
 #include <string>
 #include <unordered_map>
+#include <vector>
 
 #include "test.hpp"
 

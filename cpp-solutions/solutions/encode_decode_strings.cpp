@@ -7,10 +7,13 @@
 // Approach:
 // Time O(?), space O(?)
 
+#include <iostream>
 #include <string>
 #include <vector>
 
 #include "test.hpp"
+
+using namespace std;
 
 std::string encode(const std::vector<std::string> &strs) {
     (void)strs;

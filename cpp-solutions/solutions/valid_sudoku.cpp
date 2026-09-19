@@ -7,10 +7,14 @@
 // Time O(?), space O(?)
 
 #include <array>
+#include <iostream>
 #include <string>
+#include <unordered_set>
 #include <vector>
 
 #include "test.hpp"
+
+using namespace std;
 
 bool isValidSudoku(const std::vector<std::vector<char>> &board) {
     (void)board;

@@ -5,6 +5,8 @@
 //           set::contains short-circuits as soon as a repeat shows up.
 //           Time O(n), space O(n).
 
+#include <algorithm>
+#include <iostream>
 #include <unordered_set>
 #include <vector>
 

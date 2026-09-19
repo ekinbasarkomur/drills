@@ -8,7 +8,10 @@
 // Approach:
 // Time O(?), space O(?)
 
+#include <iostream>
+#include <stack>
 #include <string>
+#include <unordered_map>
 
 #include "test.hpp"
 

@@ -8,6 +8,8 @@
 // Approach:
 // Time O(?), space O(?)
 
+#include <algorithm>
+#include <iostream>
 #include <stack>
 #include <vector>
 

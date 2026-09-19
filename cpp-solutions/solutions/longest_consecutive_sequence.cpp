@@ -6,11 +6,16 @@
 // Approach:
 // Time O(?), space O(?)   -- the problem demands O(n)
 
+#include <algorithm>
+#include <iostream>
 #include <numeric>
 #include <random>
+#include <unordered_set>
 #include <vector>
 
 #include "test.hpp"
+
+using namespace std;
 
 int longestConsecutive(const std::vector<int> &nums) {
     (void)nums;

@@ -5,9 +5,12 @@
 // Approach:
 // Time O(?), space O(?)
 
+#include <iostream>
 #include <vector>
 
 #include "test.hpp"
+
+using namespace std;
 
 std::vector<int> productExceptSelf(const std::vector<int> &nums) {
     (void)nums;

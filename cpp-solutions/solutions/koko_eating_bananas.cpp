@@ -10,6 +10,9 @@
 // Approach:
 // Time O(?), space O(?)
 
+#include <algorithm>
+#include <cmath>
+#include <iostream>
 #include <vector>
 
 #include "test.hpp"

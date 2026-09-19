@@ -8,10 +8,13 @@
 // Approach:
 // Time O(?), space O(?)
 
+#include <iostream>
 #include <numeric>
 #include <vector>
 
 #include "test.hpp"
+
+using namespace std;
 
 std::vector<int> twoSum(const std::vector<int> &numbers, int target) {
     (void)numbers;

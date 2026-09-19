@@ -6,9 +6,13 @@
 // Time O(?), space O(?)
 
 #include <algorithm>
+#include <cctype>
+#include <iostream>
 #include <string>
 
 #include "test.hpp"
+
+using namespace std;
 
 bool isPalindrome(const std::string &s) {
     (void)s;
