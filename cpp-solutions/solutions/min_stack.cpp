@@ -21,7 +21,7 @@ using namespace std;
 
 class MinStack {
     stack<int> s;
-    stack<int> mins; // mins.top() is the minimum of everything in s
+    stack<int> mins;
 
 public:
     MinStack() {}
@@ -37,7 +37,7 @@ public:
 
     void pop() {
         s.pop();
-        mins.pop(); // the previous minimum is now on top, already stored
+        mins.pop();
     }
 
     int top() { return s.top(); }
