@@ -5,10 +5,8 @@
 //          Return the index of target, or -1. O(log n) is the point.
 // Note: At any midpoint one of the two halves is still properly sorted.
 //       Work out which, and you know whether target can be in it.
-// Approach: binary search. At every midpoint one half is properly sorted;
-//           if target falls inside that half's range search it, otherwise
-//           search the other half.
-// Time O(log n), space O(1)
+// Approach:
+// Time O(?), space O(?)
 
 #include <iostream>
 #include <vector>
@@ -20,32 +18,9 @@ using namespace std;
 class Solution {
 public:
     int search(vector<int> &nums, int target) {
-        int left = 0;
-        int right = (int)nums.size() - 1;
-
-        while (left <= right) {
-            int mid = left + (right - left) / 2;
-
-            if (nums[mid] == target) {
-                return mid;
-            }
-
-            if (nums[left] <= nums[mid]) {
-                if (nums[left] <= target && target < nums[mid]) {
-                    right = mid - 1;
-                } else {
-                    left = mid + 1;
-                }
-            } else {
-                if (nums[mid] < target && target <= nums[right]) {
-                    left = mid + 1;
-                } else {
-                    right = mid - 1;
-                }
-            }
-        }
-
-        return -1;
+        (void)nums;
+        (void)target;
+        return 0; // TODO
     }
 };
 
