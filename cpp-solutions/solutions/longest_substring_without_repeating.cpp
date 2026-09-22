@@ -5,8 +5,10 @@
 //          character repeats. s may contain any printable ASCII.
 // Note: A window that only ever grows from the right and shrinks from the
 //       left visits each character twice at most.
-// Approach:
-// Time O(?), space O(?)
+// Approach: sliding window. `right` adds one character per step; when it is
+//           already in the window, `left` drops characters until it is not.
+//           Each character enters and leaves the set at most once.
+// Time O(n), space O(min(n, 95)) -- at most 95 printable ASCII characters
 
 #include <algorithm>
 #include <iostream>
@@ -25,18 +27,17 @@ public:
 
         unordered_set<char> letters;
         int max_len = 0;
-        int curr_len = 0;
-        for (size_t i = 0; i < size(s); i++) {
-            auto result = letters.insert(s[i]);
-            if (!result.second) {
-                curr_len = 0;
-                letters = {};
-                letters.insert(s[i]);
-                continue;
+        size_t left = 0;
+
+        for (size_t right = 0; right < s.size(); right++) {
+
+            while (letters.contains(s[right])) {
+                letters.erase(s[left]);
+                left++;
             }
 
-            curr_len++;
-            max_len = max(curr_len, max_len);
+            letters.insert(s[right]);
+            max_len = max(max_len, (int)(right - left + 1));
         }
         return max_len;
     }

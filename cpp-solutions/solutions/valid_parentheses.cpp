@@ -5,8 +5,9 @@
 //          and nothing left open at the end.
 // Note: The most recently opened bracket is the first that has to close --
 //       that is exactly what a stack gives you.
-// Approach:
-// Time O(?), space O(?)
+// Approach: push every opener; on a closer, the top of the stack must be the
+//           matching opener, which is then popped. Valid if nothing is left.
+// Time O(n), space O(n)
 
 #include <iostream>
 #include <stack>
@@ -20,8 +21,30 @@ using namespace std;
 class Solution {
 public:
     bool isValid(string s) {
-        (void)s;
-        return false; // TODO
+        stack<char> st;
+        for (char c : s) {
+            if (c == '(' || c == '{' || c == '[') {
+                st.push(c);
+                continue;
+            }
+
+            // a closer: there must be an opener waiting, and of its own kind
+            if (st.empty()) {
+                return false;
+            }
+            if (c == ')' && st.top() != '(') {
+                return false;
+            }
+            if (c == '}' && st.top() != '{') {
+                return false;
+            }
+            if (c == ']' && st.top() != '[') {
+                return false;
+            }
+            st.pop();
+        }
+
+        return st.empty();
     }
 };
 
@@ -50,6 +73,11 @@ TEST(one_closing_bracket) { CHECK(!isValid(")")); }
 TEST(all_three_kinds_side_by_side) { CHECK(isValid("()[]{}")); }
 
 TEST(mismatched_pair) { CHECK(!isValid("(]")); }
+
+TEST(a_wrong_closer_is_not_skipped) {
+    // the ']' must fail immediately; ignoring it lets ')' close the '('
+    CHECK(!isValid("(])"));
+}
 
 TEST(only_openers) { CHECK(!isValid("((((")); }
 
