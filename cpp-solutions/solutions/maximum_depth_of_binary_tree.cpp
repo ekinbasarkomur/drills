@@ -3,8 +3,9 @@
 //
 // Problem: the number of nodes along the longest root-to-leaf path.
 //          An empty tree has depth 0, a single node has depth 1.
-// Approach:
-// Time O(?), space O(?)
+// Approach: an empty tree has depth 0; otherwise it is 1 for this node plus
+//           the deeper of the two subtrees.
+// Time O(n), space O(h) for the recursion, h = height of the tree
 
 #include <algorithm>
 #include <iostream>
@@ -20,8 +21,14 @@ using namespace std;
 class Solution {
 public:
     int maxDepth(TreeNode *root) {
-        (void)root;
-        return 0; // TODO
+        if (root == nullptr) {
+            return 0;
+        }
+
+        int left_depth = maxDepth(root->left);
+        int right_depth = maxDepth(root->right);
+
+        return 1 + max(left_depth, right_depth);
     }
 };
 
