@@ -6,8 +6,9 @@
 //          is 3.
 // Note: you never need the whole stream -- only the k largest values, and of
 //       those only the smallest is ever the answer.
-// Approach:
-// Time O(?) per add, space O(?)
+// Approach: keep only the k largest values seen, in a min-heap. Its top is
+//           the smallest of those k -- the kth largest overall.
+// Time O(log k) per add, space O(k)
 
 #include <algorithm>
 #include <functional>
@@ -20,15 +21,22 @@
 using namespace std;
 
 class KthLargest {
+    int k;
+    priority_queue<int, vector<int>, greater<int>> heap;
+
 public:
-    KthLargest(int k, vector<int> &nums) {
-        (void)k;
-        (void)nums; // TODO
+    KthLargest(int k, vector<int> &nums) : k(k) {
+        for (int num : nums) {
+            add(num);
+        }
     }
 
     int add(int val) {
-        (void)val;
-        return 0; // TODO
+        heap.push(val);
+        if ((int)heap.size() > k) {
+            heap.pop();
+        }
+        return heap.top();
     }
 };
 
