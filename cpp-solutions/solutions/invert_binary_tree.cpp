@@ -3,8 +3,9 @@
 //
 // Problem: mirror the tree -- every node's left and right swap, all the way
 //          down -- and return the root.
-// Approach:
-// Time O(?), space O(?)
+// Approach: swap this node's children, then invert each subtree the same way.
+//           An empty tree is its own mirror.
+// Time O(n), space O(h) for the recursion, h = height of the tree
 
 #include <iostream>
 #include <optional>
@@ -19,7 +20,16 @@ using namespace std;
 class Solution {
 public:
     TreeNode *invertTree(TreeNode *root) {
-        return root; // TODO
+        if (root == nullptr) {
+            return nullptr;
+        }
+
+        swap(root->left, root->right);
+
+        invertTree(root->left);
+        invertTree(root->right);
+
+        return root;
     }
 };
 
