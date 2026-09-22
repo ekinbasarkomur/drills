@@ -5,9 +5,8 @@
 //          index of target, or -1. Must run in O(log n).
 // Note: The classic bug is the loop bound: <= vs <, and whether the midpoint
 //       moves. Get those wrong and it either misses the answer or hangs.
-// Approach: compare the middle element with target and discard the half that
-//           cannot hold it, until found or the range is empty.
-// Time O(log n), space O(1)
+// Approach:
+// Time O(?), space O(?)
 
 #include <iostream>
 #include <vector>
@@ -19,22 +18,9 @@ using namespace std;
 class Solution {
 public:
     int search(vector<int> &nums, int target) {
-        int left = 0;
-        int right = (int)nums.size() - 1;
-
-        while (left <= right) {
-            int mid = left + (right - left) / 2;
-
-            if (nums[mid] == target) {
-                return mid;
-            } else if (nums[mid] < target) {
-                left = mid + 1;
-            } else {
-                right = mid - 1;
-            }
-        }
-
-        return -1;
+        (void)nums;
+        (void)target;
+        return 0; // TODO
     }
 };
 
