@@ -68,6 +68,16 @@ def test_stale_index_must_be_ignored():
     assert length_of_longest_substring("tmmzuxt") == 5
 
 
+def test_a_repeat_keeps_the_characters_after_it():
+    # at the second 'a' the window becomes "bca", not "a"
+    assert length_of_longest_substring("abcad") == 4
+
+
+def test_the_answer_spans_the_repeated_character():
+    # "vdf": the second 'd' only evicts the first 'd', 'v' stays
+    assert length_of_longest_substring("dvdf") == 3
+
+
 def test_spaces_count_as_characters():
     assert length_of_longest_substring("a b c") == 3
 

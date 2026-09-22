@@ -4,8 +4,10 @@
 // Problem: turn a list of strings into ONE string, and turn it back. The strings
 //          may contain any ASCII character -- including whatever separator you
 //          were about to reach for.
-// Approach:
-// Time O(?), space O(?)
+// Approach: prefix each string with its length and a '#'. Decoding reads the
+//           length, then takes exactly that many characters -- it never
+//           searches for a separator, so a '#' inside the payload is harmless.
+// Time O(n), space O(n)
 
 #include <iostream>
 #include <string>
@@ -16,13 +18,29 @@
 using namespace std;
 
 std::string encode(const std::vector<std::string> &strs) {
-    (void)strs;
-    return {}; // TODO
+    string encoded_string = "";
+
+    for (const string &str : strs) {
+        encoded_string += to_string(size(str)) + "#" + str;
+    }
+
+    return encoded_string;
 }
 
 std::vector<std::string> decode(const std::string &s) {
-    (void)s;
-    return {}; // TODO
+    vector<string> output;
+
+    size_t pos = 0;
+    while (pos < s.size()) {
+        size_t hash = s.find('#', pos);          // where the length header ends
+        int len = stoi(s.substr(pos, hash - pos));
+
+        output.push_back(s.substr(hash + 1, len));
+
+        pos = hash + 1 + len;                    // skip past the payload too
+    }
+
+    return output;
 }
 
 // ---------------------------------------------------------------- tests

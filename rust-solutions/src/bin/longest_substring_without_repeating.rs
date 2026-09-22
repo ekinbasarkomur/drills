@@ -83,6 +83,18 @@ mod tests {
     }
 
     #[test]
+    fn a_repeat_keeps_the_characters_after_it() {
+        // at the second 'a' the window becomes "bca", not "a"
+        assert_eq!(length_of_longest_substring("abcad"), 4);
+    }
+
+    #[test]
+    fn the_answer_spans_the_repeated_character() {
+        // "vdf": the second 'd' only evicts the first 'd', 'v' stays
+        assert_eq!(length_of_longest_substring("dvdf"), 3);
+    }
+
+    #[test]
     fn spaces_count_as_characters() {
         assert_eq!(length_of_longest_substring("a b c"), 3);
     }

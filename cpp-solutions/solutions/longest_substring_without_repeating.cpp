@@ -22,8 +22,23 @@ using namespace std;
 class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
-        (void)s;
-        return 0; // TODO
+
+        unordered_set<char> letters;
+        int max_len = 0;
+        int curr_len = 0;
+        for (size_t i = 0; i < size(s); i++) {
+            auto result = letters.insert(s[i]);
+            if (!result.second) {
+                curr_len = 0;
+                letters = {};
+                letters.insert(s[i]);
+                continue;
+            }
+
+            curr_len++;
+            max_len = max(curr_len, max_len);
+        }
+        return max_len;
     }
 };
 
@@ -64,6 +79,16 @@ TEST(a_repeat_before_the_window_start) {
 TEST(stale_index_must_be_ignored) {
     // \"mzuxt\"
     CHECK((lengthOfLongestSubstring("tmmzuxt") == 5));
+}
+
+TEST(a_repeat_keeps_the_characters_after_it) {
+    // at the second 'a' the window becomes "bca", not "a"
+    CHECK((lengthOfLongestSubstring("abcad") == 4));
+}
+
+TEST(the_answer_spans_the_repeated_character) {
+    // "vdf": the second 'd' only evicts the first 'd', 'v' stays
+    CHECK((lengthOfLongestSubstring("dvdf") == 3));
 }
 
 TEST(spaces_count_as_characters) {

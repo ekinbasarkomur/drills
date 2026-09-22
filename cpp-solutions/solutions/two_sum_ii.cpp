@@ -17,9 +17,23 @@
 using namespace std;
 
 std::vector<int> twoSum(const std::vector<int> &numbers, int target) {
-    (void)numbers;
-    (void)target;
-    return {}; // TODO
+
+    int left = 0;
+    int right = size(numbers) - 1;
+
+    while (left < right) {
+        if (target == numbers[left] + numbers[right]) {
+            return {left + 1, right + 1};
+        }
+
+        else if (target > numbers[left] + numbers[right]) {
+            left++;
+        } else {
+            right--;
+        }
+    }
+
+    return {0, 0};
 }
 
 // ---------------------------------------------------------------- tests
