@@ -4,8 +4,10 @@
 // Problem: reverse a singly linked list and return the new head.
 // Note: you only get one pointer per node, so you must hold onto the next node
 //       before you overwrite it -- three pointers is the usual dance.
-// Approach:
-// Time O(?), space O(?)
+// Approach: walk the list once, turning each node's `next` around to point at
+//           the node before it. Three pointers: prev, curr, and next (saved
+//           before curr->next is overwritten).
+// Time O(n), space O(1)
 
 #include <iostream>
 #include <vector>
@@ -18,7 +20,17 @@ using namespace std;
 class Solution {
 public:
     ListNode *reverseList(ListNode *head) {
-        return head; // TODO
+        ListNode *prev = nullptr;
+        ListNode *curr = head;
+
+        while (curr != nullptr) {
+            ListNode *next = curr->next;
+            curr->next = prev;
+            prev = curr;
+            curr = next;
+        }
+
+        return prev;
     }
 };
 
