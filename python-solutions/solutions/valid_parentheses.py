@@ -59,6 +59,11 @@ def test_mismatched_pair():
     assert is_valid("(]") == False
 
 
+def test_a_wrong_closer_is_not_skipped():
+    # the ']' must fail immediately; ignoring it lets ')' close the '('
+    assert is_valid("(])") == False
+
+
 def test_only_openers():
     assert is_valid("((((") == False
 

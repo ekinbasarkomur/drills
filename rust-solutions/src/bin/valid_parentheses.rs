@@ -72,6 +72,12 @@ mod tests {
     }
 
     #[test]
+    fn a_wrong_closer_is_not_skipped() {
+        // the ']' must fail immediately; ignoring it lets ')' close the '('
+        assert_eq!(is_valid("(])"), false);
+    }
+
+    #[test]
     fn only_openers() {
         assert_eq!(is_valid("(((("), false);
     }
