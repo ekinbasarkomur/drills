@@ -5,8 +5,10 @@
 // Note: getMin in O(1) is the whole problem. Scanning for the minimum is O(n),
 //       and a single "current min" variable cannot survive a pop that removes
 //       it, because you no longer know what the minimum was before.
-// Approach:
-// Time O(?) per operation, space O(?)
+// Approach: a second stack records, for every element pushed, the minimum at
+//           that moment. Popping both keeps them in step, so the previous
+//           minimum is always sitting underneath -- nothing to recompute.
+// Time O(1) per operation, space O(n)
 
 #include <algorithm>
 #include <iostream>
@@ -18,26 +20,29 @@
 using namespace std;
 
 class MinStack {
+    stack<int> s;
+    stack<int> mins; // mins.top() is the minimum of everything in s
+
 public:
-    MinStack() {
-        // TODO
-    }
+    MinStack() {}
 
     void push(int val) {
-        (void)val; // TODO
+        s.push(val);
+        if (mins.empty()) {
+            mins.push(val);
+        } else {
+            mins.push(min(val, mins.top()));
+        }
     }
 
     void pop() {
-        // TODO
+        s.pop();
+        mins.pop(); // the previous minimum is now on top, already stored
     }
 
-    int top() {
-        return 0; // TODO
-    }
+    int top() { return s.top(); }
 
-    int getMin() {
-        return 0; // TODO
-    }
+    int getMin() { return mins.top(); }
 };
 
 // ---------------------------------------------------------------- tests
