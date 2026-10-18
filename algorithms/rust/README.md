@@ -1,4 +1,4 @@
-# NeetCode 150
+# Algorithms — Rust
 
 One file per problem in `src/bin/`, named after the problem in snake_case.
 

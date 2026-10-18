@@ -1,4 +1,4 @@
-# C++ solutions
+# Algorithms — C++
 
 One file per problem in `solutions/`, named after the problem in snake_case.
 Each file holds the solution *and* its tests, the same way the Rust and Python

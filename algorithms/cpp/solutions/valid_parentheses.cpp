@@ -28,7 +28,6 @@ public:
                 continue;
             }
 
-            // a closer: there must be an opener waiting, and of its own kind
             if (st.empty()) {
                 return false;
             }

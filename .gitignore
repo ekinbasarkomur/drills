@@ -9,7 +9,12 @@ __pycache__/
 
 # C++
 build/
+.cache/
+compile_commands.json
 
 # Stray binaries from `rustc -o` / `g++ -o` experiments
 /test
-/rust-solutions/neetcode
+/cpp
+/neetcode
+algorithms/cpp/cpp
+algorithms/rust/neetcode

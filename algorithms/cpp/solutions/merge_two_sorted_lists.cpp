@@ -18,8 +18,34 @@ using namespace std;
 class Solution {
 public:
     ListNode *mergeTwoLists(ListNode *list1, ListNode *list2) {
-        (void)list2;
-        return list1; // TODO
+        ListNode *curr1 = list1;
+        ListNode *curr2 = list2;
+        ListNode dummy;
+        ListNode *merged_list = &dummy;
+
+        while (curr1 != nullptr || curr2 != nullptr) {
+            if (curr1 == nullptr) {
+                merged_list->next = curr2;
+                merged_list = curr2;
+                curr2 = curr2->next;
+
+            } else if (curr2 == nullptr) {
+                merged_list->next = curr1;
+                merged_list = curr1;
+                curr1 = curr1->next;
+
+            } else if (curr1->val < curr2->val) {
+                merged_list->next = curr1;
+                merged_list = curr1;
+                curr1 = curr1->next;
+            } else {
+                merged_list->next = curr2;
+                merged_list = curr2;
+                curr2 = curr2->next;
+            }
+        }
+
+        return dummy.next;
     }
 };
 
