@@ -10,6 +10,8 @@ and each one keeps a link back to where it came from.
 ```
 drills/
 ├── README.md            the index below
+├── Makefile             runs anything from here
+├── scripts/status.sh    the grid `make status` prints
 ├── algorithms/          LeetCode / NeetCode 150, in three languages
 │   ├── rust/
 │   ├── python/
@@ -33,14 +35,31 @@ top-level directory — it does not have to look like the others.
 
 ## Running things
 
+From the repository root, through the top-level `Makefile`:
+
+```
+make status          a grid of what is solved in which language (~15s)
+make two_sum         that one exercise, in all three languages
+make cpp-two_sum     that one exercise, in C++ only  (also rust- and py-)
+make rust            every Rust exercise, raw cargo output
+make python          every Python exercise, raw pytest output
+make cpp             every C++ exercise
+make list            the exercise names you can pass
+make clean           wipe every build directory
+```
+
+`make status` is what the index below is generated from — it runs each
+exercise's tests rather than reading the files, so it cannot drift.
+
+Or from inside a project, with its own tool:
+
 | | Everything | One exercise |
 | --- | --- | --- |
 | **Rust** — `algorithms/rust/` | `cargo test` | `cargo test --bin two_sum` |
 | **Python** — `algorithms/python/` | `uv run pytest` | `uv run pytest -k two_sum` |
 | **C++** — `algorithms/cpp/` | `make` | `make two_sum` |
 
-Each command is run from inside that project's own directory. The **File**
-column in the index below is the name to pass.
+The **File** column in the index below is the name to pass.
 
 ## The shape every exercise follows
 
