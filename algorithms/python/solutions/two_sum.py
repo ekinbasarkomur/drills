@@ -8,7 +8,18 @@ Time O(?), space O(?)
 
 
 def two_sum(nums: list[int], target: int) -> list[int]:
-    raise NotImplementedError
+
+    differences = {}
+    for i in range(0, len(nums)):
+        num = nums[i]
+        diff = target - num
+
+        if diff in nums[i + 1 :]:
+            return [i, nums[i + 1 :].index(diff) + i + 1]
+
+        differences[diff] = i
+
+    return []
 
 
 # ---------------------------------------------------------------- tests

@@ -16,18 +16,27 @@
 
 using namespace std;
 
-std::vector<int> topKFrequent(const std::vector<int> &nums, int k) {
+vector<int> topKFrequent(vector<int> &nums, int k) {
     unordered_map<int, int> inventory;
 
     for (int num : nums) {
         inventory[num]++;
     }
 
-    for (auto &[k, v] : inventory) {
-        cout << k << " " << v << endl;
+    vector<pair<int, int>> counts;
+
+    for (auto &[num, count] : inventory) {
+        counts.push_back({num, count});
     }
 
-    return {};
+    sort(counts.begin(), counts.end(),
+         [](const auto &a, const auto &b) { return a.second > b.second; });
+
+    vector<int> output;
+    for (int i = 0; i < k; i++) {
+        output.push_back(counts[i].first);
+    }
+    return output;
 }
 
 // ---------------------------------------------------------------- tests
@@ -40,7 +49,7 @@ static vi sorted(vi v) {
     return v;
 }
 
-static vi topK(const vi &nums, int k) { return sorted(topKFrequent(nums, k)); }
+static vi topK(vi nums, int k) { return sorted(topKFrequent(nums, k)); }
 
 TEST(example_1) { CHECK_EQ(topK({1, 2, 2, 3, 3, 3}, 2), (vi{2, 3})); }
 

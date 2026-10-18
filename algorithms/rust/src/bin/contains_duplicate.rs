@@ -12,17 +12,15 @@ struct Solution;
 impl Solution {
     pub fn has_duplicate(nums: Vec<i32>) -> bool {
         let len = nums.len();
-        let mut numbers = HashSet::new();
+        let mut numbers: HashSet<i32> = HashSet::new();
 
         for i in 0..len {
-            if numbers.contains(&nums[i])
-            {
+            if numbers.contains(&nums[i]) {
                 return true;
             }
             numbers.insert(nums[i]);
         }
-    return false;
-
+        return false;
     }
 }
 
@@ -62,7 +60,14 @@ mod tests {
 
     #[test]
     fn negatives_and_extremes() {
-        assert!(Solution::has_duplicate(vec![-1_000_000_000, 0, -1_000_000_000]));
-        assert!(!Solution::has_duplicate(vec![-1_000_000_000, 1_000_000_000]));
+        assert!(Solution::has_duplicate(vec![
+            -1_000_000_000,
+            0,
+            -1_000_000_000
+        ]));
+        assert!(!Solution::has_duplicate(vec![
+            -1_000_000_000,
+            1_000_000_000
+        ]));
     }
 }
