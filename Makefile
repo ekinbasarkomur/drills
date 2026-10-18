@@ -5,6 +5,7 @@
 #   make two_sum          that one exercise, in all three languages
 #   make cpp-two_sum      that one exercise, in C++ only
 #   make status           a grid of what is solved in which language
+#   make progress         the same, and rewrite the PROGRESS.md tables
 #   make list             the exercise names you can pass
 #
 # Each language project can still be driven from inside its own directory;
@@ -17,7 +18,7 @@ CPP  := algorithms/cpp
 # Exercise names come from the C++ solutions, which exist for all of them.
 NAMES := $(sort $(notdir $(basename $(wildcard $(CPP)/solutions/*.cpp))))
 
-.PHONY: all rust python cpp status list clean $(NAMES)
+.PHONY: all rust python cpp status progress list clean $(NAMES)
 # The rust-% / py-% / cpp-% targets are deliberately NOT phony: make skips
 # pattern rules for phony targets, and these are pattern rules. No file by
 # those names exists at the root, so they rebuild every time anyway.
@@ -57,7 +58,10 @@ cpp-%:
 # ---------------------------------------------------------------- housekeeping
 
 status:
-	@scripts/status.sh
+	@scripts/progress.py
+
+progress:
+	@scripts/progress.py --write
 
 list:
 	@printf "%s\n" $(NAMES)
