@@ -50,23 +50,31 @@ def digest(path: Path, lang: str) -> str:
 # ---------------------------------------------------------------- runners: [Path] -> {Path: ok}
 
 def run_rust(paths):
-    """One cargo invocation for all of them; a binary that does not compile counts as failing."""
+    """Compile them all (a binary that does not compile counts as failing), then one cargo test."""
     if not paths:
         return {}
     res = {p: False for p in paths}
     by_stem = {p.stem: p for p in paths}
-    cmd = ["cargo", "test", "--no-fail-fast"] + [a for p in paths for a in ("--bin", p.stem)]
-    o = subprocess.run(cmd, cwd=LC / "rust", capture_output=True, text=True, timeout=TIMEOUT)
+    bins = lambda ps: [a for p in ps for a in ("--bin", p.stem)]
+    b = subprocess.run(["cargo", "build", "--tests", "--keep-going"] + bins(paths), cwd=LC / "rust",
+                       capture_output=True, text=True, timeout=TIMEOUT)
+    broken = set(re.findall(r'could not compile `leetcode` \(bin "(\w+)" test\)', b.stderr))
+    if b.returncode != 0 and not broken:  # something else is wrong (the library, Cargo.toml)
+        return res
+    good = [p for p in paths if p.stem not in broken]
+    if not good:
+        return res
+    o = subprocess.run(["cargo", "test", "--no-fail-fast"] + bins(good), cwd=LC / "rust",
+                       capture_output=True, text=True, timeout=TIMEOUT)
     # stderr names each binary as it starts ("Running unittests src/bin/<stem>.rs"), stdout has
     # its "test result" line; both come out in the same order.
     names = re.findall(r"Running unittests src/bin/(\w+)\.rs", o.stderr)
     results = re.findall(r"^test result: (ok|FAILED)\.", o.stdout, re.M)
-    if len(names) == len(results):
+    if len(names) == len(results) == len(good):
         for n, r in zip(names, results):
-            if n in by_stem:
-                res[by_stem[n]] = r == "ok"
+            res[by_stem[n]] = r == "ok"
         return res
-    for p in paths:  # could not pair them up: one binary at a time
+    for p in good:  # could not pair them up: one binary at a time
         o = subprocess.run(["cargo", "test", "--bin", p.stem], cwd=LC / "rust",
                            capture_output=True, text=True, timeout=TIMEOUT)
         res[p] = o.returncode == 0 and "test result: ok" in o.stdout
@@ -98,7 +106,7 @@ def run_pytest(paths):
     if not paths:
         return {}
     rel = [str(p.relative_to(LC)) for p in paths]
-    o = subprocess.run(["uv", "run", "--quiet", "pytest", "-q", "--tb=no", "-rA", *rel], cwd=LC,
+    o = subprocess.run(["uv", "run", "--quiet", "pytest", "-q", "--tb=no", "-rA", "--continue-on-collection-errors", *rel], cwd=LC,
                        capture_output=True, text=True, timeout=TIMEOUT)
     if o.returncode not in (0, 1, 5):  # 2+ = interrupted, internal error, usage error
         return {p: False for p in paths}
@@ -133,7 +141,11 @@ def status(only: set[int] | None = None, verify_stubs: bool = False) -> dict[tup
     for kind, batch in todo.items():
         if not batch:
             continue
-        res = RUNNERS["python" if kind == "py" else kind]([j[1] for j in batch])
+        try:
+            res = RUNNERS["python" if kind == "py" else kind]([j[1] for j in batch])
+        except subprocess.TimeoutExpired:  # an endless loop somewhere: none of this batch counts
+            print(f"  {kind}: tests did not finish in {TIMEOUT}s, counted as failing", file=sys.stderr)
+            res = {}
         for k, path, h, key, stub in batch:
             ok = res.get(path, False)
             if stub:
