@@ -30,8 +30,8 @@ impl Solution {
 // ---------------------------------------------------------------- tests
 
 fn main() {
-    println!("{}", Solution::has_duplicate(vec![1, 2, 3, 3]));
-    println!("{}", Solution::has_duplicate(vec![1, 2, 3, 4]));
+    println!("{}", Solution::contains_duplicate(vec![1, 2, 3, 3]));
+    println!("{}", Solution::contains_duplicate(vec![1, 2, 3, 4]));
 }
 
 #[cfg(test)]
@@ -40,37 +40,37 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert!(Solution::has_duplicate(vec![1, 2, 3, 3]));
+        assert!(Solution::contains_duplicate(vec![1, 2, 3, 3]));
     }
 
     #[test]
     fn example_2() {
-        assert!(!Solution::has_duplicate(vec![1, 2, 3, 4]));
+        assert!(!Solution::contains_duplicate(vec![1, 2, 3, 4]));
     }
 
     #[test]
     fn empty_array() {
-        assert!(!Solution::has_duplicate(vec![]));
+        assert!(!Solution::contains_duplicate(vec![]));
     }
 
     #[test]
     fn single_element() {
-        assert!(!Solution::has_duplicate(vec![7]));
+        assert!(!Solution::contains_duplicate(vec![7]));
     }
 
     #[test]
     fn duplicate_at_the_very_end() {
-        assert!(Solution::has_duplicate(vec![1, 2, 3, 4, 5, 1]));
+        assert!(Solution::contains_duplicate(vec![1, 2, 3, 4, 5, 1]));
     }
 
     #[test]
     fn negatives_and_extremes() {
-        assert!(Solution::has_duplicate(vec![
+        assert!(Solution::contains_duplicate(vec![
             -1_000_000_000,
             0,
             -1_000_000_000
         ]));
-        assert!(!Solution::has_duplicate(vec![
+        assert!(!Solution::contains_duplicate(vec![
             -1_000_000_000,
             1_000_000_000
         ]));

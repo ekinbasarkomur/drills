@@ -14,12 +14,16 @@ Called by the Obsidian vault's leetcode_sync.py with a JSON list on stdin:
   - the file has no uncommitted changes (`git status --porcelain <file>`): local work wins;
   - its code differs from the file's solution.
 
+--force drops the first rule: the newest accepted submission is written even when it is
+older than the file's last commit or the last synced one (e.g. after a restructure commit).
+Uncommitted local changes still win, and every written submission is recorded as usual.
+
 Only the solution region (between the two marker lines) is replaced; the header and the
 tests stay. A missing file is scaffolded with scripts/new.py first. Each written file's
 tests are run in that language, then one commit holds them all ("LeetCode sync: 146 rust,
 23 cpp"). Nothing is pushed.
 
-    scripts/sync.py [--dry-run] [--no-commit] < submissions.json
+    scripts/sync.py [--dry-run] [--no-commit] [--force] < submissions.json
 
 Prints a JSON report: {"written": [...], "skipped": [...], "commit": sha | null}.
 """
@@ -84,6 +88,8 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--dry-run", action="store_true", help="report what would be written, touch nothing")
     ap.add_argument("--no-commit", action="store_true")
+    ap.add_argument("--force", action="store_true",
+                    help="write the newest submission even if it is older than the file (local changes still win)")
     args = ap.parse_args()
     subs = json.load(sys.stdin)
     record = json.loads(RECORD.read_text()) if RECORD.exists() else {}
@@ -122,10 +128,11 @@ def main():
             continue
         rec = record.get(rel)
         stub = is_stub(text, lang)
-        if rec and int(rec["timestamp"]) >= ts:
+        held = rec and (str(rec["submission"]) == str(s["submission_id"]) if args.force else int(rec["timestamp"]) >= ts)
+        if held:
             skipped.append({"id": pid, "lang": lang, "file": rel, "why": "already holds this or a newer submission"})
             continue
-        if not rec and not stub:
+        if not rec and not stub and not args.force:
             committed = last_commit_time(path)
             if committed and committed > ts:
                 skipped.append({"id": pid, "lang": lang, "file": rel,

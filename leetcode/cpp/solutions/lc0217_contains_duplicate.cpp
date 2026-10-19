@@ -26,24 +26,24 @@ public:
 
 };
 // ---------------------------------------------------------------- tests
-// hasDuplicate takes a non-const reference, so the test cannot hand it a
+// containsDuplicate takes a non-const reference, so the test cannot hand it a
 // temporary -- each case names its vector first.
 
-static bool hasDuplicate(vector<int> nums) {
-    return Solution().hasDuplicate(nums);
+static bool containsDuplicate(vector<int> nums) {
+    return Solution().containsDuplicate(nums);
 }
 
-TEST(example_1) { CHECK(hasDuplicate({1, 2, 3, 3})); }
+TEST(example_1) { CHECK(containsDuplicate({1, 2, 3, 3})); }
 
-TEST(example_2) { CHECK(!hasDuplicate({1, 2, 3, 4})); }
+TEST(example_2) { CHECK(!containsDuplicate({1, 2, 3, 4})); }
 
-TEST(empty_array) { CHECK(!hasDuplicate({})); }
+TEST(empty_array) { CHECK(!containsDuplicate({})); }
 
-TEST(single_element) { CHECK(!hasDuplicate({7})); }
+TEST(single_element) { CHECK(!containsDuplicate({7})); }
 
-TEST(duplicate_at_the_very_end) { CHECK(hasDuplicate({1, 2, 3, 4, 5, 1})); }
+TEST(duplicate_at_the_very_end) { CHECK(containsDuplicate({1, 2, 3, 4, 5, 1})); }
 
 TEST(negatives_and_extremes) {
-    CHECK(hasDuplicate({-1000000000, 0, -1000000000}));
-    CHECK(!hasDuplicate({-1000000000, 1000000000}));
+    CHECK(containsDuplicate({-1000000000, 0, -1000000000}));
+    CHECK(!containsDuplicate({-1000000000, 1000000000}));
 }

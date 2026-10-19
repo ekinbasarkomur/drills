@@ -36,8 +36,11 @@ public:
 
 using vi = vector<int>;
 
+// LeetCode accepts the two indices in either order, so compare them sorted.
 static vi twoSum(vi nums, int target) {
-    return Solution().twoSum(nums, target);
+    vi got = Solution().twoSum(nums, target);
+    sort(got.begin(), got.end());
+    return got;
 }
 
 TEST(example_1) { CHECK_EQ(twoSum({3, 4, 5, 6}, 7), (vi{0, 1})); }

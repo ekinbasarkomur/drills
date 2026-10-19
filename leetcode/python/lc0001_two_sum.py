@@ -28,7 +28,8 @@ class Solution(object):
 # ---------------------------------------------------------------- tests
 
 # The tests below call the old free functions; forward them to Solution.
-def two_sum(*args): return Solution().twoSum(*args)  # noqa: E704
+# LeetCode accepts the two indices in either order, so compare them sorted.
+def two_sum(*args): return sorted(Solution().twoSum(*args))  # noqa: E704
 
 
 def test_example_1():
