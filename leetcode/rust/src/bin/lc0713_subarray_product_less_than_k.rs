@@ -1,0 +1,36 @@
+// 713. Subarray Product Less Than K · Medium · https://leetcode.com/problems/subarray-product-less-than-k/
+// Plan: Aşama 1 · Prefix Sum ve Sliding Window
+//
+// Problem:
+// Approach:
+// Time O(?), space O(?)
+
+#[allow(unused_imports)]
+use leetcode::*;
+
+struct Solution;
+
+// ---------------------------------------------------------------- solution
+impl Solution {
+    pub fn num_subarray_product_less_than_k(nums: Vec<i32>, k: i32) -> i32 {
+        todo!()
+    }
+}
+// ---------------------------------------------------------------- tests
+
+fn main() {}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn example_1() {
+        assert_eq!(Solution::num_subarray_product_less_than_k(vec![686, 28, 455, 675, 605, 29, 942, 48, 502, 889, 854, 206, 231, 796, 272, 565, 887, 969, 558, 13, 22, 455, 145, 804, 15], 515854), 8);
+    }
+
+    #[test]
+    fn example_2() {
+        assert_eq!(Solution::num_subarray_product_less_than_k(vec![542, 433, 935, 193, 280, 849, 122, 107, 688, 913, 31, 311, 814, 507, 596, 109, 340, 981, 662, 145, 955, 692, 659, 46, 276, 734, 177, 727, 329, 320, 93, 78, 451, 129, 226, 491, 595, 175, 894, 662, 699, 871, 340, 375, 98, 38, 414, 306, 20, 548, 459, 577, 626, 942, 92, 322, 665, 497, 593, 877, 247, 487, 67, 320, 78, 775, 431, 193, 175, 957, 926, 816, 776, 967, 600, 114, 474, 810, 513, 43, 586, 559, 880, 540, 122, 95, 408, 621, 850, 598], 425740), 0);
+    }
+}
