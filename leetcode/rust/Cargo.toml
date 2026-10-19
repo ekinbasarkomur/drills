@@ -1,0 +1,22 @@
+[package]
+name = "leetcode"
+version = "0.1.0"
+edition = "2024"
+
+# Every problem is a binary in src/bin/, named after the file: `cargo test --bin lc0001_two_sum`.
+# src/lib.rs holds LeetCode's ListNode/TreeNode and the helpers the tests use.
+autobins = true
+
+[dependencies]
+rand = "0.9"
+
+[profile.test]
+opt-level = 1
+
+# LeetCode's starter code leaves parameters unused and uses camelCase names here and there;
+# neither is worth a warning in a practice repo.
+[lints.rust]
+unused_variables = "allow"
+unused_mut = "allow"
+dead_code = "allow"
+non_snake_case = "allow"

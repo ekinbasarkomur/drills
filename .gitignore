@@ -9,12 +9,14 @@ __pycache__/
 
 # C++
 build/
-.cache/
 compile_commands.json
+.clangd/
 
-# Stray binaries from `rustc -o` / `g++ -o` experiments
+# LeetCode problem data, the test-status cache, the sync record (scripts/, leetcode_sync)
+.cache/
+
+# Stray binaries from `rustc -o` / `g++ -o` experiments, Vim sessions
 /test
 /cpp
 /neetcode
-algorithms/cpp/cpp
-algorithms/rust/neetcode
+*.swp

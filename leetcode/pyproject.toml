@@ -1,0 +1,16 @@
+[project]
+name = "leetcode"
+version = "0.1.0"
+description = "LeetCode solutions in Python, plus the pandas and SQL tracks"
+requires-python = ">=3.11"
+dependencies = ["pandas>=2.2", "duckdb>=1.1"]
+
+[dependency-groups]
+dev = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+# python/: algorithms · pandas/: DataFrame problems · sql/: queries, run on DuckDB (sql/conftest.py)
+testpaths = ["python", "pandas", "sql"]
+python_files = ["lc*.py"]
+pythonpath = ["python"]
+addopts = "-p no:cacheprovider --import-mode=importlib"
