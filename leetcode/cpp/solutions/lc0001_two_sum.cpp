@@ -13,17 +13,18 @@
 // ---------------------------------------------------------------- solution
 class Solution {
 public:
-    vector<int> twoSum(vector<int> &nums, int target) {
+    vector<int> twoSum(vector<int>& nums, int target) {
 
         unordered_map<int, int> seen;
-
-        for (size_t i = 0; i < nums.size(); i++) {
+        
+        for (int i = 0; i < size(nums); i++)
+        {
             int diff = target - nums[i];
-            //cout << i << " " << diff << endl;
-
-            if (seen.contains(diff)) {
-                return {seen[diff], static_cast<int>(i)};
+            if(seen.contains(diff))
+            {
+                return {i, seen[diff]};
             }
+
             seen[nums[i]] = i;
         }
 

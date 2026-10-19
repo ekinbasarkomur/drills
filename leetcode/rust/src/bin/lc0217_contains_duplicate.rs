@@ -15,18 +15,17 @@ struct Solution;
 use std::collections::HashSet;
 
 impl Solution {
-    pub fn has_duplicate(nums: Vec<i32>) -> bool {
-        let len = nums.len();
+    pub fn contains_duplicate(nums: Vec<i32>) -> bool {
         let mut numbers: HashSet<i32> = HashSet::with_capacity(nums.len());
 
-        for i in 0..len {
-            if numbers.contains(&nums[i]) {
+        for num in nums {
+            if !numbers.insert(num) {
                 return true;
             }
-            numbers.insert(nums[i]);
         }
         return false;
     }
+
 }
 // ---------------------------------------------------------------- tests
 

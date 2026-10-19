@@ -12,17 +12,18 @@
 // ---------------------------------------------------------------- solution
 class Solution {
 public:
-    bool hasDuplicate(vector<int> &nums) {
-        unordered_set<int> seen;
+    bool containsDuplicate(vector<int> &nums) {
+        unordered_set<int> seen(size(nums));
 
         for (int i : nums) {
-            if (seen.contains(i)) {
+            if (seen.count(i)) {
                 return true;
             }
             seen.insert(i);
         }
         return false;
     }
+
 };
 // ---------------------------------------------------------------- tests
 // hasDuplicate takes a non-const reference, so the test cannot hand it a

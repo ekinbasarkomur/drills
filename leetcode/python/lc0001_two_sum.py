@@ -10,22 +10,21 @@ Time O(?), space O(?)
 from _lc import *  # noqa: F403  (LeetCode's namespace: List, ListNode, ...)
 
 # ---------------------------------------------------------------- solution
-class Solution:
-    def twoSum(self, nums: list[int], target: int) -> list[int]:
-
-        differences = {}
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        seen = {}
         for i in range(0, len(nums)):
-            num = nums[i]
-            diff = target - num
+            if target - nums[i] in seen:
+                return [i, seen[target - nums[i]]]
 
-            if diff in nums[i + 1 :]:
-                return [i, nums[i + 1 :].index(diff) + i + 1]
-
-            differences[diff] = i
+            seen[nums[i]] = i
 
         return []
-
-
 # ---------------------------------------------------------------- tests
 
 # The tests below call the old free functions; forward them to Solution.
