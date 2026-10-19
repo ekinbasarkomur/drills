@@ -1,216 +1,186 @@
 # Drills
 
-Practice, kept in one place. Every exercise lives here with its source, its
-solution, and tests that say whether the solution is right.
+LeetCode practice, kept in one place: every problem is one file per language, named by
+its LeetCode id, holding LeetCode's own starter code, the solution, and tests that say
+whether the solution is right.
 
-The point is repetition: a problem can be solved again later, in another
-language, or after forgetting it — so nothing is deleted once it is written,
-and each one keeps a link back to where it came from.
+The point is repetition: a problem can be solved again later, in another language, or
+after forgetting it, so nothing is deleted once it is written, and each file keeps a link
+back to the problem.
 
 ```
 drills/
-├── README.md            the index below
-├── Makefile             runs anything from here
-├── scripts/progress.py  writes the PROGRESS.md tables
-├── algorithms/          LeetCode / NeetCode 150, in three languages
-│   ├── rust/
-│   ├── python/
-│   └── cpp/
-├── pandas/              (empty)
-├── machine-learning/    (empty)
-└── rust-lang/           (empty)
+├── plan.toml              the order to solve things in: the single source
+├── PROGRESS.md            generated from plan.toml and the tests (make progress)
+├── Makefile               runs anything from here
+├── scripts/
+│   ├── new.py             scaffolds a problem from LeetCode's data   (make new)
+│   ├── progress.py        status, PROGRESS.md, what's next            (make status/progress/next)
+│   ├── run.py             one problem's tests                         (make 146, make rust-146)
+│   ├── copy.py            a solution to the clipboard                 (make copy)
+│   ├── sync.py            writes accepted LeetCode submissions in   (the vault's leetcode_sync)
+│   ├── leetcode.py        LeetCode's public problem data, cached in .cache/
+│   └── drills.py          what the scripts share: paths, plan, marker lines
+└── leetcode/
+    ├── rust/              Cargo package; src/bin/lc0146_lru_cache.rs, src/lib.rs = helpers
+    ├── cpp/               Makefile; solutions/lc0146_lru_cache.cpp, include/ = helpers
+    ├── python/            lc0146_lru_cache.py, _lc.py = LeetCode's namespace
+    ├── pandas/            lc0595_big_countries.py           (parallel track)
+    ├── sql/               lc0584_find_customer_referee.sql  (parallel track, run on DuckDB)
+    └── pyproject.toml     one uv project for python/, pandas/ and sql/
 ```
 
-Each track brings its own toolchain and its own README. A new track is a new
-top-level directory — it does not have to look like the others.
+## The plan
 
-## Tracks
+[`plan.toml`](plan.toml) holds every problem, in the order to solve them. Phases
+(`[[phase]]`) are solved in order, groups inside a phase in order, problems top to bottom.
+Phase 0 is the NeetCode set this repo started with; the later phases come from what quant
+and trading firms are known to ask, each problem with a `why`. Problems marked
+`warmup = true` were not in the research; they are the direct prerequisite of the problem
+after them.
 
-| Track | Source | Languages | Solved | Progress |
-| --- | --- | --- | --- | --- |
-| [`algorithms/`](algorithms/) | [NeetCode 150](https://neetcode.io/practice) / [LeetCode](https://leetcode.com/) | Rust, Python, C++ | rust 11/34, python 5/34, cpp 18/34 | [PROGRESS.md](algorithms/PROGRESS.md) |
-| [`pandas/`](pandas/) | not started | Python | — | [PROGRESS.md](pandas/PROGRESS.md) |
-| [`machine-learning/`](machine-learning/) | not started | Python | — | [PROGRESS.md](machine-learning/PROGRESS.md) |
-| [`rust-lang/`](rust-lang/) | not started | Rust | — | [PROGRESS.md](rust-lang/PROGRESS.md) |
+Two `[[parallel]]` tracks run alongside, one problem a day: **Pandas** (LeetCode's
+"Introduction to Pandas" / "30 Days of Pandas") and **SQL** ("SQL 50" plus a few
+finance-flavoured extras).
+
+Every plan problem is already scaffolded, in Rust, C++ and Python for the algorithm
+phases and in pandas or SQL for the tracks. A problem outside the plan is one command
+away: `make new 1768`.
 
 ## Running things
 
-From the repository root, through the top-level `Makefile`:
-
 ```
-make status          a grid of what is solved in which language (~15s)
-make progress        the same, and rewrite the PROGRESS.md tables
-make two_sum         that one exercise, in all three languages
-make cpp-two_sum     that one exercise, in C++ only  (also rust- and py-)
-make rust            every Rust exercise, raw cargo output
-make python          every Python exercise, raw pytest output
-make cpp             every C++ exercise
-make list            the exercise names you can pass
-make clean           wipe every build directory
+make status          what is solved, per plan group (only changed files are re-tested)
+make progress        the same, and rewrite PROGRESS.md
+make next            the next problem to solve, per language and per parallel track
+make 146             that problem's tests, in every language it has, full output
+make rust-146        in Rust only  (also cpp-146, py-146, pandas-595, sql-584)
+make new 146         scaffold any LeetCode id or slug; never overwrites a file
+make copy 146 rust   put the solution on the clipboard, ready to paste into LeetCode
+make rust            every Rust file, raw cargo output (also cpp, python, pandas, sql)
+make clean           wipe build directories and the status cache
 ```
 
-`make status` is what the index below is generated from — it runs each
-exercise's tests rather than reading the files, so it cannot drift.
+`make new ID=146 LANG=rust` and `make copy ID=146 LANG=rust` work too.
+
+**Solved** means two things: the scaffold's stub is gone from the solution, and the file's
+tests pass. Stub files are never run, and results are cached by file content in
+`.cache/status.json`, so `make status` takes about a second when nothing changed.
 
 Or from inside a project, with its own tool:
 
-| | Everything | One exercise |
+| | Everything | One problem |
 | --- | --- | --- |
-| **Rust** — `algorithms/rust/` | `cargo test` | `cargo test --bin two_sum` |
-| **Python** — `algorithms/python/` | `uv run pytest` | `uv run pytest -k two_sum` |
-| **C++** — `algorithms/cpp/` | `make` | `make two_sum` |
+| **Rust** — `leetcode/rust/` | `cargo test` | `cargo test --bin lc0146_lru_cache` |
+| **C++** — `leetcode/cpp/` | `make` | `make lc0146_lru_cache` |
+| **Python, pandas, SQL** — `leetcode/` | `uv run pytest` | `uv run pytest python/lc0146_lru_cache.py` |
 
-The **File** column in the index below is the name to pass.
+## The shape of a problem file
 
-## The shape every exercise follows
+One problem, one file per language, named `lc<id, 4 digits>_<slug>`
+(`lc0167_two_sum_ii_input_array_is_sorted.rs`; Cargo refuses binary names that start
+with a digit, hence the `lc`). Every file has the same four parts:
 
-Whatever the track or language, one exercise is **one file** named in
-`snake_case`, holding four things in this order:
+1. **A header**: `146. LRU Cache · Medium · <url>`, the plan step it belongs to, and
+   `Problem:` / `Approach:` / `Time O(?), space O(?)` lines for your own words.
+2. **What LeetCode provides around the editor**: `use leetcode::*;` and
+   `struct Solution;` in Rust, `#include "leetcode.hpp"` in C++, `from _lc import *` in
+   Python. These give the file exactly the names LeetCode's judge has in scope
+   (`ListNode`, `TreeNode`, `List`, `heapq`, every standard header, ...).
+3. **The solution**, between two marker lines:
 
-1. **A header comment** — where the problem came from (number, title, URL),
-   the problem in your own words, the approach in one line, and the
-   time/space complexity.
-2. **The solution**, kept separate from any scratch or `main` code so the
-   tests can call it.
-3. **The tests** — the examples from the problem statement first, then the
-   edge cases the statement does not show you.
-4. **Optionally a scratch entry point** for printing things by hand.
+   ```
+   // ---------------------------------------------------------------- solution
+   impl Solution { ... }
+   // ---------------------------------------------------------------- tests
+   ```
 
-Tests live *beside* the solution rather than in a separate `tests/` tree. That
-is Rust's native convention (`#[cfg(test)] mod tests`), and the other projects
-were configured to match it so every track feels the same.
+   Everything between the markers is what goes into LeetCode's editor, and nothing else:
+   `make copy` copies exactly that. `use std::...` lines belong inside, LeetCode needs
+   them too.
+4. **The tests**, below the second marker. A scaffold starts with the examples from the
+   problem statement, generated from LeetCode's data; add the edge cases the statement
+   does not show you (empty input, one element, the answer at the very end, duplicates,
+   negative numbers, the value range's extremes).
 
-### Why tests instead of a `main` that prints
+A fresh scaffold holds LeetCode's starter code with a stub body: `todo!()` in Rust,
+`TODO();` in C++, `raise NotImplementedError` in Python and pandas, and a
+`-- TODO: solve, then delete this line` line in SQL. While the stub is there the problem
+counts as unsolved; the generated tests fail until the solution is right.
 
-A practice site gives you a Run button and a fixed set of cases. Running
-things by hand and eyeballing the output is strictly worse than that. Writing
-the examples as assertions gets you the Run button *plus* every edge case you
-thought of yourself, re-checked in a second, forever.
+How the tests are generated:
 
-The edge cases matter more than the examples. A problem statement shows two
-happy paths; what actually breaks a solution is the empty input, the single
-element, the answer sitting at the very end, duplicate values, negative
-numbers, and the value range's extremes. Those go in the file too.
+- inputs come from LeetCode's example test cases, outputs from the statement's
+  `Output:` lines, types from the problem's signature metadata;
+- a `void` function is checked through its (mutated) first argument;
+- "in any order" in the statement means both sides are sorted before comparing (only the
+  outer list for permutations); doubles compare to 1e-5; lists and trees are compared as
+  their level-order values;
+- design problems (`LRUCache`, `MedianFinder`, ...) construct the object and replay the
+  example's calls, checking every non-null output; methods that are random by nature
+  (`getRandom`, `pick`, `shuffle`) are called but not checked;
+- premium problems have no public statement: the starter code is rebuilt from the
+  signature, and the tests only run the example inputs;
+- problems LeetCode judges with a custom harness (concurrency, `rand10`,
+  serialize/deserialize, the two pandas problems that modify a table in place) get no
+  generated tests; the file says so.
 
-## Index
+### Rust: `leetcode/rust/`
 
-Each track keeps its own table, generated from its tests where it can be:
+Every `.rs` file under `src/bin/` is its own binary with its own (empty) `main()`. No
+`Cargo.toml` registration: drop the file in and it is runnable. `src/lib.rs` holds
+LeetCode's `ListNode` and `TreeNode` verbatim, plus `build_list`, `list_to_vec`,
+`build_tree`, `tree_to_vec`, `deep_sort`, `sort_outer`, `approx_eq`. `rand` is a
+dependency because LeetCode's Rust has it.
 
-| Track | Progress |
-| --- | --- |
-| [`algorithms/PROGRESS.md`](algorithms/PROGRESS.md) | every problem, grouped by NeetCode section, linked to LeetCode, with a tick per language |
-| [`pandas/PROGRESS.md`](pandas/PROGRESS.md) | not started |
-| [`machine-learning/PROGRESS.md`](machine-learning/PROGRESS.md) | not started |
-| [`rust-lang/PROGRESS.md`](rust-lang/PROGRESS.md) | not started |
+LeetCode's Rust starter code for design problems takes `&self`; change it to `&mut self`
+where the method mutates, as the comment in the snippet says. The tests work either way.
 
-`make progress` reruns every test and rewrites `algorithms/PROGRESS.md` plus
-the totals in the table above, so neither can drift. The other three are
-written by hand until their track has a runner.
+Linked List Cycle is the odd one: a cycle cannot be built out of `Option<Box<ListNode>>`,
+so its Rust file uses an index-based arena instead (and LeetCode has no Rust version).
 
-## Starting a new exercise
+### C++: `leetcode/cpp/`
 
-Copy the template in the language you want:
+No CMake. The `Makefile` compiles each `solutions/*.cpp` separately with
+`-std=c++20 -Wall -Wextra -O1`, using a precompiled `include/leetcode.hpp` (every
+standard header, `using namespace std;`, `ListNode`, `TreeNode`), which keeps one
+problem at about half a second.
 
-```
-cp algorithms/rust/template.rs   algorithms/rust/src/bin/<name>.rs
-cp algorithms/python/template.py algorithms/python/solutions/<name>.py
-cp algorithms/cpp/template.cpp   algorithms/cpp/solutions/<name>.cpp
-```
+`include/test.hpp` is a ~60 line harness providing `TEST(name)`, `CHECK(expr)` and
+`CHECK_EQ(a, b)`, with Rust-shaped output; an exception thrown by the solution (the stub's
+`TODO()` throws) counts as a failure. **It defines `main()`**, so a solution file must not.
 
-Then add a row to the index above with the source link.
+### Python, pandas, SQL: `leetcode/`
 
-## Language notes
+One [uv](https://docs.astral.sh/uv/) project; `uv run` builds the virtualenv on first
+use. pytest collects every `lc*.py` under `python/` and `pandas/`, and every `lc*.sql`
+under `sql/` through `sql/conftest.py`.
 
-### Rust — `algorithms/rust/`
+- `python/_lc.py` is LeetCode's namespace (`typing`, `collections`, `heapq`, `bisect`,
+  `ListNode`, `TreeNode`, ...) plus the test helpers `build`, `to_list`, `build_tree`,
+  `to_level_order`, `deep_sorted`, `close`.
+- `python/_pd.py` builds the input tables with LeetCode's dtypes (`frame`) and compares a
+  result the way LeetCode's judge does (`check`: same columns, same rows, in any order
+  unless the statement says "ordered by").
+- An SQL file holds the query between the markers and, below them, the schema, each
+  example's tables (`-- case:`) and the expected result (`-- expect:`). The query runs on
+  [DuckDB](https://duckdb.org/), not MySQL: backticks, `#` comments and a handful of
+  MySQL functions (`DATEDIFF`, `DATE_FORMAT`, `DATE_ADD`/`DATE_SUB`, `IF`, `CHAR_LENGTH`,
+  `GROUP_CONCAT ... SEPARATOR`) are translated, but other MySQL-only syntax can fail
+  here although LeetCode accepts it, and string comparison is case-sensitive here.
 
-Every `.rs` file under `src/bin/` is its own standalone program with its own
-`main()`. No `Cargo.toml` registration: drop the file in and it is runnable.
+## LeetCode and Obsidian
 
-```
-cargo test  --bin two_sum      run its tests
-cargo run   --bin two_sum      run its main()
-cargo check --bin two_sum      typecheck only, fastest feedback
-```
-
-Solutions keep LeetCode's `impl Solution` shape, with a `struct Solution;`
-declared above it, so code can be pasted back into the site unchanged. The one
-thing those editors hide is imports — `use std::collections::HashMap;` and
-friends have to be written out here.
-
-`src/main.rs` is not a solution, just a signpost.
-
-Linked-list and tree problems carry LeetCode's own type definition in the file
-rather than sharing one, because the list is `Option<Box<ListNode>>` and the
-tree `Option<Rc<RefCell<TreeNode>>>` — things to paste, not to share. Linked
-List Cycle is the exception: a cycle cannot be built out of `Option<Box<..>>`
-at all, so it uses an index-based arena instead.
-
-### Python — `algorithms/python/`
-
-Managed with [uv](https://docs.astral.sh/uv/). `uv run` builds the virtualenv
-on first use; there is nothing to activate.
-
-```
-uv run pytest                        every exercise
-uv run pytest -k two_sum             by name
-uv run pytest solutions/two_sum.py   by path
-uv run pytest -x -q                  stop at first failure, quiet
-uv run python solutions/two_sum.py   run the __main__ scratch block
-```
-
-pytest normally only collects files named `test_*.py`. `pyproject.toml`
-overrides that with `python_files = ["*.py"]` so it picks up the `test_*`
-functions living inside each solution file.
-
-`solutions/list_node.py` and `solutions/tree_node.py` are shared helpers, not
-exercises; `pyproject.toml` excludes them from collection.
-
-### C++ — `algorithms/cpp/`
-
-No CMake, no package manager. A `Makefile` globs `solutions/*.cpp` and
-compiles each one separately with `-std=c++20 -Wall -Wextra -O2`.
-
-```
-make                 build and run every exercise
-make two_sum         build and run just that one
-make clean           wipe build/
-```
-
-`include/test.hpp` is a ~40 line dependency-free harness providing
-`TEST(name)`, `CHECK(expr)` and `CHECK_EQ(a, b)`, with output shaped to look
-like Rust's:
-
-```
-test example_1 ... ok
-test empty_array ... ok
-
-test result: ok. 6 passed; 0 failed
-```
-
-**It defines `main()`**, so a solution file must not. To print something by
-hand, put the `printf` inside a `TEST`.
-
-`include/list_node.hpp` and `include/tree_node.hpp` hold the shared `ListNode`
-and `TreeNode` types plus builders, so linked-list and tree problems keep
-LeetCode's shape while the tests stay readable. They deliberately do **not**
-carry `using namespace std;` — a header pulls the whole namespace into every
-file that includes it.
+The Obsidian vault (`~/Archive`, `Sources/Drills`) keeps one note per problem. Its
+`leetcode_sync.py` pulls the latest accepted LeetCode submission per language and writes
+it into the matching file here, between the markers, then runs that file's tests and
+commits (`LeetCode sync: 146 rust, 23 cpp`), all through `scripts/sync.py`. A submission
+is written only when it is newer than what the file holds (the last synced submission,
+recorded in `.cache/synced.json`, or else the file's last commit; a stub always takes it),
+a file with uncommitted changes is skipped, and nothing is ever pushed. Everything else in
+this repo is written by hand.
 
 ## Formatting
 
-4-space indentation everywhere, enforced by `.editorconfig`, plus
-`.clang-format` for C++. The one exception is `algorithms/cpp/Makefile`: make
-requires a literal tab to start a recipe line.
-
-## The Rust notebook
-
-Kept outside this repo, in the Obsidian vault:
-
-```
-~/Archive/Sources/Courses/W3 Schools Rust Tutorial/Notes.md
-```
-
-A running reference covering the language from `println!` being a macro
-through ownership, borrowing, collections, structs and enums. Each entry is
-deliberately one line of rule plus one minimal example — a lookup table, not a
-tutorial.
+4-space indentation everywhere, enforced by `.editorconfig`, plus `.clang-format` for
+C++. Makefiles need a literal tab to start a recipe line.
