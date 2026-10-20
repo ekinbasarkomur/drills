@@ -5,13 +5,13 @@ and the file's tests pass, ▢ = not yet, — = no file in that language. Phases
 in order, groups top to bottom; the parallel tracks run alongside, one problem a day.
 *ısınma* = a warm-up the researched plan did not list, the prerequisite of the next problem.
 
-**Rust 11/176 &nbsp;·&nbsp; C++ 19/176 &nbsp;·&nbsp; Python 8/176 &nbsp;·&nbsp; Pandas 0/33 &nbsp;·&nbsp; SQL 0/40**
+**Rust 11/176 &nbsp;·&nbsp; C++ 19/176 &nbsp;·&nbsp; Python 10/176 &nbsp;·&nbsp; Pandas · 30 Days of Pandas 0/33 &nbsp;·&nbsp; SQL 0/40**
 
 ## Aşama 0 · Temel: NeetCode
 
 Repo'daki ilk 34 problem. Sonraki aşamaların her grubu bunların üstüne kurulu; 7'si zaten planın ilk adımı.
 
-<sub>Rust 11/34 · C++ 19/34 · Python 8/34</sub>
+<sub>Rust 11/34 · C++ 19/34 · Python 10/34</sub>
 
 ### Arrays & Hashing
 
@@ -20,9 +20,9 @@ Repo'daki ilk 34 problem. Sonraki aşamaların her grubu bunların üstüne kuru
 | 1 | [217](https://leetcode.com/problems/contains-duplicate/) | Contains Duplicate | Easy | ✅ | ✅ | ✅ | `lc0217_contains_duplicate` |
 | 2 | [242](https://leetcode.com/problems/valid-anagram/) | Valid Anagram | Easy | ✅ | ✅ | ✅ | `lc0242_valid_anagram` |
 | 3 | [1](https://leetcode.com/problems/two-sum/) | Two Sum | Easy | ✅ | ✅ | ✅ | `lc0001_two_sum` |
-| 4 | [49](https://leetcode.com/problems/group-anagrams/) | Group Anagrams | Medium | ✅ | ✅ | ▢ | `lc0049_group_anagrams` |
+| 4 | [49](https://leetcode.com/problems/group-anagrams/) | Group Anagrams | Medium | ✅ | ✅ | ✅ | `lc0049_group_anagrams` |
 | 5 | [347](https://leetcode.com/problems/top-k-frequent-elements/) | Top K Frequent Elements | Medium | ✅ | ✅ | ✅ | `lc0347_top_k_frequent_elements` |
-| 6 | [271](https://leetcode.com/problems/encode-and-decode-strings/) | Encode and Decode Strings | Medium | ✅ | ✅ | ▢ | `lc0271_encode_and_decode_strings` |
+| 6 | [271](https://leetcode.com/problems/encode-and-decode-strings/) | Encode and Decode Strings | Medium | ✅ | ✅ | ✅ | `lc0271_encode_and_decode_strings` |
 | 7 | [238](https://leetcode.com/problems/product-of-array-except-self/) | Product of Array Except Self | Medium | ✅ | ✅ | ✅ | `lc0238_product_of_array_except_self` |
 | 8 | [36](https://leetcode.com/problems/valid-sudoku/) | Valid Sudoku | Medium | ✅ | ✅ | ✅ | `lc0036_valid_sudoku` |
 | 9 | [128](https://leetcode.com/problems/longest-consecutive-sequence/) | Longest Consecutive Sequence | Medium | ✅ | ✅ | ✅ | `lc0128_longest_consecutive_sequence` |
@@ -381,47 +381,47 @@ Fiyat seviyelerini sıralı tutmak ve aralık sorgularını O(log n)'de yapmak: 
 
 ## Paralel hat
 
-### Pandas
+### Pandas · 30 Days of Pandas
 
-LeetCode'un "Introduction to Pandas" ve "30 Days of Pandas" planları: veri temizleme, gruplama, birleştirme; quant research'ün günlük işi.
+LeetCode'un "30 Days of Pandas" planı, kendi sırasıyla: günde bir problem (30 gün + 3 pekiştirme sorusu). Veri filtreleme, string metotları, veri işleme, istatistik, gruplama, birleştirme; quant research'ün günlük işi. Başlangıç: 21-10-2026.
 
 <sub>0/33</sub>
 
-| # | No | Problem | Difficulty | Pandas | File |
-| ---: | ---: | --- | --- | :---: | --- |
-| 1 | [595](https://leetcode.com/problems/big-countries/) | Big Countries | Easy | ▢ | `lc0595_big_countries` |
-| 2 | [1757](https://leetcode.com/problems/recyclable-and-low-fat-products/) | Recyclable and Low Fat Products | Easy | ▢ | `lc1757_recyclable_and_low_fat_products` |
-| 3 | [183](https://leetcode.com/problems/customers-who-never-order/) | Customers Who Never Order | Easy | ▢ | `lc0183_customers_who_never_order` |
-| 4 | [1148](https://leetcode.com/problems/article-views-i/) | Article Views I | Easy | ▢ | `lc1148_article_views_i` |
-| 5 | [1683](https://leetcode.com/problems/invalid-tweets/) | Invalid Tweets | Easy | ▢ | `lc1683_invalid_tweets` |
-| 6 | [1873](https://leetcode.com/problems/calculate-special-bonus/) | Calculate Special Bonus | Easy | ▢ | `lc1873_calculate_special_bonus` |
-| 7 | [1667](https://leetcode.com/problems/fix-names-in-a-table/) | Fix Names in a Table | Easy | ▢ | `lc1667_fix_names_in_a_table` |
-| 8 | [1517](https://leetcode.com/problems/find-users-with-valid-e-mails/) | Find Users With Valid E-Mails | Easy | ▢ | `lc1517_find_users_with_valid_e_mails` |
-| 9 | [1527](https://leetcode.com/problems/patients-with-a-condition/) | Patients With a Condition | Easy | ▢ | `lc1527_patients_with_a_condition` |
-| 10 | [2738](https://leetcode.com/problems/count-occurrences-in-text/) | Count Occurrences in Text | Medium | ▢ | `lc2738_count_occurrences_in_text` |
-| 11 | [177](https://leetcode.com/problems/nth-highest-salary/) | Nth Highest Salary | Medium | ▢ | `lc0177_nth_highest_salary` |
-| 12 | [176](https://leetcode.com/problems/second-highest-salary/) | Second Highest Salary | Medium | ▢ | `lc0176_second_highest_salary` |
-| 13 | [184](https://leetcode.com/problems/department-highest-salary/) | Department Highest Salary | Medium | ▢ | `lc0184_department_highest_salary` |
-| 14 | [178](https://leetcode.com/problems/rank-scores/) | Rank Scores | Medium | ▢ | `lc0178_rank_scores` |
-| 15 | [196](https://leetcode.com/problems/delete-duplicate-emails/) | Delete Duplicate Emails | Easy | ▢ | `lc0196_delete_duplicate_emails` |
-| 16 | [1795](https://leetcode.com/problems/rearrange-products-table/) | Rearrange Products Table | Easy | ▢ | `lc1795_rearrange_products_table` |
-| 17 | [2082](https://leetcode.com/problems/the-number-of-rich-customers/) | The Number of Rich Customers | Easy | ▢ | `lc2082_the_number_of_rich_customers` |
-| 18 | [1173](https://leetcode.com/problems/immediate-food-delivery-i/) | Immediate Food Delivery I | Easy | ▢ | `lc1173_immediate_food_delivery_i` |
-| 19 | [1907](https://leetcode.com/problems/count-salary-categories/) | Count Salary Categories | Medium | ▢ | `lc1907_count_salary_categories` |
-| 20 | [1322](https://leetcode.com/problems/ads-performance/) | Ads Performance | Easy | ▢ | `lc1322_ads_performance` |
-| 21 | [1741](https://leetcode.com/problems/find-total-time-spent-by-each-employee/) | Find Total Time Spent by Each Employee | Easy | ▢ | `lc1741_find_total_time_spent_by_each_employee` |
-| 22 | [511](https://leetcode.com/problems/game-play-analysis-i/) | Game Play Analysis I | Easy | ▢ | `lc0511_game_play_analysis_i` |
-| 23 | [2356](https://leetcode.com/problems/number-of-unique-subjects-taught-by-each-teacher/) | Number of Unique Subjects Taught by Each Teacher | Easy | ▢ | `lc2356_number_of_unique_subjects_taught_by_each_teacher` |
-| 24 | [596](https://leetcode.com/problems/classes-with-at-least-5-students/) | Classes With at Least 5 Students | Easy | ▢ | `lc0596_classes_with_at_least_5_students` |
-| 25 | [586](https://leetcode.com/problems/customer-placing-the-largest-number-of-orders/) | Customer Placing the Largest Number of Orders | Easy | ▢ | `lc0586_customer_placing_the_largest_number_of_orders` |
-| 26 | [1484](https://leetcode.com/problems/group-sold-products-by-the-date/) | Group Sold Products By The Date | Easy | ▢ | `lc1484_group_sold_products_by_the_date` |
-| 27 | [1693](https://leetcode.com/problems/daily-leads-and-partners/) | Daily Leads and Partners | Easy | ▢ | `lc1693_daily_leads_and_partners` |
-| 28 | [1050](https://leetcode.com/problems/actors-and-directors-who-cooperated-at-least-three-times/) | Actors and Directors Who Cooperated At Least Three Times | Easy | ▢ | `lc1050_actors_and_directors_who_cooperated_at_least_three_times` |
-| 29 | [1378](https://leetcode.com/problems/replace-employee-id-with-the-unique-identifier/) | Replace Employee ID With The Unique Identifier | Easy | ▢ | `lc1378_replace_employee_id_with_the_unique_identifier` |
-| 30 | [1280](https://leetcode.com/problems/students-and-examinations/) | Students and Examinations | Easy | ▢ | `lc1280_students_and_examinations` |
-| 31 | [570](https://leetcode.com/problems/managers-with-at-least-5-direct-reports/) | Managers with at Least 5 Direct Reports | Medium | ▢ | `lc0570_managers_with_at_least_5_direct_reports` |
-| 32 | [607](https://leetcode.com/problems/sales-person/) | Sales Person | Easy | ▢ | `lc0607_sales_person` |
-| 33 | [2041](https://leetcode.com/problems/accepted-candidates-from-the-interviews/) | Accepted Candidates From the Interviews | Medium | ▢ | `lc2041_accepted_candidates_from_the_interviews` |
+| Day | No | Problem | Difficulty | Pandas | File | Section |
+| ---: | ---: | --- | --- | :---: | --- | --- |
+| 1 | [595](https://leetcode.com/problems/big-countries/) | Big Countries | Easy | ▢ | `lc0595_big_countries` | Data Filtering |
+| 2 | [1757](https://leetcode.com/problems/recyclable-and-low-fat-products/) | Recyclable and Low Fat Products | Easy | ▢ | `lc1757_recyclable_and_low_fat_products` | Data Filtering |
+| 3 | [183](https://leetcode.com/problems/customers-who-never-order/) | Customers Who Never Order | Easy | ▢ | `lc0183_customers_who_never_order` | Data Filtering |
+| 4 | [1148](https://leetcode.com/problems/article-views-i/) | Article Views I | Easy | ▢ | `lc1148_article_views_i` | Data Filtering |
+| 5 | [1683](https://leetcode.com/problems/invalid-tweets/) | Invalid Tweets | Easy | ▢ | `lc1683_invalid_tweets` | String Methods |
+| 6 | [1873](https://leetcode.com/problems/calculate-special-bonus/) | Calculate Special Bonus | Easy | ▢ | `lc1873_calculate_special_bonus` | String Methods |
+| 7 | [1667](https://leetcode.com/problems/fix-names-in-a-table/) | Fix Names in a Table | Easy | ▢ | `lc1667_fix_names_in_a_table` | String Methods |
+| 8 | [1517](https://leetcode.com/problems/find-users-with-valid-e-mails/) | Find Users With Valid E-Mails | Easy | ▢ | `lc1517_find_users_with_valid_e_mails` | String Methods |
+| 9 | [1527](https://leetcode.com/problems/patients-with-a-condition/) | Patients With a Condition | Easy | ▢ | `lc1527_patients_with_a_condition` | String Methods |
+| + | [2738](https://leetcode.com/problems/count-occurrences-in-text/) | Count Occurrences in Text | Medium | ▢ | `lc2738_count_occurrences_in_text` | String Methods · pekiştirme |
+| 10 | [177](https://leetcode.com/problems/nth-highest-salary/) | Nth Highest Salary | Medium | ▢ | `lc0177_nth_highest_salary` | Data Manipulation |
+| 11 | [176](https://leetcode.com/problems/second-highest-salary/) | Second Highest Salary | Medium | ▢ | `lc0176_second_highest_salary` | Data Manipulation |
+| 12 | [184](https://leetcode.com/problems/department-highest-salary/) | Department Highest Salary | Medium | ▢ | `lc0184_department_highest_salary` | Data Manipulation |
+| 13 | [178](https://leetcode.com/problems/rank-scores/) | Rank Scores | Medium | ▢ | `lc0178_rank_scores` | Data Manipulation |
+| 14 | [196](https://leetcode.com/problems/delete-duplicate-emails/) | Delete Duplicate Emails | Easy | ▢ | `lc0196_delete_duplicate_emails` | Data Manipulation |
+| 15 | [1795](https://leetcode.com/problems/rearrange-products-table/) | Rearrange Products Table | Easy | ▢ | `lc1795_rearrange_products_table` | Data Manipulation |
+| 16 | [2082](https://leetcode.com/problems/the-number-of-rich-customers/) | The Number of Rich Customers | Easy | ▢ | `lc2082_the_number_of_rich_customers` | Statistics |
+| 17 | [1173](https://leetcode.com/problems/immediate-food-delivery-i/) | Immediate Food Delivery I | Easy | ▢ | `lc1173_immediate_food_delivery_i` | Statistics |
+| 18 | [1907](https://leetcode.com/problems/count-salary-categories/) | Count Salary Categories | Medium | ▢ | `lc1907_count_salary_categories` | Statistics |
+| + | [1322](https://leetcode.com/problems/ads-performance/) | Ads Performance | Easy | ▢ | `lc1322_ads_performance` | Statistics · pekiştirme |
+| 19 | [1741](https://leetcode.com/problems/find-total-time-spent-by-each-employee/) | Find Total Time Spent by Each Employee | Easy | ▢ | `lc1741_find_total_time_spent_by_each_employee` | Data Aggregation |
+| 20 | [511](https://leetcode.com/problems/game-play-analysis-i/) | Game Play Analysis I | Easy | ▢ | `lc0511_game_play_analysis_i` | Data Aggregation |
+| 21 | [2356](https://leetcode.com/problems/number-of-unique-subjects-taught-by-each-teacher/) | Number of Unique Subjects Taught by Each Teacher | Easy | ▢ | `lc2356_number_of_unique_subjects_taught_by_each_teacher` | Data Aggregation |
+| 22 | [596](https://leetcode.com/problems/classes-with-at-least-5-students/) | Classes With at Least 5 Students | Easy | ▢ | `lc0596_classes_with_at_least_5_students` | Data Aggregation |
+| 23 | [586](https://leetcode.com/problems/customer-placing-the-largest-number-of-orders/) | Customer Placing the Largest Number of Orders | Easy | ▢ | `lc0586_customer_placing_the_largest_number_of_orders` | Data Aggregation |
+| 24 | [1484](https://leetcode.com/problems/group-sold-products-by-the-date/) | Group Sold Products By The Date | Easy | ▢ | `lc1484_group_sold_products_by_the_date` | Data Aggregation |
+| 25 | [1693](https://leetcode.com/problems/daily-leads-and-partners/) | Daily Leads and Partners | Easy | ▢ | `lc1693_daily_leads_and_partners` | Data Aggregation |
+| 26 | [1050](https://leetcode.com/problems/actors-and-directors-who-cooperated-at-least-three-times/) | Actors and Directors Who Cooperated At Least Three Times | Easy | ▢ | `lc1050_actors_and_directors_who_cooperated_at_least_three_times` | Data Integration |
+| 27 | [1378](https://leetcode.com/problems/replace-employee-id-with-the-unique-identifier/) | Replace Employee ID With The Unique Identifier | Easy | ▢ | `lc1378_replace_employee_id_with_the_unique_identifier` | Data Integration |
+| 28 | [1280](https://leetcode.com/problems/students-and-examinations/) | Students and Examinations | Easy | ▢ | `lc1280_students_and_examinations` | Data Integration |
+| 29 | [570](https://leetcode.com/problems/managers-with-at-least-5-direct-reports/) | Managers with at Least 5 Direct Reports | Medium | ▢ | `lc0570_managers_with_at_least_5_direct_reports` | Data Integration |
+| 30 | [607](https://leetcode.com/problems/sales-person/) | Sales Person | Easy | ▢ | `lc0607_sales_person` | Data Integration |
+| + | [2041](https://leetcode.com/problems/accepted-candidates-from-the-interviews/) | Accepted Candidates From the Interviews | Medium | ▢ | `lc2041_accepted_candidates_from_the_interviews` | Data Integration · pekiştirme |
 
 ### SQL
 

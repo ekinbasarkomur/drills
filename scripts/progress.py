@@ -270,7 +270,12 @@ def write_progress(plan, st):
         ps = [q for q in plan["problems"] if q["kind"] == "track" and q["track"] is t]
         out += ["", f"### {t['name']}", "", t["why"], "", f"<sub>{done}/{len(ps)}</sub>", "",
                 f"| # | No | Problem | Difficulty | {LABEL[t['lang']]} | File |", "| ---: | ---: | --- | --- | :---: | --- |"]
-        out += [row(p, [t["lang"]], i) for i, p in enumerate(ps, 1)]
+        days = any("day" in p for p in ps)  # a study plan with days and sections (30 Days of Pandas)
+        if days:
+            out[-2:] = [f"| Day | No | Problem | Difficulty | {LABEL[t['lang']]} | File | Section |",
+                        "| ---: | ---: | --- | --- | :---: | --- | --- |"]
+        out += [row(p, [t["lang"]], p["day"]) + f" {p.get('section', '')} |" if days else row(p, [t["lang"]], i)
+                for i, p in enumerate(ps, 1)]
     extra = sorted({pid for pid, _ in st} - set(plan["by_id"]))
     if extra:
         out += ["", "## Plan dışı", "", "In the repo but not in the plan.", "",
