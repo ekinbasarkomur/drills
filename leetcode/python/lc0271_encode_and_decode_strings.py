@@ -13,19 +13,43 @@ Time O(?), space O(?)
 from _lc import *  # noqa: F403  (LeetCode's namespace: List, ListNode, ...)
 
 # ---------------------------------------------------------------- solution
-class Solution:
-    def encode(self, strs: list[str]) -> str:
-        raise NotImplementedError
+# LeetCode hands this one out as a Codec class, not as Solution.
+class Codec:
 
-    def decode(self, s: str) -> list[str]:
-        raise NotImplementedError
+    split_char = "#"
+
+    def encode(self, strs: List[str]) -> str:  # noqa: F405
+        """Encodes a list of strings to a single string."""
+        encoded_string = ""
+
+        for string in strs:
+            encoded_string = encoded_string + str(len(string)) + self.split_char + string
+
+        return encoded_string
+
+    def decode(self, s: str) -> List[str]:  # noqa: F405
+        """Decodes a single string to a list of strings."""
+        output = []
+        rest = s
+
+        while len(rest) > 0:
+            len_of_string, rest = rest.split(self.split_char, 1)
+            output.append(rest[:int(len_of_string)])
+            rest = rest[int(len_of_string):]
+
+        return output
+
+
+# Your Codec object will be instantiated and called as such:
+# codec = Codec()
+# codec.decode(codec.encode(strs))
 
 
 # ---------------------------------------------------------------- tests
 
-# The tests below call the old free functions; forward them to Solution.
-def encode(*args): return Solution().encode(*args)  # noqa: E704
-def decode(*args): return Solution().decode(*args)  # noqa: E704
+# The tests below call free functions; forward them to one Codec instance.
+def encode(*args): return Codec().encode(*args)  # noqa: E704
+def decode(*args): return Codec().decode(*args)  # noqa: E704
 # The encoding format is yours to choose, so the tests never look at the
 # encoded string. They only check that decode(encode(x)) == x.
 

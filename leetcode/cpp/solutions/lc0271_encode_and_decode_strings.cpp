@@ -14,7 +14,8 @@
 #include "test.hpp"
 
 // ---------------------------------------------------------------- solution
-class Solution {
+// LeetCode hands this one out as a Codec class, not as Solution.
+class Codec {
 public:
     std::string encode(const std::vector<std::string> &strs) {
         string encoded_string = "";
@@ -42,10 +43,15 @@ public:
         return output;
     }
 };
+
+// Your Codec object will be instantiated and called as such:
+// Codec codec;
+// codec.decode(codec.encode(strs));
+
 // ---------------------------------------------------------------- tests
-// The tests below call the old free functions; forward them to Solution.
-static std::string encode(const std::vector<std::string> &strs) { return Solution().encode(strs); }
-static std::vector<std::string> decode(const std::string &s) { return Solution().decode(s); }
+// The tests below call free functions; forward them to one Codec instance.
+static std::string encode(const std::vector<std::string> &strs) { return Codec().encode(strs); }
+static std::vector<std::string> decode(const std::string &s) { return Codec().decode(s); }
 
 // The encoding format is yours to choose, so the tests never look at the
 // encoded string. They only check that decode(encode(x)) == x.

@@ -9,16 +9,38 @@ Time O(?), space O(?)
 
 from _lc import *  # noqa: F403  (LeetCode's namespace: List, ListNode, ...)
 
+
 # ---------------------------------------------------------------- solution
 class Solution:
-    def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
-        raise NotImplementedError
+    def groupAnagrams(self, strs: list[str]) -> list[List[str]]:
+        sorted_strings = {}
+        output = []
+
+        # Sort all
+        for index, string in enumerate(strs):
+            sorted_string = ""
+            sorted_string = sorted_string.join(sorted(string))
+
+            if sorted_string in sorted_strings.keys():
+                sorted_strings[sorted_string].append(string)
+                continue
+
+            sorted_strings[sorted_string] = [string]
+
+        for anagram in sorted_strings:
+            output.append(sorted_strings[anagram])
+
+        return output
 
 
 # ---------------------------------------------------------------- tests
 
+
 # The tests below call the old free functions; forward them to Solution.
-def group_anagrams(*args): return Solution().groupAnagrams(*args)  # noqa: E704
+def group_anagrams(*args):
+    return Solution().groupAnagrams(*args)  # noqa: E704
+
+
 # The output may come back in any order, so sort both levels before comparing.
 
 

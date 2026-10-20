@@ -11,11 +11,20 @@
 #[allow(unused_imports)]
 use leetcode::*;
 
-struct Solution;
+// LeetCode hands this one out as a struct with methods, not an impl Solution.
+struct Codec {}
 
+/**
+ * `&self` means the method takes an immutable reference.
+ * If you need a mutable reference, change it to `&mut self` instead.
+ */
 // ---------------------------------------------------------------- solution
-impl Solution {
-    pub fn encode(strs: Vec<String>) -> String {
+impl Codec {
+    fn new() -> Self {
+        Self {}
+    }
+
+    fn encode(&self, strs: Vec<String>) -> String {
         let mut encoded_string: String = String::new();
 
         for string in &strs {
@@ -25,7 +34,7 @@ impl Solution {
         encoded_string
     }
 
-    pub fn decode(s: String) -> Vec<String> {
+    fn decode(&self, s: String) -> Vec<String> {
         let mut decoded_vector: Vec<String> = Vec::new();
 
         let mut rest: String = s;
@@ -43,13 +52,15 @@ impl Solution {
         decoded_vector
     }
 }
+
 // ---------------------------------------------------------------- tests
 
 fn main() {
+    let codec = Codec::new();
     let strs = vec!["Hello".to_string(), "World".to_string()];
-    let wire = Solution::encode(strs);
+    let wire = codec.encode(strs);
     println!("encoded: {:?}", wire);
-    println!("decoded: {:?}", Solution::decode(wire));
+    println!("decoded: {:?}", codec.decode(wire));
 }
 
 #[cfg(test)]
@@ -59,9 +70,10 @@ mod tests {
     // The encoding format is yours to choose, so the tests never look at the
     // encoded string. They only check that decode(encode(x)) == x.
     fn roundtrip(input: &[&str]) {
+        let codec = Codec::new();
         let original: Vec<String> = input.iter().map(|s| s.to_string()).collect();
-        let encoded = Solution::encode(original.clone());
-        let decoded = Solution::decode(encoded);
+        let encoded = codec.encode(original.clone());
+        let decoded = codec.decode(encoded);
         assert_eq!(decoded, original);
     }
 
