@@ -36,7 +36,7 @@ copy:
 else
 
 # Every LeetCode id that has a file, without leading zeros: `make 146`.
-IDS := $(shell ls $(LC)/rust/src/bin $(LC)/cpp/solutions $(LC)/python $(LC)/pandas $(LC)/sql 2>/dev/null \
+IDS := $(shell ls $(LC)/rust/src/bin $(LC)/cpp/solutions $(LC)/python $(LC)/pandas_track $(LC)/sql 2>/dev/null \
          | sed -n 's/^lc0*\([0-9][0-9]*\)_.*/\1/p' | sort -un)
 
 .PHONY: all status progress next rust cpp python pandas sql clean $(IDS)
@@ -85,7 +85,7 @@ python:
 	@cd $(LC) && uv run pytest python
 
 pandas:
-	@cd $(LC) && uv run pytest pandas
+	@cd $(LC) && uv run pytest pandas_track
 
 sql:
 	@cd $(LC) && uv run pytest sql

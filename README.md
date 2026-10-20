@@ -25,9 +25,9 @@ drills/
     ├── rust/              Cargo package; src/bin/lc0146_lru_cache.rs, src/lib.rs = helpers
     ├── cpp/               Makefile; solutions/lc0146_lru_cache.cpp, include/ = helpers
     ├── python/            lc0146_lru_cache.py, _lc.py = LeetCode's namespace
-    ├── pandas/            lc0595_big_countries.py           (parallel track)
+    ├── pandas_track/      lc0595_big_countries.py           (parallel track; not `pandas/`, which would shadow the library)
     ├── sql/               lc0584_find_customer_referee.sql  (parallel track, run on DuckDB)
-    └── pyproject.toml     one uv project for python/, pandas/ and sql/
+    └── pyproject.toml     one uv project for python/, pandas_track/ and sql/
 ```
 
 ## The plan

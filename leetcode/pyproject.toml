@@ -9,8 +9,8 @@ dependencies = ["pandas>=2.2", "duckdb>=1.1"]
 dev = ["pytest>=8.0"]
 
 [tool.pytest.ini_options]
-# python/: algorithms · pandas/: DataFrame problems · sql/: queries, run on DuckDB (sql/conftest.py)
-testpaths = ["python", "pandas", "sql"]
+# python/: algorithms · pandas_track/: DataFrame problems (not pandas/: it would shadow the library) · sql/: queries, run on DuckDB (sql/conftest.py)
+testpaths = ["python", "pandas_track", "sql"]
 python_files = ["lc*.py"]
 pythonpath = ["python"]
 addopts = "-p no:cacheprovider --import-mode=importlib"

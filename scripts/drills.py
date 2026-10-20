@@ -21,7 +21,7 @@ LANGS = {
     "rust":   (LC / "rust" / "src" / "bin", ".rs",  "//", "todo!()"),
     "cpp":    (LC / "cpp" / "solutions",    ".cpp", "//", "TODO()"),
     "python": (LC / "python",               ".py",  "#",  "raise NotImplementedError"),
-    "pandas": (LC / "pandas",               ".py",  "#",  "raise NotImplementedError"),
+    "pandas": (LC / "pandas_track",         ".py",  "#",  "raise NotImplementedError"),
     "sql":    (LC / "sql",                  ".sql", "--", "TODO: solve"),
 }
 ALGO_LANGS = ["rust", "cpp", "python"]
