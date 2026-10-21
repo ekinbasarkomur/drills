@@ -7,8 +7,10 @@ Problem: numbers is sorted ascending. Return the ONE-BASED indices of the two
          values that add up to target, smaller index first. Exactly one answer
          exists and you may not use the same element twice.
 Follow-up: constant extra space -- so no dict this time.
-Approach:
-Time O(?), space O(?)
+Approach: two pointers from both ends. The array is sorted, so a sum that is
+          too small can only grow by moving left right, and one that is too
+          large can only shrink by moving right left.
+Time O(n), space O(1)
 """
 
 from _lc import *  # noqa: F403  (LeetCode's namespace: List, ListNode, ...)
@@ -18,8 +20,21 @@ from typing import List
 
 
 class Solution:
-    def twoSum(self, numbers: List[int], target: int) -> List[int]:
-        raise NotImplementedError
+    def twoSum(self, numbers: list[int], target: int) -> list[int]:
+        left = 0
+        right = len(numbers) - 1
+
+        while left < right:
+            total = numbers[left] + numbers[right]
+
+            if target > total:
+                left += 1
+            elif target < total:
+                right -= 1
+            else:
+                return [left + 1, right + 1]
+
+        return []
 
 
 # ---------------------------------------------------------------- tests
