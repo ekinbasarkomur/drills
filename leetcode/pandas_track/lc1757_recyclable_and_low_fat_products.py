@@ -13,9 +13,7 @@ from _pd import check, frame
 import pandas as pd
 
 def find_products(products: pd.DataFrame) -> pd.DataFrame:
-    raise NotImplementedError
-
-
+    return products[(products["low_fats"] == 'Y') & (products["recyclable"] == 'Y')][["product_id"]]
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
