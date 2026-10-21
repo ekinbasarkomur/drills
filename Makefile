@@ -9,6 +9,7 @@
 #   make new 146          scaffold a problem: any LeetCode id or slug, never overwrites
 #   make copy 146 rust    put the solution on the clipboard, ready for LeetCode
 #   make rust             every Rust file, raw cargo output (also cpp, python, pandas, sql)
+#   make compdb           regenerate clangd's compile_commands.json for C++
 #   make clean            wipe build directories and the status cache
 #
 # `make new ID=146 LANG=rust` and `make copy ID=146 LANG=rust` work too.
@@ -39,7 +40,7 @@ else
 IDS := $(shell ls $(LC)/rust/src/bin $(LC)/cpp/solutions $(LC)/python $(LC)/pandas_track $(LC)/sql 2>/dev/null \
          | sed -n 's/^lc0*\([0-9][0-9]*\)_.*/\1/p' | sort -un)
 
-.PHONY: all status progress next rust cpp python pandas sql clean $(IDS)
+.PHONY: all status progress next rust cpp python pandas sql clean $(IDS) compdb
 # rust-% / cpp-% / py-% ... are pattern rules, and make skips pattern rules for phony targets,
 # so they are deliberately not listed; no file by those names exists, so they always run.
 
@@ -89,6 +90,9 @@ pandas:
 
 sql:
 	@cd $(LC) && uv run pytest sql
+
+compdb:
+	@$(MAKE) --no-print-directory -C $(LC)/cpp compdb
 
 clean:
 	@cd $(LC)/rust && cargo clean

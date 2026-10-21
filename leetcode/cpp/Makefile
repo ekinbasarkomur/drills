@@ -1,4 +1,5 @@
 CXX      ?= g++
+PY       ?= python3
 CXXFLAGS ?= -std=c++20 -Wall -Wextra -Wno-unused-parameter -O1 -Iinclude
 
 SRCS  := $(wildcard solutions/*.cpp)
@@ -30,8 +31,13 @@ test: $(BINS)
 	 if [ $$fail -ne 0 ]; then echo ""; echo "some problems are still failing"; exit 1; fi
 
 # `make compdb` — regenerate compile_commands.json for clangd
+# clangd's compilation database. The -include-pch flag is stripped: clangd
+# builds its own preamble, and bear records the flag without its argument.
 compdb:
-	bear -- $(MAKE) clean $(BINS); true
+	@bear -- $(MAKE) clean $(BINS) >/dev/null 2>&1; true
+	@$(PY) -c 'import json; p="compile_commands.json"; d=json.load(open(p)); \
+[e.__setitem__("arguments", [a for a in e["arguments"] if a != "-include-pch" and not a.endswith(".pch")]) for e in d if "arguments" in e]; \
+json.dump(d, open(p, "w"), indent=1); print(len(d), "entries")'
 
 clean:
 	rm -rf build
