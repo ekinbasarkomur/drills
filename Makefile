@@ -83,13 +83,13 @@ cpp:
 	@$(MAKE) --no-print-directory -k -j8 -C $(LC)/cpp
 
 python:
-	@cd $(LC) && uv run pytest python
+	@uv run pytest $(LC)/python
 
 pandas:
-	@cd $(LC) && uv run pytest pandas_track
+	@uv run pytest $(LC)/pandas_track
 
 sql:
-	@cd $(LC) && uv run pytest sql
+	@uv run pytest $(LC)/sql
 
 compdb:
 	@$(MAKE) --no-print-directory -C $(LC)/cpp compdb

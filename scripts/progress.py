@@ -105,8 +105,8 @@ def run_cpp(paths):
 def run_pytest(paths):
     if not paths:
         return {}
-    rel = [str(p.relative_to(LC)) for p in paths]
-    o = subprocess.run(["uv", "run", "--quiet", "pytest", "-q", "--tb=no", "-rA", "--continue-on-collection-errors", *rel], cwd=LC,
+    rel = [str(p.relative_to(ROOT)) for p in paths]
+    o = subprocess.run(["uv", "run", "--quiet", "pytest", "-q", "--tb=no", "-rA", "--continue-on-collection-errors", *rel], cwd=ROOT,
                        capture_output=True, text=True, timeout=TIMEOUT)
     if o.returncode not in (0, 1, 5):  # 2+ = interrupted, internal error, usage error
         return {p: False for p in paths}

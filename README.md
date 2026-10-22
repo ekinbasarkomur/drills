@@ -47,6 +47,24 @@ Every plan problem is already scaffolded, in Rust, C++ and Python for the algori
 phases and in pandas or SQL for the tracks. A problem outside the plan is one command
 away: `make new 1768`.
 
+## The Python environment
+
+One [uv](https://docs.astral.sh/uv/) project at the repository root covers all
+three Python tracks: `pyproject.toml`, `uv.lock` and `.venv` live here, not
+inside `leetcode/`. `uv run` builds it on first use; there is nothing to
+activate.
+
+```
+uv sync          install/refresh it
+uv run pytest    every Python, pandas and SQL test
+```
+
+**Never move a `.venv` with `mv`.** The console scripts in `.venv/bin` hardcode
+the interpreter's absolute path, so a moved venv leaves `uv run pytest` falling
+back to an ephemeral environment — one with a different Python and none of this
+project's dependencies, which shows up as `ModuleNotFoundError: duckdb` and
+`TypeError: unsupported operand type(s) for |`. Delete it and `uv sync` again.
+
 ## Running things
 
 ```

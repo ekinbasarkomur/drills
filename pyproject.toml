@@ -10,7 +10,14 @@ dev = ["pytest>=8.0"]
 
 [tool.pytest.ini_options]
 # python/: algorithms · pandas_track/: DataFrame problems (not pandas/: it would shadow the library) · sql/: queries, run on DuckDB (sql/conftest.py)
-testpaths = ["python", "pandas_track", "sql"]
+testpaths = ["leetcode/python", "leetcode/pandas_track", "leetcode/sql"]
 python_files = ["lc*.py"]
-pythonpath = ["python"]
+pythonpath = ["leetcode/python"]
 addopts = "-p no:cacheprovider --import-mode=importlib"
+
+[tool.pyright]
+# pyright does not read pytest's pythonpath, and without venvPath it would use
+# whatever python is on PATH instead of this project's.
+venvPath = "."
+venv = ".venv"
+extraPaths = ["leetcode/python"]
