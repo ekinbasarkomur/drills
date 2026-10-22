@@ -34,8 +34,10 @@ drills/
 
 [`plan.toml`](plan.toml) holds every problem, in the order to solve them. Phases
 (`[[phase]]`) are solved in order, groups inside a phase in order, problems top to bottom.
-Phase 0 is the NeetCode set this repo started with; the later phases come from what quant
-and trading firms are known to ask, each problem with a `why`. Problems marked
+Phase 0 holds the basics the later phases build on, picked by looking at those problems
+(the NeetCode set this repo started with, plus one or two per missing pattern, each with a
+`why` naming the later problems it prepares); the later phases come from what quant and
+trading firms are known to ask, each problem with a `why`. Problems marked
 `warmup = true` were not in the research; they are the direct prerequisite of the problem
 after them.
 

@@ -5,11 +5,12 @@
 
 [[phase]]
 id = 0
-name = "Temel: NeetCode"
-why = "Repo'daki ilk 34 problem. Sonraki aşamaların her grubu bunların üstüne kurulu; 7'si zaten planın ilk adımı."
+name = "Temel"
+why = "Sonraki aşamaların her grubunun ön koşulu olan temel problemler: Aşama 1-5'teki problemlere bakılarak seçildi. \"Hazırlık\" satırı problemin hangi ileri problemlere zemin hazırladığını söyler. Çözdüklerin olduğu gibi kaldı."
 
 [[phase.group]]
 name = "Arrays & Hashing"
+why = "Hash tablosu ve sayma: sonraki her aşamanın en sık kullanılan aracı."
 problems = [
   { id = 217, slug = "contains-duplicate", file = "lc0217_contains_duplicate" },
   { id = 242, slug = "valid-anagram", file = "lc0242_valid_anagram" },
@@ -24,6 +25,7 @@ problems = [
 
 [[phase.group]]
 name = "Two Pointers"
+why = "Sıralı dizide iki uçtan yürüme; Aşama 1'deki pencerelerin ve sort-merge join'in temeli."
 problems = [
   { id = 125, slug = "valid-palindrome", file = "lc0125_valid_palindrome" },
   { id = 167, slug = "two-sum-ii-input-array-is-sorted", file = "lc0167_two_sum_ii_input_array_is_sorted" },
@@ -33,68 +35,107 @@ problems = [
 ]
 
 [[phase.group]]
-name = "Sliding Window"
+name = "Sliding Window ve Prefix Sum"
+why = "Sabit ve değişken pencere, ön toplam: Aşama 1'deki Prefix Sum ve Sliding Window grubunun hazırlığı."
 problems = [
   { id = 121, slug = "best-time-to-buy-and-sell-stock", file = "lc0121_best_time_to_buy_and_sell_stock", tier = 1, why = "Akuna Capital, Citadel, DE Shaw, Millennium, Optiver, Square (güçlü kanıt)" },
   { id = 3, slug = "longest-substring-without-repeating-characters", file = "lc0003_longest_substring_without_repeating_characters" },
   { id = 424, slug = "longest-repeating-character-replacement", file = "lc0424_longest_repeating_character_replacement" },
+  { id = 209, slug = "minimum-size-subarray-sum", file = "lc0209_minimum_size_subarray_sum", why = "Hazırlık: 713, 1004, 862 (değişken pencere, toplam koşulu)" },
+  { id = 724, slug = "find-pivot-index", file = "lc0724_find_pivot_index", why = "Hazırlık: 303, 560, 304 (ön toplam fikri)" },
 ]
 
 [[phase.group]]
 name = "Stack"
+why = "LIFO ve monotonic stack'in ilk adımı; Aşama 1'deki Monotonic Stack, Aşama 5'teki ayrıştırma problemleri buradan."
 problems = [
   { id = 20, slug = "valid-parentheses", file = "lc0020_valid_parentheses", tier = 1, why = "Akuna Capital, Citadel, DE Shaw, Jane Street, Millennium, Tw (güçlü kanıt)" },
   { id = 155, slug = "min-stack", file = "lc0155_min_stack", tier = 1, why = "Citadel, IMC (orta kanıt)" },
+  { id = 232, slug = "implement-queue-using-stacks", file = "lc0232_implement_queue_using_stacks", why = "Hazırlık: 622, 641 (kuyruğu başka yapıyla kurmak, amortize O(1))" },
   { id = 739, slug = "daily-temperatures", file = "lc0739_daily_temperatures", tier = 2, why = "Kalıp için temsilci" },
 ]
 
 [[phase.group]]
 name = "Binary Search"
+why = "Dizide arama, sınır bulma ve cevabı arama; Aşama 1'deki Binary Search grubunun ön koşulu."
 problems = [
   { id = 704, slug = "binary-search", file = "lc0704_binary_search" },
+  { id = 35, slug = "search-insert-position", file = "lc0035_search_insert_position", why = "Hazırlık: 34, 981, 1146 (alt sınır: ilk ≥ hedef konumu)" },
   { id = 875, slug = "koko-eating-bananas", file = "lc0875_koko_eating_bananas", tier = 1, why = "Citadel, DE Shaw, Trexquant (güçlü kanıt)" },
+  { id = 153, slug = "find-minimum-in-rotated-sorted-array", file = "lc0153_find_minimum_in_rotated_sorted_array", why = "Hazırlık: 33, 4 (döndürülmüş dizide hangi yarı sıralı)" },
   { id = 33, slug = "search-in-rotated-sorted-array", file = "lc0033_search_in_rotated_sorted_array" },
 ]
 
 [[phase.group]]
 name = "Linked List"
+why = "Göstericilerle yürüme ve çift yönlü liste; Aşama 2'deki 23 ve Aşama 3'teki cache tasarımları bunun üstünde."
 problems = [
   { id = 206, slug = "reverse-linked-list", file = "lc0206_reverse_linked_list" },
   { id = 21, slug = "merge-two-sorted-lists", file = "lc0021_merge_two_sorted_lists" },
   { id = 141, slug = "linked-list-cycle", file = "lc0141_linked_list_cycle" },
+  { id = 19, slug = "remove-nth-node-from-end-of-list", file = "lc0019_remove_nth_node_from_end_of_list", why = "Hazırlık: 23, 146 (listede iki işaretçi, dummy düğüm)" },
   { id = 146, slug = "lru-cache", file = "lc0146_lru_cache", tier = 1, why = "Akuna Capital, Citadel, DE Shaw, Jane Street, Millennium, Op (güçlü kanıt)" },
 ]
 
 [[phase.group]]
 name = "Trees"
+why = "Özyinelemeli gezinme, yukarı değer döndürme ve BST sırası; Aşama 2'deki Tree grubu ve 297 bunun üstünde."
 problems = [
   { id = 226, slug = "invert-binary-tree", file = "lc0226_invert_binary_tree" },
   { id = 104, slug = "maximum-depth-of-binary-tree", file = "lc0104_maximum_depth_of_binary_tree" },
+  { id = 100, slug = "same-tree", file = "lc0100_same_tree", why = "Hazırlık: 98, 297 (iki ağacı aynı anda gezmek)" },
+  { id = 543, slug = "diameter-of-binary-tree", file = "lc0543_diameter_of_binary_tree", why = "Hazırlık: 98, 297 (alt ağaçtan değer döndürüp üstte birleştirmek)" },
+  { id = 230, slug = "kth-smallest-element-in-a-bst", file = "lc0230_kth_smallest_element_in_a_bst", why = "Hazırlık: 98, 1206 (BST'de inorder = sıralı)" },
 ]
 
 [[phase.group]]
 name = "Heap & Priority Queue"
+why = "En büyük/en küçük k eleman; Aşama 2'deki Data Stream ve Heap grubunun temeli."
 problems = [
   { id = 703, slug = "kth-largest-element-in-a-stream", file = "lc0703_kth_largest_element_in_a_stream", tier = 2, why = "Kalıp için temsilci" },
   { id = 1046, slug = "last-stone-weight", file = "lc1046_last_stone_weight" },
-]
-
-[[phase.group]]
-name = "Graphs"
-problems = [
-  { id = 200, slug = "number-of-islands", file = "lc0200_number_of_islands", tier = 1, why = "Citadel, DE Shaw, Squarepoint Capital, Two Sigma (güçlü kanıt)" },
-]
-
-[[phase.group]]
-name = "Greedy"
-problems = [
-  { id = 53, slug = "maximum-subarray", file = "lc0053_maximum_subarray", tier = 1, why = "Citadel, Squarepoint Capital, Two Sigma (güçlü kanıt)" },
+  { id = 215, slug = "kth-largest-element-in-an-array", file = "lc0215_kth_largest_element_in_an_array", why = "Hazırlık: 295, 1834, 502 (k'ıncı eleman: heap ya da quickselect)" },
 ]
 
 [[phase.group]]
 name = "Intervals"
+why = "Sırala ve birleştir; Aşama 2'deki Intervals ve Sweep Line grubunun ilk adımı."
 problems = [
   { id = 56, slug = "merge-intervals", file = "lc0056_merge_intervals", tier = 1, why = "Citadel, Millennium, Two Sigma (güçlü kanıt)" },
+]
+
+[[phase.group]]
+name = "Matrix"
+why = "İki boyutlu indeksleme ve yerinde güncelleme; Aşama 5'teki 48, 289, 874 simülasyonlarının hazırlığı."
+problems = [
+  { id = 54, slug = "spiral-matrix", file = "lc0054_spiral_matrix", why = "Hazırlık: 48, 874 (sınırları daraltarak matriste yürümek)" },
+  { id = 73, slug = "set-matrix-zeroes", file = "lc0073_set_matrix_zeroes", why = "Hazırlık: 289 (yerinde güncelleme, işaretleyerek ek bellek kullanmamak)" },
+]
+
+[[phase.group]]
+name = "Graphs"
+why = "DFS/BFS, topolojik sıra ve union-find; Aşama 4'teki Graph grubunun ön koşulları."
+problems = [
+  { id = 200, slug = "number-of-islands", file = "lc0200_number_of_islands", tier = 1, why = "Citadel, DE Shaw, Squarepoint Capital, Two Sigma (güçlü kanıt)" },
+  { id = 994, slug = "rotting-oranges", file = "lc0994_rotting_oranges", why = "Hazırlık: 743, 787 (çok kaynaklı BFS, seviye seviye zaman)" },
+  { id = 207, slug = "course-schedule", file = "lc0207_course_schedule", why = "Hazırlık: 210, 2050 (döngü tespiti, topolojik sıra)" },
+  { id = 684, slug = "redundant-connection", file = "lc0684_redundant_connection", why = "Hazırlık: 547, 1319, 765 (union-find)" },
+]
+
+[[phase.group]]
+name = "Greedy"
+why = "Yerel en iyi seçim ve Kadane; Aşama 4'teki Stock serisi ve 1326'nın temeli."
+problems = [
+  { id = 53, slug = "maximum-subarray", file = "lc0053_maximum_subarray", tier = 1, why = "Citadel, Squarepoint Capital, Two Sigma (güçlü kanıt)" },
+  { id = 55, slug = "jump-game", file = "lc0055_jump_game", why = "Hazırlık: 45, 1326 (ulaşılabilecek en uzak noktayı tutmak)" },
+  { id = 45, slug = "jump-game-ii", file = "lc0045_jump_game_ii", why = "Hazırlık: 1326 (en az adımla aralık kaplamak)" },
+]
+
+[[phase.group]]
+name = "Math"
+why = "Basamak basamak aritmetik; Aşama 5'teki 43, 8, 166'nın hazırlığı."
+problems = [
+  { id = 66, slug = "plus-one", file = "lc0066_plus_one", why = "Hazırlık: 43, 8 (eldeyle basamak işlemek)" },
 ]
 
 [[phase]]

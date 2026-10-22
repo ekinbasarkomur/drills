@@ -5,15 +5,17 @@ and the file's tests pass, ▢ = not yet, — = no file in that language. Phases
 in order, groups top to bottom; the parallel tracks run alongside, one problem a day.
 *ısınma* = a warm-up the researched plan did not list, the prerequisite of the next problem.
 
-**Rust 11/176 &nbsp;·&nbsp; C++ 19/176 &nbsp;·&nbsp; Python 10/176 &nbsp;·&nbsp; Pandas · 30 Days of Pandas 0/33 &nbsp;·&nbsp; SQL 0/40**
+**Rust 12/194 &nbsp;·&nbsp; C++ 19/194 &nbsp;·&nbsp; Python 16/194 &nbsp;·&nbsp; Pandas · 30 Days of Pandas 3/33 &nbsp;·&nbsp; SQL 0/40**
 
-## Aşama 0 · Temel: NeetCode
+## Aşama 0 · Temel
 
-Repo'daki ilk 34 problem. Sonraki aşamaların her grubu bunların üstüne kurulu; 7'si zaten planın ilk adımı.
+Sonraki aşamaların her grubunun ön koşulu olan temel problemler: Aşama 1-5'teki problemlere bakılarak seçildi. "Hazırlık" satırı problemin hangi ileri problemlere zemin hazırladığını söyler. Çözdüklerin olduğu gibi kaldı.
 
-<sub>Rust 11/34 · C++ 19/34 · Python 10/34</sub>
+<sub>Rust 12/52 · C++ 19/52 · Python 16/52</sub>
 
 ### Arrays & Hashing
+
+Hash tablosu ve sayma: sonraki her aşamanın en sık kullanılan aracı.
 
 | # | No | Problem | Difficulty | Rust | C++ | Python | File |
 | ---: | ---: | --- | --- | :---: | :---: | :---: | --- |
@@ -29,78 +31,130 @@ Repo'daki ilk 34 problem. Sonraki aşamaların her grubu bunların üstüne kuru
 
 ### Two Pointers
 
+Sıralı dizide iki uçtan yürüme; Aşama 1'deki pencerelerin ve sort-merge join'in temeli.
+
 | # | No | Problem | Difficulty | Rust | C++ | Python | File |
 | ---: | ---: | --- | --- | :---: | :---: | :---: | --- |
 | 10 | [125](https://leetcode.com/problems/valid-palindrome/) | Valid Palindrome | Easy | ✅ | ✅ | ✅ | `lc0125_valid_palindrome` |
-| 11 | [167](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/) | Two Sum II - Input Array Is Sorted | Medium | ✅ | ✅ | ▢ | `lc0167_two_sum_ii_input_array_is_sorted` |
-| 12 | [15](https://leetcode.com/problems/3sum/) | 3Sum | Medium | ▢ | ✅ | ▢ | `lc0015_3sum` |
+| 11 | [167](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/) | Two Sum II - Input Array Is Sorted | Medium | ✅ | ✅ | ✅ | `lc0167_two_sum_ii_input_array_is_sorted` |
+| 12 | [15](https://leetcode.com/problems/3sum/) | 3Sum | Medium | ✅ | ✅ | ✅ | `lc0015_3sum` |
 | 13 | [11](https://leetcode.com/problems/container-with-most-water/) | Container With Most Water | Medium | ▢ | ▢ | ▢ | `lc0011_container_with_most_water` |
 | 14 | [42](https://leetcode.com/problems/trapping-rain-water/) | Trapping Rain Water | Hard | ▢ | ▢ | ▢ | `lc0042_trapping_rain_water` |
 
-### Sliding Window
+### Sliding Window ve Prefix Sum
+
+Sabit ve değişken pencere, ön toplam: Aşama 1'deki Prefix Sum ve Sliding Window grubunun hazırlığı.
 
 | # | No | Problem | Difficulty | Rust | C++ | Python | File |
 | ---: | ---: | --- | --- | :---: | :---: | :---: | --- |
 | 15 | [121](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) | Best Time to Buy and Sell Stock | Easy | ▢ | ✅ | ▢ | `lc0121_best_time_to_buy_and_sell_stock` |
 | 16 | [3](https://leetcode.com/problems/longest-substring-without-repeating-characters/) | Longest Substring Without Repeating Characters | Medium | ▢ | ✅ | ▢ | `lc0003_longest_substring_without_repeating_characters` |
 | 17 | [424](https://leetcode.com/problems/longest-repeating-character-replacement/) | Longest Repeating Character Replacement | Medium | ▢ | ▢ | ▢ | `lc0424_longest_repeating_character_replacement` |
+| 18 | [209](https://leetcode.com/problems/minimum-size-subarray-sum/) | Minimum Size Subarray Sum | Medium | ▢ | ▢ | ▢ | `lc0209_minimum_size_subarray_sum` |
+| 19 | [724](https://leetcode.com/problems/find-pivot-index/) | Find Pivot Index | Easy | ▢ | ▢ | ▢ | `lc0724_find_pivot_index` |
 
 ### Stack
 
+LIFO ve monotonic stack'in ilk adımı; Aşama 1'deki Monotonic Stack, Aşama 5'teki ayrıştırma problemleri buradan.
+
 | # | No | Problem | Difficulty | Rust | C++ | Python | File |
 | ---: | ---: | --- | --- | :---: | :---: | :---: | --- |
-| 18 | [20](https://leetcode.com/problems/valid-parentheses/) | Valid Parentheses | Easy | ▢ | ✅ | ▢ | `lc0020_valid_parentheses` |
-| 19 | [155](https://leetcode.com/problems/min-stack/) | Min Stack | Medium | ▢ | ✅ | ▢ | `lc0155_min_stack` |
-| 20 | [739](https://leetcode.com/problems/daily-temperatures/) | Daily Temperatures | Medium | ▢ | ▢ | ▢ | `lc0739_daily_temperatures` |
+| 20 | [20](https://leetcode.com/problems/valid-parentheses/) | Valid Parentheses | Easy | ▢ | ✅ | ▢ | `lc0020_valid_parentheses` |
+| 21 | [155](https://leetcode.com/problems/min-stack/) | Min Stack | Medium | ▢ | ✅ | ▢ | `lc0155_min_stack` |
+| 22 | [232](https://leetcode.com/problems/implement-queue-using-stacks/) | Implement Queue using Stacks | Easy | ▢ | ▢ | ▢ | `lc0232_implement_queue_using_stacks` |
+| 23 | [739](https://leetcode.com/problems/daily-temperatures/) | Daily Temperatures | Medium | ▢ | ▢ | ▢ | `lc0739_daily_temperatures` |
 
 ### Binary Search
 
+Dizide arama, sınır bulma ve cevabı arama; Aşama 1'deki Binary Search grubunun ön koşulu.
+
 | # | No | Problem | Difficulty | Rust | C++ | Python | File |
 | ---: | ---: | --- | --- | :---: | :---: | :---: | --- |
-| 21 | [704](https://leetcode.com/problems/binary-search/) | Binary Search | Easy | ▢ | ▢ | ▢ | `lc0704_binary_search` |
-| 22 | [875](https://leetcode.com/problems/koko-eating-bananas/) | Koko Eating Bananas | Medium | ▢ | ▢ | ▢ | `lc0875_koko_eating_bananas` |
-| 23 | [33](https://leetcode.com/problems/search-in-rotated-sorted-array/) | Search in Rotated Sorted Array | Medium | ▢ | ▢ | ▢ | `lc0033_search_in_rotated_sorted_array` |
+| 24 | [704](https://leetcode.com/problems/binary-search/) | Binary Search | Easy | ▢ | ▢ | ▢ | `lc0704_binary_search` |
+| 25 | [35](https://leetcode.com/problems/search-insert-position/) | Search Insert Position | Easy | ▢ | ▢ | ▢ | `lc0035_search_insert_position` |
+| 26 | [875](https://leetcode.com/problems/koko-eating-bananas/) | Koko Eating Bananas | Medium | ▢ | ▢ | ▢ | `lc0875_koko_eating_bananas` |
+| 27 | [153](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) | Find Minimum in Rotated Sorted Array | Medium | ▢ | ▢ | ▢ | `lc0153_find_minimum_in_rotated_sorted_array` |
+| 28 | [33](https://leetcode.com/problems/search-in-rotated-sorted-array/) | Search in Rotated Sorted Array | Medium | ▢ | ▢ | ▢ | `lc0033_search_in_rotated_sorted_array` |
 
 ### Linked List
 
+Göstericilerle yürüme ve çift yönlü liste; Aşama 2'deki 23 ve Aşama 3'teki cache tasarımları bunun üstünde.
+
 | # | No | Problem | Difficulty | Rust | C++ | Python | File |
 | ---: | ---: | --- | --- | :---: | :---: | :---: | --- |
-| 24 | [206](https://leetcode.com/problems/reverse-linked-list/) | Reverse Linked List | Easy | ▢ | ✅ | ▢ | `lc0206_reverse_linked_list` |
-| 25 | [21](https://leetcode.com/problems/merge-two-sorted-lists/) | Merge Two Sorted Lists | Easy | ▢ | ✅ | ▢ | `lc0021_merge_two_sorted_lists` |
-| 26 | [141](https://leetcode.com/problems/linked-list-cycle/) | Linked List Cycle | Easy | ▢ | ▢ | ▢ | `lc0141_linked_list_cycle` |
-| 27 | [146](https://leetcode.com/problems/lru-cache/) | LRU Cache | Medium | ▢ | ▢ | ▢ | `lc0146_lru_cache` |
+| 29 | [206](https://leetcode.com/problems/reverse-linked-list/) | Reverse Linked List | Easy | ▢ | ✅ | ✅ | `lc0206_reverse_linked_list` |
+| 30 | [21](https://leetcode.com/problems/merge-two-sorted-lists/) | Merge Two Sorted Lists | Easy | ▢ | ✅ | ✅ | `lc0021_merge_two_sorted_lists` |
+| 31 | [141](https://leetcode.com/problems/linked-list-cycle/) | Linked List Cycle | Easy | ▢ | ▢ | ✅ | `lc0141_linked_list_cycle` |
+| 32 | [19](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) | Remove Nth Node From End of List | Medium | ▢ | ▢ | ▢ | `lc0019_remove_nth_node_from_end_of_list` |
+| 33 | [146](https://leetcode.com/problems/lru-cache/) | LRU Cache | Medium | ▢ | ▢ | ▢ | `lc0146_lru_cache` |
 
 ### Trees
 
+Özyinelemeli gezinme, yukarı değer döndürme ve BST sırası; Aşama 2'deki Tree grubu ve 297 bunun üstünde.
+
 | # | No | Problem | Difficulty | Rust | C++ | Python | File |
 | ---: | ---: | --- | --- | :---: | :---: | :---: | --- |
-| 28 | [226](https://leetcode.com/problems/invert-binary-tree/) | Invert Binary Tree | Easy | ▢ | ▢ | ▢ | `lc0226_invert_binary_tree` |
-| 29 | [104](https://leetcode.com/problems/maximum-depth-of-binary-tree/) | Maximum Depth of Binary Tree | Easy | ▢ | ▢ | ▢ | `lc0104_maximum_depth_of_binary_tree` |
+| 34 | [226](https://leetcode.com/problems/invert-binary-tree/) | Invert Binary Tree | Easy | ▢ | ▢ | ✅ | `lc0226_invert_binary_tree` |
+| 35 | [104](https://leetcode.com/problems/maximum-depth-of-binary-tree/) | Maximum Depth of Binary Tree | Easy | ▢ | ▢ | ▢ | `lc0104_maximum_depth_of_binary_tree` |
+| 36 | [100](https://leetcode.com/problems/same-tree/) | Same Tree | Easy | ▢ | ▢ | ▢ | `lc0100_same_tree` |
+| 37 | [543](https://leetcode.com/problems/diameter-of-binary-tree/) | Diameter of Binary Tree | Easy | ▢ | ▢ | ▢ | `lc0543_diameter_of_binary_tree` |
+| 38 | [230](https://leetcode.com/problems/kth-smallest-element-in-a-bst/) | Kth Smallest Element in a BST | Medium | ▢ | ▢ | ▢ | `lc0230_kth_smallest_element_in_a_bst` |
 
 ### Heap & Priority Queue
 
-| # | No | Problem | Difficulty | Rust | C++ | Python | File |
-| ---: | ---: | --- | --- | :---: | :---: | :---: | --- |
-| 30 | [703](https://leetcode.com/problems/kth-largest-element-in-a-stream/) | Kth Largest Element in a Stream | Easy | ▢ | ✅ | ▢ | `lc0703_kth_largest_element_in_a_stream` |
-| 31 | [1046](https://leetcode.com/problems/last-stone-weight/) | Last Stone Weight | Easy | ▢ | ▢ | ▢ | `lc1046_last_stone_weight` |
-
-### Graphs
+En büyük/en küçük k eleman; Aşama 2'deki Data Stream ve Heap grubunun temeli.
 
 | # | No | Problem | Difficulty | Rust | C++ | Python | File |
 | ---: | ---: | --- | --- | :---: | :---: | :---: | --- |
-| 32 | [200](https://leetcode.com/problems/number-of-islands/) | Number of Islands | Medium | ▢ | ▢ | ▢ | `lc0200_number_of_islands` |
-
-### Greedy
-
-| # | No | Problem | Difficulty | Rust | C++ | Python | File |
-| ---: | ---: | --- | --- | :---: | :---: | :---: | --- |
-| 33 | [53](https://leetcode.com/problems/maximum-subarray/) | Maximum Subarray | Medium | ▢ | ▢ | ▢ | `lc0053_maximum_subarray` |
+| 39 | [703](https://leetcode.com/problems/kth-largest-element-in-a-stream/) | Kth Largest Element in a Stream | Easy | ▢ | ✅ | ▢ | `lc0703_kth_largest_element_in_a_stream` |
+| 40 | [1046](https://leetcode.com/problems/last-stone-weight/) | Last Stone Weight | Easy | ▢ | ▢ | ▢ | `lc1046_last_stone_weight` |
+| 41 | [215](https://leetcode.com/problems/kth-largest-element-in-an-array/) | Kth Largest Element in an Array | Medium | ▢ | ▢ | ▢ | `lc0215_kth_largest_element_in_an_array` |
 
 ### Intervals
 
+Sırala ve birleştir; Aşama 2'deki Intervals ve Sweep Line grubunun ilk adımı.
+
 | # | No | Problem | Difficulty | Rust | C++ | Python | File |
 | ---: | ---: | --- | --- | :---: | :---: | :---: | --- |
-| 34 | [56](https://leetcode.com/problems/merge-intervals/) | Merge Intervals | Medium | ▢ | ▢ | ▢ | `lc0056_merge_intervals` |
+| 42 | [56](https://leetcode.com/problems/merge-intervals/) | Merge Intervals | Medium | ▢ | ▢ | ▢ | `lc0056_merge_intervals` |
+
+### Matrix
+
+İki boyutlu indeksleme ve yerinde güncelleme; Aşama 5'teki 48, 289, 874 simülasyonlarının hazırlığı.
+
+| # | No | Problem | Difficulty | Rust | C++ | Python | File |
+| ---: | ---: | --- | --- | :---: | :---: | :---: | --- |
+| 43 | [54](https://leetcode.com/problems/spiral-matrix/) | Spiral Matrix | Medium | ▢ | ▢ | ▢ | `lc0054_spiral_matrix` |
+| 44 | [73](https://leetcode.com/problems/set-matrix-zeroes/) | Set Matrix Zeroes | Medium | ▢ | ▢ | ▢ | `lc0073_set_matrix_zeroes` |
+
+### Graphs
+
+DFS/BFS, topolojik sıra ve union-find; Aşama 4'teki Graph grubunun ön koşulları.
+
+| # | No | Problem | Difficulty | Rust | C++ | Python | File |
+| ---: | ---: | --- | --- | :---: | :---: | :---: | --- |
+| 45 | [200](https://leetcode.com/problems/number-of-islands/) | Number of Islands | Medium | ▢ | ▢ | ▢ | `lc0200_number_of_islands` |
+| 46 | [994](https://leetcode.com/problems/rotting-oranges/) | Rotting Oranges | Medium | ▢ | ▢ | ▢ | `lc0994_rotting_oranges` |
+| 47 | [207](https://leetcode.com/problems/course-schedule/) | Course Schedule | Medium | ▢ | ▢ | ▢ | `lc0207_course_schedule` |
+| 48 | [684](https://leetcode.com/problems/redundant-connection/) | Redundant Connection | Medium | ▢ | ▢ | ▢ | `lc0684_redundant_connection` |
+
+### Greedy
+
+Yerel en iyi seçim ve Kadane; Aşama 4'teki Stock serisi ve 1326'nın temeli.
+
+| # | No | Problem | Difficulty | Rust | C++ | Python | File |
+| ---: | ---: | --- | --- | :---: | :---: | :---: | --- |
+| 49 | [53](https://leetcode.com/problems/maximum-subarray/) | Maximum Subarray | Medium | ▢ | ▢ | ▢ | `lc0053_maximum_subarray` |
+| 50 | [55](https://leetcode.com/problems/jump-game/) | Jump Game | Medium | ▢ | ▢ | ▢ | `lc0055_jump_game` |
+| 51 | [45](https://leetcode.com/problems/jump-game-ii/) | Jump Game II | Medium | ▢ | ▢ | ▢ | `lc0045_jump_game_ii` |
+
+### Math
+
+Basamak basamak aritmetik; Aşama 5'teki 43, 8, 166'nın hazırlığı.
+
+| # | No | Problem | Difficulty | Rust | C++ | Python | File |
+| ---: | ---: | --- | --- | :---: | :---: | :---: | --- |
+| 52 | [66](https://leetcode.com/problems/plus-one/) | Plus One | Easy | ▢ | ▢ | ▢ | `lc0066_plus_one` |
 
 ## Aşama 1 · Temel kalıplar
 
@@ -114,13 +168,13 @@ Toplam/çarpım pencereleri ve prefix toplamları: getiri serilerinde aralık so
 
 | # | No | Problem | Difficulty | Rust | C++ | Python | File |
 | ---: | ---: | --- | --- | :---: | :---: | :---: | --- |
-| 35 | [303](https://leetcode.com/problems/range-sum-query-immutable/) | Range Sum Query - Immutable *(ısınma)* | Easy | ▢ | ▢ | ▢ | `lc0303_range_sum_query_immutable` |
-| 36 | [560](https://leetcode.com/problems/subarray-sum-equals-k/) | Subarray Sum Equals K | Medium | ▢ | ▢ | ▢ | `lc0560_subarray_sum_equals_k` |
-| 37 | [304](https://leetcode.com/problems/range-sum-query-2d-immutable/) | Range Sum Query 2D - Immutable | Medium | ▢ | ▢ | ▢ | `lc0304_range_sum_query_2d_immutable` |
-| 38 | [713](https://leetcode.com/problems/subarray-product-less-than-k/) | Subarray Product Less Than K | Medium | ▢ | ▢ | ▢ | `lc0713_subarray_product_less_than_k` |
-| 39 | [1004](https://leetcode.com/problems/max-consecutive-ones-iii/) | Max Consecutive Ones III | Medium | ▢ | ▢ | ▢ | `lc1004_max_consecutive_ones_iii` |
-| 40 | [1358](https://leetcode.com/problems/number-of-substrings-containing-all-three-characters/) | Number of Substrings Containing All Three Characters | Medium | ▢ | ▢ | ▢ | `lc1358_number_of_substrings_containing_all_three_characters` |
-| 41 | [1093](https://leetcode.com/problems/statistics-from-a-large-sample/) | Statistics from a Large Sample | Medium | ▢ | ▢ | ▢ | `lc1093_statistics_from_a_large_sample` |
+| 53 | [303](https://leetcode.com/problems/range-sum-query-immutable/) | Range Sum Query - Immutable *(ısınma)* | Easy | ▢ | ▢ | ▢ | `lc0303_range_sum_query_immutable` |
+| 54 | [560](https://leetcode.com/problems/subarray-sum-equals-k/) | Subarray Sum Equals K | Medium | ▢ | ▢ | ▢ | `lc0560_subarray_sum_equals_k` |
+| 55 | [304](https://leetcode.com/problems/range-sum-query-2d-immutable/) | Range Sum Query 2D - Immutable | Medium | ▢ | ▢ | ▢ | `lc0304_range_sum_query_2d_immutable` |
+| 56 | [713](https://leetcode.com/problems/subarray-product-less-than-k/) | Subarray Product Less Than K | Medium | ▢ | ▢ | ▢ | `lc0713_subarray_product_less_than_k` |
+| 57 | [1004](https://leetcode.com/problems/max-consecutive-ones-iii/) | Max Consecutive Ones III | Medium | ▢ | ▢ | ▢ | `lc1004_max_consecutive_ones_iii` |
+| 58 | [1358](https://leetcode.com/problems/number-of-substrings-containing-all-three-characters/) | Number of Substrings Containing All Three Characters | Medium | ▢ | ▢ | ▢ | `lc1358_number_of_substrings_containing_all_three_characters` |
+| 59 | [1093](https://leetcode.com/problems/statistics-from-a-large-sample/) | Statistics from a Large Sample | Medium | ▢ | ▢ | ▢ | `lc1093_statistics_from_a_large_sample` |
 
 ### Binary Search
 
@@ -128,13 +182,13 @@ Diziyi değil cevabı arama; Koko ve Split Array tipi problemler quant OA'ların
 
 | # | No | Problem | Difficulty | Rust | C++ | Python | File |
 | ---: | ---: | --- | --- | :---: | :---: | :---: | --- |
-| 42 | [34](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/) | Find First and Last Position of Element in Sorted Array | Medium | ▢ | ▢ | ▢ | `lc0034_find_first_and_last_position_of_element_in_sorted_array` |
-| 43 | [1011](https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/) | Capacity To Ship Packages Within D Days | Medium | ▢ | ▢ | ▢ | `lc1011_capacity_to_ship_packages_within_d_days` |
-| 44 | [287](https://leetcode.com/problems/find-the-duplicate-number/) | Find the Duplicate Number | Medium | ▢ | ▢ | ▢ | `lc0287_find_the_duplicate_number` |
-| 45 | [410](https://leetcode.com/problems/split-array-largest-sum/) | Split Array Largest Sum | Hard | ▢ | ▢ | ▢ | `lc0410_split_array_largest_sum` |
-| 46 | [4](https://leetcode.com/problems/median-of-two-sorted-arrays/) | Median of Two Sorted Arrays | Hard | ▢ | ▢ | ▢ | `lc0004_median_of_two_sorted_arrays` |
-| 47 | [1889](https://leetcode.com/problems/minimum-space-wasted-from-packaging/) | Minimum Space Wasted From Packaging | Hard | ▢ | ▢ | ▢ | `lc1889_minimum_space_wasted_from_packaging` |
-| 48 | [1515](https://leetcode.com/problems/best-position-for-a-service-centre/) | Best Position for a Service Centre | Hard | ▢ | ▢ | ▢ | `lc1515_best_position_for_a_service_centre` |
+| 60 | [34](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/) | Find First and Last Position of Element in Sorted Array | Medium | ▢ | ▢ | ▢ | `lc0034_find_first_and_last_position_of_element_in_sorted_array` |
+| 61 | [1011](https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/) | Capacity To Ship Packages Within D Days | Medium | ▢ | ▢ | ▢ | `lc1011_capacity_to_ship_packages_within_d_days` |
+| 62 | [287](https://leetcode.com/problems/find-the-duplicate-number/) | Find the Duplicate Number | Medium | ▢ | ▢ | ▢ | `lc0287_find_the_duplicate_number` |
+| 63 | [410](https://leetcode.com/problems/split-array-largest-sum/) | Split Array Largest Sum | Hard | ▢ | ▢ | ▢ | `lc0410_split_array_largest_sum` |
+| 64 | [4](https://leetcode.com/problems/median-of-two-sorted-arrays/) | Median of Two Sorted Arrays | Hard | ▢ | ▢ | ▢ | `lc0004_median_of_two_sorted_arrays` |
+| 65 | [1889](https://leetcode.com/problems/minimum-space-wasted-from-packaging/) | Minimum Space Wasted From Packaging | Hard | ▢ | ▢ | ▢ | `lc1889_minimum_space_wasted_from_packaging` |
+| 66 | [1515](https://leetcode.com/problems/best-position-for-a-service-centre/) | Best Position for a Service Centre | Hard | ▢ | ▢ | ▢ | `lc1515_best_position_for_a_service_centre` |
 
 ### Monotonic Stack ve Queue
 
@@ -142,14 +196,14 @@ Kayan pencere maksimumu, stock span, sonraki büyük eleman: rolling istatistikl
 
 | # | No | Problem | Difficulty | Rust | C++ | Python | File |
 | ---: | ---: | --- | --- | :---: | :---: | :---: | --- |
-| 49 | [496](https://leetcode.com/problems/next-greater-element-i/) | Next Greater Element I *(ısınma)* | Easy | ▢ | ▢ | ▢ | `lc0496_next_greater_element_i` |
-| 50 | [901](https://leetcode.com/problems/online-stock-span/) | Online Stock Span | Medium | ▢ | ▢ | ▢ | `lc0901_online_stock_span` |
-| 51 | [84](https://leetcode.com/problems/largest-rectangle-in-histogram/) | Largest Rectangle in Histogram | Hard | ▢ | ▢ | ▢ | `lc0084_largest_rectangle_in_histogram` |
-| 52 | [85](https://leetcode.com/problems/maximal-rectangle/) | Maximal Rectangle | Hard | ▢ | ▢ | ▢ | `lc0085_maximal_rectangle` |
-| 53 | [907](https://leetcode.com/problems/sum-of-subarray-minimums/) | Sum of Subarray Minimums | Medium | ▢ | ▢ | ▢ | `lc0907_sum_of_subarray_minimums` |
-| 54 | [239](https://leetcode.com/problems/sliding-window-maximum/) | Sliding Window Maximum | Hard | ▢ | ▢ | ▢ | `lc0239_sliding_window_maximum` |
-| 55 | [1438](https://leetcode.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/) | Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit | Medium | ▢ | ▢ | ▢ | `lc1438_longest_continuous_subarray_with_absolute_diff_less_than_or_equal_to_limit` |
-| 56 | [862](https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/) | Shortest Subarray with Sum at Least K | Hard | ▢ | ▢ | ▢ | `lc0862_shortest_subarray_with_sum_at_least_k` |
+| 67 | [496](https://leetcode.com/problems/next-greater-element-i/) | Next Greater Element I *(ısınma)* | Easy | ▢ | ▢ | ▢ | `lc0496_next_greater_element_i` |
+| 68 | [901](https://leetcode.com/problems/online-stock-span/) | Online Stock Span | Medium | ▢ | ▢ | ▢ | `lc0901_online_stock_span` |
+| 69 | [84](https://leetcode.com/problems/largest-rectangle-in-histogram/) | Largest Rectangle in Histogram | Hard | ▢ | ▢ | ▢ | `lc0084_largest_rectangle_in_histogram` |
+| 70 | [85](https://leetcode.com/problems/maximal-rectangle/) | Maximal Rectangle | Hard | ▢ | ▢ | ▢ | `lc0085_maximal_rectangle` |
+| 71 | [907](https://leetcode.com/problems/sum-of-subarray-minimums/) | Sum of Subarray Minimums | Medium | ▢ | ▢ | ▢ | `lc0907_sum_of_subarray_minimums` |
+| 72 | [239](https://leetcode.com/problems/sliding-window-maximum/) | Sliding Window Maximum | Hard | ▢ | ▢ | ▢ | `lc0239_sliding_window_maximum` |
+| 73 | [1438](https://leetcode.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/) | Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit | Medium | ▢ | ▢ | ▢ | `lc1438_longest_continuous_subarray_with_absolute_diff_less_than_or_equal_to_limit` |
+| 74 | [862](https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/) | Shortest Subarray with Sum at Least K | Hard | ▢ | ▢ | ▢ | `lc0862_shortest_subarray_with_sum_at_least_k` |
 
 ### Bit Manipulation
 
@@ -157,12 +211,12 @@ Bayt seviyesinde ayrıştırma (UTF-8), bit sayma: binary feed protokollerinde g
 
 | # | No | Problem | Difficulty | Rust | C++ | Python | File |
 | ---: | ---: | --- | --- | :---: | :---: | :---: | --- |
-| 57 | [191](https://leetcode.com/problems/number-of-1-bits/) | Number of 1 Bits | Easy | ▢ | ▢ | ▢ | `lc0191_number_of_1_bits` |
-| 58 | [136](https://leetcode.com/problems/single-number/) | Single Number | Easy | ▢ | ▢ | ▢ | `lc0136_single_number` |
-| 59 | [190](https://leetcode.com/problems/reverse-bits/) | Reverse Bits | Easy | ▢ | ▢ | ▢ | `lc0190_reverse_bits` |
-| 60 | [342](https://leetcode.com/problems/power-of-four/) | Power of Four | Easy | ▢ | ▢ | ▢ | `lc0342_power_of_four` |
-| 61 | [371](https://leetcode.com/problems/sum-of-two-integers/) | Sum of Two Integers | Medium | ▢ | ▢ | ▢ | `lc0371_sum_of_two_integers` |
-| 62 | [393](https://leetcode.com/problems/utf-8-validation/) | UTF-8 Validation | Medium | ▢ | ▢ | ▢ | `lc0393_utf_8_validation` |
+| 75 | [191](https://leetcode.com/problems/number-of-1-bits/) | Number of 1 Bits | Easy | ▢ | ▢ | ▢ | `lc0191_number_of_1_bits` |
+| 76 | [136](https://leetcode.com/problems/single-number/) | Single Number | Easy | ▢ | ▢ | ▢ | `lc0136_single_number` |
+| 77 | [190](https://leetcode.com/problems/reverse-bits/) | Reverse Bits | Easy | ▢ | ▢ | ▢ | `lc0190_reverse_bits` |
+| 78 | [342](https://leetcode.com/problems/power-of-four/) | Power of Four | Easy | ▢ | ▢ | ▢ | `lc0342_power_of_four` |
+| 79 | [371](https://leetcode.com/problems/sum-of-two-integers/) | Sum of Two Integers | Medium | ▢ | ▢ | ▢ | `lc0371_sum_of_two_integers` |
+| 80 | [393](https://leetcode.com/problems/utf-8-validation/) | UTF-8 Validation | Medium | ▢ | ▢ | ▢ | `lc0393_utf_8_validation` |
 
 ## Aşama 2 · Veri yapıları
 
@@ -176,9 +230,9 @@ Gezinme sıraları ve BST doğrulama: Aşama 4'teki graph gezintisinin ağaç ü
 
 | # | No | Problem | Difficulty | Rust | C++ | Python | File |
 | ---: | ---: | --- | --- | :---: | :---: | :---: | --- |
-| 63 | [94](https://leetcode.com/problems/binary-tree-inorder-traversal/) | Binary Tree Inorder Traversal *(ısınma)* | Easy | ▢ | ▢ | ▢ | `lc0094_binary_tree_inorder_traversal` |
-| 64 | [102](https://leetcode.com/problems/binary-tree-level-order-traversal/) | Binary Tree Level Order Traversal *(ısınma)* | Medium | ▢ | ▢ | ▢ | `lc0102_binary_tree_level_order_traversal` |
-| 65 | [98](https://leetcode.com/problems/validate-binary-search-tree/) | Validate Binary Search Tree | Medium | ▢ | ▢ | ▢ | `lc0098_validate_binary_search_tree` |
+| 81 | [94](https://leetcode.com/problems/binary-tree-inorder-traversal/) | Binary Tree Inorder Traversal *(ısınma)* | Easy | ▢ | ▢ | ▢ | `lc0094_binary_tree_inorder_traversal` |
+| 82 | [102](https://leetcode.com/problems/binary-tree-level-order-traversal/) | Binary Tree Level Order Traversal *(ısınma)* | Medium | ▢ | ▢ | ▢ | `lc0102_binary_tree_level_order_traversal` |
+| 83 | [98](https://leetcode.com/problems/validate-binary-search-tree/) | Validate Binary Search Tree | Medium | ▢ | ▢ | ▢ | `lc0098_validate_binary_search_tree` |
 
 ### Data Stream ve Heap
 
@@ -186,16 +240,16 @@ Akan veride medyan, k'ıncı en büyük, k sıralı akışı birleştirme: marke
 
 | # | No | Problem | Difficulty | Rust | C++ | Python | File |
 | ---: | ---: | --- | --- | :---: | :---: | :---: | --- |
-| 66 | [346](https://leetcode.com/problems/moving-average-from-data-stream/) | Moving Average from Data Stream | Easy | ▢ | ▢ | ▢ | `lc0346_moving_average_from_data_stream` |
-| 67 | [767](https://leetcode.com/problems/reorganize-string/) | Reorganize String | Medium | ▢ | ▢ | ▢ | `lc0767_reorganize_string` |
-| 68 | [1834](https://leetcode.com/problems/single-threaded-cpu/) | Single-Threaded CPU | Medium | ▢ | ▢ | ▢ | `lc1834_single_threaded_cpu` |
-| 69 | [1882](https://leetcode.com/problems/process-tasks-using-servers/) | Process Tasks Using Servers | Medium | ▢ | ▢ | ▢ | `lc1882_process_tasks_using_servers` |
-| 70 | [23](https://leetcode.com/problems/merge-k-sorted-lists/) | Merge k Sorted Lists | Hard | ▢ | ▢ | ▢ | `lc0023_merge_k_sorted_lists` |
-| 71 | [295](https://leetcode.com/problems/find-median-from-data-stream/) | Find Median from Data Stream | Hard | ▢ | ▢ | ▢ | `lc0295_find_median_from_data_stream` |
-| 72 | [502](https://leetcode.com/problems/ipo/) | IPO | Hard | ▢ | ▢ | ▢ | `lc0502_ipo` |
-| 73 | [480](https://leetcode.com/problems/sliding-window-median/) | Sliding Window Median | Hard | ▢ | ▢ | ▢ | `lc0480_sliding_window_median` |
-| 74 | [1825](https://leetcode.com/problems/finding-mk-average/) | Finding MK Average | Hard | ▢ | ▢ | ▢ | `lc1825_finding_mk_average` |
-| 75 | [352](https://leetcode.com/problems/data-stream-as-disjoint-intervals/) | Data Stream as Disjoint Intervals | Hard | ▢ | ▢ | ▢ | `lc0352_data_stream_as_disjoint_intervals` |
+| 84 | [346](https://leetcode.com/problems/moving-average-from-data-stream/) | Moving Average from Data Stream | Easy | ▢ | ▢ | ▢ | `lc0346_moving_average_from_data_stream` |
+| 85 | [767](https://leetcode.com/problems/reorganize-string/) | Reorganize String | Medium | ▢ | ▢ | ▢ | `lc0767_reorganize_string` |
+| 86 | [1834](https://leetcode.com/problems/single-threaded-cpu/) | Single-Threaded CPU | Medium | ▢ | ▢ | ▢ | `lc1834_single_threaded_cpu` |
+| 87 | [1882](https://leetcode.com/problems/process-tasks-using-servers/) | Process Tasks Using Servers | Medium | ▢ | ▢ | ▢ | `lc1882_process_tasks_using_servers` |
+| 88 | [23](https://leetcode.com/problems/merge-k-sorted-lists/) | Merge k Sorted Lists | Hard | ▢ | ▢ | ▢ | `lc0023_merge_k_sorted_lists` |
+| 89 | [295](https://leetcode.com/problems/find-median-from-data-stream/) | Find Median from Data Stream | Hard | ▢ | ▢ | ▢ | `lc0295_find_median_from_data_stream` |
+| 90 | [502](https://leetcode.com/problems/ipo/) | IPO | Hard | ▢ | ▢ | ▢ | `lc0502_ipo` |
+| 91 | [480](https://leetcode.com/problems/sliding-window-median/) | Sliding Window Median | Hard | ▢ | ▢ | ▢ | `lc0480_sliding_window_median` |
+| 92 | [1825](https://leetcode.com/problems/finding-mk-average/) | Finding MK Average | Hard | ▢ | ▢ | ▢ | `lc1825_finding_mk_average` |
+| 93 | [352](https://leetcode.com/problems/data-stream-as-disjoint-intervals/) | Data Stream as Disjoint Intervals | Hard | ▢ | ▢ | ▢ | `lc0352_data_stream_as_disjoint_intervals` |
 
 ### Intervals ve Sweep Line
 
@@ -203,14 +257,14 @@ Zaman aralıklarını birleştirme ve sayma: seans, rezervasyon, kapasite proble
 
 | # | No | Problem | Difficulty | Rust | C++ | Python | File |
 | ---: | ---: | --- | --- | :---: | :---: | :---: | --- |
-| 76 | [57](https://leetcode.com/problems/insert-interval/) | Insert Interval | Medium | ▢ | ▢ | ▢ | `lc0057_insert_interval` |
-| 77 | [435](https://leetcode.com/problems/non-overlapping-intervals/) | Non-overlapping Intervals | Medium | ▢ | ▢ | ▢ | `lc0435_non_overlapping_intervals` |
-| 78 | [253](https://leetcode.com/problems/meeting-rooms-ii/) | Meeting Rooms II | Medium | ▢ | ▢ | ▢ | `lc0253_meeting_rooms_ii` |
-| 79 | [1094](https://leetcode.com/problems/car-pooling/) | Car Pooling | Medium | ▢ | ▢ | ▢ | `lc1094_car_pooling` |
-| 80 | [729](https://leetcode.com/problems/my-calendar-i/) | My Calendar I *(ısınma)* | Medium | ▢ | ▢ | ▢ | `lc0729_my_calendar_i` |
-| 81 | [731](https://leetcode.com/problems/my-calendar-ii/) | My Calendar II *(ısınma)* | Medium | ▢ | ▢ | ▢ | `lc0731_my_calendar_ii` |
-| 82 | [732](https://leetcode.com/problems/my-calendar-iii/) | My Calendar III | Hard | ▢ | ▢ | ▢ | `lc0732_my_calendar_iii` |
-| 83 | [715](https://leetcode.com/problems/range-module/) | Range Module | Hard | ▢ | ▢ | ▢ | `lc0715_range_module` |
+| 94 | [57](https://leetcode.com/problems/insert-interval/) | Insert Interval | Medium | ▢ | ▢ | ▢ | `lc0057_insert_interval` |
+| 95 | [435](https://leetcode.com/problems/non-overlapping-intervals/) | Non-overlapping Intervals | Medium | ▢ | ▢ | ▢ | `lc0435_non_overlapping_intervals` |
+| 96 | [253](https://leetcode.com/problems/meeting-rooms-ii/) | Meeting Rooms II | Medium | ▢ | ▢ | ▢ | `lc0253_meeting_rooms_ii` |
+| 97 | [1094](https://leetcode.com/problems/car-pooling/) | Car Pooling | Medium | ▢ | ▢ | ▢ | `lc1094_car_pooling` |
+| 98 | [729](https://leetcode.com/problems/my-calendar-i/) | My Calendar I *(ısınma)* | Medium | ▢ | ▢ | ▢ | `lc0729_my_calendar_i` |
+| 99 | [731](https://leetcode.com/problems/my-calendar-ii/) | My Calendar II *(ısınma)* | Medium | ▢ | ▢ | ▢ | `lc0731_my_calendar_ii` |
+| 100 | [732](https://leetcode.com/problems/my-calendar-iii/) | My Calendar III | Hard | ▢ | ▢ | ▢ | `lc0732_my_calendar_iii` |
+| 101 | [715](https://leetcode.com/problems/range-module/) | Range Module | Hard | ▢ | ▢ | ▢ | `lc0715_range_module` |
 
 ## Aşama 3 · Order Book ve sistem tasarımı
 
@@ -224,27 +278,27 @@ Order book, ring buffer, cache, rate limiter: trading sistemlerinde doğrudan ya
 
 | # | No | Problem | Difficulty | Rust | C++ | Python | File |
 | ---: | ---: | --- | --- | :---: | :---: | :---: | --- |
-| 84 | [706](https://leetcode.com/problems/design-hashmap/) | Design HashMap | Easy | ▢ | ▢ | ▢ | `lc0706_design_hashmap` |
-| 85 | [705](https://leetcode.com/problems/design-hashset/) | Design HashSet *(ısınma)* | Easy | ▢ | ▢ | ▢ | `lc0705_design_hashset` |
-| 86 | [622](https://leetcode.com/problems/design-circular-queue/) | Design Circular Queue | Medium | ▢ | ▢ | ▢ | `lc0622_design_circular_queue` |
-| 87 | [641](https://leetcode.com/problems/design-circular-deque/) | Design Circular Deque | Medium | ▢ | ▢ | ▢ | `lc0641_design_circular_deque` |
-| 88 | [359](https://leetcode.com/problems/logger-rate-limiter/) | Logger Rate Limiter | Easy | ▢ | ▢ | ▢ | `lc0359_logger_rate_limiter` |
-| 89 | [362](https://leetcode.com/problems/design-hit-counter/) | Design Hit Counter | Medium | ▢ | ▢ | ▢ | `lc0362_design_hit_counter` |
-| 90 | [380](https://leetcode.com/problems/insert-delete-getrandom-o1/) | Insert Delete GetRandom O(1) | Medium | ▢ | ▢ | ▢ | `lc0380_insert_delete_getrandom_o1` |
-| 91 | [981](https://leetcode.com/problems/time-based-key-value-store/) | Time Based Key-Value Store | Medium | ▢ | ▢ | ▢ | `lc0981_time_based_key_value_store` |
-| 92 | [1146](https://leetcode.com/problems/snapshot-array/) | Snapshot Array | Medium | ▢ | ▢ | ▢ | `lc1146_snapshot_array` |
-| 93 | [2034](https://leetcode.com/problems/stock-price-fluctuation/) | Stock Price Fluctuation  | Medium | ▢ | ▢ | ▢ | `lc2034_stock_price_fluctuation` |
-| 94 | [1801](https://leetcode.com/problems/number-of-orders-in-the-backlog/) | Number of Orders in the Backlog | Medium | ▢ | ▢ | ▢ | `lc1801_number_of_orders_in_the_backlog` |
-| 95 | [1244](https://leetcode.com/problems/design-a-leaderboard/) | Design A Leaderboard | Medium | ▢ | ▢ | ▢ | `lc1244_design_a_leaderboard` |
-| 96 | [1268](https://leetcode.com/problems/search-suggestions-system/) | Search Suggestions System | Medium | ▢ | ▢ | ▢ | `lc1268_search_suggestions_system` |
-| 97 | [2502](https://leetcode.com/problems/design-memory-allocator/) | Design Memory Allocator | Medium | ▢ | ▢ | ▢ | `lc2502_design_memory_allocator` |
-| 98 | [3508](https://leetcode.com/problems/implement-router/) | Implement Router | Medium | ▢ | ▢ | ▢ | `lc3508_implement_router` |
-| 99 | [3815](https://leetcode.com/problems/design-auction-system/) | Design Auction System | Medium | ▢ | ▢ | ▢ | `lc3815_design_auction_system` |
-| 100 | [3822](https://leetcode.com/problems/design-order-management-system/) | Design Order Management System | Medium | ▢ | ▢ | ▢ | `lc3822_design_order_management_system` |
-| 101 | [460](https://leetcode.com/problems/lfu-cache/) | LFU Cache | Hard | ▢ | ▢ | ▢ | `lc0460_lfu_cache` |
-| 102 | [432](https://leetcode.com/problems/all-oone-data-structure/) | All O`one Data Structure | Hard | ▢ | ▢ | ▢ | `lc0432_all_oone_data_structure` |
-| 103 | [297](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/) | Serialize and Deserialize Binary Tree | Hard | ▢ | ▢ | ▢ | `lc0297_serialize_and_deserialize_binary_tree` |
-| 104 | [1206](https://leetcode.com/problems/design-skiplist/) | Design Skiplist | Hard | ▢ | ▢ | ▢ | `lc1206_design_skiplist` |
+| 102 | [706](https://leetcode.com/problems/design-hashmap/) | Design HashMap | Easy | ▢ | ▢ | ▢ | `lc0706_design_hashmap` |
+| 103 | [705](https://leetcode.com/problems/design-hashset/) | Design HashSet *(ısınma)* | Easy | ▢ | ▢ | ▢ | `lc0705_design_hashset` |
+| 104 | [622](https://leetcode.com/problems/design-circular-queue/) | Design Circular Queue | Medium | ▢ | ▢ | ▢ | `lc0622_design_circular_queue` |
+| 105 | [641](https://leetcode.com/problems/design-circular-deque/) | Design Circular Deque | Medium | ▢ | ▢ | ▢ | `lc0641_design_circular_deque` |
+| 106 | [359](https://leetcode.com/problems/logger-rate-limiter/) | Logger Rate Limiter | Easy | ▢ | ▢ | ▢ | `lc0359_logger_rate_limiter` |
+| 107 | [362](https://leetcode.com/problems/design-hit-counter/) | Design Hit Counter | Medium | ▢ | ▢ | ▢ | `lc0362_design_hit_counter` |
+| 108 | [380](https://leetcode.com/problems/insert-delete-getrandom-o1/) | Insert Delete GetRandom O(1) | Medium | ▢ | ▢ | ▢ | `lc0380_insert_delete_getrandom_o1` |
+| 109 | [981](https://leetcode.com/problems/time-based-key-value-store/) | Time Based Key-Value Store | Medium | ▢ | ▢ | ▢ | `lc0981_time_based_key_value_store` |
+| 110 | [1146](https://leetcode.com/problems/snapshot-array/) | Snapshot Array | Medium | ▢ | ▢ | ▢ | `lc1146_snapshot_array` |
+| 111 | [2034](https://leetcode.com/problems/stock-price-fluctuation/) | Stock Price Fluctuation  | Medium | ▢ | ▢ | ▢ | `lc2034_stock_price_fluctuation` |
+| 112 | [1801](https://leetcode.com/problems/number-of-orders-in-the-backlog/) | Number of Orders in the Backlog | Medium | ▢ | ▢ | ▢ | `lc1801_number_of_orders_in_the_backlog` |
+| 113 | [1244](https://leetcode.com/problems/design-a-leaderboard/) | Design A Leaderboard | Medium | ▢ | ▢ | ▢ | `lc1244_design_a_leaderboard` |
+| 114 | [1268](https://leetcode.com/problems/search-suggestions-system/) | Search Suggestions System | Medium | ▢ | ▢ | ▢ | `lc1268_search_suggestions_system` |
+| 115 | [2502](https://leetcode.com/problems/design-memory-allocator/) | Design Memory Allocator | Medium | ▢ | ▢ | ▢ | `lc2502_design_memory_allocator` |
+| 116 | [3508](https://leetcode.com/problems/implement-router/) | Implement Router | Medium | ▢ | ▢ | ▢ | `lc3508_implement_router` |
+| 117 | [3815](https://leetcode.com/problems/design-auction-system/) | Design Auction System | Medium | ▢ | ▢ | ▢ | `lc3815_design_auction_system` |
+| 118 | [3822](https://leetcode.com/problems/design-order-management-system/) | Design Order Management System | Medium | ▢ | ▢ | ▢ | `lc3822_design_order_management_system` |
+| 119 | [460](https://leetcode.com/problems/lfu-cache/) | LFU Cache | Hard | ▢ | ▢ | ▢ | `lc0460_lfu_cache` |
+| 120 | [432](https://leetcode.com/problems/all-oone-data-structure/) | All O`one Data Structure | Hard | ▢ | ▢ | ▢ | `lc0432_all_oone_data_structure` |
+| 121 | [297](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/) | Serialize and Deserialize Binary Tree | Hard | ▢ | ▢ | ▢ | `lc0297_serialize_and_deserialize_binary_tree` |
+| 122 | [1206](https://leetcode.com/problems/design-skiplist/) | Design Skiplist | Hard | ▢ | ▢ | ▢ | `lc1206_design_skiplist` |
 
 ## Aşama 4 · Graph, backtracking, DP
 
@@ -258,18 +312,18 @@ Topolojik sıralama, en kısa yol, Evaluate Division (çapraz kur hesabı gibi).
 
 | # | No | Problem | Difficulty | Rust | C++ | Python | File |
 | ---: | ---: | --- | --- | :---: | :---: | :---: | --- |
-| 105 | [547](https://leetcode.com/problems/number-of-provinces/) | Number of Provinces | Medium | ▢ | ▢ | ▢ | `lc0547_number_of_provinces` |
-| 106 | [1319](https://leetcode.com/problems/number-of-operations-to-make-network-connected/) | Number of Operations to Make Network Connected | Medium | ▢ | ▢ | ▢ | `lc1319_number_of_operations_to_make_network_connected` |
-| 107 | [210](https://leetcode.com/problems/course-schedule-ii/) | Course Schedule II | Medium | ▢ | ▢ | ▢ | `lc0210_course_schedule_ii` |
-| 108 | [2050](https://leetcode.com/problems/parallel-courses-iii/) | Parallel Courses III | Hard | ▢ | ▢ | ▢ | `lc2050_parallel_courses_iii` |
-| 109 | [743](https://leetcode.com/problems/network-delay-time/) | Network Delay Time | Medium | ▢ | ▢ | ▢ | `lc0743_network_delay_time` |
-| 110 | [787](https://leetcode.com/problems/cheapest-flights-within-k-stops/) | Cheapest Flights Within K Stops | Medium | ▢ | ▢ | ▢ | `lc0787_cheapest_flights_within_k_stops` |
-| 111 | [1514](https://leetcode.com/problems/path-with-maximum-probability/) | Path with Maximum Probability | Medium | ▢ | ▢ | ▢ | `lc1514_path_with_maximum_probability` |
-| 112 | [332](https://leetcode.com/problems/reconstruct-itinerary/) | Reconstruct Itinerary | Hard | ▢ | ▢ | ▢ | `lc0332_reconstruct_itinerary` |
-| 113 | [765](https://leetcode.com/problems/couples-holding-hands/) | Couples Holding Hands | Hard | ▢ | ▢ | ▢ | `lc0765_couples_holding_hands` |
-| 114 | [208](https://leetcode.com/problems/implement-trie-prefix-tree/) | Implement Trie (Prefix Tree) *(ısınma)* | Medium | ▢ | ▢ | ▢ | `lc0208_implement_trie_prefix_tree` |
-| 115 | [79](https://leetcode.com/problems/word-search/) | Word Search *(ısınma)* | Medium | ▢ | ▢ | ▢ | `lc0079_word_search` |
-| 116 | [212](https://leetcode.com/problems/word-search-ii/) | Word Search II | Hard | ▢ | ▢ | ▢ | `lc0212_word_search_ii` |
+| 123 | [547](https://leetcode.com/problems/number-of-provinces/) | Number of Provinces | Medium | ▢ | ▢ | ▢ | `lc0547_number_of_provinces` |
+| 124 | [1319](https://leetcode.com/problems/number-of-operations-to-make-network-connected/) | Number of Operations to Make Network Connected | Medium | ▢ | ▢ | ▢ | `lc1319_number_of_operations_to_make_network_connected` |
+| 125 | [210](https://leetcode.com/problems/course-schedule-ii/) | Course Schedule II | Medium | ▢ | ▢ | ▢ | `lc0210_course_schedule_ii` |
+| 126 | [2050](https://leetcode.com/problems/parallel-courses-iii/) | Parallel Courses III | Hard | ▢ | ▢ | ▢ | `lc2050_parallel_courses_iii` |
+| 127 | [743](https://leetcode.com/problems/network-delay-time/) | Network Delay Time | Medium | ▢ | ▢ | ▢ | `lc0743_network_delay_time` |
+| 128 | [787](https://leetcode.com/problems/cheapest-flights-within-k-stops/) | Cheapest Flights Within K Stops | Medium | ▢ | ▢ | ▢ | `lc0787_cheapest_flights_within_k_stops` |
+| 129 | [1514](https://leetcode.com/problems/path-with-maximum-probability/) | Path with Maximum Probability | Medium | ▢ | ▢ | ▢ | `lc1514_path_with_maximum_probability` |
+| 130 | [332](https://leetcode.com/problems/reconstruct-itinerary/) | Reconstruct Itinerary | Hard | ▢ | ▢ | ▢ | `lc0332_reconstruct_itinerary` |
+| 131 | [765](https://leetcode.com/problems/couples-holding-hands/) | Couples Holding Hands | Hard | ▢ | ▢ | ▢ | `lc0765_couples_holding_hands` |
+| 132 | [208](https://leetcode.com/problems/implement-trie-prefix-tree/) | Implement Trie (Prefix Tree) *(ısınma)* | Medium | ▢ | ▢ | ▢ | `lc0208_implement_trie_prefix_tree` |
+| 133 | [79](https://leetcode.com/problems/word-search/) | Word Search *(ısınma)* | Medium | ▢ | ▢ | ▢ | `lc0079_word_search` |
+| 134 | [212](https://leetcode.com/problems/word-search-ii/) | Word Search II | Hard | ▢ | ▢ | ▢ | `lc0212_word_search_ii` |
 
 ### Backtracking
 
@@ -277,10 +331,10 @@ Citadel, DE Shaw ve Akuna listelerinde geçen klasik arama problemleri.
 
 | # | No | Problem | Difficulty | Rust | C++ | Python | File |
 | ---: | ---: | --- | --- | :---: | :---: | :---: | --- |
-| 117 | [78](https://leetcode.com/problems/subsets/) | Subsets *(ısınma)* | Medium | ▢ | ▢ | ▢ | `lc0078_subsets` |
-| 118 | [46](https://leetcode.com/problems/permutations/) | Permutations *(ısınma)* | Medium | ▢ | ▢ | ▢ | `lc0046_permutations` |
-| 119 | [17](https://leetcode.com/problems/letter-combinations-of-a-phone-number/) | Letter Combinations of a Phone Number | Medium | ▢ | ▢ | ▢ | `lc0017_letter_combinations_of_a_phone_number` |
-| 120 | [39](https://leetcode.com/problems/combination-sum/) | Combination Sum | Medium | ▢ | ▢ | ▢ | `lc0039_combination_sum` |
+| 135 | [78](https://leetcode.com/problems/subsets/) | Subsets *(ısınma)* | Medium | ▢ | ▢ | ▢ | `lc0078_subsets` |
+| 136 | [46](https://leetcode.com/problems/permutations/) | Permutations *(ısınma)* | Medium | ▢ | ▢ | ▢ | `lc0046_permutations` |
+| 137 | [17](https://leetcode.com/problems/letter-combinations-of-a-phone-number/) | Letter Combinations of a Phone Number | Medium | ▢ | ▢ | ▢ | `lc0017_letter_combinations_of_a_phone_number` |
+| 138 | [39](https://leetcode.com/problems/combination-sum/) | Combination Sum | Medium | ▢ | ▢ | ▢ | `lc0039_combination_sum` |
 
 ### Stock Serisi ve DP
 
@@ -288,32 +342,32 @@ Best Time to Buy and Sell Stock serisinin tamamı ve Kadane ailesi; Citadel'in l
 
 | # | No | Problem | Difficulty | Rust | C++ | Python | File |
 | ---: | ---: | --- | --- | :---: | :---: | :---: | --- |
-| 121 | [70](https://leetcode.com/problems/climbing-stairs/) | Climbing Stairs *(ısınma)* | Easy | ▢ | ▢ | ▢ | `lc0070_climbing_stairs` |
-| 122 | [198](https://leetcode.com/problems/house-robber/) | House Robber *(ısınma)* | Medium | ▢ | ▢ | ▢ | `lc0198_house_robber` |
-| 123 | [122](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/) | Best Time to Buy and Sell Stock II | Medium | ▢ | ▢ | ▢ | `lc0122_best_time_to_buy_and_sell_stock_ii` |
-| 124 | [309](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/) | Best Time to Buy and Sell Stock with Cooldown | Medium | ▢ | ▢ | ▢ | `lc0309_best_time_to_buy_and_sell_stock_with_cooldown` |
-| 125 | [714](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/) | Best Time to Buy and Sell Stock with Transaction Fee | Medium | ▢ | ▢ | ▢ | `lc0714_best_time_to_buy_and_sell_stock_with_transaction_fee` |
-| 126 | [123](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/) | Best Time to Buy and Sell Stock III | Hard | ▢ | ▢ | ▢ | `lc0123_best_time_to_buy_and_sell_stock_iii` |
-| 127 | [188](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/) | Best Time to Buy and Sell Stock IV | Hard | ▢ | ▢ | ▢ | `lc0188_best_time_to_buy_and_sell_stock_iv` |
-| 128 | [3573](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-v/) | Best Time to Buy and Sell Stock V | Medium | ▢ | ▢ | ▢ | `lc3573_best_time_to_buy_and_sell_stock_v` |
-| 129 | [3652](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-using-strategy/) | Best Time to Buy and Sell Stock using Strategy | Medium | ▢ | ▢ | ▢ | `lc3652_best_time_to_buy_and_sell_stock_using_strategy` |
-| 130 | [152](https://leetcode.com/problems/maximum-product-subarray/) | Maximum Product Subarray | Medium | ▢ | ▢ | ▢ | `lc0152_maximum_product_subarray` |
-| 131 | [918](https://leetcode.com/problems/maximum-sum-circular-subarray/) | Maximum Sum Circular Subarray | Medium | ▢ | ▢ | ▢ | `lc0918_maximum_sum_circular_subarray` |
-| 132 | [1186](https://leetcode.com/problems/maximum-subarray-sum-with-one-deletion/) | Maximum Subarray Sum with One Deletion | Medium | ▢ | ▢ | ▢ | `lc1186_maximum_subarray_sum_with_one_deletion` |
-| 133 | [322](https://leetcode.com/problems/coin-change/) | Coin Change | Medium | ▢ | ▢ | ▢ | `lc0322_coin_change` |
-| 134 | [300](https://leetcode.com/problems/longest-increasing-subsequence/) | Longest Increasing Subsequence | Medium | ▢ | ▢ | ▢ | `lc0300_longest_increasing_subsequence` |
-| 135 | [1048](https://leetcode.com/problems/longest-string-chain/) | Longest String Chain | Medium | ▢ | ▢ | ▢ | `lc1048_longest_string_chain` |
-| 136 | [1143](https://leetcode.com/problems/longest-common-subsequence/) | Longest Common Subsequence | Medium | ▢ | ▢ | ▢ | `lc1143_longest_common_subsequence` |
-| 137 | [72](https://leetcode.com/problems/edit-distance/) | Edit Distance | Medium | ▢ | ▢ | ▢ | `lc0072_edit_distance` |
-| 138 | [718](https://leetcode.com/problems/maximum-length-of-repeated-subarray/) | Maximum Length of Repeated Subarray | Medium | ▢ | ▢ | ▢ | `lc0718_maximum_length_of_repeated_subarray` |
-| 139 | [647](https://leetcode.com/problems/palindromic-substrings/) | Palindromic Substrings | Medium | ▢ | ▢ | ▢ | `lc0647_palindromic_substrings` |
-| 140 | [221](https://leetcode.com/problems/maximal-square/) | Maximal Square | Medium | ▢ | ▢ | ▢ | `lc0221_maximal_square` |
-| 141 | [877](https://leetcode.com/problems/stone-game/) | Stone Game | Medium | ▢ | ▢ | ▢ | `lc0877_stone_game` |
-| 142 | [1223](https://leetcode.com/problems/dice-roll-simulation/) | Dice Roll Simulation | Hard | ▢ | ▢ | ▢ | `lc1223_dice_roll_simulation` |
-| 143 | [1326](https://leetcode.com/problems/minimum-number-of-taps-to-open-to-water-a-garden/) | Minimum Number of Taps to Open to Water a Garden | Hard | ▢ | ▢ | ▢ | `lc1326_minimum_number_of_taps_to_open_to_water_a_garden` |
-| 144 | [2484](https://leetcode.com/problems/count-palindromic-subsequences/) | Count Palindromic Subsequences | Hard | ▢ | ▢ | ▢ | `lc2484_count_palindromic_subsequences` |
-| 145 | [1425](https://leetcode.com/problems/constrained-subsequence-sum/) | Constrained Subsequence Sum | Hard | ▢ | ▢ | ▢ | `lc1425_constrained_subsequence_sum` |
-| 146 | [32](https://leetcode.com/problems/longest-valid-parentheses/) | Longest Valid Parentheses | Hard | ▢ | ▢ | ▢ | `lc0032_longest_valid_parentheses` |
+| 139 | [70](https://leetcode.com/problems/climbing-stairs/) | Climbing Stairs *(ısınma)* | Easy | ▢ | ▢ | ▢ | `lc0070_climbing_stairs` |
+| 140 | [198](https://leetcode.com/problems/house-robber/) | House Robber *(ısınma)* | Medium | ▢ | ▢ | ▢ | `lc0198_house_robber` |
+| 141 | [122](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/) | Best Time to Buy and Sell Stock II | Medium | ▢ | ▢ | ▢ | `lc0122_best_time_to_buy_and_sell_stock_ii` |
+| 142 | [309](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/) | Best Time to Buy and Sell Stock with Cooldown | Medium | ▢ | ▢ | ▢ | `lc0309_best_time_to_buy_and_sell_stock_with_cooldown` |
+| 143 | [714](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/) | Best Time to Buy and Sell Stock with Transaction Fee | Medium | ▢ | ▢ | ▢ | `lc0714_best_time_to_buy_and_sell_stock_with_transaction_fee` |
+| 144 | [123](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/) | Best Time to Buy and Sell Stock III | Hard | ▢ | ▢ | ▢ | `lc0123_best_time_to_buy_and_sell_stock_iii` |
+| 145 | [188](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/) | Best Time to Buy and Sell Stock IV | Hard | ▢ | ▢ | ▢ | `lc0188_best_time_to_buy_and_sell_stock_iv` |
+| 146 | [3573](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-v/) | Best Time to Buy and Sell Stock V | Medium | ▢ | ▢ | ▢ | `lc3573_best_time_to_buy_and_sell_stock_v` |
+| 147 | [3652](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-using-strategy/) | Best Time to Buy and Sell Stock using Strategy | Medium | ▢ | ▢ | ▢ | `lc3652_best_time_to_buy_and_sell_stock_using_strategy` |
+| 148 | [152](https://leetcode.com/problems/maximum-product-subarray/) | Maximum Product Subarray | Medium | ▢ | ▢ | ▢ | `lc0152_maximum_product_subarray` |
+| 149 | [918](https://leetcode.com/problems/maximum-sum-circular-subarray/) | Maximum Sum Circular Subarray | Medium | ▢ | ▢ | ▢ | `lc0918_maximum_sum_circular_subarray` |
+| 150 | [1186](https://leetcode.com/problems/maximum-subarray-sum-with-one-deletion/) | Maximum Subarray Sum with One Deletion | Medium | ▢ | ▢ | ▢ | `lc1186_maximum_subarray_sum_with_one_deletion` |
+| 151 | [322](https://leetcode.com/problems/coin-change/) | Coin Change | Medium | ▢ | ▢ | ▢ | `lc0322_coin_change` |
+| 152 | [300](https://leetcode.com/problems/longest-increasing-subsequence/) | Longest Increasing Subsequence | Medium | ▢ | ▢ | ▢ | `lc0300_longest_increasing_subsequence` |
+| 153 | [1048](https://leetcode.com/problems/longest-string-chain/) | Longest String Chain | Medium | ▢ | ▢ | ▢ | `lc1048_longest_string_chain` |
+| 154 | [1143](https://leetcode.com/problems/longest-common-subsequence/) | Longest Common Subsequence | Medium | ▢ | ▢ | ▢ | `lc1143_longest_common_subsequence` |
+| 155 | [72](https://leetcode.com/problems/edit-distance/) | Edit Distance | Medium | ▢ | ▢ | ▢ | `lc0072_edit_distance` |
+| 156 | [718](https://leetcode.com/problems/maximum-length-of-repeated-subarray/) | Maximum Length of Repeated Subarray | Medium | ▢ | ▢ | ▢ | `lc0718_maximum_length_of_repeated_subarray` |
+| 157 | [647](https://leetcode.com/problems/palindromic-substrings/) | Palindromic Substrings | Medium | ▢ | ▢ | ▢ | `lc0647_palindromic_substrings` |
+| 158 | [221](https://leetcode.com/problems/maximal-square/) | Maximal Square | Medium | ▢ | ▢ | ▢ | `lc0221_maximal_square` |
+| 159 | [877](https://leetcode.com/problems/stone-game/) | Stone Game | Medium | ▢ | ▢ | ▢ | `lc0877_stone_game` |
+| 160 | [1223](https://leetcode.com/problems/dice-roll-simulation/) | Dice Roll Simulation | Hard | ▢ | ▢ | ▢ | `lc1223_dice_roll_simulation` |
+| 161 | [1326](https://leetcode.com/problems/minimum-number-of-taps-to-open-to-water-a-garden/) | Minimum Number of Taps to Open to Water a Garden | Hard | ▢ | ▢ | ▢ | `lc1326_minimum_number_of_taps_to_open_to_water_a_garden` |
+| 162 | [2484](https://leetcode.com/problems/count-palindromic-subsequences/) | Count Palindromic Subsequences | Hard | ▢ | ▢ | ▢ | `lc2484_count_palindromic_subsequences` |
+| 163 | [1425](https://leetcode.com/problems/constrained-subsequence-sum/) | Constrained Subsequence Sum | Hard | ▢ | ▢ | ▢ | `lc1425_constrained_subsequence_sum` |
+| 164 | [32](https://leetcode.com/problems/longest-valid-parentheses/) | Longest Valid Parentheses | Hard | ▢ | ▢ | ▢ | `lc0032_longest_valid_parentheses` |
 
 ## Aşama 5 · İleri ve niş
 
@@ -327,21 +381,21 @@ Ağırlıklı rastgele seçim, karıştırma, reservoir sampling, rand7'den rand
 
 | # | No | Problem | Difficulty | Rust | C++ | Python | File |
 | ---: | ---: | --- | --- | :---: | :---: | :---: | --- |
-| 147 | [528](https://leetcode.com/problems/random-pick-with-weight/) | Random Pick with Weight | Medium | ▢ | ▢ | ▢ | `lc0528_random_pick_with_weight` |
-| 148 | [384](https://leetcode.com/problems/shuffle-an-array/) | Shuffle an Array | Medium | ▢ | ▢ | ▢ | `lc0384_shuffle_an_array` |
-| 149 | [382](https://leetcode.com/problems/linked-list-random-node/) | Linked List Random Node | Medium | ▢ | ▢ | ▢ | `lc0382_linked_list_random_node` |
-| 150 | [470](https://leetcode.com/problems/implement-rand10-using-rand7/) | Implement Rand10() Using Rand7() | Medium | ▢ | ▢ | ▢ | `lc0470_implement_rand10_using_rand7` |
-| 151 | [478](https://leetcode.com/problems/generate-random-point-in-a-circle/) | Generate Random Point in a Circle | Medium | ▢ | ▢ | ▢ | `lc0478_generate_random_point_in_a_circle` |
-| 152 | [1227](https://leetcode.com/problems/airplane-seat-assignment-probability/) | Airplane Seat Assignment Probability | Medium | ▢ | ▢ | ▢ | `lc1227_airplane_seat_assignment_probability` |
-| 153 | [837](https://leetcode.com/problems/new-21-game/) | New 21 Game | Medium | ▢ | ▢ | ▢ | `lc0837_new_21_game` |
-| 154 | [688](https://leetcode.com/problems/knight-probability-in-chessboard/) | Knight Probability in Chessboard | Medium | ▢ | ▢ | ▢ | `lc0688_knight_probability_in_chessboard` |
-| 155 | [43](https://leetcode.com/problems/multiply-strings/) | Multiply Strings | Medium | ▢ | ▢ | ▢ | `lc0043_multiply_strings` |
-| 156 | [8](https://leetcode.com/problems/string-to-integer-atoi/) | String to Integer (atoi) | Medium | ▢ | ▢ | ▢ | `lc0008_string_to_integer_atoi` |
-| 157 | [166](https://leetcode.com/problems/fraction-to-recurring-decimal/) | Fraction to Recurring Decimal | Medium | ▢ | ▢ | ▢ | `lc0166_fraction_to_recurring_decimal` |
-| 158 | [829](https://leetcode.com/problems/consecutive-numbers-sum/) | Consecutive Numbers Sum | Hard | ▢ | ▢ | ▢ | `lc0829_consecutive_numbers_sum` |
-| 159 | [150](https://leetcode.com/problems/evaluate-reverse-polish-notation/) | Evaluate Reverse Polish Notation *(ısınma)* | Medium | ▢ | ▢ | ▢ | `lc0150_evaluate_reverse_polish_notation` |
-| 160 | [224](https://leetcode.com/problems/basic-calculator/) | Basic Calculator | Hard | ▢ | ▢ | ▢ | `lc0224_basic_calculator` |
-| 161 | [399](https://leetcode.com/problems/evaluate-division/) | Evaluate Division | Medium | ▢ | ▢ | ▢ | `lc0399_evaluate_division` |
+| 165 | [528](https://leetcode.com/problems/random-pick-with-weight/) | Random Pick with Weight | Medium | ▢ | ▢ | ▢ | `lc0528_random_pick_with_weight` |
+| 166 | [384](https://leetcode.com/problems/shuffle-an-array/) | Shuffle an Array | Medium | ▢ | ▢ | ▢ | `lc0384_shuffle_an_array` |
+| 167 | [382](https://leetcode.com/problems/linked-list-random-node/) | Linked List Random Node | Medium | ▢ | ▢ | ▢ | `lc0382_linked_list_random_node` |
+| 168 | [470](https://leetcode.com/problems/implement-rand10-using-rand7/) | Implement Rand10() Using Rand7() | Medium | ▢ | ▢ | ▢ | `lc0470_implement_rand10_using_rand7` |
+| 169 | [478](https://leetcode.com/problems/generate-random-point-in-a-circle/) | Generate Random Point in a Circle | Medium | ▢ | ▢ | ▢ | `lc0478_generate_random_point_in_a_circle` |
+| 170 | [1227](https://leetcode.com/problems/airplane-seat-assignment-probability/) | Airplane Seat Assignment Probability | Medium | ▢ | ▢ | ▢ | `lc1227_airplane_seat_assignment_probability` |
+| 171 | [837](https://leetcode.com/problems/new-21-game/) | New 21 Game | Medium | ▢ | ▢ | ▢ | `lc0837_new_21_game` |
+| 172 | [688](https://leetcode.com/problems/knight-probability-in-chessboard/) | Knight Probability in Chessboard | Medium | ▢ | ▢ | ▢ | `lc0688_knight_probability_in_chessboard` |
+| 173 | [43](https://leetcode.com/problems/multiply-strings/) | Multiply Strings | Medium | ▢ | ▢ | ▢ | `lc0043_multiply_strings` |
+| 174 | [8](https://leetcode.com/problems/string-to-integer-atoi/) | String to Integer (atoi) | Medium | ▢ | ▢ | ▢ | `lc0008_string_to_integer_atoi` |
+| 175 | [166](https://leetcode.com/problems/fraction-to-recurring-decimal/) | Fraction to Recurring Decimal | Medium | ▢ | ▢ | ▢ | `lc0166_fraction_to_recurring_decimal` |
+| 176 | [829](https://leetcode.com/problems/consecutive-numbers-sum/) | Consecutive Numbers Sum | Hard | ▢ | ▢ | ▢ | `lc0829_consecutive_numbers_sum` |
+| 177 | [150](https://leetcode.com/problems/evaluate-reverse-polish-notation/) | Evaluate Reverse Polish Notation *(ısınma)* | Medium | ▢ | ▢ | ▢ | `lc0150_evaluate_reverse_polish_notation` |
+| 178 | [224](https://leetcode.com/problems/basic-calculator/) | Basic Calculator | Hard | ▢ | ▢ | ▢ | `lc0224_basic_calculator` |
+| 179 | [399](https://leetcode.com/problems/evaluate-division/) | Evaluate Division | Medium | ▢ | ▢ | ▢ | `lc0399_evaluate_division` |
 
 ### Simülasyon ve Ayrıştırma
 
@@ -349,12 +403,12 @@ Text Justification, atoi, calculator: dikkat ve uç durum disiplini isteyen prob
 
 | # | No | Problem | Difficulty | Rust | C++ | Python | File |
 | ---: | ---: | --- | --- | :---: | :---: | :---: | --- |
-| 162 | [2085](https://leetcode.com/problems/count-common-words-with-one-occurrence/) | Count Common Words With One Occurrence | Easy | ▢ | ▢ | ▢ | `lc2085_count_common_words_with_one_occurrence` |
-| 163 | [48](https://leetcode.com/problems/rotate-image/) | Rotate Image | Medium | ▢ | ▢ | ▢ | `lc0048_rotate_image` |
-| 164 | [289](https://leetcode.com/problems/game-of-life/) | Game of Life | Medium | ▢ | ▢ | ▢ | `lc0289_game_of_life` |
-| 165 | [874](https://leetcode.com/problems/walking-robot-simulation/) | Walking Robot Simulation | Medium | ▢ | ▢ | ▢ | `lc0874_walking_robot_simulation` |
-| 166 | [636](https://leetcode.com/problems/exclusive-time-of-functions/) | Exclusive Time of Functions | Medium | ▢ | ▢ | ▢ | `lc0636_exclusive_time_of_functions` |
-| 167 | [68](https://leetcode.com/problems/text-justification/) | Text Justification | Hard | ▢ | ▢ | ▢ | `lc0068_text_justification` |
+| 180 | [2085](https://leetcode.com/problems/count-common-words-with-one-occurrence/) | Count Common Words With One Occurrence | Easy | ▢ | ▢ | ▢ | `lc2085_count_common_words_with_one_occurrence` |
+| 181 | [48](https://leetcode.com/problems/rotate-image/) | Rotate Image | Medium | ▢ | ▢ | ▢ | `lc0048_rotate_image` |
+| 182 | [289](https://leetcode.com/problems/game-of-life/) | Game of Life | Medium | ▢ | ▢ | ▢ | `lc0289_game_of_life` |
+| 183 | [874](https://leetcode.com/problems/walking-robot-simulation/) | Walking Robot Simulation | Medium | ▢ | ▢ | ▢ | `lc0874_walking_robot_simulation` |
+| 184 | [636](https://leetcode.com/problems/exclusive-time-of-functions/) | Exclusive Time of Functions | Medium | ▢ | ▢ | ▢ | `lc0636_exclusive_time_of_functions` |
+| 185 | [68](https://leetcode.com/problems/text-justification/) | Text Justification | Hard | ▢ | ▢ | ▢ | `lc0068_text_justification` |
 
 ### Concurrency
 
@@ -362,10 +416,10 @@ LeetCode'un concurrency problemleri; asıl HFT turundaki lock-free kuyruk/bellek
 
 | # | No | Problem | Difficulty | Rust | C++ | Python | File |
 | ---: | ---: | --- | --- | :---: | :---: | :---: | --- |
-| 168 | [1114](https://leetcode.com/problems/print-in-order/) | Print in Order | Easy | ▢ | ▢ | ▢ | `lc1114_print_in_order` |
-| 169 | [1115](https://leetcode.com/problems/print-foobar-alternately/) | Print FooBar Alternately | Medium | ▢ | ▢ | ▢ | `lc1115_print_foobar_alternately` |
-| 170 | [1226](https://leetcode.com/problems/the-dining-philosophers/) | The Dining Philosophers | Medium | ▢ | ▢ | ▢ | `lc1226_the_dining_philosophers` |
-| 171 | [1188](https://leetcode.com/problems/design-bounded-blocking-queue/) | Design Bounded Blocking Queue | Medium | ▢ | ▢ | ▢ | `lc1188_design_bounded_blocking_queue` |
+| 186 | [1114](https://leetcode.com/problems/print-in-order/) | Print in Order | Easy | ▢ | ▢ | ▢ | `lc1114_print_in_order` |
+| 187 | [1115](https://leetcode.com/problems/print-foobar-alternately/) | Print FooBar Alternately | Medium | ▢ | ▢ | ▢ | `lc1115_print_foobar_alternately` |
+| 188 | [1226](https://leetcode.com/problems/the-dining-philosophers/) | The Dining Philosophers | Medium | ▢ | ▢ | ▢ | `lc1226_the_dining_philosophers` |
+| 189 | [1188](https://leetcode.com/problems/design-bounded-blocking-queue/) | Design Bounded Blocking Queue | Medium | ▢ | ▢ | ▢ | `lc1188_design_bounded_blocking_queue` |
 
 ### Segment Tree ve Fenwick
 
@@ -373,11 +427,11 @@ Fiyat seviyelerini sıralı tutmak ve aralık sorgularını O(log n)'de yapmak: 
 
 | # | No | Problem | Difficulty | Rust | C++ | Python | File |
 | ---: | ---: | --- | --- | :---: | :---: | :---: | --- |
-| 172 | [307](https://leetcode.com/problems/range-sum-query-mutable/) | Range Sum Query - Mutable | Medium | ▢ | ▢ | ▢ | `lc0307_range_sum_query_mutable` |
-| 173 | [315](https://leetcode.com/problems/count-of-smaller-numbers-after-self/) | Count of Smaller Numbers After Self | Hard | ▢ | ▢ | ▢ | `lc0315_count_of_smaller_numbers_after_self` |
-| 174 | [220](https://leetcode.com/problems/contains-duplicate-iii/) | Contains Duplicate III | Hard | ▢ | ▢ | ▢ | `lc0220_contains_duplicate_iii` |
-| 175 | [2286](https://leetcode.com/problems/booking-concert-tickets-in-groups/) | Booking Concert Tickets in Groups | Hard | ▢ | ▢ | ▢ | `lc2286_booking_concert_tickets_in_groups` |
-| 176 | [3161](https://leetcode.com/problems/block-placement-queries/) | Block Placement Queries | Hard | ▢ | ▢ | ▢ | `lc3161_block_placement_queries` |
+| 190 | [307](https://leetcode.com/problems/range-sum-query-mutable/) | Range Sum Query - Mutable | Medium | ▢ | ▢ | ▢ | `lc0307_range_sum_query_mutable` |
+| 191 | [315](https://leetcode.com/problems/count-of-smaller-numbers-after-self/) | Count of Smaller Numbers After Self | Hard | ▢ | ▢ | ▢ | `lc0315_count_of_smaller_numbers_after_self` |
+| 192 | [220](https://leetcode.com/problems/contains-duplicate-iii/) | Contains Duplicate III | Hard | ▢ | ▢ | ▢ | `lc0220_contains_duplicate_iii` |
+| 193 | [2286](https://leetcode.com/problems/booking-concert-tickets-in-groups/) | Booking Concert Tickets in Groups | Hard | ▢ | ▢ | ▢ | `lc2286_booking_concert_tickets_in_groups` |
+| 194 | [3161](https://leetcode.com/problems/block-placement-queries/) | Block Placement Queries | Hard | ▢ | ▢ | ▢ | `lc3161_block_placement_queries` |
 
 ## Paralel hat
 
@@ -385,13 +439,13 @@ Fiyat seviyelerini sıralı tutmak ve aralık sorgularını O(log n)'de yapmak: 
 
 LeetCode'un "30 Days of Pandas" planı, kendi sırasıyla: günde bir problem (30 gün + 3 pekiştirme sorusu). Veri filtreleme, string metotları, veri işleme, istatistik, gruplama, birleştirme; quant research'ün günlük işi. Başlangıç: 21-10-2026.
 
-<sub>0/33</sub>
+<sub>3/33</sub>
 
 | Day | No | Problem | Difficulty | Pandas | File | Section |
 | ---: | ---: | --- | --- | :---: | --- | --- |
-| 1 | [595](https://leetcode.com/problems/big-countries/) | Big Countries | Easy | ▢ | `lc0595_big_countries` | Data Filtering |
-| 2 | [1757](https://leetcode.com/problems/recyclable-and-low-fat-products/) | Recyclable and Low Fat Products | Easy | ▢ | `lc1757_recyclable_and_low_fat_products` | Data Filtering |
-| 3 | [183](https://leetcode.com/problems/customers-who-never-order/) | Customers Who Never Order | Easy | ▢ | `lc0183_customers_who_never_order` | Data Filtering |
+| 1 | [595](https://leetcode.com/problems/big-countries/) | Big Countries | Easy | ✅ | `lc0595_big_countries` | Data Filtering |
+| 2 | [1757](https://leetcode.com/problems/recyclable-and-low-fat-products/) | Recyclable and Low Fat Products | Easy | ✅ | `lc1757_recyclable_and_low_fat_products` | Data Filtering |
+| 3 | [183](https://leetcode.com/problems/customers-who-never-order/) | Customers Who Never Order | Easy | ✅ | `lc0183_customers_who_never_order` | Data Filtering |
 | 4 | [1148](https://leetcode.com/problems/article-views-i/) | Article Views I | Easy | ▢ | `lc1148_article_views_i` | Data Filtering |
 | 5 | [1683](https://leetcode.com/problems/invalid-tweets/) | Invalid Tweets | Easy | ▢ | `lc1683_invalid_tweets` | String Methods |
 | 6 | [1873](https://leetcode.com/problems/calculate-special-bonus/) | Calculate Special Bonus | Easy | ▢ | `lc1873_calculate_special_bonus` | String Methods |
