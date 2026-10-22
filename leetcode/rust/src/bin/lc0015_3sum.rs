@@ -17,8 +17,43 @@ struct Solution;
 // ---------------------------------------------------------------- solution
 impl Solution {
     pub fn three_sum(nums: Vec<i32>) -> Vec<Vec<i32>> {
-        let _ = nums;
-        todo!()
+        let mut output: Vec<Vec<i32>> = vec![];
+        let mut sorted_nums = nums;
+        sorted_nums.sort();
+
+        for i in 0..sorted_nums.len() - 2 {
+            if i > 0 && sorted_nums[i] == sorted_nums[i - 1] {
+                continue;
+            }
+
+            let target = -sorted_nums[i];
+            let mut left = i + 1;
+            let mut right = sorted_nums.len() - 1;
+
+            while left < right {
+                let sum = sorted_nums[left] + sorted_nums[right];
+
+                if sum < target {
+                    left += 1;
+                } else if sum > target {
+                    right -= 1;
+                } else {
+                    output.push(vec![sorted_nums[i], sorted_nums[left], sorted_nums[right]]);
+
+                    left += 1;
+                    right -= 1;
+
+                    while left < right && sorted_nums[left] == sorted_nums[left - 1] {
+                        left += 1;
+                    }
+                    while left < right && sorted_nums[right] == sorted_nums[right + 1] {
+                        right -= 1;
+                    }
+                }
+            }
+        }
+
+        return output;
     }
 }
 // ---------------------------------------------------------------- tests

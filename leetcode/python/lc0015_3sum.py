@@ -11,15 +11,48 @@ Approach:
 Time O(?), space O(?)
 """
 
-from _lc import *  # noqa: F403  (LeetCode's namespace: List, ListNode, ...)
-
 # ---------------------------------------------------------------- solution
 from typing import List
+
+from _lc import *  # noqa: F403  (LeetCode's namespace: List, ListNode, ...)
 
 
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
-        raise NotImplementedError
+        output = []
+        sorted_nums = sorted(nums)
+
+        for i in range(0, len(nums) - 2):
+            if (i > 0) and (sorted_nums[i] == sorted_nums[i - 1]):
+                continue
+
+            target = -sorted_nums[i]
+
+            left = i + 1
+            right = len(nums) - 1
+
+            while left < right:
+                summed = sorted_nums[left] + sorted_nums[right]
+
+                if summed < target:
+                    left += 1
+
+                elif summed > target:
+                    right -= 1
+
+                else:
+                    output.append(
+                        [sorted_nums[i], sorted_nums[left], sorted_nums[right]]
+                    )
+                    print(output[-1])
+
+                    left += 1
+                    right -= 1
+
+                    while left < right and sorted_nums[left] == sorted_nums[left - 1]:
+                        left += 1
+
+        return output
 
 
 # ---------------------------------------------------------------- tests
@@ -78,9 +111,7 @@ def test_same_values_different_order_in_the_input():
 
 def test_value_range_extremes():
     assert three_sum([100_000, -100_000, 0]) == expect([[-100_000, 0, 100_000]])
-    assert three_sum([-100_000, 50_000, 50_000]) == expect(
-        [[-100_000, 50_000, 50_000]]
-    )
+    assert three_sum([-100_000, 50_000, 50_000]) == expect([[-100_000, 50_000, 50_000]])
 
 
 def test_largest_allowed_input():
