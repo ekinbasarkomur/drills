@@ -23,6 +23,9 @@ def find_customers(customers: pd.DataFrame, orders: pd.DataFrame) -> pd.DataFram
     return customers
 
 
+# ---------------------------------------------------------------- tests
+
+# Alternative, kept out of the solution region: the same answer with isin (not a submission).
 def find_customers_isin(customers: pd.DataFrame, orders: pd.DataFrame) -> pd.DataFrame:
     """Same answer without building the joined frame first.
 
@@ -35,9 +38,6 @@ def find_customers_isin(customers: pd.DataFrame, orders: pd.DataFrame) -> pd.Dat
     """
     never_ordered = ~customers["id"].isin(orders["customerId"])
     return customers[never_ordered][["name"]].rename(columns={"name": "Customers"})
-
-
-# ---------------------------------------------------------------- tests
 
 
 def test_example_1():
