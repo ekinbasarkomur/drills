@@ -15,6 +15,8 @@ use leetcode::*;
 struct Solution;
 
 // ---------------------------------------------------------------- solution
+use std::cmp::Ordering;
+
 impl Solution {
     pub fn three_sum(nums: Vec<i32>) -> Vec<Vec<i32>> {
         let mut output: Vec<Vec<i32>> = vec![];
@@ -33,28 +35,32 @@ impl Solution {
             while left < right {
                 let sum = sorted_nums[left] + sorted_nums[right];
 
-                if sum < target {
-                    left += 1;
-                } else if sum > target {
-                    right -= 1;
-                } else {
-                    output.push(vec![sorted_nums[i], sorted_nums[left], sorted_nums[right]]);
 
-                    left += 1;
-                    right -= 1;
+                match sum.cmp(&target) {
+                    Ordering::Less => left += 1,
+                    Ordering::Greater => right -= 1,
+                    Ordering::Equal => {
+                        output.push(vec![sorted_nums[i], sorted_nums[left], sorted_nums[right]]);
 
-                    while left < right && sorted_nums[left] == sorted_nums[left - 1] {
                         left += 1;
-                    }
-                    while left < right && sorted_nums[right] == sorted_nums[right + 1] {
                         right -= 1;
+
+                        while left < right && sorted_nums[left] == sorted_nums[left - 1] {
+                            left += 1;
+                        }
+                        while left < right && sorted_nums[right] == sorted_nums[right + 1] {
+                            right -= 1;
+                        }
+
                     }
+
                 }
             }
         }
 
         return output;
     }
+
 }
 // ---------------------------------------------------------------- tests
 
