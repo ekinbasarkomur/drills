@@ -7,8 +7,10 @@ Problem: buy on one day and sell on a LATER day. Return the best profit,
          or 0 if every later price is lower.
 Note: You never need to look ahead: the best sale on day i is against the
       cheapest price seen so far, so one pass is enough.
-Approach:
-Time O(?), space O(?)
+Approach: one pass, keeping the lowest price seen so far. A lower price becomes the new
+          buy day; any other price is a possible sale, and its profit against that lowest price
+          updates the best.
+Time O(n), space O(1)
 """
 
 from _lc import *  # noqa: F403  (LeetCode's namespace: List, ListNode, ...)
