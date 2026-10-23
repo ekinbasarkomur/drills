@@ -19,8 +19,6 @@ struct Codec {}
  * If you need a mutable reference, change it to `&mut self` instead.
  */
 // ---------------------------------------------------------------- solution
-struct Codec {}
-
 impl Codec {
     fn new() -> Self {
         Self {}
@@ -44,7 +42,7 @@ impl Codec {
         while let Some((len, tail)) = rest.split_once("#") {
             let len: usize = len.parse().unwrap();
             let msg = tail[..len].to_string();
-            //println!("{} - {}", msg, tail);
+            println!("{} - {}", msg, tail);
 
             decoded_vector.push(msg);
 
@@ -55,12 +53,6 @@ impl Codec {
     }
 }
 
-/**
- * Your Codec object will be instantiated and called as such:
- * let obj = Codec::new();
- * let s: String = obj.encode(strs);
- * let ans: VecVec<String> = obj.decode(s);
- */
 // ---------------------------------------------------------------- tests
 
 fn main() {

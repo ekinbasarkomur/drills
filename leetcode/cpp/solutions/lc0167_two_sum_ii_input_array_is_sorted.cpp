@@ -13,29 +13,25 @@
 #include "test.hpp"
 
 // ---------------------------------------------------------------- solution
-class Solution {
-public:
-    vector<int> twoSum(const vector<int> &numbers, int target) {
+std::vector<int> twoSum(const std::vector<int> &numbers, int target) {
 
-        int left = 0;
-        int right = size(numbers) - 1;
+    int left = 0;
+    int right = size(numbers) - 1;
 
-        while (left < right) {
-            if (target == numbers[left] + numbers[right]) {
-                return {left + 1, right + 1};
-            }
-
-            else if (target > numbers[left] + numbers[right]) {
-                left++;
-            } else {
-                right--;
-            }
+    while (left < right) {
+        if (target == numbers[left] + numbers[right]) {
+            return {left + 1, right + 1};
         }
 
-        return {0, 0};
+        else if (target > numbers[left] + numbers[right]) {
+            left++;
+        } else {
+            right--;
+        }
     }
 
-};
+    return {0, 0};
+}
 // ---------------------------------------------------------------- tests
 
 using vi = std::vector<int>;
