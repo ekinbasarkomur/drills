@@ -13,7 +13,6 @@ Time O(?), space O(?)
 from _lc import *  # noqa: F403  (LeetCode's namespace: List, ListNode, ...)
 
 # ---------------------------------------------------------------- solution
-# LeetCode hands this one out as a Codec class, not as Solution.
 class Codec:
 
     split_char = "#"
@@ -37,14 +36,12 @@ class Codec:
             output.append(rest[:int(len_of_string)])
             rest = rest[int(len_of_string):]
 
-        return output
+        return output        
 
 
 # Your Codec object will be instantiated and called as such:
 # codec = Codec()
 # codec.decode(codec.encode(strs))
-
-
 # ---------------------------------------------------------------- tests
 
 # The tests below call free functions; forward them to one Codec instance.

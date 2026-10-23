@@ -13,9 +13,6 @@ Approach: for each i, gather the i-th row, the i-th column and the i-th sub-box
 from _lc import *  # noqa: F403  (LeetCode's namespace: List, ListNode, ...)
 
 # ---------------------------------------------------------------- solution
-from typing import List
-
-
 class Solution:
     def isValidSudoku(self, board: List[List[str]]) -> bool:
         def duplicate_exist(array):
@@ -54,8 +51,6 @@ class Solution:
                 return False
 
         return True
-
-
 # ---------------------------------------------------------------- tests
 # Boards are written as nine 9-character strings for readability.
 

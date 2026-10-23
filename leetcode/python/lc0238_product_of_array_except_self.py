@@ -13,9 +13,6 @@ Approach: build a prefix table (product of everything to the left of i) and a
 from _lc import *  # noqa: F403  (LeetCode's namespace: List, ListNode, ...)
 
 # ---------------------------------------------------------------- solution
-from typing import List
-
-
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
         output = []
@@ -36,8 +33,6 @@ class Solution:
             output.append(prefix[i] * suffix[i])
 
         return output
-
-
 # ---------------------------------------------------------------- tests
 
 

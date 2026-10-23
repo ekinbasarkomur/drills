@@ -35,6 +35,7 @@ public:
         }
         return output;
     }
+
 };
 // ---------------------------------------------------------------- tests
 // The tests below call the old free functions; forward them to Solution.

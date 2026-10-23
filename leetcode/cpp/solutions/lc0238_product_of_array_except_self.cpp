@@ -12,7 +12,7 @@
 // ---------------------------------------------------------------- solution
 class Solution {
 public:
-    std::vector<int> productExceptSelf(const std::vector<int> &nums) {
+    vector<int> productExceptSelf(const vector<int> &nums) {
         vector<int> prefix = {1};
         vector<int> suffix = {1};
         vector<int> output;
@@ -29,6 +29,7 @@ public:
         }
         return output;
     }
+
 };
 // ---------------------------------------------------------------- tests
 // The tests below call the old free functions; forward them to Solution.

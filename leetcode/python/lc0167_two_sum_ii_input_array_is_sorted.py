@@ -16,9 +16,6 @@ Time O(n), space O(1)
 from _lc import *  # noqa: F403  (LeetCode's namespace: List, ListNode, ...)
 
 # ---------------------------------------------------------------- solution
-from typing import List
-
-
 class Solution:
     def twoSum(self, numbers: list[int], target: int) -> list[int]:
         left = 0
@@ -33,10 +30,8 @@ class Solution:
                 right -= 1
             else:
                 return [left + 1, right + 1]
-
+        
         return []
-
-
 # ---------------------------------------------------------------- tests
 
 

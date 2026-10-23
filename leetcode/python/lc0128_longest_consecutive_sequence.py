@@ -14,9 +14,6 @@ Approach: put everything in a set, then only start counting from a number whose
 from _lc import *  # noqa: F403  (LeetCode's namespace: List, ListNode, ...)
 
 # ---------------------------------------------------------------- solution
-from typing import List
-
-
 class Solution:
     def longestConsecutive(self, nums: List[int]) -> int:
 
@@ -48,8 +45,6 @@ class Solution:
                 max_count = inc_map[start]
 
         return max_count
-
-
 # ---------------------------------------------------------------- tests
 
 

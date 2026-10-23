@@ -12,9 +12,6 @@ use leetcode::*;
 struct Solution;
 
 // ---------------------------------------------------------------- solution
-//use std::mem::{align_of, size_of, size_of_val};
-//use std::ops::Index;
-
 impl Solution {
     pub fn is_palindrome(s: String) -> bool {
         let mut clean: Vec<char> = Vec::new();
