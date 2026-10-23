@@ -813,6 +813,10 @@ def pandas_tests(p: Problem, code: str):
         return [], reason
     m = re.search(r"def\s+(\w+)\s*\((.*?)\)", code, re.S)
     fname, params = m.group(1), [x.split(":")[0].strip() for x in split_top(m.group(2))]
+    # LeetCode sometimes names a parameter after the function itself (607:
+    # sales_person(sales_person, ...)). Binding the frame to that name in the
+    # test would shadow the function before it is called.
+    params = [f"{x}_df" if x == fname else x for x in params]
     dtypes = table_dtypes(p.meta)
     out = []
     for n, (case, want) in enumerate(ex, 1):
