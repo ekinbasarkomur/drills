@@ -17,8 +17,20 @@ struct Solution;
 // ---------------------------------------------------------------- solution
 impl Solution {
     pub fn max_profit(prices: Vec<i32>) -> i32 {
-        let _ = (prices,);
-        todo!()
+        let mut max_profit : i32 = 0;
+        let mut lowest_price : i32 = prices[0];
+
+        for price in prices {
+            if price < lowest_price
+            {
+                lowest_price = price;
+                continue;
+            }
+
+            max_profit = std::cmp::max(max_profit, price - lowest_price);
+        }
+
+        max_profit
     }
 }
 // ---------------------------------------------------------------- tests
