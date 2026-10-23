@@ -13,10 +13,13 @@ from _pd import check, frame
 
 
 def article_views(views: pd.DataFrame) -> pd.DataFrame:
-    views = views.loc[views["author_id"] == views["viewer_id"], ["author_id"]]
-    views = views.groupby("author_id").count()
-    views = views.reset_index()
-    views = views.rename(columns={"author_id": "id"})
+    views = views[views["author_id"] == views["viewer_id"]][["author_id"]]
+    views = (
+        views.groupby("author_id")
+        .count()
+        .reset_index()
+        .rename(columns={"author_id": "id"})
+    )
     return views
 
 
