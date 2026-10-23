@@ -20,8 +20,9 @@ Uncommitted local changes still win, and every written submission is recorded as
 
 Only the solution region (between the two marker lines) is replaced; the header and the
 tests stay. A missing file is scaffolded with scripts/new.py first. Each written file's
-tests are run in that language, then one commit holds them all ("LeetCode sync: 146 rust,
-23 cpp"). Nothing is pushed.
+tests are run in that language; a submission that fails them is not written (the file goes
+back to what it was and the problem is listed as skipped). One commit holds the rest
+("LeetCode sync: 146 rust, 23 cpp"). Nothing is pushed.
 
     scripts/sync.py [--dry-run] [--no-commit] [--force] < submissions.json
 
@@ -146,10 +147,15 @@ def main():
         if args.dry_run:
             written.append({"id": pid, "lang": lang, "file": rel, "submission": s["submission_id"], "dry_run": True})
             continue
+        original = path.read_text()
         path.write_text(above + code + below)
+        if not run_tests(pid, lang):  # e.g. a class wrapper the repo's tests don't call: keep what works
+            path.write_text(original)
+            skipped.append({"id": pid, "lang": lang, "file": rel,
+                            "why": "the submission fails this file's tests; the file was left as it was"})
+            continue
         record[rel] = {"submission": str(s["submission_id"]), "timestamp": ts}
-        ok = run_tests(pid, lang)
-        written.append({"id": pid, "lang": lang, "file": rel, "submission": s["submission_id"], "tests_pass": ok})
+        written.append({"id": pid, "lang": lang, "file": rel, "submission": s["submission_id"], "tests_pass": True})
 
     commit = None
     if not args.dry_run:
