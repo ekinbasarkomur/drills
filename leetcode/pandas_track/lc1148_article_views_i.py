@@ -7,8 +7,8 @@ Problem: the authors who viewed at least one of their own articles, as a single 
 Approach: keep the rows where author_id equals viewer_id, then reduce them to distinct
           authors. groupby("author_id").count() does that as a side effect: the key moves
           into the index (sorted), no column is left to count, and reset_index turns the
-          index back into the only column.
-Time O(n + k log k) for k distinct authors, space O(n)
+          index back into the only column. k = distinct authors.
+Time O(n + k log k), space O(n)
 """
 
 # ---------------------------------------------------------------- solution
