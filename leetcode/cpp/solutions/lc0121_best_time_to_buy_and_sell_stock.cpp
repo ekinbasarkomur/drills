@@ -15,25 +15,21 @@
 // ---------------------------------------------------------------- solution
 class Solution {
 public:
-    int maxProfit(vector<int> &prices) {
-
-        int lowest_price = prices[0];
+    int maxProfit(vector<int>& prices) {
         int max_profit = 0;
+        int lowest_price = prices[0];
 
-        for (int price : prices) {
-            if (price < lowest_price) {
+        for(int price : prices)
+        {
+            if(price < lowest_price)
+            {
                 lowest_price = price;
                 continue;
             }
-
-            int profit = price - lowest_price;
-
-            if (profit > max_profit) {
-                max_profit = profit;
-            }
+            max_profit = max(max_profit, price - lowest_price);
         }
-
         return max_profit;
+        
     }
 };
 // ---------------------------------------------------------------- tests
