@@ -18,7 +18,7 @@ from _pd import check, frame
 
 def find_customers(customers: pd.DataFrame, orders: pd.DataFrame) -> pd.DataFrame:
     customers = customers.merge(orders, left_on="id", right_on="customerId", how="left")
-    customers = customers.loc[customers["customerId"].isna(), ["name"]]
+    customers = customers[customers["customerId"].isna()][["name"]]
     customers.columns = ["Customers"]
     return customers
 
@@ -37,7 +37,7 @@ def find_customers_isin(customers: pd.DataFrame, orders: pd.DataFrame) -> pd.Dat
     a column from the right-hand side is what makes a merge necessary.
     """
     never_ordered = ~customers["id"].isin(orders["customerId"])
-    return customers.loc[never_ordered, ["name"]].rename(columns={"name": "Customers"})
+    return customers[never_ordered][["name"]].rename(columns={"name": "Customers"})
 
 
 def test_example_1():
