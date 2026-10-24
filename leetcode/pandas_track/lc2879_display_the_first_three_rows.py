@@ -13,9 +13,7 @@ from _pd import check, frame
 import pandas as pd
 
 def selectFirstRows(employees: pd.DataFrame) -> pd.DataFrame:
-    raise NotImplementedError
-
-
+    return employees.head(3)
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
