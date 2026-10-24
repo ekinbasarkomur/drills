@@ -2,9 +2,9 @@
 2886. Change Data Type · Easy · https://leetcode.com/problems/change-data-type/
 Plan: Paralel hat · Pandas · Introduction to Pandas
 
-Problem:
-Approach:
-Time O(?), space O(?)
+Problem: convert the grade column from float to int.
+Approach: astype(int) converts the whole column to integers (it truncates decimals and fails on NaN); assign it back to the same column
+Time O(n), space O(n)
 """
 
 from _pd import check, frame  # isort: skip
