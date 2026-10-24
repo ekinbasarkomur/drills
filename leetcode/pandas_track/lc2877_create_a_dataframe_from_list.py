@@ -15,9 +15,7 @@ from _pd import check, frame
 import pandas as pd
 
 def createDataframe(student_data: List[List[int]]) -> pd.DataFrame:
-    raise NotImplementedError
-
-
+    return pd.DataFrame(student_data, columns = ["student_id", "age"])
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
