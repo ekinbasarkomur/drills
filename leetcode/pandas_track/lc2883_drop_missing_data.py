@@ -13,11 +13,21 @@ from _pd import check, frame  # isort: skip
 import pandas as pd
 
 def dropMissingData(students: pd.DataFrame) -> pd.DataFrame:
-    raise NotImplementedError
+    return students.dropna(subset=["name"])
 
 
 # ---------------------------------------------------------------- tests
 
+
 def test_example_1():
-    students = frame(['student_id', 'name', 'age'], [[32, 'Piper', 5], [217, None, 19], [779, 'Georgia', 20], [849, 'Willow', 14]], {'student_id': 'Int64', 'name': 'object', 'age': 'Int64'})
-    check(dropMissingData(students), ['student_id', 'name', 'age'], [[32, 'Piper', 5], [779, 'Georgia', 20], [849, 'Willow', 14]], ordered=False)
+    students = frame(
+        ["student_id", "name", "age"],
+        [[32, "Piper", 5], [217, None, 19], [779, "Georgia", 20], [849, "Willow", 14]],
+        {"student_id": "Int64", "name": "object", "age": "Int64"},
+    )
+    check(
+        dropMissingData(students),
+        ["student_id", "name", "age"],
+        [[32, "Piper", 5], [779, "Georgia", 20], [849, "Willow", 14]],
+        ordered=False,
+    )
