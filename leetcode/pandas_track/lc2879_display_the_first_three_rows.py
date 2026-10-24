@@ -2,9 +2,9 @@
 2879. Display the First Three Rows · Easy · https://leetcode.com/problems/display-the-first-three-rows/
 Plan: Paralel hat · Pandas · Introduction to Pandas
 
-Problem:
-Approach:
-Time O(?), space O(?)
+Problem: return the first 3 rows of the employees DataFrame.
+Approach: df.head(n) returns the first n rows (5 by default).
+Time O(1), space O(1)
 """
 
 from _pd import check, frame
@@ -14,6 +14,8 @@ import pandas as pd
 
 def selectFirstRows(employees: pd.DataFrame) -> pd.DataFrame:
     return employees.head(3)
+
+
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
