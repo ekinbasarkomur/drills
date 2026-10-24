@@ -2,9 +2,10 @@
 2880. Select Data · Easy · https://leetcode.com/problems/select-data/
 Plan: Paralel hat · Pandas · Introduction to Pandas
 
-Problem:
-Approach:
-Time O(?), space O(?)
+Problem: the name and age of the student whose student_id is 101.
+Approach: .loc[row mask, column list]: the mask picks rows where student_id == 101,
+          the list keeps only name and age.
+Time O(n), space O(n)
 """
 
 from _pd import check, frame
@@ -14,6 +15,8 @@ import pandas as pd
 
 def selectData(students: pd.DataFrame) -> pd.DataFrame:
     return students.loc[students['student_id'] == 101, ['name', 'age']]
+
+
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
