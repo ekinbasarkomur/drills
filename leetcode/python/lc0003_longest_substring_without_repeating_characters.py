@@ -14,14 +14,20 @@ Time O(?), space O(?)
 from _lc import *  # noqa: F403  (LeetCode's namespace: List, ListNode, ...)
 
 # ---------------------------------------------------------------- solution
-from typing import List
-
-
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        raise NotImplementedError
+        last = {}
+        longest_streak = 0
+        left = 0
 
+        for right, c in enumerate(s):
+            if c in last and last[c] >= left:
+                left = last[c] + 1
+            
+            last[c] = right
+            longest_streak = max(longest_streak, right - left + 1)
 
+        return longest_streak
 # ---------------------------------------------------------------- tests
 
 

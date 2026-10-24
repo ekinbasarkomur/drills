@@ -18,21 +18,20 @@
 class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
-        unordered_set<char> ss;
+        int last[256];
+        fill(begin(last), end(last), -1);
         int longest_streak = 0;
         int left = 0;
 
         for(int right = 0; right < size(s); right++)
         {
-            while(ss.contains(s[right]))
+            unsigned char c = s[right];
+            if (last[c] >= left) 
             {
-                ss.erase(s[left]);
-                left++;
+                left = last[c] + 1;
             }
-
-            ss.insert(s[right]);
-            longest_streak = max(longest_streak, (int)size(ss));
-        }
+            last[c] = right;
+            longest_streak = max(longest_streak, right - left + 1);        }
 
         return longest_streak;
     }
