@@ -2,9 +2,9 @@
 2884. Modify Columns · Easy · https://leetcode.com/problems/modify-columns/
 Plan: Paralel hat · Pandas · Introduction to Pandas
 
-Problem:
-Approach:
-Time O(?), space O(?)
+Problem: double every value in the salary column, in place.
+Approach: employees['salary'] *= 2 overwrites the existing column with the doubled values (vectorised)
+Time O(n), space O(1)
 """
 
 from _pd import check, frame  # isort: skip
@@ -15,6 +15,7 @@ import pandas as pd
 def modifySalaryColumn(employees: pd.DataFrame) -> pd.DataFrame:
     employees["salary"] *= 2
     return employees
+
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
