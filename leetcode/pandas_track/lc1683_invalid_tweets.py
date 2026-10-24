@@ -10,7 +10,7 @@ Time O(n), space O(n)
 
 # ---------------------------------------------------------------- solution
 import pandas as pd
-from _pd import check, frame
+from _pd import check, frame  # isort: skip
 
 
 def invalid_tweets(tweets: pd.DataFrame) -> pd.DataFrame:

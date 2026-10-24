@@ -13,7 +13,7 @@ Time O(n + m), space O(m) for the hash of order ids
 
 # ---------------------------------------------------------------- solution
 import pandas as pd
-from _pd import check, frame
+from _pd import check, frame  # isort: skip
 
 
 def find_customers(customers: pd.DataFrame, orders: pd.DataFrame) -> pd.DataFrame:

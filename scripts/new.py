@@ -798,7 +798,7 @@ def gen_pandas(p: Problem) -> str | None:
         else:
             return None
     code = stub_py(code)
-    above = header(p, '"""') + ["", "from _pd import check, frame", ""]
+    above = header(p, '"""') + ["", "from _pd import check, frame  # isort: skip", ""]
     tests, reason = pandas_tests(p, code)
     body = [marker("pandas", "solution"), code.rstrip(), "", "", marker("pandas", "tests"), ""]
     if reason:

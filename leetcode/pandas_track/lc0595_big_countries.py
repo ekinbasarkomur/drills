@@ -9,7 +9,7 @@ Time O(?), space O(?)
 
 # ---------------------------------------------------------------- solution
 import pandas as pd
-from _pd import check, frame
+from _pd import check, frame  # isort: skip
 
 
 def big_countries(world: pd.DataFrame) -> pd.DataFrame:

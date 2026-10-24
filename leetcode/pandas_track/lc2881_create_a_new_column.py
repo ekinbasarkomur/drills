@@ -7,7 +7,7 @@ Approach: assign a new column: employees['bonus'] = employees['salary'] * 2 (vec
 Time O(n), space O(n)
 """
 
-from _pd import check, frame
+from _pd import check, frame  # isort: skip
 
 # ---------------------------------------------------------------- solution
 import pandas as pd

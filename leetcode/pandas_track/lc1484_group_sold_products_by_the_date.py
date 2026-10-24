@@ -7,7 +7,7 @@ Approach:
 Time O(?), space O(?)
 """
 
-from _pd import check, frame
+from _pd import check, frame  # isort: skip
 
 # ---------------------------------------------------------------- solution
 import pandas as pd

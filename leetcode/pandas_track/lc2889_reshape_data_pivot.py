@@ -9,7 +9,7 @@ Time O(?), space O(?)
 
 from typing import List
 
-from _pd import check, frame
+from _pd import check, frame  # isort: skip
 
 # ---------------------------------------------------------------- solution
 import pandas as pd

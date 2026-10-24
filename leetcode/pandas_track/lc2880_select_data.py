@@ -8,7 +8,7 @@ Approach: .loc[row mask, column list]: the mask picks rows where student_id == 1
 Time O(n), space O(n)
 """
 
-from _pd import check, frame
+from _pd import check, frame  # isort: skip
 
 # ---------------------------------------------------------------- solution
 import pandas as pd

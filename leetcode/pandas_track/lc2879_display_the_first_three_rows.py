@@ -7,7 +7,7 @@ Approach: df.head(n) returns the first n rows (5 by default).
 Time O(1), space O(1)
 """
 
-from _pd import check, frame
+from _pd import check, frame  # isort: skip
 
 # ---------------------------------------------------------------- solution
 import pandas as pd
