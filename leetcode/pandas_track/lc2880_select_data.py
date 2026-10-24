@@ -13,9 +13,7 @@ from _pd import check, frame
 import pandas as pd
 
 def selectData(students: pd.DataFrame) -> pd.DataFrame:
-    raise NotImplementedError
-
-
+    return students.loc[students['student_id'] == 101, ['name', 'age']]
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
