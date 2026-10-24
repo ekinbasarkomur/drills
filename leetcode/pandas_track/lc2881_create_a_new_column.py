@@ -2,9 +2,9 @@
 2881. Create a New Column · Easy · https://leetcode.com/problems/create-a-new-column/
 Plan: Paralel hat · Pandas · Introduction to Pandas
 
-Problem:
-Approach:
-Time O(?), space O(?)
+Problem: add a bonus column that is twice the salary.
+Approach: assign a new column: employees['bonus'] = employees['salary'] * 2 (vectorised, no loop)
+Time O(n), space O(n)
 """
 
 from _pd import check, frame
@@ -15,6 +15,7 @@ import pandas as pd
 def createBonusColumn(employees: pd.DataFrame) -> pd.DataFrame:
     employees["bonus"] = employees["salary"] * 2
     return employees
+
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
