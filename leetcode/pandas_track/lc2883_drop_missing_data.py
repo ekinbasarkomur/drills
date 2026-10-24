@@ -2,9 +2,9 @@
 2883. Drop Missing Data · Easy · https://leetcode.com/problems/drop-missing-data/
 Plan: Paralel hat · Pandas · Introduction to Pandas
 
-Problem:
-Approach:
-Time O(?), space O(?)
+Problem: drop the rows whose name is missing.
+Approach: dropna(subset=['name']): a row is dropped only if name is NaN/None; missing values in other columns do not count
+Time O(n), space O(n)
 """
 
 from _pd import check, frame  # isort: skip
