@@ -411,6 +411,29 @@ problems = [
 ]
 
 [[parallel]]
+name = "Pandas · Introduction to Pandas"
+lang = "pandas"
+tag = "pandas"
+why = "LeetCode'un \"Introduction to Pandas\" planı (15 kolay soru): her soru tek bir pandas işlemi (DataFrame oluşturma, boyut, seçme, yeni sütun, tekrar/eksik veri temizleme, ad ve tip değiştirme, concat, pivot, melt, method chaining). 30 Days of Pandas'tan önce sözdizimini oturtmak için. Başlangıç: 24-10-2026."
+problems = [
+  { id = 2877, slug = "create-a-dataframe-from-list", file = "lc2877_create_a_dataframe_from_list", day = "1", section = "Pandas Data Structures", tier = 1, why = "LeetCode study plan: Introduction to Pandas" },
+  { id = 2878, slug = "get-the-size-of-a-dataframe", file = "lc2878_get_the_size_of_a_dataframe", day = "2", section = "Data Inspection", tier = 1, why = "LeetCode study plan: Introduction to Pandas" },
+  { id = 2879, slug = "display-the-first-three-rows", file = "lc2879_display_the_first_three_rows", day = "3", section = "Data Inspection", tier = 1, why = "LeetCode study plan: Introduction to Pandas" },
+  { id = 2880, slug = "select-data", file = "lc2880_select_data", day = "4", section = "Data Selecting", tier = 1, why = "LeetCode study plan: Introduction to Pandas" },
+  { id = 2881, slug = "create-a-new-column", file = "lc2881_create_a_new_column", day = "5", section = "Data Selecting", tier = 1, why = "LeetCode study plan: Introduction to Pandas" },
+  { id = 2882, slug = "drop-duplicate-rows", file = "lc2882_drop_duplicate_rows", day = "6", section = "Data Cleaning", tier = 1, why = "LeetCode study plan: Introduction to Pandas" },
+  { id = 2883, slug = "drop-missing-data", file = "lc2883_drop_missing_data", day = "7", section = "Data Cleaning", tier = 1, why = "LeetCode study plan: Introduction to Pandas" },
+  { id = 2884, slug = "modify-columns", file = "lc2884_modify_columns", day = "8", section = "Data Cleaning", tier = 1, why = "LeetCode study plan: Introduction to Pandas" },
+  { id = 2885, slug = "rename-columns", file = "lc2885_rename_columns", day = "9", section = "Data Cleaning", tier = 1, why = "LeetCode study plan: Introduction to Pandas" },
+  { id = 2886, slug = "change-data-type", file = "lc2886_change_data_type", day = "10", section = "Data Cleaning", tier = 1, why = "LeetCode study plan: Introduction to Pandas" },
+  { id = 2887, slug = "fill-missing-data", file = "lc2887_fill_missing_data", day = "11", section = "Data Cleaning", tier = 1, why = "LeetCode study plan: Introduction to Pandas" },
+  { id = 2888, slug = "reshape-data-concatenate", file = "lc2888_reshape_data_concatenate", day = "12", section = "Table Reshaping", tier = 1, why = "LeetCode study plan: Introduction to Pandas" },
+  { id = 2889, slug = "reshape-data-pivot", file = "lc2889_reshape_data_pivot", day = "13", section = "Table Reshaping", tier = 1, why = "LeetCode study plan: Introduction to Pandas" },
+  { id = 2890, slug = "reshape-data-melt", file = "lc2890_reshape_data_melt", day = "14", section = "Table Reshaping", tier = 1, why = "LeetCode study plan: Introduction to Pandas" },
+  { id = 2891, slug = "method-chaining", file = "lc2891_method_chaining", day = "15", section = "Advanced Techniques", tier = 1, why = "LeetCode study plan: Introduction to Pandas" },
+]
+
+[[parallel]]
 name = "Pandas · 30 Days of Pandas"
 lang = "pandas"
 tag = "pandas"
