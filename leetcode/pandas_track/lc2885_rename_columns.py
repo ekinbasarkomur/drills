@@ -2,9 +2,9 @@
 2885. Rename Columns · Easy · https://leetcode.com/problems/rename-columns/
 Plan: Paralel hat · Pandas · Introduction to Pandas
 
-Problem:
-Approach:
-Time O(?), space O(?)
+Problem: rename the columns id, first, last, age to student_id, first_name, last_name, age_in_years.
+Approach: rename(columns={old: new}) returns a new DataFrame with only the listed columns renamed
+Time O(n), space O(n)
 """
 
 from _pd import check, frame  # isort: skip
