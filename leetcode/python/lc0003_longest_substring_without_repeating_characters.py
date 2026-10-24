@@ -7,8 +7,10 @@ Problem: length of the longest contiguous stretch of s in which no
          character repeats. s may contain any printable ASCII.
 Note: A window that only ever grows from the right and shrinks from the
       left visits each character twice at most.
-Approach:
-Time O(?), space O(?)
+Approach: sliding window with a last-seen index per character. `right` adds one
+          character per step; if that character was last seen inside the window,
+          `left` jumps straight past that position (no inner loop).
+Time O(n), space O(min(n, 95))
 """
 
 from _lc import *  # noqa: F403  (LeetCode's namespace: List, ListNode, ...)

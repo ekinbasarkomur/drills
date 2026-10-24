@@ -6,10 +6,10 @@
 //          character repeats. s may contain any printable ASCII.
 // Note: A window that only ever grows from the right and shrinks from the
 //       left visits each character twice at most.
-// Approach: sliding window. `right` adds one character per step; when it is
-//           already in the window, `left` drops characters until it is not.
-//           Each character enters and leaves the set at most once.
-// Time O(n), space O(min(n, 95)) -- at most 95 printable ASCII characters
+// Approach: sliding window with a last-seen index per character. `right` adds one
+//           character per step; if that character was last seen inside the window,
+//           `left` jumps straight past that position (no inner loop).
+// Time O(n), space O(1) -- a fixed 256-entry array
 
 #include "leetcode.hpp"
 #include "test.hpp"
