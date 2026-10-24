@@ -2,9 +2,9 @@
 2887. Fill Missing Data · Easy · https://leetcode.com/problems/fill-missing-data/
 Plan: Paralel hat · Pandas · Introduction to Pandas
 
-Problem:
-Approach:
-Time O(?), space O(?)
+Problem: fill the missing values of the quantity column with 0.
+Approach: take the column, fillna(0) returns a filled copy, assign it back to the same column
+Time O(n), space O(n)
 """
 
 from _pd import check, frame  # isort: skip
@@ -15,6 +15,7 @@ import pandas as pd
 def fillMissingValues(products: pd.DataFrame) -> pd.DataFrame:
     products['quantity'] = products['quantity'].fillna(value = 0)
     return products
+
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
