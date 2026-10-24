@@ -2,9 +2,9 @@
 2882. Drop Duplicate Rows · Easy · https://leetcode.com/problems/drop-duplicate-rows/
 Plan: Paralel hat · Pandas · Introduction to Pandas
 
-Problem:
-Approach:
-Time O(?), space O(?)
+Problem: keep only the first row for each email; later rows with the same email are dropped.
+Approach: drop_duplicates(subset=['email'], keep='first'): rows are compared only on email, the first one of each group stays
+Time O(n), space O(n)
 """
 
 from _pd import check, frame  # isort: skip
