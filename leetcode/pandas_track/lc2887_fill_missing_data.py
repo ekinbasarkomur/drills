@@ -13,9 +13,8 @@ from _pd import check, frame  # isort: skip
 import pandas as pd
 
 def fillMissingValues(products: pd.DataFrame) -> pd.DataFrame:
-    raise NotImplementedError
-
-
+    products['quantity'] = products['quantity'].fillna(value = 0)
+    return products
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
