@@ -6,8 +6,10 @@
 //          character repeats. s may contain any printable ASCII.
 // Note: A window that only ever grows from the right and shrinks from the
 //       left visits each character twice at most.
-// Approach:
-// Time O(?), space O(?)
+// Approach: sliding window with a last-seen index per character. `right` adds one
+//           character per step; if that character was last seen inside the window,
+//           `left` jumps straight past that position (no inner loop).
+// Time O(n), space O(1) -- a fixed 256-entry array
 
 #[allow(unused_imports)]
 use leetcode::*;
@@ -17,14 +19,30 @@ struct Solution;
 // ---------------------------------------------------------------- solution
 impl Solution {
     pub fn length_of_longest_substring(s: String) -> i32 {
-        let _ = (s,);
-        todo!()
+        let mut last: Vec<i32> = Vec::new();
+        last.resize(256, -1);
+
+        let mut longest_streak: i32 = 0;
+        let mut left: i32 = 0;
+
+        for (right, c) in s.chars().enumerate() {
+            if last[c as usize] >= left {
+                left = last[c as usize] + 1;
+            }
+
+            last[c as usize] = right as i32;
+            longest_streak = std::cmp::max(longest_streak, right as i32 - left + 1);
+        }
+        longest_streak
     }
 }
 // ---------------------------------------------------------------- tests
 
 fn main() {
-    println!("{}", Solution::length_of_longest_substring("zxyzxyz".into()));
+    println!(
+        "{}",
+        Solution::length_of_longest_substring("zxyzxyz".into())
+    );
 }
 
 #[cfg(test)]
