@@ -191,7 +191,7 @@ under `sql/` through `sql/conftest.py`.
 
 ## LeetCode and Obsidian
 
-The Obsidian vault (`~/Archive`, `Sources/Drills`) keeps one note per problem. Its
+The Obsidian vault (`~/Archive`, `Sources/Drills/LeetCode/Problems`) keeps one note per problem. Its
 `leetcode_sync.py` pulls the latest accepted LeetCode submission per language and writes
 it into the matching file here, between the markers, then runs that file's tests and
 commits (`LeetCode sync: 146 rust, 23 cpp`), all through `scripts/sync.py`. A submission
