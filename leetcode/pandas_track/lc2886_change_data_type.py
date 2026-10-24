@@ -12,12 +12,24 @@ from _pd import check, frame  # isort: skip
 # ---------------------------------------------------------------- solution
 import pandas as pd
 
+
 def changeDatatype(students: pd.DataFrame) -> pd.DataFrame:
-    raise NotImplementedError
+    students["grade"] = students["grade"].astype(int)
+    return students
 
 
 # ---------------------------------------------------------------- tests
 
+
 def test_example_1():
-    students = frame(['student_id', 'name', 'age', 'grade'], [[1, 'Ava', 6, 73.0], [2, 'Kate', 15, 87.0]], {'student_id': 'Int64', 'name': 'object', 'age': 'Int64', 'grade': 'Float64'})
-    check(changeDatatype(students), ['student_id', 'name', 'age', 'grade'], [[1, 'Ava', 6, 73], [2, 'Kate', 15, 87]], ordered=False)
+    students = frame(
+        ["student_id", "name", "age", "grade"],
+        [[1, "Ava", 6, 73.0], [2, "Kate", 15, 87.0]],
+        {"student_id": "Int64", "name": "object", "age": "Int64", "grade": "Float64"},
+    )
+    check(
+        changeDatatype(students),
+        ["student_id", "name", "age", "grade"],
+        [[1, "Ava", 6, 73], [2, "Kate", 15, 87]],
+        ordered=False,
+    )
