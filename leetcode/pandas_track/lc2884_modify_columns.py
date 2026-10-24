@@ -13,9 +13,8 @@ from _pd import check, frame  # isort: skip
 import pandas as pd
 
 def modifySalaryColumn(employees: pd.DataFrame) -> pd.DataFrame:
-    raise NotImplementedError
-
-
+    employees["salary"] *= 2
+    return employees
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
