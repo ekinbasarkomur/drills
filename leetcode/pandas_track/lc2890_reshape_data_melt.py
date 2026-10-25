@@ -2,9 +2,9 @@
 2890. Reshape Data: Melt · Easy · https://leetcode.com/problems/reshape-data-melt/
 Plan: Paralel hat · Pandas · Introduction to Pandas
 
-Problem:
-Approach:
-Time O(?), space O(?)
+Problem: turn the wide table into a long one: one row per (product, quarter) with its sales.
+Approach: melt keeps product as the id column, turns the quarter_1..4 column names into the quarter column and their values into sales
+Time O(n·k), space O(n·k)
 """
 
 from _pd import check, frame  # isort: skip
