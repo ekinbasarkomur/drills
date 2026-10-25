@@ -6,8 +6,8 @@
 //          and nothing left open at the end.
 // Note: The most recently opened bracket is the first that has to close --
 //       that is exactly what a stack gives you.
-// Approach: push every opener; on a closer, the top of the stack must be the
-//           matching opener, which is then popped. Valid if nothing is left.
+// Approach: on an opener push the closer it expects; on a closer the top must equal it,
+//           then pop. An empty stack on a closer is invalid; valid if nothing is left.
 // Time O(n), space O(n)
 
 #include "leetcode.hpp"

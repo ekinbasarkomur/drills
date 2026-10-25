@@ -6,8 +6,9 @@
 //          and nothing left open at the end.
 // Note: The most recently opened bracket is the first that has to close --
 //       that is exactly what a stack gives you.
-// Approach:
-// Time O(?), space O(?)
+// Approach: match on the char: an opener pushes its expected closer; a closer pops and
+//           must get Some(same char) (None = empty stack = invalid). Valid if the Vec is empty.
+// Time O(n), space O(n)
 
 #[allow(unused_imports)]
 use leetcode::*;

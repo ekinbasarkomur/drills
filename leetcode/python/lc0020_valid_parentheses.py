@@ -7,8 +7,9 @@ Problem: every bracket closed by its own kind, in the right order,
          and nothing left open at the end.
 Note: The most recently opened bracket is the first that has to close --
       that is exactly what a stack gives you.
-Approach:
-Time O(?), space O(?)
+Approach: the open_close dict gives the closer each opener expects and it is pushed;
+          on a closer, pop and compare. A closer on an empty stack is invalid; valid if nothing is left.
+Time O(n), space O(n)
 """
 
 from _lc import *  # noqa: F403  (LeetCode's namespace: List, ListNode, ...)
