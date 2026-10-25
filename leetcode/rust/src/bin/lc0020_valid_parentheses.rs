@@ -17,9 +17,24 @@ struct Solution;
 // ---------------------------------------------------------------- solution
 impl Solution {
     pub fn is_valid(s: String) -> bool {
-        let _ = (s,);
-        todo!()
+        let mut expected: Vec<char> = Vec::new();
+
+        for c in s.chars() {
+            match c {
+                '(' => expected.push(')'),
+                '{' => expected.push('}'),
+                '[' => expected.push(']'),
+                _ => match expected.pop() {
+                    Some(expected_c) if expected_c == c => {}
+                    _ => return false,
+                },
+            }
+        }
+
+        expected.is_empty()
+
     }
+
 }
 // ---------------------------------------------------------------- tests
 

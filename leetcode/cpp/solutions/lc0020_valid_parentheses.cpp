@@ -17,29 +17,32 @@
 class Solution {
 public:
     bool isValid(string s) {
-        stack<char> st;
+        stack<char> expected;
+
         for (char c : s) {
-            if (c == '(' || c == '{' || c == '[') {
-                st.push(c);
-                continue;
+
+            if (size(expected) == 0) {
+                if (c == ')' || c == '}' || c == ']') {
+                    return false;
+                }
             }
 
-            if (st.empty()) {
+            if (c == '(') {
+                expected.push(')');
+                continue;
+            } else if (c == '{') {
+                expected.push('}');
+                continue;
+            } else if (c == '[') {
+                expected.push(']');
+                continue;
+            } else if (expected.top() != c) {
                 return false;
             }
-            if (c == ')' && st.top() != '(') {
-                return false;
-            }
-            if (c == '}' && st.top() != '{') {
-                return false;
-            }
-            if (c == ']' && st.top() != '[') {
-                return false;
-            }
-            st.pop();
+            expected.pop();
         }
 
-        return st.empty();
+        return expected.empty();
     }
 };
 // ---------------------------------------------------------------- tests

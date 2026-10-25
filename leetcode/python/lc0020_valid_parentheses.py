@@ -14,14 +14,23 @@ Time O(?), space O(?)
 from _lc import *  # noqa: F403  (LeetCode's namespace: List, ListNode, ...)
 
 # ---------------------------------------------------------------- solution
-from typing import List
-
-
 class Solution:
     def isValid(self, s: str) -> bool:
-        raise NotImplementedError
+        expected = []
+        open_close={"(":")","{":"}","[":"]"}
+
+        for c in s:
+            if len(expected) == 0:
+                if c in [')', '}', ']']:
+                    return False 
+            
+            if c in ['(', '{', '[']:
+                expected.append(open_close[c])
+            elif expected.pop() != c:
+                return False               
 
 
+        return len(expected) == 0
 # ---------------------------------------------------------------- tests
 
 
