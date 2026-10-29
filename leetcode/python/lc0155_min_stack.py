@@ -7,8 +7,10 @@ Problem: a stack that also answers getMin() -- all four operations in O(1).
 Note: getMin in O(1) is the whole problem. Scanning for the minimum is O(n),
       and a single "current min" variable cannot survive a pop that removes it,
       because you no longer know what the minimum was before.
-Approach:
-Time O(?) per operation, space O(?)
+Approach: a second stack records, for every element pushed, the minimum at
+          that moment. Popping both keeps them in step, so the previous
+          minimum is always sitting underneath -- nothing to recompute.
+Time O(1) per operation, space O(n)
 """
 
 from _lc import *  # noqa: F403  (LeetCode's namespace: List, ListNode, ...)
@@ -16,19 +18,26 @@ from _lc import *  # noqa: F403  (LeetCode's namespace: List, ListNode, ...)
 # ---------------------------------------------------------------- solution
 class MinStack:
     def __init__(self):
-        raise NotImplementedError
+        self.stack = []
+        self.min_stack = []
 
     def push(self, val: int) -> None:
-        raise NotImplementedError
+        self.stack.append(val)
+
+        if self.min_stack:
+            self.min_stack.append(min(val, self.min_stack[-1]))
+        else:
+            self.min_stack.append(val)
 
     def pop(self) -> None:
-        raise NotImplementedError
+        self.stack.pop()
+        self.min_stack.pop()
 
     def top(self) -> int:
-        raise NotImplementedError
+        return self.stack[-1]
 
     def getMin(self) -> int:
-        raise NotImplementedError
+        return self.min_stack[-1]
 
 
 # ---------------------------------------------------------------- tests

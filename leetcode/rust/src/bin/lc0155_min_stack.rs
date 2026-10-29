@@ -6,38 +6,51 @@
 // Note: get_min in O(1) is the whole problem. Scanning for the minimum is O(n),
 //       and a single "current min" field cannot survive a pop that removes it,
 //       because you no longer know what the minimum was before.
-// Approach:
-// Time O(?) per operation, space O(?)
+// Approach: a second Vec records, for every element pushed, the minimum at
+//           that moment (last() is None on the first push, so the value itself
+//           is the minimum). Popping both keeps them in step.
+// Time O(1) per operation, space O(n)
+
+use std::ptr::null;
 
 #[allow(unused_imports)]
 use leetcode::*;
 
 // ---------------------------------------------------------------- solution
 struct MinStack {
-    // TODO: what does this need to hold?
+    stack: Vec<i32>,
+    min_stack: Vec<i32>,
 }
 
 #[allow(dead_code)] // every method is exercised by the tests once implemented
 impl MinStack {
     fn new() -> Self {
-        todo!()
+        Self {
+            stack: Vec::new(),
+            min_stack: Vec::new(),
+        }
     }
 
     fn push(&mut self, val: i32) {
-        let _ = val;
-        todo!()
+        self.stack.push(val);
+
+        match self.min_stack.last() {
+            Some(last_min) => self.min_stack.push(val.min(*last_min)),
+            _ => self.min_stack.push(val),
+        }
     }
 
     fn pop(&mut self) {
-        todo!()
+        self.stack.pop();
+        self.min_stack.pop();
     }
 
     fn top(&self) -> i32 {
-        todo!()
+        *self.stack.last().unwrap()
     }
 
     fn get_min(&self) -> i32 {
-        todo!()
+        *self.min_stack.last().unwrap()
     }
 }
 // ---------------------------------------------------------------- tests
