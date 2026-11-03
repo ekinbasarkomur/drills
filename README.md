@@ -13,6 +13,3 @@ make status       what is solved
 ```
 
 Profile: [leetcode.com/u/BrzXkUwIIo](https://leetcode.com/u/BrzXkUwIIo/)
-
-`notes/` holds the occasional write-up when a problem turns out to have something worth
-measuring.
