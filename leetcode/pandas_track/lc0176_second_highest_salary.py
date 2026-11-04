@@ -13,9 +13,14 @@ from _pd import check, frame  # isort: skip
 import pandas as pd
 
 def second_highest_salary(employee: pd.DataFrame) -> pd.DataFrame:
-    raise NotImplementedError
+    column = "SecondHighestSalary"
 
+    salaries = employee["salary"].drop_duplicates().sort_values(ascending=False)
 
+    if len(salaries) < 2:
+        return pd.DataFrame([None], columns=[column])
+
+    return pd.DataFrame([salaries.iloc[1]], columns=[column])
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
