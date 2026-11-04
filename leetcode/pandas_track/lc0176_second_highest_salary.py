@@ -2,9 +2,9 @@
 176. Second Highest Salary · Medium · https://leetcode.com/problems/second-highest-salary/
 Plan: 30 Days of Pandas · Gün 11 · Data Manipulation
 
-Problem:
-Approach:
-Time O(?), space O(?)
+Problem: return the second highest distinct salary as a one-row frame named SecondHighestSalary; None when there are fewer than two distinct salaries.
+Approach: drop duplicate salaries, sort descending and take position 1; fewer than two distinct values returns the None row.
+Time O(n log n), space O(n)
 """
 
 from _pd import check, frame  # isort: skip
