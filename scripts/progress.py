@@ -111,7 +111,7 @@ def run_pytest(paths):
     if o.returncode not in (0, 1, 5):  # 2+ = interrupted, internal error, usage error
         return {p: False for p in paths}
     bad = {m.group(2) for m in re.finditer(r"^(FAILED|ERROR) ([^\s:]+)", o.stdout, re.M)}
-    return {p: str(p.relative_to(LC)) not in bad for p in paths}
+    return {p: str(p.relative_to(ROOT)) not in bad for p in paths}  # pytest prints paths relative to the repo root
 
 
 RUNNERS = {"rust": run_rust, "cpp": run_cpp, "python": run_pytest, "pandas": run_pytest, "sql": run_pytest}
