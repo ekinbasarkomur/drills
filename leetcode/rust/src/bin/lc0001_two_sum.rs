@@ -57,37 +57,37 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(two_sum(vec![3, 4, 5, 6], 7), vec![0, 1]);
+        check_eq!(two_sum(vec![3, 4, 5, 6], 7), vec![0, 1]);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(two_sum(vec![4, 5, 6], 10), vec![0, 2]);
+        check_eq!(two_sum(vec![4, 5, 6], 10), vec![0, 2]);
     }
 
     #[test]
     fn example_3() {
-        assert_eq!(two_sum(vec![5, 5], 10), vec![0, 1]);
+        check_eq!(two_sum(vec![5, 5], 10), vec![0, 1]);
     }
 
     #[test]
     fn answer_is_the_last_two() {
-        assert_eq!(two_sum(vec![1, 9, 3, 4], 7), vec![2, 3]);
+        check_eq!(two_sum(vec![1, 9, 3, 4], 7), vec![2, 3]);
     }
 
     #[test]
     fn negative_numbers() {
-        assert_eq!(two_sum(vec![-3, 4, 7, -1], -4), vec![0, 3]);
+        check_eq!(two_sum(vec![-3, 4, 7, -1], -4), vec![0, 3]);
     }
 
     #[test]
     fn target_is_zero() {
-        assert_eq!(two_sum(vec![-8, 2, 8], 0), vec![0, 2]);
+        check_eq!(two_sum(vec![-8, 2, 8], 0), vec![0, 2]);
     }
 
     #[test]
     fn extreme_values() {
-        assert_eq!(
+        check_eq!(
             two_sum(vec![10_000_000, -10_000_000, 3], 0),
             vec![0, 1]
         );

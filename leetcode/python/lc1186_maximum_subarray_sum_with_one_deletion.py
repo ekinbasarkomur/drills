@@ -18,12 +18,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().maximumSum([1, -2, 0, 3]) == 4
+    check(Solution().maximumSum([1, -2, 0, 3]), 4, "Solution().maximumSum([1, -2, 0, 3])")
 
 
 def test_example_2():
-    assert Solution().maximumSum([1, -2, -2, 3]) == 3
+    check(Solution().maximumSum([1, -2, -2, 3]), 3, "Solution().maximumSum([1, -2, -2, 3])")
 
 
 def test_example_3():
-    assert Solution().maximumSum([-1, -1, -1, -1]) == -1
+    check(Solution().maximumSum([-1, -1, -1, -1]), -1, "Solution().maximumSum([-1, -1, -1, -1])")

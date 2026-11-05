@@ -27,12 +27,12 @@ mod tests {
     #[test]
     fn example_1() {
         let want: Vec<String> = vec!["JFK".to_string(), "MUC".to_string(), "LHR".to_string(), "SFO".to_string(), "SJC".to_string()];
-        assert_eq!(Solution::find_itinerary(vec![vec!["MUC".to_string(), "LHR".to_string()], vec!["JFK".to_string(), "MUC".to_string()], vec!["SFO".to_string(), "SJC".to_string()], vec!["LHR".to_string(), "SFO".to_string()]]), want);
+        check_eq!(Solution::find_itinerary(vec![vec!["MUC".to_string(), "LHR".to_string()], vec!["JFK".to_string(), "MUC".to_string()], vec!["SFO".to_string(), "SJC".to_string()], vec!["LHR".to_string(), "SFO".to_string()]]), want);
     }
 
     #[test]
     fn example_2() {
         let want: Vec<String> = vec!["JFK".to_string(), "ATL".to_string(), "JFK".to_string(), "SFO".to_string(), "ATL".to_string(), "SFO".to_string()];
-        assert_eq!(Solution::find_itinerary(vec![vec!["JFK".to_string(), "SFO".to_string()], vec!["JFK".to_string(), "ATL".to_string()], vec!["SFO".to_string(), "ATL".to_string()], vec!["ATL".to_string(), "JFK".to_string()], vec!["ATL".to_string(), "SFO".to_string()]]), want);
+        check_eq!(Solution::find_itinerary(vec![vec!["JFK".to_string(), "SFO".to_string()], vec!["JFK".to_string(), "ATL".to_string()], vec!["SFO".to_string(), "ATL".to_string()], vec!["ATL".to_string(), "JFK".to_string()], vec!["ATL".to_string(), "SFO".to_string()]]), want);
     }
 }

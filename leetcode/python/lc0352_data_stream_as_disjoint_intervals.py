@@ -29,12 +29,12 @@ class SummaryRanges:
 def test_example_1():
     obj = SummaryRanges()
     obj.addNum(1)
-    assert obj.getIntervals() == [[1, 1]]
+    check(obj.getIntervals(), [[1, 1]], "obj.getIntervals()")
     obj.addNum(3)
-    assert obj.getIntervals() == [[1, 1], [3, 3]]
+    check(obj.getIntervals(), [[1, 1], [3, 3]], "obj.getIntervals()")
     obj.addNum(7)
-    assert obj.getIntervals() == [[1, 1], [3, 3], [7, 7]]
+    check(obj.getIntervals(), [[1, 1], [3, 3], [7, 7]], "obj.getIntervals()")
     obj.addNum(2)
-    assert obj.getIntervals() == [[1, 3], [7, 7]]
+    check(obj.getIntervals(), [[1, 3], [7, 7]], "obj.getIntervals()")
     obj.addNum(6)
-    assert obj.getIntervals() == [[1, 3], [6, 7]]
+    check(obj.getIntervals(), [[1, 3], [6, 7]], "obj.getIntervals()")

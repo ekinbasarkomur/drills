@@ -27,12 +27,12 @@ mod tests {
     #[test]
     fn example_1() {
         let want: Vec<Vec<i32>> = vec![vec![], vec![1], vec![2], vec![1, 2], vec![3], vec![1, 3], vec![2, 3], vec![1, 2, 3]];
-        assert_eq!(deep_sort(Solution::subsets(vec![1, 2, 3])), deep_sort(want));
+        check_eq!(deep_sort(Solution::subsets(vec![1, 2, 3])), deep_sort(want));
     }
 
     #[test]
     fn example_2() {
         let want: Vec<Vec<i32>> = vec![vec![], vec![0]];
-        assert_eq!(deep_sort(Solution::subsets(vec![0])), deep_sort(want));
+        check_eq!(deep_sort(Solution::subsets(vec![0])), deep_sort(want));
     }
 }

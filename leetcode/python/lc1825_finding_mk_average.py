@@ -30,10 +30,10 @@ def test_example_1():
     obj = MKAverage(3, 1)
     obj.addElement(3)
     obj.addElement(1)
-    assert obj.calculateMKAverage() == -1
+    check(obj.calculateMKAverage(), -1, "obj.calculateMKAverage()")
     obj.addElement(10)
-    assert obj.calculateMKAverage() == 3
+    check(obj.calculateMKAverage(), 3, "obj.calculateMKAverage()")
     obj.addElement(5)
     obj.addElement(5)
     obj.addElement(5)
-    assert obj.calculateMKAverage() == 5
+    check(obj.calculateMKAverage(), 5, "obj.calculateMKAverage()")

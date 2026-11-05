@@ -18,12 +18,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert close(Solution().new21Game(10, 1, 10), 1.0)
+    check_true(close(Solution().new21Game(10, 1, 10), 1.0), "close(Solution().new21Game(10, 1, 10), 1.0)")
 
 
 def test_example_2():
-    assert close(Solution().new21Game(6, 1, 10), 0.6)
+    check_true(close(Solution().new21Game(6, 1, 10), 0.6), "close(Solution().new21Game(6, 1, 10), 0.6)")
 
 
 def test_example_3():
-    assert close(Solution().new21Game(21, 17, 10), 0.73278)
+    check_true(close(Solution().new21Game(21, 17, 10), 0.73278), "close(Solution().new21Game(21, 17, 10), 0.73278)")

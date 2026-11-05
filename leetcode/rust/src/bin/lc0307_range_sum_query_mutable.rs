@@ -50,8 +50,8 @@ mod tests {
     #[test]
     fn example_1() {
         let mut obj = NumArray::new(vec![1, 3, 5]);
-        assert_eq!(obj.sum_range(0, 2), 9);
+        check_eq!(obj.sum_range(0, 2), 9);
         obj.update(1, 2);
-        assert_eq!(obj.sum_range(0, 2), 8);
+        check_eq!(obj.sum_range(0, 2), 8);
     }
 }

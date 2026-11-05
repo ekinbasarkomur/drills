@@ -52,13 +52,13 @@ mod tests {
         let mut obj = TimeMap::new();
         obj.set("foo".to_string(), "bar".to_string(), 1);
         let want: String = "bar".to_string();
-        assert_eq!(obj.get("foo".to_string(), 1), want);
+        check_eq!(obj.get("foo".to_string(), 1), want);
         let want: String = "bar".to_string();
-        assert_eq!(obj.get("foo".to_string(), 3), want);
+        check_eq!(obj.get("foo".to_string(), 3), want);
         obj.set("foo".to_string(), "bar2".to_string(), 4);
         let want: String = "bar2".to_string();
-        assert_eq!(obj.get("foo".to_string(), 4), want);
+        check_eq!(obj.get("foo".to_string(), 4), want);
         let want: String = "bar2".to_string();
-        assert_eq!(obj.get("foo".to_string(), 5), want);
+        check_eq!(obj.get("foo".to_string(), 5), want);
     }
 }

@@ -18,12 +18,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().findOrder(2, [[1, 0]]) == [0, 1]
+    check(Solution().findOrder(2, [[1, 0]]), [0, 1], "Solution().findOrder(2, [[1, 0]])")
 
 
 def test_example_2():
-    assert Solution().findOrder(4, [[1, 0], [2, 0], [3, 1], [3, 2]]) == [0, 2, 1, 3]
+    check(Solution().findOrder(4, [[1, 0], [2, 0], [3, 1], [3, 2]]), [0, 2, 1, 3], "Solution().findOrder(4, [[1, 0], [2, 0], [3, 1], [3, 2]])")
 
 
 def test_example_3():
-    assert Solution().findOrder(1, []) == [0]
+    check(Solution().findOrder(1, []), [0], "Solution().findOrder(1, [])")

@@ -24,8 +24,8 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().kthSmallest(build_tree([3, 1, 4, None, 2]), 1) == 1
+    check(Solution().kthSmallest(build_tree([3, 1, 4, None, 2]), 1), 1, "Solution().kthSmallest(build_tree([3, 1, 4, None, 2]), 1)")
 
 
 def test_example_2():
-    assert Solution().kthSmallest(build_tree([5, 3, 6, 2, 4, None, None, 1]), 3) == 3
+    check(Solution().kthSmallest(build_tree([5, 3, 6, 2, 4, None, None, 1]), 3), 3, "Solution().kthSmallest(build_tree([5, 3, 6, 2, 4, None, None, 1]), 3)")

@@ -26,16 +26,16 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::shortest_subarray(vec![1], 1), 1);
+        check_eq!(Solution::shortest_subarray(vec![1], 1), 1);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::shortest_subarray(vec![1, 2], 4), -1);
+        check_eq!(Solution::shortest_subarray(vec![1, 2], 4), -1);
     }
 
     #[test]
     fn example_3() {
-        assert_eq!(Solution::shortest_subarray(vec![2, -1, 2], 3), 3);
+        check_eq!(Solution::shortest_subarray(vec![2, -1, 2], 3), 3);
     }
 }

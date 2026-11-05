@@ -55,12 +55,12 @@ mod tests {
     #[test]
     fn example_1() {
         let mut obj = RandomizedSet::new();
-        assert_eq!(obj.insert(1), true);
-        assert_eq!(obj.remove(2), false);
-        assert_eq!(obj.insert(2), true);
+        check_eq!(obj.insert(1), true);
+        check_eq!(obj.remove(2), false);
+        check_eq!(obj.insert(2), true);
         obj.get_random();
-        assert_eq!(obj.remove(1), true);
-        assert_eq!(obj.insert(2), false);
+        check_eq!(obj.remove(1), true);
+        check_eq!(obj.insert(2), false);
         obj.get_random();
     }
 }

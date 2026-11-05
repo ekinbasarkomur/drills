@@ -23,12 +23,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert to_list(Solution().mergeKLists([build([1, 4, 5]), build([1, 3, 4]), build([2, 6])])) == [1, 1, 2, 3, 4, 4, 5, 6]
+    check(to_list(Solution().mergeKLists([build([1, 4, 5]), build([1, 3, 4]), build([2, 6])])), [1, 1, 2, 3, 4, 4, 5, 6], "to_list(Solution().mergeKLists([build([1, 4, 5]), build([1, 3, 4]), build([2, 6])]))")
 
 
 def test_example_2():
-    assert to_list(Solution().mergeKLists([])) == []
+    check(to_list(Solution().mergeKLists([])), [], "to_list(Solution().mergeKLists([]))")
 
 
 def test_example_3():
-    assert to_list(Solution().mergeKLists([build([])])) == []
+    check(to_list(Solution().mergeKLists([build([])])), [], "to_list(Solution().mergeKLists([build([])]))")

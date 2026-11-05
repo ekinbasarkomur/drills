@@ -18,12 +18,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().findDuplicate([1, 3, 4, 2, 2]) == 2
+    check(Solution().findDuplicate([1, 3, 4, 2, 2]), 2, "Solution().findDuplicate([1, 3, 4, 2, 2])")
 
 
 def test_example_2():
-    assert Solution().findDuplicate([3, 1, 3, 4, 2]) == 3
+    check(Solution().findDuplicate([3, 1, 3, 4, 2]), 3, "Solution().findDuplicate([3, 1, 3, 4, 2])")
 
 
 def test_example_3():
-    assert Solution().findDuplicate([3, 3, 3, 3, 3]) == 3
+    check(Solution().findDuplicate([3, 3, 3, 3, 3]), 3, "Solution().findDuplicate([3, 3, 3, 3, 3])")

@@ -26,16 +26,16 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::find_min(vec![3, 4, 5, 1, 2]), 1);
+        check_eq!(Solution::find_min(vec![3, 4, 5, 1, 2]), 1);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::find_min(vec![4, 5, 6, 7, 0, 1, 2]), 0);
+        check_eq!(Solution::find_min(vec![4, 5, 6, 7, 0, 1, 2]), 0);
     }
 
     #[test]
     fn example_3() {
-        assert_eq!(Solution::find_min(vec![11, 13, 15, 17]), 11);
+        check_eq!(Solution::find_min(vec![11, 13, 15, 17]), 11);
     }
 }

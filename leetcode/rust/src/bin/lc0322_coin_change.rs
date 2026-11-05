@@ -26,16 +26,16 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::coin_change(vec![1, 2, 5], 11), 3);
+        check_eq!(Solution::coin_change(vec![1, 2, 5], 11), 3);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::coin_change(vec![2], 3), -1);
+        check_eq!(Solution::coin_change(vec![2], 3), -1);
     }
 
     #[test]
     fn example_3() {
-        assert_eq!(Solution::coin_change(vec![1], 0), 0);
+        check_eq!(Solution::coin_change(vec![1], 0), 0);
     }
 }

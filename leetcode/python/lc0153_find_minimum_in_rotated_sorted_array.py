@@ -18,12 +18,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().findMin([3, 4, 5, 1, 2]) == 1
+    check(Solution().findMin([3, 4, 5, 1, 2]), 1, "Solution().findMin([3, 4, 5, 1, 2])")
 
 
 def test_example_2():
-    assert Solution().findMin([4, 5, 6, 7, 0, 1, 2]) == 0
+    check(Solution().findMin([4, 5, 6, 7, 0, 1, 2]), 0, "Solution().findMin([4, 5, 6, 7, 0, 1, 2])")
 
 
 def test_example_3():
-    assert Solution().findMin([11, 13, 15, 17]) == 11
+    check(Solution().findMin([11, 13, 15, 17]), 11, "Solution().findMin([11, 13, 15, 17])")

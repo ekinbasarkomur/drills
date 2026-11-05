@@ -37,53 +37,53 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(search(&[3, 4, 5, 6, 1, 2], 1), 4);
+        check_eq!(search(&[3, 4, 5, 6, 1, 2], 1), 4);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(search(&[3, 5, 6, 0, 1, 2], 4), -1);
+        check_eq!(search(&[3, 5, 6, 0, 1, 2], 4), -1);
     }
 
     #[test]
     fn single_element_found() {
-        assert_eq!(search(&[1], 1), 0);
+        check_eq!(search(&[1], 1), 0);
     }
 
     #[test]
     fn single_element_missing() {
-        assert_eq!(search(&[1], 2), -1);
+        check_eq!(search(&[1], 2), -1);
     }
 
     #[test]
     fn not_rotated_at_all() {
         // a full rotation looks like no rotation
-        assert_eq!(search(&[1, 2, 3, 4, 5, 6], 4), 3);
+        check_eq!(search(&[1, 2, 3, 4, 5, 6], 4), 3);
     }
 
     #[test]
     fn target_is_the_pivot() {
-        assert_eq!(search(&[4, 5, 6, 7, 0, 1, 2], 0), 4);
+        check_eq!(search(&[4, 5, 6, 7, 0, 1, 2], 0), 4);
     }
 
     #[test]
     fn target_missing_inside_the_range() {
-        assert_eq!(search(&[4, 5, 6, 7, 0, 1, 2], 3), -1);
+        check_eq!(search(&[4, 5, 6, 7, 0, 1, 2], 3), -1);
     }
 
     #[test]
     fn rotated_by_one() {
-        assert_eq!(search(&[2, 1], 1), 1);
+        check_eq!(search(&[2, 1], 1), 1);
     }
 
     #[test]
     fn target_is_the_first_element() {
-        assert_eq!(search(&[5, 1, 2, 3, 4], 5), 0);
+        check_eq!(search(&[5, 1, 2, 3, 4], 5), 0);
     }
 
     #[test]
     fn negative_values() {
-        assert_eq!(search(&[0, 1, 2, -3, -2, -1], -3), 3);
+        check_eq!(search(&[0, 1, 2, -3, -2, -1], -3), 3);
     }
 
     #[test]
@@ -92,6 +92,6 @@ mod tests {
         // The answer is at index 0.
         let mut nums: Vec<i32> = (500..1_000).collect();
         nums.extend(0..500);
-        assert_eq!(search(&nums, 500), 0);
+        check_eq!(search(&nums, 500), 0);
     }
 }

@@ -26,16 +26,16 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::maximum_sum(vec![1, -2, 0, 3]), 4);
+        check_eq!(Solution::maximum_sum(vec![1, -2, 0, 3]), 4);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::maximum_sum(vec![1, -2, -2, 3]), 3);
+        check_eq!(Solution::maximum_sum(vec![1, -2, -2, 3]), 3);
     }
 
     #[test]
     fn example_3() {
-        assert_eq!(Solution::maximum_sum(vec![-1, -1, -1, -1]), -1);
+        check_eq!(Solution::maximum_sum(vec![-1, -1, -1, -1]), -1);
     }
 }

@@ -18,12 +18,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().countSmaller([5, 2, 6, 1]) == [2, 1, 1, 0]
+    check(Solution().countSmaller([5, 2, 6, 1]), [2, 1, 1, 0], "Solution().countSmaller([5, 2, 6, 1])")
 
 
 def test_example_2():
-    assert Solution().countSmaller([-1]) == [0]
+    check(Solution().countSmaller([-1]), [0], "Solution().countSmaller([-1])")
 
 
 def test_example_3():
-    assert Solution().countSmaller([-1, -1]) == [0, 0]
+    check(Solution().countSmaller([-1, -1]), [0, 0], "Solution().countSmaller([-1, -1])")

@@ -45,8 +45,8 @@ mod tests {
     #[test]
     fn example_1() {
         let mut obj = NumArray::new(vec![-2, 0, 3, -5, 2, -1]);
-        assert_eq!(obj.sum_range(0, 2), 1);
-        assert_eq!(obj.sum_range(2, 5), -1);
-        assert_eq!(obj.sum_range(0, 5), -3);
+        check_eq!(obj.sum_range(0, 2), 1);
+        check_eq!(obj.sum_range(2, 5), -1);
+        check_eq!(obj.sum_range(0, 5), -3);
     }
 }

@@ -27,18 +27,18 @@ mod tests {
     #[test]
     fn example_1() {
         let want: Vec<i32> = vec![2, 1, 1, 0];
-        assert_eq!(Solution::count_smaller(vec![5, 2, 6, 1]), want);
+        check_eq!(Solution::count_smaller(vec![5, 2, 6, 1]), want);
     }
 
     #[test]
     fn example_2() {
         let want: Vec<i32> = vec![0];
-        assert_eq!(Solution::count_smaller(vec![-1]), want);
+        check_eq!(Solution::count_smaller(vec![-1]), want);
     }
 
     #[test]
     fn example_3() {
         let want: Vec<i32> = vec![0, 0];
-        assert_eq!(Solution::count_smaller(vec![-1, -1]), want);
+        check_eq!(Solution::count_smaller(vec![-1, -1]), want);
     }
 }

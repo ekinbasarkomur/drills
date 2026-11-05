@@ -18,12 +18,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().minSubArrayLen(7, [2, 3, 1, 2, 4, 3]) == 2
+    check(Solution().minSubArrayLen(7, [2, 3, 1, 2, 4, 3]), 2, "Solution().minSubArrayLen(7, [2, 3, 1, 2, 4, 3])")
 
 
 def test_example_2():
-    assert Solution().minSubArrayLen(4, [1, 4, 4]) == 1
+    check(Solution().minSubArrayLen(4, [1, 4, 4]), 1, "Solution().minSubArrayLen(4, [1, 4, 4])")
 
 
 def test_example_3():
-    assert Solution().minSubArrayLen(11, [1, 1, 1, 1, 1, 1, 1, 1]) == 0
+    check(Solution().minSubArrayLen(11, [1, 1, 1, 1, 1, 1, 1, 1]), 0, "Solution().minSubArrayLen(11, [1, 1, 1, 1, 1, 1, 1, 1])")

@@ -26,16 +26,16 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::number_of_substrings("abcabc".to_string()), 10);
+        check_eq!(Solution::number_of_substrings("abcabc".to_string()), 10);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::number_of_substrings("aaacb".to_string()), 3);
+        check_eq!(Solution::number_of_substrings("aaacb".to_string()), 3);
     }
 
     #[test]
     fn example_3() {
-        assert_eq!(Solution::number_of_substrings("abc".to_string()), 1);
+        check_eq!(Solution::number_of_substrings("abc".to_string()), 1);
     }
 }

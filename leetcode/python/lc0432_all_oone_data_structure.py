@@ -36,8 +36,8 @@ def test_example_1():
     obj = AllOne()
     obj.inc('hello')
     obj.inc('hello')
-    assert obj.getMaxKey() == 'hello'
-    assert obj.getMinKey() == 'hello'
+    check(obj.getMaxKey(), 'hello', "obj.getMaxKey()")
+    check(obj.getMinKey(), 'hello', "obj.getMinKey()")
     obj.inc('leet')
-    assert obj.getMaxKey() == 'hello'
-    assert obj.getMinKey() == 'leet'
+    check(obj.getMaxKey(), 'hello', "obj.getMaxKey()")
+    check(obj.getMinKey(), 'leet', "obj.getMinKey()")

@@ -27,12 +27,12 @@ mod tests {
     #[test]
     fn example_1() {
         let want: Vec<i32> = vec![3, 3, 5, 5, 6, 7];
-        assert_eq!(Solution::max_sliding_window(vec![1, 3, -1, -3, 5, 3, 6, 7], 3), want);
+        check_eq!(Solution::max_sliding_window(vec![1, 3, -1, -3, 5, 3, 6, 7], 3), want);
     }
 
     #[test]
     fn example_2() {
         let want: Vec<i32> = vec![1];
-        assert_eq!(Solution::max_sliding_window(vec![1], 1), want);
+        check_eq!(Solution::max_sliding_window(vec![1], 1), want);
     }
 }

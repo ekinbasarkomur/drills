@@ -26,11 +26,11 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert!(approx_eq(Solution::find_median_sorted_arrays(vec![1, 3], vec![2]), 2.0));
+        check!(approx_eq(Solution::find_median_sorted_arrays(vec![1, 3], vec![2]), 2.0));
     }
 
     #[test]
     fn example_2() {
-        assert!(approx_eq(Solution::find_median_sorted_arrays(vec![1, 2], vec![3, 4]), 2.5));
+        check!(approx_eq(Solution::find_median_sorted_arrays(vec![1, 2], vec![3, 4]), 2.5));
     }
 }

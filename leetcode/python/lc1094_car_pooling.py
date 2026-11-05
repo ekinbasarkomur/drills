@@ -18,8 +18,8 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().carPooling([[2, 1, 5], [3, 3, 7]], 4) == False
+    check(Solution().carPooling([[2, 1, 5], [3, 3, 7]], 4), False, "Solution().carPooling([[2, 1, 5], [3, 3, 7]], 4)")
 
 
 def test_example_2():
-    assert Solution().carPooling([[2, 1, 5], [3, 3, 7]], 5) == True
+    check(Solution().carPooling([[2, 1, 5], [3, 3, 7]], 5), True, "Solution().carPooling([[2, 1, 5], [3, 3, 7]], 5)")

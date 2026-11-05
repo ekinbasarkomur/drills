@@ -27,18 +27,18 @@ mod tests {
     #[test]
     fn example_1() {
         let want: Vec<Vec<i32>> = vec![vec![2, 2, 3], vec![7]];
-        assert_eq!(deep_sort(Solution::combination_sum(vec![2, 3, 6, 7], 7)), deep_sort(want));
+        check_eq!(deep_sort(Solution::combination_sum(vec![2, 3, 6, 7], 7)), deep_sort(want));
     }
 
     #[test]
     fn example_2() {
         let want: Vec<Vec<i32>> = vec![vec![2, 2, 2, 2], vec![2, 3, 3], vec![3, 5]];
-        assert_eq!(deep_sort(Solution::combination_sum(vec![2, 3, 5], 8)), deep_sort(want));
+        check_eq!(deep_sort(Solution::combination_sum(vec![2, 3, 5], 8)), deep_sort(want));
     }
 
     #[test]
     fn example_3() {
         let want: Vec<Vec<i32>> = vec![];
-        assert_eq!(deep_sort(Solution::combination_sum(vec![2], 1)), deep_sort(want));
+        check_eq!(deep_sort(Solution::combination_sum(vec![2], 1)), deep_sort(want));
     }
 }

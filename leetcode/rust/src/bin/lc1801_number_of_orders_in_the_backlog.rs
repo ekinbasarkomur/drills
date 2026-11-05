@@ -26,11 +26,11 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::get_number_of_backlog_orders(vec![vec![10, 5, 0], vec![15, 2, 1], vec![25, 1, 1], vec![30, 4, 0]]), 6);
+        check_eq!(Solution::get_number_of_backlog_orders(vec![vec![10, 5, 0], vec![15, 2, 1], vec![25, 1, 1], vec![30, 4, 0]]), 6);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::get_number_of_backlog_orders(vec![vec![7, 1000000000, 1], vec![15, 3, 0], vec![5, 999999995, 0], vec![5, 1, 1]]), 999999984);
+        check_eq!(Solution::get_number_of_backlog_orders(vec![vec![7, 1000000000, 1], vec![15, 3, 0], vec![5, 999999995, 0], vec![5, 1, 1]]), 999999984);
     }
 }

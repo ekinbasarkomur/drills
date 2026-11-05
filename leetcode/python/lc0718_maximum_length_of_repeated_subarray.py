@@ -18,8 +18,8 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().findLength([1, 2, 3, 2, 1], [3, 2, 1, 4, 7]) == 3
+    check(Solution().findLength([1, 2, 3, 2, 1], [3, 2, 1, 4, 7]), 3, "Solution().findLength([1, 2, 3, 2, 1], [3, 2, 1, 4, 7])")
 
 
 def test_example_2():
-    assert Solution().findLength([0, 0, 0, 0, 0], [0, 0, 0, 0, 0]) == 5
+    check(Solution().findLength([0, 0, 0, 0, 0], [0, 0, 0, 0, 0]), 5, "Solution().findLength([0, 0, 0, 0, 0], [0, 0, 0, 0, 0])")

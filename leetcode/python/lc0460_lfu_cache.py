@@ -30,11 +30,11 @@ def test_example_1():
     obj = LFUCache(2)
     obj.put(1, 1)
     obj.put(2, 2)
-    assert obj.get(1) == 1
+    check(obj.get(1), 1, "obj.get(1)")
     obj.put(3, 3)
-    assert obj.get(2) == -1
-    assert obj.get(3) == 3
+    check(obj.get(2), -1, "obj.get(2)")
+    check(obj.get(3), 3, "obj.get(3)")
     obj.put(4, 4)
-    assert obj.get(1) == -1
-    assert obj.get(3) == 3
-    assert obj.get(4) == 4
+    check(obj.get(1), -1, "obj.get(1)")
+    check(obj.get(3), 3, "obj.get(3)")
+    check(obj.get(4), 4, "obj.get(4)")

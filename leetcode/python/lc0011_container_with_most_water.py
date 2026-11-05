@@ -31,44 +31,44 @@ def max_area(height: List[int]) -> int:
 
 
 def test_example_1():
-    assert max_area([1, 7, 2, 5, 4, 7, 3, 6]) == 36
+    check(max_area([1, 7, 2, 5, 4, 7, 3, 6]), 36, "max_area([1, 7, 2, 5, 4, 7, 3, 6])")
 
 
 def test_example_2():
-    assert max_area([2, 2, 2]) == 4
+    check(max_area([2, 2, 2]), 4, "max_area([2, 2, 2])")
 
 
 def test_shortest_possible_input():
-    assert max_area([1, 1]) == 1
+    check(max_area([1, 1]), 1, "max_area([1, 1])")
 
 
 def test_two_zero_bars_hold_nothing():
-    assert max_area([0, 0]) == 0
+    check(max_area([0, 0]), 0, "max_area([0, 0])")
 
 
 def test_the_classic_leetcode_case():
-    assert max_area([1, 8, 6, 2, 5, 4, 8, 3, 7]) == 49
+    check(max_area([1, 8, 6, 2, 5, 4, 8, 3, 7]), 49, "max_area([1, 8, 6, 2, 5, 4, 8, 3, 7])")
 
 
 def test_wide_beats_tall():
     # the two 3s are 2 apart; nothing taller sits closer together
-    assert max_area([3, 0, 3]) == 6
+    check(max_area([3, 0, 3]), 6, "max_area([3, 0, 3])")
 
 
 def test_strictly_ascending():
-    assert max_area([1, 2, 3, 4, 5]) == 6
+    check(max_area([1, 2, 3, 4, 5]), 6, "max_area([1, 2, 3, 4, 5])")
 
 
 def test_strictly_descending():
-    assert max_area([5, 4, 3, 2, 1]) == 6
+    check(max_area([5, 4, 3, 2, 1]), 6, "max_area([5, 4, 3, 2, 1])")
 
 
 def test_one_zero_bar_kills_the_pair():
-    assert max_area([0, 10000]) == 0
+    check(max_area([0, 10000]), 0, "max_area([0, 10000])")
 
 
 def test_value_range_extremes():
-    assert max_area([10000, 0, 0, 0, 10000]) == 40000
+    check(max_area([10000, 0, 0, 0, 10000]), 40000, "max_area([10000, 0, 0, 0, 10000])")
 
 
 def test_largest_allowed_input():
@@ -77,7 +77,7 @@ def test_largest_allowed_input():
     height = [0] * 100_000
     height[0] = 1
     height[99_999] = 1
-    assert max_area(height) == 99999
+    check(max_area(height), 99999, "max_area(height)")
 
 
 if __name__ == "__main__":

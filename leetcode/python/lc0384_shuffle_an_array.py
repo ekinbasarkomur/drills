@@ -29,5 +29,5 @@ class Solution:
 def test_example_1():
     obj = Solution([1, 2, 3])
     obj.shuffle()
-    assert obj.reset() == [1, 2, 3]
+    check(obj.reset(), [1, 2, 3], "obj.reset()")
     obj.shuffle()

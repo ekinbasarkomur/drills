@@ -28,6 +28,6 @@ class NumArray:
 
 def test_example_1():
     obj = NumArray([1, 3, 5])
-    assert obj.sumRange(0, 2) == 9
+    check(obj.sumRange(0, 2), 9, "obj.sumRange(0, 2)")
     obj.update(1, 2)
-    assert obj.sumRange(0, 2) == 8
+    check(obj.sumRange(0, 2), 8, "obj.sumRange(0, 2)")

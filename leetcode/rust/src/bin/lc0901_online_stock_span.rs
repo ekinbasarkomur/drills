@@ -45,12 +45,12 @@ mod tests {
     #[test]
     fn example_1() {
         let mut obj = StockSpanner::new();
-        assert_eq!(obj.next(100), 1);
-        assert_eq!(obj.next(80), 1);
-        assert_eq!(obj.next(60), 1);
-        assert_eq!(obj.next(70), 2);
-        assert_eq!(obj.next(60), 1);
-        assert_eq!(obj.next(75), 4);
-        assert_eq!(obj.next(85), 6);
+        check_eq!(obj.next(100), 1);
+        check_eq!(obj.next(80), 1);
+        check_eq!(obj.next(60), 1);
+        check_eq!(obj.next(70), 2);
+        check_eq!(obj.next(60), 1);
+        check_eq!(obj.next(75), 4);
+        check_eq!(obj.next(85), 6);
     }
 }

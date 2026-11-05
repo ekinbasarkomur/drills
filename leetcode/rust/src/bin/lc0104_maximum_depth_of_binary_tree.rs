@@ -110,52 +110,52 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(depth(&[n(1), n(2), n(3), X, X, n(4)]), 3);
+        check_eq!(depth(&[n(1), n(2), n(3), X, X, n(4)]), 3);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(depth(&[]), 0);
+        check_eq!(depth(&[]), 0);
     }
 
     #[test]
     fn single_node() {
-        assert_eq!(depth(&[n(1)]), 1);
+        check_eq!(depth(&[n(1)]), 1);
     }
 
     #[test]
     fn two_levels_full() {
-        assert_eq!(depth(&[n(1), n(2), n(3)]), 2);
+        check_eq!(depth(&[n(1), n(2), n(3)]), 2);
     }
 
     #[test]
     fn only_a_left_child() {
-        assert_eq!(depth(&[n(1), n(2)]), 2);
+        check_eq!(depth(&[n(1), n(2)]), 2);
     }
 
     #[test]
     fn only_a_right_child() {
-        assert_eq!(depth(&[n(1), X, n(2)]), 2);
+        check_eq!(depth(&[n(1), X, n(2)]), 2);
     }
 
     #[test]
     fn a_left_leaning_chain() {
-        assert_eq!(depth(&[n(1), n(2), X, n(3), X, n(4)]), 4);
+        check_eq!(depth(&[n(1), n(2), X, n(3), X, n(4)]), 4);
     }
 
     #[test]
     fn a_right_leaning_chain() {
-        assert_eq!(depth(&[n(1), X, n(2), X, n(3), X, n(4)]), 4);
+        check_eq!(depth(&[n(1), X, n(2), X, n(3), X, n(4)]), 4);
     }
 
     #[test]
     fn the_deep_side_is_on_the_right() {
-        assert_eq!(depth(&[n(1), n(2), n(3), X, X, n(4), n(5), n(6)]), 4);
+        check_eq!(depth(&[n(1), n(2), n(3), X, X, n(4), n(5), n(6)]), 4);
     }
 
     #[test]
     fn a_full_tree_of_three_levels() {
-        assert_eq!(depth(&[n(1), n(2), n(3), n(4), n(5), n(6), n(7)]), 3);
+        check_eq!(depth(&[n(1), n(2), n(3), n(4), n(5), n(6), n(7)]), 3);
     }
 
     #[test]
@@ -168,6 +168,6 @@ mod tests {
                 values.push(X);
             }
         }
-        assert_eq!(depth(&values), 100);
+        check_eq!(depth(&values), 100);
     }
 }

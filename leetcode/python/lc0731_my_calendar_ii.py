@@ -25,9 +25,9 @@ class MyCalendarTwo:
 
 def test_example_1():
     obj = MyCalendarTwo()
-    assert obj.book(10, 20) == True
-    assert obj.book(50, 60) == True
-    assert obj.book(10, 40) == True
-    assert obj.book(5, 15) == False
-    assert obj.book(5, 10) == True
-    assert obj.book(25, 55) == True
+    check(obj.book(10, 20), True, "obj.book(10, 20)")
+    check(obj.book(50, 60), True, "obj.book(50, 60)")
+    check(obj.book(10, 40), True, "obj.book(10, 40)")
+    check(obj.book(5, 15), False, "obj.book(5, 15)")
+    check(obj.book(5, 10), True, "obj.book(5, 10)")
+    check(obj.book(25, 55), True, "obj.book(25, 55)")

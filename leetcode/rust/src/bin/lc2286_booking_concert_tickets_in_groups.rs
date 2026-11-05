@@ -51,10 +51,10 @@ mod tests {
     fn example_1() {
         let mut obj = BookMyShow::new(2, 5);
         let want: Vec<i32> = vec![0, 0];
-        assert_eq!(obj.gather(4, 0), want);
+        check_eq!(obj.gather(4, 0), want);
         let want: Vec<i32> = vec![];
-        assert_eq!(obj.gather(2, 0), want);
-        assert_eq!(obj.scatter(5, 1), true);
-        assert_eq!(obj.scatter(5, 1), false);
+        check_eq!(obj.gather(2, 0), want);
+        check_eq!(obj.scatter(5, 1), true);
+        check_eq!(obj.scatter(5, 1), false);
     }
 }

@@ -70,14 +70,14 @@ mod tests {
     #[test]
     fn example_1() {
         let mut obj = MyCircularQueue::new(3);
-        assert_eq!(obj.en_queue(1), true);
-        assert_eq!(obj.en_queue(2), true);
-        assert_eq!(obj.en_queue(3), true);
-        assert_eq!(obj.en_queue(4), false);
-        assert_eq!(obj.rear(), 3);
-        assert_eq!(obj.is_full(), true);
-        assert_eq!(obj.de_queue(), true);
-        assert_eq!(obj.en_queue(4), true);
-        assert_eq!(obj.rear(), 4);
+        check_eq!(obj.en_queue(1), true);
+        check_eq!(obj.en_queue(2), true);
+        check_eq!(obj.en_queue(3), true);
+        check_eq!(obj.en_queue(4), false);
+        check_eq!(obj.rear(), 3);
+        check_eq!(obj.is_full(), true);
+        check_eq!(obj.de_queue(), true);
+        check_eq!(obj.en_queue(4), true);
+        check_eq!(obj.rear(), 4);
     }
 }

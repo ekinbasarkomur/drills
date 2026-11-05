@@ -47,18 +47,18 @@ mod tests {
     #[test]
     fn example_1() {
         let want: Vec<Vec<i32>> = vec![vec![3], vec![9, 20], vec![15, 7]];
-        assert_eq!(Solution::level_order(build_tree(&[Some(3), Some(9), Some(20), None, None, Some(15), Some(7)])), want);
+        check_eq!(Solution::level_order(build_tree(&[Some(3), Some(9), Some(20), None, None, Some(15), Some(7)])), want);
     }
 
     #[test]
     fn example_2() {
         let want: Vec<Vec<i32>> = vec![vec![1]];
-        assert_eq!(Solution::level_order(build_tree(&[Some(1)])), want);
+        check_eq!(Solution::level_order(build_tree(&[Some(1)])), want);
     }
 
     #[test]
     fn example_3() {
         let want: Vec<Vec<i32>> = vec![];
-        assert_eq!(Solution::level_order(build_tree(&[])), want);
+        check_eq!(Solution::level_order(build_tree(&[])), want);
     }
 }

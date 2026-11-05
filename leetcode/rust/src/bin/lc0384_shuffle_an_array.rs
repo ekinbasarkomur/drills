@@ -52,7 +52,7 @@ mod tests {
         let mut obj = Solution::new(vec![1, 2, 3]);
         obj.shuffle();
         let want: Vec<i32> = vec![1, 2, 3];
-        assert_eq!(obj.reset(), want);
+        check_eq!(obj.reset(), want);
         obj.shuffle();
     }
 }

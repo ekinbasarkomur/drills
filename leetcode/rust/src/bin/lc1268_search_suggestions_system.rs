@@ -27,12 +27,12 @@ mod tests {
     #[test]
     fn example_1() {
         let want: Vec<Vec<String>> = vec![vec!["mobile".to_string(), "moneypot".to_string(), "monitor".to_string()], vec!["mobile".to_string(), "moneypot".to_string(), "monitor".to_string()], vec!["mouse".to_string(), "mousepad".to_string()], vec!["mouse".to_string(), "mousepad".to_string()], vec!["mouse".to_string(), "mousepad".to_string()]];
-        assert_eq!(Solution::suggested_products(vec!["mobile".to_string(), "mouse".to_string(), "moneypot".to_string(), "monitor".to_string(), "mousepad".to_string()], "mouse".to_string()), want);
+        check_eq!(Solution::suggested_products(vec!["mobile".to_string(), "mouse".to_string(), "moneypot".to_string(), "monitor".to_string(), "mousepad".to_string()], "mouse".to_string()), want);
     }
 
     #[test]
     fn example_2() {
         let want: Vec<Vec<String>> = vec![vec!["havana".to_string()], vec!["havana".to_string()], vec!["havana".to_string()], vec!["havana".to_string()], vec!["havana".to_string()], vec!["havana".to_string()]];
-        assert_eq!(Solution::suggested_products(vec!["havana".to_string()], "havana".to_string()), want);
+        check_eq!(Solution::suggested_products(vec!["havana".to_string()], "havana".to_string()), want);
     }
 }

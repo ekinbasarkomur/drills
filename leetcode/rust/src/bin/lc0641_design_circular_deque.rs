@@ -80,14 +80,14 @@ mod tests {
     #[test]
     fn example_1() {
         let mut obj = MyCircularDeque::new(3);
-        assert_eq!(obj.insert_last(1), true);
-        assert_eq!(obj.insert_last(2), true);
-        assert_eq!(obj.insert_front(3), true);
-        assert_eq!(obj.insert_front(4), false);
-        assert_eq!(obj.get_rear(), 2);
-        assert_eq!(obj.is_full(), true);
-        assert_eq!(obj.delete_last(), true);
-        assert_eq!(obj.insert_front(4), true);
-        assert_eq!(obj.get_front(), 4);
+        check_eq!(obj.insert_last(1), true);
+        check_eq!(obj.insert_last(2), true);
+        check_eq!(obj.insert_front(3), true);
+        check_eq!(obj.insert_front(4), false);
+        check_eq!(obj.get_rear(), 2);
+        check_eq!(obj.is_full(), true);
+        check_eq!(obj.delete_last(), true);
+        check_eq!(obj.insert_front(4), true);
+        check_eq!(obj.get_front(), 4);
     }
 }

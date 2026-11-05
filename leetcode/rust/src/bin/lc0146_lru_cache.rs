@@ -53,17 +53,17 @@ mod tests {
     fn example_1() {
         let mut c = LRUCache::new(2);
         c.put(1, 10);
-        assert_eq!(c.get(1), 10);
+        check_eq!(c.get(1), 10);
         c.put(2, 20);
         c.put(3, 30); // evicts key 1
-        assert_eq!(c.get(2), 20);
-        assert_eq!(c.get(1), -1);
+        check_eq!(c.get(2), 20);
+        check_eq!(c.get(1), -1);
     }
 
     #[test]
     fn missing_key_returns_minus_one() {
         let mut c = LRUCache::new(2);
-        assert_eq!(c.get(7), -1);
+        check_eq!(c.get(7), -1);
     }
 
     #[test]
@@ -71,7 +71,7 @@ mod tests {
         let mut c = LRUCache::new(2);
         c.put(1, 10);
         c.put(1, 99);
-        assert_eq!(c.get(1), 99);
+        check_eq!(c.get(1), 99);
     }
 
     #[test]
@@ -80,8 +80,8 @@ mod tests {
         c.put(1, 10);
         c.put(1, 11);
         c.put(2, 20);
-        assert_eq!(c.get(1), 11);
-        assert_eq!(c.get(2), 20);
+        check_eq!(c.get(1), 11);
+        check_eq!(c.get(2), 20);
     }
 
     #[test]
@@ -89,8 +89,8 @@ mod tests {
         let mut c = LRUCache::new(1);
         c.put(1, 10);
         c.put(2, 20);
-        assert_eq!(c.get(1), -1);
-        assert_eq!(c.get(2), 20);
+        check_eq!(c.get(1), -1);
+        check_eq!(c.get(2), 20);
     }
 
     #[test]
@@ -100,9 +100,9 @@ mod tests {
         c.put(2, 20);
         c.get(1); // 2 is now the least recently used
         c.put(3, 30);
-        assert_eq!(c.get(2), -1);
-        assert_eq!(c.get(1), 10);
-        assert_eq!(c.get(3), 30);
+        check_eq!(c.get(2), -1);
+        check_eq!(c.get(1), 10);
+        check_eq!(c.get(3), 30);
     }
 
     #[test]
@@ -112,8 +112,8 @@ mod tests {
         c.put(2, 20);
         c.put(1, 11); // 2 is now the least recently used
         c.put(3, 30);
-        assert_eq!(c.get(2), -1);
-        assert_eq!(c.get(1), 11);
+        check_eq!(c.get(2), -1);
+        check_eq!(c.get(1), 11);
     }
 
     #[test]
@@ -123,8 +123,8 @@ mod tests {
         c.put(2, 20);
         c.get(99); // not present
         c.put(3, 30); // must still evict 1
-        assert_eq!(c.get(1), -1);
-        assert_eq!(c.get(2), 20);
+        check_eq!(c.get(1), -1);
+        check_eq!(c.get(2), 20);
     }
 
     #[test]
@@ -133,9 +133,9 @@ mod tests {
         c.put(1, 10);
         c.put(2, 20);
         c.put(3, 30);
-        assert_eq!(c.get(1), 10);
-        assert_eq!(c.get(2), 20);
-        assert_eq!(c.get(3), 30);
+        check_eq!(c.get(1), 10);
+        check_eq!(c.get(2), 20);
+        check_eq!(c.get(3), 30);
     }
 
     #[test]
@@ -143,8 +143,8 @@ mod tests {
         let mut c = LRUCache::new(2);
         c.put(0, 0);
         c.put(10_000, 100_000);
-        assert_eq!(c.get(0), 0);
-        assert_eq!(c.get(10_000), 100_000);
+        check_eq!(c.get(0), 0);
+        check_eq!(c.get(10_000), 100_000);
     }
 
     #[test]
@@ -155,11 +155,11 @@ mod tests {
         for i in 0..3000 {
             c.put(i, i * 2);
         }
-        assert_eq!(c.get(0), 0); // still present, and now most recent
+        check_eq!(c.get(0), 0); // still present, and now most recent
         for i in 3000..10_000 {
             c.put(i, i);
         }
-        assert_eq!(c.get(9_999), 9_999); // newest survived
-        assert_eq!(c.get(1), -1); // oldest was evicted
+        check_eq!(c.get(9_999), 9_999); // newest survived
+        check_eq!(c.get(1), -1); // oldest was evicted
     }
 }

@@ -27,28 +27,28 @@ def has_duplicate(*args): return Solution().containsDuplicate(*args)  # noqa: E7
 
 
 def test_example_1():
-    assert has_duplicate([1, 2, 3, 3]) is True
+    check(has_duplicate([1, 2, 3, 3]), True, "has_duplicate([1, 2, 3, 3])", op="is")
 
 
 def test_example_2():
-    assert has_duplicate([1, 2, 3, 4]) is False
+    check(has_duplicate([1, 2, 3, 4]), False, "has_duplicate([1, 2, 3, 4])", op="is")
 
 
 def test_empty_array():
-    assert has_duplicate([]) is False
+    check(has_duplicate([]), False, "has_duplicate([])", op="is")
 
 
 def test_single_element():
-    assert has_duplicate([7]) is False
+    check(has_duplicate([7]), False, "has_duplicate([7])", op="is")
 
 
 def test_duplicate_at_the_very_end():
-    assert has_duplicate([1, 2, 3, 4, 5, 1]) is True
+    check(has_duplicate([1, 2, 3, 4, 5, 1]), True, "has_duplicate([1, 2, 3, 4, 5, 1])", op="is")
 
 
 def test_negatives_and_extremes():
-    assert has_duplicate([-10**9, 0, -10**9]) is True
-    assert has_duplicate([-10**9, 10**9]) is False
+    check(has_duplicate([-10**9, 0, -10**9]), True, "has_duplicate([-10**9, 0, -10**9])", op="is")
+    check(has_duplicate([-10**9, 10**9]), False, "has_duplicate([-10**9, 10**9])", op="is")
 
 
 if __name__ == "__main__":

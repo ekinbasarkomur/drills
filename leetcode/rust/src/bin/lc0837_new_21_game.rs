@@ -26,16 +26,16 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert!(approx_eq(Solution::new21_game(10, 1, 10), 1.0));
+        check!(approx_eq(Solution::new21_game(10, 1, 10), 1.0));
     }
 
     #[test]
     fn example_2() {
-        assert!(approx_eq(Solution::new21_game(6, 1, 10), 0.6));
+        check!(approx_eq(Solution::new21_game(6, 1, 10), 0.6));
     }
 
     #[test]
     fn example_3() {
-        assert!(approx_eq(Solution::new21_game(21, 17, 10), 0.73278));
+        check!(approx_eq(Solution::new21_game(21, 17, 10), 0.73278));
     }
 }

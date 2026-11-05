@@ -25,10 +25,10 @@ class StockSpanner:
 
 def test_example_1():
     obj = StockSpanner()
-    assert obj.next(100) == 1
-    assert obj.next(80) == 1
-    assert obj.next(60) == 1
-    assert obj.next(70) == 2
-    assert obj.next(60) == 1
-    assert obj.next(75) == 4
-    assert obj.next(85) == 6
+    check(obj.next(100), 1, "obj.next(100)")
+    check(obj.next(80), 1, "obj.next(80)")
+    check(obj.next(60), 1, "obj.next(60)")
+    check(obj.next(70), 2, "obj.next(70)")
+    check(obj.next(60), 1, "obj.next(60)")
+    check(obj.next(75), 4, "obj.next(75)")
+    check(obj.next(85), 6, "obj.next(85)")

@@ -24,8 +24,8 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().isValidBST(build_tree([2, 1, 3])) == True
+    check(Solution().isValidBST(build_tree([2, 1, 3])), True, "Solution().isValidBST(build_tree([2, 1, 3]))")
 
 
 def test_example_2():
-    assert Solution().isValidBST(build_tree([5, 1, 4, None, None, 3, 6])) == False
+    check(Solution().isValidBST(build_tree([5, 1, 4, None, None, 3, 6])), False, "Solution().isValidBST(build_tree([5, 1, 4, None, None, 3, 6]))")

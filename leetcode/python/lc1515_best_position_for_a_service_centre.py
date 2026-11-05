@@ -18,8 +18,8 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert close(Solution().getMinDistSum([[0, 1], [1, 0], [1, 2], [2, 1]]), 4.0)
+    check_true(close(Solution().getMinDistSum([[0, 1], [1, 0], [1, 2], [2, 1]]), 4.0), "close(Solution().getMinDistSum([[0, 1], [1, 0], [1, 2], [2, 1]]), 4.0)")
 
 
 def test_example_2():
-    assert close(Solution().getMinDistSum([[1, 1], [3, 3]]), 2.82843)
+    check_true(close(Solution().getMinDistSum([[1, 1], [3, 3]]), 2.82843), "close(Solution().getMinDistSum([[1, 1], [3, 3]]), 2.82843)")

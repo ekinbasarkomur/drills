@@ -18,8 +18,8 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().minSwapsCouples([0, 2, 1, 3]) == 1
+    check(Solution().minSwapsCouples([0, 2, 1, 3]), 1, "Solution().minSwapsCouples([0, 2, 1, 3])")
 
 
 def test_example_2():
-    assert Solution().minSwapsCouples([3, 2, 0, 1]) == 0
+    check(Solution().minSwapsCouples([3, 2, 0, 1]), 0, "Solution().minSwapsCouples([3, 2, 0, 1])")

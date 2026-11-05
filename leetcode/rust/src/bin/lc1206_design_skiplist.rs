@@ -58,11 +58,11 @@ mod tests {
         obj.add(1);
         obj.add(2);
         obj.add(3);
-        assert_eq!(obj.search(0), false);
+        check_eq!(obj.search(0), false);
         obj.add(4);
-        assert_eq!(obj.search(1), true);
-        assert_eq!(obj.erase(0), false);
-        assert_eq!(obj.erase(1), true);
-        assert_eq!(obj.search(1), false);
+        check_eq!(obj.search(1), true);
+        check_eq!(obj.erase(0), false);
+        check_eq!(obj.erase(1), true);
+        check_eq!(obj.search(1), false);
     }
 }

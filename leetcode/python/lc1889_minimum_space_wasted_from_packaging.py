@@ -18,12 +18,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().minWastedSpace([2, 3, 5], [[4, 8], [2, 8]]) == 6
+    check(Solution().minWastedSpace([2, 3, 5], [[4, 8], [2, 8]]), 6, "Solution().minWastedSpace([2, 3, 5], [[4, 8], [2, 8]])")
 
 
 def test_example_2():
-    assert Solution().minWastedSpace([2, 3, 5], [[1, 4], [2, 3], [3, 4]]) == -1
+    check(Solution().minWastedSpace([2, 3, 5], [[1, 4], [2, 3], [3, 4]]), -1, "Solution().minWastedSpace([2, 3, 5], [[1, 4], [2, 3], [3, 4]])")
 
 
 def test_example_3():
-    assert Solution().minWastedSpace([3, 5, 8, 10, 11, 12], [[12], [11, 9], [10, 5, 14]]) == 9
+    check(Solution().minWastedSpace([3, 5, 8, 10, 11, 12], [[12], [11, 9], [10, 5, 14]]), 9, "Solution().minWastedSpace([3, 5, 8, 10, 11, 12], [[12], [11, 9], [10, 5, 14]])")

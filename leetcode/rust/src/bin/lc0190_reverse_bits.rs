@@ -26,11 +26,11 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::reverse_bits(43261596), 964176192);
+        check_eq!(Solution::reverse_bits(43261596), 964176192);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::reverse_bits(2147483644), 1073741822);
+        check_eq!(Solution::reverse_bits(2147483644), 1073741822);
     }
 }

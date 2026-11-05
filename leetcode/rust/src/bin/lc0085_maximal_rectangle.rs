@@ -26,16 +26,16 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::maximal_rectangle(vec![vec!['1', '0', '1', '0', '0'], vec!['1', '0', '1', '1', '1'], vec!['1', '1', '1', '1', '1'], vec!['1', '0', '0', '1', '0']]), 6);
+        check_eq!(Solution::maximal_rectangle(vec![vec!['1', '0', '1', '0', '0'], vec!['1', '0', '1', '1', '1'], vec!['1', '1', '1', '1', '1'], vec!['1', '0', '0', '1', '0']]), 6);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::maximal_rectangle(vec![vec!['0']]), 0);
+        check_eq!(Solution::maximal_rectangle(vec![vec!['0']]), 0);
     }
 
     #[test]
     fn example_3() {
-        assert_eq!(Solution::maximal_rectangle(vec![vec!['1']]), 1);
+        check_eq!(Solution::maximal_rectangle(vec![vec!['1']]), 1);
     }
 }

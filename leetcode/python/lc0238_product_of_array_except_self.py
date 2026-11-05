@@ -41,44 +41,44 @@ def product_except_self(nums: list[int]) -> list[int]:
 
 
 def test_example_1():
-    assert product_except_self([1, 2, 4, 6]) == [48, 24, 12, 8]
+    check(product_except_self([1, 2, 4, 6]), [48, 24, 12, 8], "product_except_self([1, 2, 4, 6])")
 
 
 def test_example_2():
-    assert product_except_self([-1, 0, 1, 2, 3]) == [0, -6, 0, 0, 0]
+    check(product_except_self([-1, 0, 1, 2, 3]), [0, -6, 0, 0, 0], "product_except_self([-1, 0, 1, 2, 3])")
 
 
 def test_shortest_possible_input():
-    assert product_except_self([2, 3]) == [3, 2]
+    check(product_except_self([2, 3]), [3, 2], "product_except_self([2, 3])")
 
 
 def test_all_ones():
-    assert product_except_self([1, 1, 1, 1]) == [1, 1, 1, 1]
+    check(product_except_self([1, 1, 1, 1]), [1, 1, 1, 1], "product_except_self([1, 1, 1, 1])")
 
 
 # The two cases a naive "divide by nums[i]" solution gets wrong.
 
 
 def test_one_zero_in_the_middle():
-    assert product_except_self([1, 2, 0, 4]) == [0, 0, 8, 0]
+    check(product_except_self([1, 2, 0, 4]), [0, 0, 8, 0], "product_except_self([1, 2, 0, 4])")
 
 
 def test_two_zeros_make_everything_zero():
-    assert product_except_self([0, 4, 0, 5]) == [0, 0, 0, 0]
+    check(product_except_self([0, 4, 0, 5]), [0, 0, 0, 0], "product_except_self([0, 4, 0, 5])")
 
 
 def test_zero_at_each_end():
-    assert product_except_self([0, 3, 5]) == [15, 0, 0]
-    assert product_except_self([3, 5, 0]) == [0, 0, 15]
+    check(product_except_self([0, 3, 5]), [15, 0, 0], "product_except_self([0, 3, 5])")
+    check(product_except_self([3, 5, 0]), [0, 0, 15], "product_except_self([3, 5, 0])")
 
 
 def test_negative_numbers_flip_the_sign():
-    assert product_except_self([-1, -2, -3]) == [6, 3, 2]
-    assert product_except_self([-2, 3, -4]) == [-12, 8, -6]
+    check(product_except_self([-1, -2, -3]), [6, 3, 2], "product_except_self([-1, -2, -3])")
+    check(product_except_self([-2, 3, -4]), [-12, 8, -6], "product_except_self([-2, 3, -4])")
 
 
 def test_value_range_extremes():
-    assert product_except_self([-30, 30]) == [30, -30]
+    check(product_except_self([-30, 30]), [30, -30], "product_except_self([-30, 30])")
 
 
 def test_large_input_stays_linear():
@@ -89,9 +89,9 @@ def test_large_input_stays_linear():
 
     out = product_except_self(nums)
 
-    assert len(out) == n
-    assert out[7] == 1
-    assert all(v == (1 if i == 7 else 0) for i, v in enumerate(out))
+    check(len(out), n, "len(out)")
+    check(out[7], 1, "out[7]")
+    check_true(all(v == (1 if i == 7 else 0) for i, v in enumerate(out)), "all(v == (1 if i == 7 else 0) for i, v in enumerate(out))")
 
 
 if __name__ == "__main__":

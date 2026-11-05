@@ -26,16 +26,16 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::find_duplicate(vec![1, 3, 4, 2, 2]), 2);
+        check_eq!(Solution::find_duplicate(vec![1, 3, 4, 2, 2]), 2);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::find_duplicate(vec![3, 1, 3, 4, 2]), 3);
+        check_eq!(Solution::find_duplicate(vec![3, 1, 3, 4, 2]), 3);
     }
 
     #[test]
     fn example_3() {
-        assert_eq!(Solution::find_duplicate(vec![3, 3, 3, 3, 3]), 3);
+        check_eq!(Solution::find_duplicate(vec![3, 3, 3, 3, 3]), 3);
     }
 }

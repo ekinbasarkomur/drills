@@ -58,37 +58,37 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(reversed(&[0, 1, 2, 3]), vec![3, 2, 1, 0]);
+        check_eq!(reversed(&[0, 1, 2, 3]), vec![3, 2, 1, 0]);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(reversed(&[]), vec![]);
+        check_eq!(reversed(&[]), vec![]);
     }
 
     #[test]
     fn single_node() {
-        assert_eq!(reversed(&[7]), vec![7]);
+        check_eq!(reversed(&[7]), vec![7]);
     }
 
     #[test]
     fn two_nodes() {
-        assert_eq!(reversed(&[1, 2]), vec![2, 1]);
+        check_eq!(reversed(&[1, 2]), vec![2, 1]);
     }
 
     #[test]
     fn repeated_values() {
-        assert_eq!(reversed(&[5, 5, 5]), vec![5, 5, 5]);
+        check_eq!(reversed(&[5, 5, 5]), vec![5, 5, 5]);
     }
 
     #[test]
     fn negative_values() {
-        assert_eq!(reversed(&[-1, -2, -3]), vec![-3, -2, -1]);
+        check_eq!(reversed(&[-1, -2, -3]), vec![-3, -2, -1]);
     }
 
     #[test]
     fn value_range_extremes() {
-        assert_eq!(reversed(&[-1000, 0, 1000]), vec![1000, 0, -1000]);
+        check_eq!(reversed(&[-1000, 0, 1000]), vec![1000, 0, -1000]);
     }
 
     #[test]
@@ -96,6 +96,6 @@ mod tests {
         // 1000 nodes, the constraint's ceiling.
         let values: Vec<i32> = (0..1000).collect();
         let expected: Vec<i32> = (0..1000).rev().collect();
-        assert_eq!(reversed(&values), expected);
+        check_eq!(reversed(&values), expected);
     }
 }

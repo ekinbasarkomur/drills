@@ -18,12 +18,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().evalRPN(['2', '1', '+', '3', '*']) == 9
+    check(Solution().evalRPN(['2', '1', '+', '3', '*']), 9, "Solution().evalRPN(['2', '1', '+', '3', '*'])")
 
 
 def test_example_2():
-    assert Solution().evalRPN(['4', '13', '5', '/', '+']) == 6
+    check(Solution().evalRPN(['4', '13', '5', '/', '+']), 6, "Solution().evalRPN(['4', '13', '5', '/', '+'])")
 
 
 def test_example_3():
-    assert Solution().evalRPN(['10', '6', '9', '3', '+', '-11', '*', '/', '*', '17', '+', '5', '+']) == 22
+    check(Solution().evalRPN(['10', '6', '9', '3', '+', '-11', '*', '/', '*', '17', '+', '5', '+']), 22, "Solution().evalRPN(['10', '6', '9', '3', '+', '-11', '*', '/', '*', '17', '+', '5', '+'])")

@@ -26,26 +26,26 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::my_atoi("42".to_string()), 42);
+        check_eq!(Solution::my_atoi("42".to_string()), 42);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::my_atoi("   -042".to_string()), -42);
+        check_eq!(Solution::my_atoi("   -042".to_string()), -42);
     }
 
     #[test]
     fn example_3() {
-        assert_eq!(Solution::my_atoi("1337c0d3".to_string()), 1337);
+        check_eq!(Solution::my_atoi("1337c0d3".to_string()), 1337);
     }
 
     #[test]
     fn example_4() {
-        assert_eq!(Solution::my_atoi("0-1".to_string()), 0);
+        check_eq!(Solution::my_atoi("0-1".to_string()), 0);
     }
 
     #[test]
     fn example_5() {
-        assert_eq!(Solution::my_atoi("words and 987".to_string()), 0);
+        check_eq!(Solution::my_atoi("words and 987".to_string()), 0);
     }
 }

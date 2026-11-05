@@ -18,8 +18,8 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert close(Solution().knightProbability(3, 2, 0, 0), 0.0625)
+    check_true(close(Solution().knightProbability(3, 2, 0, 0), 0.0625), "close(Solution().knightProbability(3, 2, 0, 0), 0.0625)")
 
 
 def test_example_2():
-    assert close(Solution().knightProbability(1, 0, 0, 0), 1.0)
+    check_true(close(Solution().knightProbability(1, 0, 0, 0), 1.0), "close(Solution().knightProbability(1, 0, 0, 0), 1.0)")

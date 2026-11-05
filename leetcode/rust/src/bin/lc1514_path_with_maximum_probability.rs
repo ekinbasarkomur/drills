@@ -26,16 +26,16 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert!(approx_eq(Solution::max_probability(3, vec![vec![0, 1], vec![1, 2], vec![0, 2]], vec![0.5, 0.5, 0.2], 0, 2), 0.25));
+        check!(approx_eq(Solution::max_probability(3, vec![vec![0, 1], vec![1, 2], vec![0, 2]], vec![0.5, 0.5, 0.2], 0, 2), 0.25));
     }
 
     #[test]
     fn example_2() {
-        assert!(approx_eq(Solution::max_probability(3, vec![vec![0, 1], vec![1, 2], vec![0, 2]], vec![0.5, 0.5, 0.3], 0, 2), 0.3));
+        check!(approx_eq(Solution::max_probability(3, vec![vec![0, 1], vec![1, 2], vec![0, 2]], vec![0.5, 0.5, 0.3], 0, 2), 0.3));
     }
 
     #[test]
     fn example_3() {
-        assert!(approx_eq(Solution::max_probability(3, vec![vec![0, 1]], vec![0.5], 0, 2), 0.0));
+        check!(approx_eq(Solution::max_probability(3, vec![vec![0, 1]], vec![0.5], 0, 2), 0.0));
     }
 }

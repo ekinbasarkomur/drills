@@ -57,8 +57,8 @@ mod tests {
         let mut obj = RangeModule::new();
         obj.add_range(10, 20);
         obj.remove_range(14, 16);
-        assert_eq!(obj.query_range(10, 14), true);
-        assert_eq!(obj.query_range(13, 15), false);
-        assert_eq!(obj.query_range(16, 17), true);
+        check_eq!(obj.query_range(10, 14), true);
+        check_eq!(obj.query_range(13, 15), false);
+        check_eq!(obj.query_range(16, 17), true);
     }
 }

@@ -18,12 +18,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().longestStrChain(['a', 'b', 'ba', 'bca', 'bda', 'bdca']) == 4
+    check(Solution().longestStrChain(['a', 'b', 'ba', 'bca', 'bda', 'bdca']), 4, "Solution().longestStrChain(['a', 'b', 'ba', 'bca', 'bda', 'bdca'])")
 
 
 def test_example_2():
-    assert Solution().longestStrChain(['xbc', 'pcxbcf', 'xb', 'cxbc', 'pcxbc']) == 5
+    check(Solution().longestStrChain(['xbc', 'pcxbcf', 'xb', 'cxbc', 'pcxbc']), 5, "Solution().longestStrChain(['xbc', 'pcxbcf', 'xb', 'cxbc', 'pcxbc'])")
 
 
 def test_example_3():
-    assert Solution().longestStrChain(['abcd', 'dbqca']) == 1
+    check(Solution().longestStrChain(['abcd', 'dbqca']), 1, "Solution().longestStrChain(['abcd', 'dbqca'])")

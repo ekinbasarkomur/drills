@@ -26,11 +26,11 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::count_substrings("abc".to_string()), 3);
+        check_eq!(Solution::count_substrings("abc".to_string()), 3);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::count_substrings("aaa".to_string()), 6);
+        check_eq!(Solution::count_substrings("aaa".to_string()), 6);
     }
 }

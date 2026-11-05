@@ -18,8 +18,8 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().maxProfit([1, 2, 3, 0, 2]) == 3
+    check(Solution().maxProfit([1, 2, 3, 0, 2]), 3, "Solution().maxProfit([1, 2, 3, 0, 2])")
 
 
 def test_example_2():
-    assert Solution().maxProfit([1]) == 0
+    check(Solution().maxProfit([1]), 0, "Solution().maxProfit([1])")

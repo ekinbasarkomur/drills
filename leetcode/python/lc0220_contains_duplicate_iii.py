@@ -18,8 +18,8 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().containsNearbyAlmostDuplicate([1, 2, 3, 1], 3, 0) == True
+    check(Solution().containsNearbyAlmostDuplicate([1, 2, 3, 1], 3, 0), True, "Solution().containsNearbyAlmostDuplicate([1, 2, 3, 1], 3, 0)")
 
 
 def test_example_2():
-    assert Solution().containsNearbyAlmostDuplicate([1, 5, 9, 1, 5, 9], 2, 3) == False
+    check(Solution().containsNearbyAlmostDuplicate([1, 5, 9, 1, 5, 9], 2, 3), False, "Solution().containsNearbyAlmostDuplicate([1, 5, 9, 1, 5, 9], 2, 3)")

@@ -48,41 +48,41 @@ def test_example_1():
     s.push(1)
     s.push(2)
     s.push(0)
-    assert s.getMin() == 0
+    check(s.getMin(), 0, "s.getMin()")
     s.pop()
-    assert s.top() == 2
-    assert s.getMin() == 1
+    check(s.top(), 2, "s.top()")
+    check(s.getMin(), 1, "s.getMin()")
 
 
 def test_single_element():
     s = MinStack()
     s.push(5)
-    assert s.top() == 5
-    assert s.getMin() == 5
+    check(s.top(), 5, "s.top()")
+    check(s.getMin(), 5, "s.getMin()")
 
 
 def test_min_is_the_first_pushed():
     s = MinStack()
     for v in (1, 2, 3):
         s.push(v)
-    assert s.getMin() == 1
-    assert s.top() == 3
+    check(s.getMin(), 1, "s.getMin()")
+    check(s.top(), 3, "s.top()")
 
 
 def test_min_is_the_last_pushed():
     s = MinStack()
     for v in (3, 2, 1):
         s.push(v)
-    assert s.getMin() == 1
+    check(s.getMin(), 1, "s.getMin()")
 
 
 def test_popping_the_minimum_restores_the_previous_one():
     s = MinStack()
     s.push(5)
     s.push(1)
-    assert s.getMin() == 1
+    check(s.getMin(), 1, "s.getMin()")
     s.pop()
-    assert s.getMin() == 5
+    check(s.getMin(), 5, "s.getMin()")
 
 
 def test_duplicate_minimums():
@@ -90,20 +90,20 @@ def test_duplicate_minimums():
     s = MinStack()
     for v in (2, 1, 1):
         s.push(v)
-    assert s.getMin() == 1
+    check(s.getMin(), 1, "s.getMin()")
     s.pop()
-    assert s.getMin() == 1
+    check(s.getMin(), 1, "s.getMin()")
     s.pop()
-    assert s.getMin() == 2
+    check(s.getMin(), 2, "s.getMin()")
 
 
 def test_negative_values():
     s = MinStack()
     for v in (0, -3, 2):
         s.push(v)
-    assert s.getMin() == -3
+    check(s.getMin(), -3, "s.getMin()")
     s.pop()
-    assert s.getMin() == -3
+    check(s.getMin(), -3, "s.getMin()")
 
 
 def test_emptied_and_refilled():
@@ -111,35 +111,35 @@ def test_emptied_and_refilled():
     s.push(1)
     s.pop()
     s.push(9)
-    assert s.top() == 9
-    assert s.getMin() == 9
+    check(s.top(), 9, "s.top()")
+    check(s.getMin(), 9, "s.getMin()")
 
 
 def test_interleaved_operations():
     s = MinStack()
     s.push(4)
-    assert s.getMin() == 4
+    check(s.getMin(), 4, "s.getMin()")
     s.push(7)
-    assert s.getMin() == 4
+    check(s.getMin(), 4, "s.getMin()")
     s.push(2)
-    assert s.getMin() == 2
+    check(s.getMin(), 2, "s.getMin()")
     s.pop()
-    assert s.getMin() == 4
+    check(s.getMin(), 4, "s.getMin()")
     s.push(1)
-    assert s.getMin() == 1
+    check(s.getMin(), 1, "s.getMin()")
     s.pop()
     s.pop()
-    assert s.top() == 4
-    assert s.getMin() == 4
+    check(s.top(), 4, "s.top()")
+    check(s.getMin(), 4, "s.getMin()")
 
 
 def test_value_range_extremes():
     s = MinStack()
     s.push(2**31 - 1)
     s.push(-(2**31))
-    assert s.getMin() == -(2**31)
+    check(s.getMin(), -(2**31), "s.getMin()")
     s.pop()
-    assert s.getMin() == 2**31 - 1
+    check(s.getMin(), 2**31 - 1, "s.getMin()")
 
 
 def test_many_operations_stay_constant_time():
@@ -149,5 +149,5 @@ def test_many_operations_stay_constant_time():
     for i in range(30_000, 0, -1):
         s.push(i)
     for i in range(1, 30_001):
-        assert s.getMin() == i
+        check(s.getMin(), i, "s.getMin()")
         s.pop()

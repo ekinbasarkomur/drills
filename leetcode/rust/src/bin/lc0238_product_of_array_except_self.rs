@@ -50,50 +50,50 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(product(&[1, 2, 4, 6]), vec![48, 24, 12, 8]);
+        check_eq!(product(&[1, 2, 4, 6]), vec![48, 24, 12, 8]);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(product(&[-1, 0, 1, 2, 3]), vec![0, -6, 0, 0, 0]);
+        check_eq!(product(&[-1, 0, 1, 2, 3]), vec![0, -6, 0, 0, 0]);
     }
 
     #[test]
     fn shortest_possible_input() {
-        assert_eq!(product(&[2, 3]), vec![3, 2]);
+        check_eq!(product(&[2, 3]), vec![3, 2]);
     }
 
     #[test]
     fn all_ones() {
-        assert_eq!(product(&[1, 1, 1, 1]), vec![1, 1, 1, 1]);
+        check_eq!(product(&[1, 1, 1, 1]), vec![1, 1, 1, 1]);
     }
 
     // The two cases a naive "divide by nums[i]" solution gets wrong.
     #[test]
     fn one_zero_in_the_middle() {
-        assert_eq!(product(&[1, 2, 0, 4]), vec![0, 0, 8, 0]);
+        check_eq!(product(&[1, 2, 0, 4]), vec![0, 0, 8, 0]);
     }
 
     #[test]
     fn two_zeros_make_everything_zero() {
-        assert_eq!(product(&[0, 4, 0, 5]), vec![0, 0, 0, 0]);
+        check_eq!(product(&[0, 4, 0, 5]), vec![0, 0, 0, 0]);
     }
 
     #[test]
     fn zero_at_each_end() {
-        assert_eq!(product(&[0, 3, 5]), vec![15, 0, 0]);
-        assert_eq!(product(&[3, 5, 0]), vec![0, 0, 15]);
+        check_eq!(product(&[0, 3, 5]), vec![15, 0, 0]);
+        check_eq!(product(&[3, 5, 0]), vec![0, 0, 15]);
     }
 
     #[test]
     fn negative_numbers_flip_the_sign() {
-        assert_eq!(product(&[-1, -2, -3]), vec![6, 3, 2]);
-        assert_eq!(product(&[-2, 3, -4]), vec![-12, 8, -6]);
+        check_eq!(product(&[-1, -2, -3]), vec![6, 3, 2]);
+        check_eq!(product(&[-2, 3, -4]), vec![-12, 8, -6]);
     }
 
     #[test]
     fn value_range_extremes() {
-        assert_eq!(product(&[-30, 30]), vec![30, -30]);
+        check_eq!(product(&[-30, 30]), vec![30, -30]);
     }
 
     // 100_000 elements: anything O(n^2) will hang here rather than fail.
@@ -106,9 +106,9 @@ mod tests {
         let out = product(&nums);
 
         // Every position except index 7 multiplies through that zero.
-        assert_eq!(out.len(), n);
-        assert_eq!(out[7], 1);
-        assert!(
+        check_eq!(out.len(), n);
+        check_eq!(out[7], 1);
+        check!(
             out.iter()
                 .enumerate()
                 .all(|(i, &v)| v == if i == 7 { 1 } else { 0 })

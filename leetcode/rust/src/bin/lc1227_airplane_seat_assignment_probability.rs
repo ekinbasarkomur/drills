@@ -26,11 +26,11 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert!(approx_eq(Solution::nth_person_gets_nth_seat(1), 1.0));
+        check!(approx_eq(Solution::nth_person_gets_nth_seat(1), 1.0));
     }
 
     #[test]
     fn example_2() {
-        assert!(approx_eq(Solution::nth_person_gets_nth_seat(2), 0.5));
+        check!(approx_eq(Solution::nth_person_gets_nth_seat(2), 0.5));
     }
 }

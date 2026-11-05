@@ -26,16 +26,16 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::min_sub_array_len(7, vec![2, 3, 1, 2, 4, 3]), 2);
+        check_eq!(Solution::min_sub_array_len(7, vec![2, 3, 1, 2, 4, 3]), 2);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::min_sub_array_len(4, vec![1, 4, 4]), 1);
+        check_eq!(Solution::min_sub_array_len(4, vec![1, 4, 4]), 1);
     }
 
     #[test]
     fn example_3() {
-        assert_eq!(Solution::min_sub_array_len(11, vec![1, 1, 1, 1, 1, 1, 1, 1]), 0);
+        check_eq!(Solution::min_sub_array_len(11, vec![1, 1, 1, 1, 1, 1, 1, 1]), 0);
     }
 }

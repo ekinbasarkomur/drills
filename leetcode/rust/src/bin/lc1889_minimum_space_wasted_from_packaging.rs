@@ -26,16 +26,16 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::min_wasted_space(vec![2, 3, 5], vec![vec![4, 8], vec![2, 8]]), 6);
+        check_eq!(Solution::min_wasted_space(vec![2, 3, 5], vec![vec![4, 8], vec![2, 8]]), 6);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::min_wasted_space(vec![2, 3, 5], vec![vec![1, 4], vec![2, 3], vec![3, 4]]), -1);
+        check_eq!(Solution::min_wasted_space(vec![2, 3, 5], vec![vec![1, 4], vec![2, 3], vec![3, 4]]), -1);
     }
 
     #[test]
     fn example_3() {
-        assert_eq!(Solution::min_wasted_space(vec![3, 5, 8, 10, 11, 12], vec![vec![12], vec![11, 9], vec![10, 5, 14]]), 9);
+        check_eq!(Solution::min_wasted_space(vec![3, 5, 8, 10, 11, 12], vec![vec![12], vec![11, 9], vec![10, 5, 14]]), 9);
     }
 }

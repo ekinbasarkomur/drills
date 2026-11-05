@@ -30,6 +30,6 @@ def test_example_1():
     obj = MedianFinder()
     obj.addNum(1)
     obj.addNum(2)
-    assert close(obj.findMedian(), 1.5)
+    check_true(close(obj.findMedian(), 1.5), "close(obj.findMedian(), 1.5)")
     obj.addNum(3)
-    assert close(obj.findMedian(), 2.0)
+    check_true(close(obj.findMedian(), 2.0), "close(obj.findMedian(), 2.0)")

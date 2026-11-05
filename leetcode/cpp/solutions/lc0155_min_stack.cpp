@@ -160,8 +160,11 @@ TEST(many_operations_stay_constant_time) {
     MinStack s;
     for (int i = 30000; i > 0; --i)
         s.push(i);
+    // One CHECK after the loop, not 30000 inside it: every check prints a line.
+    bool every_min_right = true;
     for (int i = 1; i <= 30000; ++i) {
-        CHECK((s.getMin() == i));
+        every_min_right &= s.getMin() == i;
         s.pop();
     }
+    CHECK(every_min_right);
 }

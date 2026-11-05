@@ -18,8 +18,8 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().stoneGame([5, 3, 4, 5]) == True
+    check(Solution().stoneGame([5, 3, 4, 5]), True, "Solution().stoneGame([5, 3, 4, 5])")
 
 
 def test_example_2():
-    assert Solution().stoneGame([3, 7, 2, 3]) == True
+    check(Solution().stoneGame([3, 7, 2, 3]), True, "Solution().stoneGame([3, 7, 2, 3])")

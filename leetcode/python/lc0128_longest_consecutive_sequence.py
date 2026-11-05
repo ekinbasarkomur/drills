@@ -53,55 +53,55 @@ def longest(nums: list[int]) -> int:
 
 
 def test_example_1():
-    assert longest([2, 20, 4, 10, 3, 4, 5]) == 4
+    check(longest([2, 20, 4, 10, 3, 4, 5]), 4, "longest([2, 20, 4, 10, 3, 4, 5])")
 
 
 def test_example_2():
-    assert longest([0, 3, 2, 5, 4, 6, 1, 1]) == 7
+    check(longest([0, 3, 2, 5, 4, 6, 1, 1]), 7, "longest([0, 3, 2, 5, 4, 6, 1, 1])")
 
 
 def test_empty_array():
-    assert longest([]) == 0
+    check(longest([]), 0, "longest([])")
 
 
 def test_single_element():
-    assert longest([7]) == 1
+    check(longest([7]), 1, "longest([7])")
 
 
 def test_all_duplicates_of_one_value():
-    assert longest([5, 5, 5, 5]) == 1
+    check(longest([5, 5, 5, 5]), 1, "longest([5, 5, 5, 5])")
 
 
 def test_no_two_numbers_are_consecutive():
-    assert longest([10, 30, 50, 70]) == 1
+    check(longest([10, 30, 50, 70]), 1, "longest([10, 30, 50, 70])")
 
 
 def test_already_sorted():
-    assert longest([1, 2, 3, 4, 5]) == 5
+    check(longest([1, 2, 3, 4, 5]), 5, "longest([1, 2, 3, 4, 5])")
 
 
 def test_given_in_descending_order():
-    assert longest([5, 4, 3, 2, 1]) == 5
+    check(longest([5, 4, 3, 2, 1]), 5, "longest([5, 4, 3, 2, 1])")
 
 
 def test_two_runs_and_the_longer_one_comes_second():
-    assert longest([1, 2, 3, 100, 101, 102, 103]) == 4
+    check(longest([1, 2, 3, 100, 101, 102, 103]), 4, "longest([1, 2, 3, 100, 101, 102, 103])")
 
 
 def test_negative_numbers():
-    assert longest([-3, -2, -1, 0, 1]) == 5
+    check(longest([-3, -2, -1, 0, 1]), 5, "longest([-3, -2, -1, 0, 1])")
 
 
 def test_run_straddling_zero_with_a_gap():
-    assert longest([-5, -4, 100, -3, 7, -1, 0]) == 3
+    check(longest([-5, -4, 100, -3, 7, -1, 0]), 3, "longest([-5, -4, 100, -3, 7, -1, 0])")
 
 
 def test_value_range_extremes():
-    assert longest([10**9, 10**9 - 1, -(10**9)]) == 2
+    check(longest([10**9, 10**9 - 1, -(10**9)]), 2, "longest([10**9, 10**9 - 1, -(10**9)])")
 
 
 def test_duplicates_inside_a_run_do_not_inflate_it():
-    assert longest([1, 2, 2, 3, 3, 3, 4]) == 4
+    check(longest([1, 2, 2, 3, 3, 3, 4]), 4, "longest([1, 2, 2, 3, 3, 3, 4])")
 
 
 def test_large_input_stays_linear():
@@ -112,7 +112,7 @@ def test_large_input_stays_linear():
     n = 100_000
     nums = list(range(n))
     random.Random(0).shuffle(nums)
-    assert longest(nums) == n
+    check(longest(nums), n, "longest(nums)")
 
 
 if __name__ == "__main__":

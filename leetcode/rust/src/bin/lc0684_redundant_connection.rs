@@ -27,12 +27,12 @@ mod tests {
     #[test]
     fn example_1() {
         let want: Vec<i32> = vec![2, 3];
-        assert_eq!(Solution::find_redundant_connection(vec![vec![1, 2], vec![1, 3], vec![2, 3]]), want);
+        check_eq!(Solution::find_redundant_connection(vec![vec![1, 2], vec![1, 3], vec![2, 3]]), want);
     }
 
     #[test]
     fn example_2() {
         let want: Vec<i32> = vec![1, 4];
-        assert_eq!(Solution::find_redundant_connection(vec![vec![1, 2], vec![2, 3], vec![3, 4], vec![1, 4], vec![1, 5]]), want);
+        check_eq!(Solution::find_redundant_connection(vec![vec![1, 2], vec![2, 3], vec![3, 4], vec![1, 4], vec![1, 5]]), want);
     }
 }

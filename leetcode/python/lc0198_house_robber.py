@@ -18,8 +18,8 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().rob([1, 2, 3, 1]) == 4
+    check(Solution().rob([1, 2, 3, 1]), 4, "Solution().rob([1, 2, 3, 1])")
 
 
 def test_example_2():
-    assert Solution().rob([2, 7, 9, 3, 1]) == 12
+    check(Solution().rob([2, 7, 9, 3, 1]), 12, "Solution().rob([2, 7, 9, 3, 1])")

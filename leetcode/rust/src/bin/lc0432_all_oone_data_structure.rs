@@ -63,13 +63,13 @@ mod tests {
         obj.inc("hello".to_string());
         obj.inc("hello".to_string());
         let want: String = "hello".to_string();
-        assert_eq!(obj.get_max_key(), want);
+        check_eq!(obj.get_max_key(), want);
         let want: String = "hello".to_string();
-        assert_eq!(obj.get_min_key(), want);
+        check_eq!(obj.get_min_key(), want);
         obj.inc("leet".to_string());
         let want: String = "hello".to_string();
-        assert_eq!(obj.get_max_key(), want);
+        check_eq!(obj.get_max_key(), want);
         let want: String = "leet".to_string();
-        assert_eq!(obj.get_min_key(), want);
+        check_eq!(obj.get_min_key(), want);
     }
 }

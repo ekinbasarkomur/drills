@@ -62,11 +62,11 @@ mod tests {
         let mut obj = StockPrice::new();
         obj.update(1, 10);
         obj.update(2, 5);
-        assert_eq!(obj.current(), 5);
-        assert_eq!(obj.maximum(), 10);
+        check_eq!(obj.current(), 5);
+        check_eq!(obj.maximum(), 10);
         obj.update(1, 3);
-        assert_eq!(obj.maximum(), 5);
+        check_eq!(obj.maximum(), 5);
         obj.update(4, 2);
-        assert_eq!(obj.minimum(), 2);
+        check_eq!(obj.minimum(), 2);
     }
 }

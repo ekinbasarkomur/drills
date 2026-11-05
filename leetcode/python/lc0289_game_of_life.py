@@ -23,10 +23,10 @@ class Solution:
 def test_example_1():
     board = [[0, 1, 0], [0, 0, 1], [1, 1, 1], [0, 0, 0]]
     Solution().gameOfLife(board)
-    assert board == [[0, 0, 0], [1, 0, 1], [0, 1, 1], [0, 1, 0]]
+    check(board, [[0, 0, 0], [1, 0, 1], [0, 1, 1], [0, 1, 0]], "board")
 
 
 def test_example_2():
     board = [[1, 1], [1, 0]]
     Solution().gameOfLife(board)
-    assert board == [[1, 1], [1, 1]]
+    check(board, [[1, 1], [1, 1]], "board")

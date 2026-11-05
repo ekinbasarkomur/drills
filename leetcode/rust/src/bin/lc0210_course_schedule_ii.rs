@@ -27,18 +27,18 @@ mod tests {
     #[test]
     fn example_1() {
         let want: Vec<i32> = vec![0, 1];
-        assert_eq!(Solution::find_order(2, vec![vec![1, 0]]), want);
+        check_eq!(Solution::find_order(2, vec![vec![1, 0]]), want);
     }
 
     #[test]
     fn example_2() {
         let want: Vec<i32> = vec![0, 2, 1, 3];
-        assert_eq!(Solution::find_order(4, vec![vec![1, 0], vec![2, 0], vec![3, 1], vec![3, 2]]), want);
+        check_eq!(Solution::find_order(4, vec![vec![1, 0], vec![2, 0], vec![3, 1], vec![3, 2]]), want);
     }
 
     #[test]
     fn example_3() {
         let want: Vec<i32> = vec![0];
-        assert_eq!(Solution::find_order(1, vec![]), want);
+        check_eq!(Solution::find_order(1, vec![]), want);
     }
 }

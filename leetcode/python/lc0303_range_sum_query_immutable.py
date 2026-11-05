@@ -25,6 +25,6 @@ class NumArray:
 
 def test_example_1():
     obj = NumArray([-2, 0, 3, -5, 2, -1])
-    assert obj.sumRange(0, 2) == 1
-    assert obj.sumRange(2, 5) == -1
-    assert obj.sumRange(0, 5) == -3
+    check(obj.sumRange(0, 2), 1, "obj.sumRange(0, 2)")
+    check(obj.sumRange(2, 5), -1, "obj.sumRange(2, 5)")
+    check(obj.sumRange(0, 5), -3, "obj.sumRange(0, 5)")

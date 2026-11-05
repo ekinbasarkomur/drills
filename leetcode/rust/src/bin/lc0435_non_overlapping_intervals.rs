@@ -26,16 +26,16 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::erase_overlap_intervals(vec![vec![1, 2], vec![2, 3], vec![3, 4], vec![1, 3]]), 1);
+        check_eq!(Solution::erase_overlap_intervals(vec![vec![1, 2], vec![2, 3], vec![3, 4], vec![1, 3]]), 1);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::erase_overlap_intervals(vec![vec![1, 2], vec![1, 2], vec![1, 2]]), 2);
+        check_eq!(Solution::erase_overlap_intervals(vec![vec![1, 2], vec![1, 2], vec![1, 2]]), 2);
     }
 
     #[test]
     fn example_3() {
-        assert_eq!(Solution::erase_overlap_intervals(vec![vec![1, 2], vec![2, 3]]), 0);
+        check_eq!(Solution::erase_overlap_intervals(vec![vec![1, 2], vec![2, 3]]), 0);
     }
 }

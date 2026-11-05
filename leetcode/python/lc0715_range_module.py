@@ -33,6 +33,6 @@ def test_example_1():
     obj = RangeModule()
     obj.addRange(10, 20)
     obj.removeRange(14, 16)
-    assert obj.queryRange(10, 14) == True
-    assert obj.queryRange(13, 15) == False
-    assert obj.queryRange(16, 17) == True
+    check(obj.queryRange(10, 14), True, "obj.queryRange(10, 14)")
+    check(obj.queryRange(13, 15), False, "obj.queryRange(13, 15)")
+    check(obj.queryRange(16, 17), True, "obj.queryRange(16, 17)")

@@ -18,8 +18,8 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().minimumTime(3, [[1, 3], [2, 3]], [3, 2, 5]) == 8
+    check(Solution().minimumTime(3, [[1, 3], [2, 3]], [3, 2, 5]), 8, "Solution().minimumTime(3, [[1, 3], [2, 3]], [3, 2, 5])")
 
 
 def test_example_2():
-    assert Solution().minimumTime(5, [[1, 5], [2, 5], [3, 5], [3, 4], [4, 5]], [1, 2, 3, 4, 5]) == 12
+    check(Solution().minimumTime(5, [[1, 5], [2, 5], [3, 5], [3, 4], [4, 5]], [1, 2, 3, 4, 5]), 12, "Solution().minimumTime(5, [[1, 5], [2, 5], [3, 5], [3, 4], [4, 5]], [1, 2, 3, 4, 5])")

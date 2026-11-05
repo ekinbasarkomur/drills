@@ -25,6 +25,6 @@ class NumMatrix:
 
 def test_example_1():
     obj = NumMatrix([[3, 0, 1, 4, 2], [5, 6, 3, 2, 1], [1, 2, 0, 1, 5], [4, 1, 0, 1, 7], [1, 0, 3, 0, 5]])
-    assert obj.sumRegion(2, 1, 4, 3) == 8
-    assert obj.sumRegion(1, 1, 2, 2) == 11
-    assert obj.sumRegion(1, 2, 2, 4) == 12
+    check(obj.sumRegion(2, 1, 4, 3), 8, "obj.sumRegion(2, 1, 4, 3)")
+    check(obj.sumRegion(1, 1, 2, 2), 11, "obj.sumRegion(1, 1, 2, 2)")
+    check(obj.sumRegion(1, 2, 2, 4), 12, "obj.sumRegion(1, 2, 2, 4)")

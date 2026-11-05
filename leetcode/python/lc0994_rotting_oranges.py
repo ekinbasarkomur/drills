@@ -18,12 +18,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().orangesRotting([[2, 1, 1], [1, 1, 0], [0, 1, 1]]) == 4
+    check(Solution().orangesRotting([[2, 1, 1], [1, 1, 0], [0, 1, 1]]), 4, "Solution().orangesRotting([[2, 1, 1], [1, 1, 0], [0, 1, 1]])")
 
 
 def test_example_2():
-    assert Solution().orangesRotting([[2, 1, 1], [0, 1, 1], [1, 0, 1]]) == -1
+    check(Solution().orangesRotting([[2, 1, 1], [0, 1, 1], [1, 0, 1]]), -1, "Solution().orangesRotting([[2, 1, 1], [0, 1, 1], [1, 0, 1]])")
 
 
 def test_example_3():
-    assert Solution().orangesRotting([[0, 2]]) == 0
+    check(Solution().orangesRotting([[0, 2]]), 0, "Solution().orangesRotting([[0, 2]])")

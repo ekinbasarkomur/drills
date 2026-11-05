@@ -26,11 +26,11 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::find_circle_num(vec![vec![1, 1, 0], vec![1, 1, 0], vec![0, 0, 1]]), 2);
+        check_eq!(Solution::find_circle_num(vec![vec![1, 1, 0], vec![1, 1, 0], vec![0, 0, 1]]), 2);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::find_circle_num(vec![vec![1, 0, 0], vec![0, 1, 0], vec![0, 0, 1]]), 3);
+        check_eq!(Solution::find_circle_num(vec![vec![1, 0, 0], vec![0, 1, 0], vec![0, 0, 1]]), 3);
     }
 }

@@ -40,37 +40,37 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert!(Solution::contains_duplicate(vec![1, 2, 3, 3]));
+        check!(Solution::contains_duplicate(vec![1, 2, 3, 3]));
     }
 
     #[test]
     fn example_2() {
-        assert!(!Solution::contains_duplicate(vec![1, 2, 3, 4]));
+        check!(!Solution::contains_duplicate(vec![1, 2, 3, 4]));
     }
 
     #[test]
     fn empty_array() {
-        assert!(!Solution::contains_duplicate(vec![]));
+        check!(!Solution::contains_duplicate(vec![]));
     }
 
     #[test]
     fn single_element() {
-        assert!(!Solution::contains_duplicate(vec![7]));
+        check!(!Solution::contains_duplicate(vec![7]));
     }
 
     #[test]
     fn duplicate_at_the_very_end() {
-        assert!(Solution::contains_duplicate(vec![1, 2, 3, 4, 5, 1]));
+        check!(Solution::contains_duplicate(vec![1, 2, 3, 4, 5, 1]));
     }
 
     #[test]
     fn negatives_and_extremes() {
-        assert!(Solution::contains_duplicate(vec![
+        check!(Solution::contains_duplicate(vec![
             -1_000_000_000,
             0,
             -1_000_000_000
         ]));
-        assert!(!Solution::contains_duplicate(vec![
+        check!(!Solution::contains_duplicate(vec![
             -1_000_000_000,
             1_000_000_000
         ]));

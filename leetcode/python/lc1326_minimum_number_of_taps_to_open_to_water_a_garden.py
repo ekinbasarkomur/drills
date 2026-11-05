@@ -18,8 +18,8 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().minTaps(5, [3, 4, 1, 1, 0, 0]) == 1
+    check(Solution().minTaps(5, [3, 4, 1, 1, 0, 0]), 1, "Solution().minTaps(5, [3, 4, 1, 1, 0, 0])")
 
 
 def test_example_2():
-    assert Solution().minTaps(3, [0, 0, 0, 0]) == -1
+    check(Solution().minTaps(3, [0, 0, 0, 0]), -1, "Solution().minTaps(3, [0, 0, 0, 0])")

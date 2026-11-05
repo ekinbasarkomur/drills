@@ -18,8 +18,8 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().getOrder([[1, 2], [2, 4], [3, 2], [4, 1]]) == [0, 2, 3, 1]
+    check(Solution().getOrder([[1, 2], [2, 4], [3, 2], [4, 1]]), [0, 2, 3, 1], "Solution().getOrder([[1, 2], [2, 4], [3, 2], [4, 1]])")
 
 
 def test_example_2():
-    assert Solution().getOrder([[7, 10], [7, 12], [7, 5], [7, 4], [7, 2]]) == [4, 3, 2, 0, 1]
+    check(Solution().getOrder([[7, 10], [7, 12], [7, 5], [7, 4], [7, 2]]), [4, 3, 2, 0, 1], "Solution().getOrder([[7, 10], [7, 12], [7, 5], [7, 4], [7, 2]])")

@@ -18,8 +18,8 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert deep_sorted(Solution().letterCombinations('23')) == deep_sorted(['ad', 'ae', 'af', 'bd', 'be', 'bf', 'cd', 'ce', 'cf'])
+    check(deep_sorted(Solution().letterCombinations('23')), deep_sorted(['ad', 'ae', 'af', 'bd', 'be', 'bf', 'cd', 'ce', 'cf']), "deep_sorted(Solution().letterCombinations('23'))")
 
 
 def test_example_2():
-    assert deep_sorted(Solution().letterCombinations('2')) == deep_sorted(['a', 'b', 'c'])
+    check(deep_sorted(Solution().letterCombinations('2')), deep_sorted(['a', 'b', 'c']), "deep_sorted(Solution().letterCombinations('2'))")

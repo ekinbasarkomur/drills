@@ -45,8 +45,8 @@ mod tests {
     #[test]
     fn example_1() {
         let mut obj = Solution::new(1.0, 0.0, 0.0);
-        assert!(approx_eq_vec(&obj.rand_point(), &vec![-0.02493, -0.38077]));
-        assert!(approx_eq_vec(&obj.rand_point(), &vec![0.82314, 0.38945]));
-        assert!(approx_eq_vec(&obj.rand_point(), &vec![0.36572, 0.17248]));
+        check!(approx_eq_vec(&obj.rand_point(), &vec![-0.02493, -0.38077]));
+        check!(approx_eq_vec(&obj.rand_point(), &vec![0.82314, 0.38945]));
+        check!(approx_eq_vec(&obj.rand_point(), &vec![0.36572, 0.17248]));
     }
 }

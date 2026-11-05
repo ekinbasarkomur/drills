@@ -46,16 +46,16 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::is_same_tree(build_tree(&[Some(1), Some(2), Some(3)]), build_tree(&[Some(1), Some(2), Some(3)])), true);
+        check_eq!(Solution::is_same_tree(build_tree(&[Some(1), Some(2), Some(3)]), build_tree(&[Some(1), Some(2), Some(3)])), true);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::is_same_tree(build_tree(&[Some(1), Some(2)]), build_tree(&[Some(1), None, Some(2)])), false);
+        check_eq!(Solution::is_same_tree(build_tree(&[Some(1), Some(2)]), build_tree(&[Some(1), None, Some(2)])), false);
     }
 
     #[test]
     fn example_3() {
-        assert_eq!(Solution::is_same_tree(build_tree(&[Some(1), Some(2), Some(1)]), build_tree(&[Some(1), Some(1), Some(2)])), false);
+        check_eq!(Solution::is_same_tree(build_tree(&[Some(1), Some(2), Some(1)]), build_tree(&[Some(1), Some(1), Some(2)])), false);
     }
 }

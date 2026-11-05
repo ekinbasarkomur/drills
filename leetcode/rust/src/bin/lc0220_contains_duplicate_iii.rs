@@ -26,11 +26,11 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::contains_nearby_almost_duplicate(vec![1, 2, 3, 1], 3, 0), true);
+        check_eq!(Solution::contains_nearby_almost_duplicate(vec![1, 2, 3, 1], 3, 0), true);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::contains_nearby_almost_duplicate(vec![1, 5, 9, 1, 5, 9], 2, 3), false);
+        check_eq!(Solution::contains_nearby_almost_duplicate(vec![1, 5, 9, 1, 5, 9], 2, 3), false);
     }
 }

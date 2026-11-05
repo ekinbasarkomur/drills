@@ -18,8 +18,8 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().sumSubarrayMins([3, 1, 2, 4]) == 17
+    check(Solution().sumSubarrayMins([3, 1, 2, 4]), 17, "Solution().sumSubarrayMins([3, 1, 2, 4])")
 
 
 def test_example_2():
-    assert Solution().sumSubarrayMins([50]) == 444
+    check(Solution().sumSubarrayMins([50]), 444, "Solution().sumSubarrayMins([50])")

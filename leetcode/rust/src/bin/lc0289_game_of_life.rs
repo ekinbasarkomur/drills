@@ -29,7 +29,7 @@ mod tests {
         let mut board: Vec<Vec<i32>> = vec![vec![0, 1, 0], vec![0, 0, 1], vec![1, 1, 1], vec![0, 0, 0]];
         Solution::game_of_life(&mut board);
         let want: Vec<Vec<i32>> = vec![vec![0, 0, 0], vec![1, 0, 1], vec![0, 1, 1], vec![0, 1, 0]];
-        assert_eq!(board, want);
+        check_eq!(board, want);
     }
 
     #[test]
@@ -37,6 +37,6 @@ mod tests {
         let mut board: Vec<Vec<i32>> = vec![vec![1, 1], vec![1, 0]];
         Solution::game_of_life(&mut board);
         let want: Vec<Vec<i32>> = vec![vec![1, 1], vec![1, 1]];
-        assert_eq!(board, want);
+        check_eq!(board, want);
     }
 }

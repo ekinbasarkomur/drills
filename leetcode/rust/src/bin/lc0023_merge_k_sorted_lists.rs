@@ -43,18 +43,18 @@ mod tests {
     #[test]
     fn example_1() {
         let want: Vec<i32> = vec![1, 1, 2, 3, 4, 4, 5, 6];
-        assert_eq!(list_to_vec(&Solution::merge_k_lists(vec![build_list(&[1, 4, 5]), build_list(&[1, 3, 4]), build_list(&[2, 6])])), want);
+        check_eq!(list_to_vec(&Solution::merge_k_lists(vec![build_list(&[1, 4, 5]), build_list(&[1, 3, 4]), build_list(&[2, 6])])), want);
     }
 
     #[test]
     fn example_2() {
         let want: Vec<i32> = vec![];
-        assert_eq!(list_to_vec(&Solution::merge_k_lists(vec![])), want);
+        check_eq!(list_to_vec(&Solution::merge_k_lists(vec![])), want);
     }
 
     #[test]
     fn example_3() {
         let want: Vec<i32> = vec![];
-        assert_eq!(list_to_vec(&Solution::merge_k_lists(vec![build_list(&[])])), want);
+        check_eq!(list_to_vec(&Solution::merge_k_lists(vec![build_list(&[])])), want);
     }
 }

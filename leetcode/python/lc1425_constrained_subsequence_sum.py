@@ -18,12 +18,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().constrainedSubsetSum([10, 2, -10, 5, 20], 2) == 37
+    check(Solution().constrainedSubsetSum([10, 2, -10, 5, 20], 2), 37, "Solution().constrainedSubsetSum([10, 2, -10, 5, 20], 2)")
 
 
 def test_example_2():
-    assert Solution().constrainedSubsetSum([-1, -2, -3], 1) == -1
+    check(Solution().constrainedSubsetSum([-1, -2, -3], 1), -1, "Solution().constrainedSubsetSum([-1, -2, -3], 1)")
 
 
 def test_example_3():
-    assert Solution().constrainedSubsetSum([10, -2, -10, -5, 20], 2) == 23
+    check(Solution().constrainedSubsetSum([10, -2, -10, -5, 20], 2), 23, "Solution().constrainedSubsetSum([10, -2, -10, -5, 20], 2)")

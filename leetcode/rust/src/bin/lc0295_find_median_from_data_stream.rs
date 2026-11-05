@@ -52,8 +52,8 @@ mod tests {
         let mut obj = MedianFinder::new();
         obj.add_num(1);
         obj.add_num(2);
-        assert!(approx_eq(obj.find_median(), 1.5));
+        check!(approx_eq(obj.find_median(), 1.5));
         obj.add_num(3);
-        assert!(approx_eq(obj.find_median(), 2.0));
+        check!(approx_eq(obj.find_median(), 2.0));
     }
 }

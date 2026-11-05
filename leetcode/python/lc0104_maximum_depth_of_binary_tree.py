@@ -29,43 +29,43 @@ def depth(values: List[Optional[int]]) -> int:
 
 
 def test_example_1():
-    assert depth([1, 2, 3, None, None, 4]) == 3
+    check(depth([1, 2, 3, None, None, 4]), 3, "depth([1, 2, 3, None, None, 4])")
 
 
 def test_example_2():
-    assert depth([]) == 0
+    check(depth([]), 0, "depth([])")
 
 
 def test_single_node():
-    assert depth([1]) == 1
+    check(depth([1]), 1, "depth([1])")
 
 
 def test_two_levels_full():
-    assert depth([1, 2, 3]) == 2
+    check(depth([1, 2, 3]), 2, "depth([1, 2, 3])")
 
 
 def test_only_a_left_child():
-    assert depth([1, 2]) == 2
+    check(depth([1, 2]), 2, "depth([1, 2])")
 
 
 def test_only_a_right_child():
-    assert depth([1, None, 2]) == 2
+    check(depth([1, None, 2]), 2, "depth([1, None, 2])")
 
 
 def test_a_left_leaning_chain():
-    assert depth([1, 2, None, 3, None, 4]) == 4
+    check(depth([1, 2, None, 3, None, 4]), 4, "depth([1, 2, None, 3, None, 4])")
 
 
 def test_a_right_leaning_chain():
-    assert depth([1, None, 2, None, 3, None, 4]) == 4
+    check(depth([1, None, 2, None, 3, None, 4]), 4, "depth([1, None, 2, None, 3, None, 4])")
 
 
 def test_the_deep_side_is_on_the_right():
-    assert depth([1, 2, 3, None, None, 4, 5, 6]) == 4
+    check(depth([1, 2, 3, None, None, 4, 5, 6]), 4, "depth([1, 2, 3, None, None, 4, 5, 6])")
 
 
 def test_a_full_tree_of_three_levels():
-    assert depth([1, 2, 3, 4, 5, 6, 7]) == 3
+    check(depth([1, 2, 3, 4, 5, 6, 7]), 3, "depth([1, 2, 3, 4, 5, 6, 7])")
 
 
 def test_largest_allowed_input():
@@ -75,7 +75,7 @@ def test_largest_allowed_input():
         values.append(i)
         if i < 99:
             values.append(None)
-    assert depth(values) == 100
+    check(depth(values), 100, "depth(values)")
 
 
 if __name__ == "__main__":

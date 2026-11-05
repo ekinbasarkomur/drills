@@ -23,12 +23,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert to_list(Solution().removeNthFromEnd(build([1, 2, 3, 4, 5]), 2)) == [1, 2, 3, 5]
+    check(to_list(Solution().removeNthFromEnd(build([1, 2, 3, 4, 5]), 2)), [1, 2, 3, 5], "to_list(Solution().removeNthFromEnd(build([1, 2, 3, 4, 5]), 2))")
 
 
 def test_example_2():
-    assert to_list(Solution().removeNthFromEnd(build([1]), 1)) == []
+    check(to_list(Solution().removeNthFromEnd(build([1]), 1)), [], "to_list(Solution().removeNthFromEnd(build([1]), 1))")
 
 
 def test_example_3():
-    assert to_list(Solution().removeNthFromEnd(build([1, 2]), 1)) == [1]
+    check(to_list(Solution().removeNthFromEnd(build([1, 2]), 1)), [1], "to_list(Solution().removeNthFromEnd(build([1, 2]), 1))")

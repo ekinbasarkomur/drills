@@ -98,7 +98,7 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(
+        check_eq!(
             three_sum(&[-1, 0, 1, 2, -1, -4]),
             expect(&[[-1, -1, 2], [-1, 0, 1]])
         );
@@ -106,34 +106,34 @@ mod tests {
 
     #[test]
     fn example_2() {
-        assert_eq!(three_sum(&[0, 1, 1]), expect(&[]));
+        check_eq!(three_sum(&[0, 1, 1]), expect(&[]));
     }
 
     #[test]
     fn example_3() {
-        assert_eq!(three_sum(&[0, 0, 0]), expect(&[[0, 0, 0]]));
+        check_eq!(three_sum(&[0, 0, 0]), expect(&[[0, 0, 0]]));
     }
 
     #[test]
     fn all_positive_cannot_reach_zero() {
-        assert_eq!(three_sum(&[1, 2, 3]), expect(&[]));
+        check_eq!(three_sum(&[1, 2, 3]), expect(&[]));
     }
 
     #[test]
     fn all_negative_cannot_reach_zero() {
-        assert_eq!(three_sum(&[-1, -2, -3]), expect(&[]));
+        check_eq!(three_sum(&[-1, -2, -3]), expect(&[]));
     }
 
     // Duplicate handling: the same triplet must appear exactly once.
 
     #[test]
     fn four_zeros_yield_one_triplet() {
-        assert_eq!(three_sum(&[0, 0, 0, 0]), expect(&[[0, 0, 0]]));
+        check_eq!(three_sum(&[0, 0, 0, 0]), expect(&[[0, 0, 0]]));
     }
 
     #[test]
     fn a_repeated_value_inside_a_triplet() {
-        assert_eq!(
+        check_eq!(
             three_sum(&[-2, 0, 1, 1, 2]),
             expect(&[[-2, 0, 2], [-2, 1, 1]])
         );
@@ -141,7 +141,7 @@ mod tests {
 
     #[test]
     fn many_repeats_many_triplets() {
-        assert_eq!(
+        check_eq!(
             three_sum(&[-4, -2, -2, -2, 0, 1, 2, 2, 2, 3, 3, 4, 4, 6, 6]),
             expect(&[
                 [-4, -2, 6],
@@ -156,7 +156,7 @@ mod tests {
 
     #[test]
     fn same_values_different_order_in_the_input() {
-        assert_eq!(
+        check_eq!(
             three_sum(&[1, -1, 0, 2, -2, 0]),
             expect(&[[-2, 0, 2], [-1, 0, 1]])
         );
@@ -164,11 +164,11 @@ mod tests {
 
     #[test]
     fn value_range_extremes() {
-        assert_eq!(
+        check_eq!(
             three_sum(&[100_000, -100_000, 0]),
             expect(&[[-100_000, 0, 100_000]])
         );
-        assert_eq!(
+        check_eq!(
             three_sum(&[-100_000, 50_000, 50_000]),
             expect(&[[-100_000, 50_000, 50_000]])
         );
@@ -180,6 +180,6 @@ mod tests {
         // An O(n^3) solution will hang here rather than fail.
         let mut nums = vec![1; 2997];
         nums.extend([-5, 2, 3]);
-        assert_eq!(three_sum(&nums), expect(&[[-5, 2, 3]]));
+        check_eq!(three_sum(&nums), expect(&[[-5, 2, 3]]));
     }
 }

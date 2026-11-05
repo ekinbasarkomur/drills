@@ -25,9 +25,9 @@ class MyCalendarThree:
 
 def test_example_1():
     obj = MyCalendarThree()
-    assert obj.book(10, 20) == 1
-    assert obj.book(50, 60) == 1
-    assert obj.book(10, 40) == 2
-    assert obj.book(5, 15) == 3
-    assert obj.book(5, 10) == 3
-    assert obj.book(25, 55) == 3
+    check(obj.book(10, 20), 1, "obj.book(10, 20)")
+    check(obj.book(50, 60), 1, "obj.book(50, 60)")
+    check(obj.book(10, 40), 2, "obj.book(10, 40)")
+    check(obj.book(5, 15), 3, "obj.book(5, 15)")
+    check(obj.book(5, 10), 3, "obj.book(5, 10)")
+    check(obj.book(25, 55), 3, "obj.book(25, 55)")

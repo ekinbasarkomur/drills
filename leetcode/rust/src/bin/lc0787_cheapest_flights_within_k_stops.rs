@@ -26,16 +26,16 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::find_cheapest_price(4, vec![vec![0, 1, 100], vec![1, 2, 100], vec![2, 0, 100], vec![1, 3, 600], vec![2, 3, 200]], 0, 3, 1), 700);
+        check_eq!(Solution::find_cheapest_price(4, vec![vec![0, 1, 100], vec![1, 2, 100], vec![2, 0, 100], vec![1, 3, 600], vec![2, 3, 200]], 0, 3, 1), 700);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::find_cheapest_price(3, vec![vec![0, 1, 100], vec![1, 2, 100], vec![0, 2, 500]], 0, 2, 1), 200);
+        check_eq!(Solution::find_cheapest_price(3, vec![vec![0, 1, 100], vec![1, 2, 100], vec![0, 2, 500]], 0, 2, 1), 200);
     }
 
     #[test]
     fn example_3() {
-        assert_eq!(Solution::find_cheapest_price(3, vec![vec![0, 1, 100], vec![1, 2, 100], vec![0, 2, 500]], 0, 2, 0), 500);
+        check_eq!(Solution::find_cheapest_price(3, vec![vec![0, 1, 100], vec![1, 2, 100], vec![0, 2, 500]], 0, 2, 0), 500);
     }
 }

@@ -26,11 +26,11 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::get_sum(1, 2), 3);
+        check_eq!(Solution::get_sum(1, 2), 3);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::get_sum(2, 3), 5);
+        check_eq!(Solution::get_sum(2, 3), 5);
     }
 }

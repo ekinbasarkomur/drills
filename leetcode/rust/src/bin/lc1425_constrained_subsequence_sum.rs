@@ -26,16 +26,16 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::constrained_subset_sum(vec![10, 2, -10, 5, 20], 2), 37);
+        check_eq!(Solution::constrained_subset_sum(vec![10, 2, -10, 5, 20], 2), 37);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::constrained_subset_sum(vec![-1, -2, -3], 1), -1);
+        check_eq!(Solution::constrained_subset_sum(vec![-1, -2, -3], 1), -1);
     }
 
     #[test]
     fn example_3() {
-        assert_eq!(Solution::constrained_subset_sum(vec![10, -2, -10, -5, 20], 2), 23);
+        check_eq!(Solution::constrained_subset_sum(vec![10, -2, -10, -5, 20], 2), 23);
     }
 }

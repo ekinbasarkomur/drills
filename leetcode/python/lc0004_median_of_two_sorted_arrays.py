@@ -18,8 +18,8 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert close(Solution().findMedianSortedArrays([1, 3], [2]), 2.0)
+    check_true(close(Solution().findMedianSortedArrays([1, 3], [2]), 2.0), "close(Solution().findMedianSortedArrays([1, 3], [2]), 2.0)")
 
 
 def test_example_2():
-    assert close(Solution().findMedianSortedArrays([1, 2], [3, 4]), 2.5)
+    check_true(close(Solution().findMedianSortedArrays([1, 2], [3, 4]), 2.5), "close(Solution().findMedianSortedArrays([1, 2], [3, 4]), 2.5)")

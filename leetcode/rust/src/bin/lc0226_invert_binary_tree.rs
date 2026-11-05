@@ -110,7 +110,7 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(
+        check_eq!(
             inverted(&[n(1), n(2), n(3), n(4), n(5), n(6), n(7)]),
             vec![n(1), n(3), n(2), n(7), n(6), n(5), n(4)]
         );
@@ -118,32 +118,32 @@ mod tests {
 
     #[test]
     fn example_2() {
-        assert_eq!(inverted(&[n(3), n(2), n(1)]), vec![n(3), n(1), n(2)]);
+        check_eq!(inverted(&[n(3), n(2), n(1)]), vec![n(3), n(1), n(2)]);
     }
 
     #[test]
     fn example_3() {
-        assert_eq!(inverted(&[]), vec![]);
+        check_eq!(inverted(&[]), vec![]);
     }
 
     #[test]
     fn single_node() {
-        assert_eq!(inverted(&[n(1)]), vec![n(1)]);
+        check_eq!(inverted(&[n(1)]), vec![n(1)]);
     }
 
     #[test]
     fn only_a_left_child() {
-        assert_eq!(inverted(&[n(1), n(2)]), vec![n(1), X, n(2)]);
+        check_eq!(inverted(&[n(1), n(2)]), vec![n(1), X, n(2)]);
     }
 
     #[test]
     fn only_a_right_child() {
-        assert_eq!(inverted(&[n(1), X, n(2)]), vec![n(1), n(2)]);
+        check_eq!(inverted(&[n(1), X, n(2)]), vec![n(1), n(2)]);
     }
 
     #[test]
     fn a_left_leaning_chain_becomes_right_leaning() {
-        assert_eq!(
+        check_eq!(
             inverted(&[n(1), n(2), X, n(3)]),
             vec![n(1), X, n(2), X, n(3)]
         );
@@ -151,7 +151,7 @@ mod tests {
 
     #[test]
     fn lopsided_tree() {
-        assert_eq!(
+        check_eq!(
             inverted(&[n(1), n(2), n(3), X, n(4)]),
             vec![n(1), n(3), n(2), X, X, n(4)]
         );
@@ -159,18 +159,18 @@ mod tests {
 
     #[test]
     fn negative_values() {
-        assert_eq!(inverted(&[n(-1), n(-2), n(-3)]), vec![n(-1), n(-3), n(-2)]);
+        check_eq!(inverted(&[n(-1), n(-2), n(-3)]), vec![n(-1), n(-3), n(-2)]);
     }
 
     #[test]
     fn inverting_twice_restores_the_original() {
         let original = [n(1), n(2), n(3), n(4), n(5), n(6), n(7)];
         let once = inverted(&original);
-        assert_eq!(inverted(&once), original.to_vec());
+        check_eq!(inverted(&once), original.to_vec());
     }
 
     #[test]
     fn a_symmetric_tree_is_unchanged() {
-        assert_eq!(inverted(&[n(1), n(2), n(2)]), vec![n(1), n(2), n(2)]);
+        check_eq!(inverted(&[n(1), n(2), n(2)]), vec![n(1), n(2), n(2)]);
     }
 }

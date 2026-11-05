@@ -26,16 +26,16 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::oranges_rotting(vec![vec![2, 1, 1], vec![1, 1, 0], vec![0, 1, 1]]), 4);
+        check_eq!(Solution::oranges_rotting(vec![vec![2, 1, 1], vec![1, 1, 0], vec![0, 1, 1]]), 4);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::oranges_rotting(vec![vec![2, 1, 1], vec![0, 1, 1], vec![1, 0, 1]]), -1);
+        check_eq!(Solution::oranges_rotting(vec![vec![2, 1, 1], vec![0, 1, 1], vec![1, 0, 1]]), -1);
     }
 
     #[test]
     fn example_3() {
-        assert_eq!(Solution::oranges_rotting(vec![vec![0, 2]]), 0);
+        check_eq!(Solution::oranges_rotting(vec![vec![0, 2]]), 0);
     }
 }

@@ -27,12 +27,12 @@ mod tests {
     #[test]
     fn example_1() {
         let want: String = "aba".to_string();
-        assert_eq!(Solution::reorganize_string("aab".to_string()), want);
+        check_eq!(Solution::reorganize_string("aab".to_string()), want);
     }
 
     #[test]
     fn example_2() {
         let want: String = "".to_string();
-        assert_eq!(Solution::reorganize_string("aaab".to_string()), want);
+        check_eq!(Solution::reorganize_string("aaab".to_string()), want);
     }
 }

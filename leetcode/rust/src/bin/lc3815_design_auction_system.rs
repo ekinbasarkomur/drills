@@ -62,11 +62,11 @@ mod tests {
         let mut obj = AuctionSystem::new();
         obj.add_bid(1, 7, 5);
         obj.add_bid(2, 7, 6);
-        assert_eq!(obj.get_highest_bidder(7), 2);
+        check_eq!(obj.get_highest_bidder(7), 2);
         obj.update_bid(1, 7, 8);
-        assert_eq!(obj.get_highest_bidder(7), 1);
+        check_eq!(obj.get_highest_bidder(7), 1);
         obj.remove_bid(2, 7);
-        assert_eq!(obj.get_highest_bidder(7), 1);
-        assert_eq!(obj.get_highest_bidder(3), -1);
+        check_eq!(obj.get_highest_bidder(7), 1);
+        check_eq!(obj.get_highest_bidder(3), -1);
     }
 }

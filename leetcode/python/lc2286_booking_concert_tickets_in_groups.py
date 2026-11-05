@@ -28,7 +28,7 @@ class BookMyShow:
 
 def test_example_1():
     obj = BookMyShow(2, 5)
-    assert obj.gather(4, 0) == [0, 0]
-    assert obj.gather(2, 0) == []
-    assert obj.scatter(5, 1) == True
-    assert obj.scatter(5, 1) == False
+    check(obj.gather(4, 0), [0, 0], "obj.gather(4, 0)")
+    check(obj.gather(2, 0), [], "obj.gather(2, 0)")
+    check(obj.scatter(5, 1), True, "obj.scatter(5, 1)")
+    check(obj.scatter(5, 1), False, "obj.scatter(5, 1)")

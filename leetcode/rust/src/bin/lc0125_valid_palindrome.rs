@@ -61,85 +61,85 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert!(palindrome("Was it a car or a cat I saw?"));
+        check!(palindrome("Was it a car or a cat I saw?"));
     }
 
     #[test]
     fn example_2() {
-        assert!(!palindrome("tab a cat"));
+        check!(!palindrome("tab a cat"));
     }
 
     #[test]
     fn single_character() {
-        assert!(palindrome("a"));
+        check!(palindrome("a"));
     }
 
     #[test]
     fn two_identical_characters() {
-        assert!(palindrome("aa"));
+        check!(palindrome("aa"));
     }
 
     #[test]
     fn two_different_characters() {
-        assert!(!palindrome("ab"));
+        check!(!palindrome("ab"));
     }
 
     #[test]
     fn nothing_alphanumeric_at_all() {
         // everything is stripped, an empty string is a palindrome
-        assert!(palindrome(".,!?"));
-        assert!(palindrome(" "));
+        check!(palindrome(".,!?"));
+        check!(palindrome(" "));
     }
 
     #[test]
     fn punctuation_between_the_letters() {
-        assert!(palindrome("A man, a plan, a canal: Panama"));
+        check!(palindrome("A man, a plan, a canal: Panama"));
     }
 
     #[test]
     fn digits_count_as_alphanumeric() {
-        assert!(palindrome("12321"));
-        assert!(!palindrome("12345"));
+        check!(palindrome("12321"));
+        check!(!palindrome("12345"));
     }
 
     #[test]
     fn letters_and_digits_together() {
-        assert!(palindrome("1a2a1"));
+        check!(palindrome("1a2a1"));
     }
 
     #[test]
     fn digit_against_letter_is_not_equal() {
         // the classic trap: '0' and 'P' are 32 apart in ASCII, like 'a' and 'A'
-        assert!(!palindrome("0P"));
+        check!(!palindrome("0P"));
     }
 
     #[test]
     fn case_is_ignored() {
-        assert!(palindrome("Aa"));
-        assert!(palindrome("RaceCar"));
+        check!(palindrome("Aa"));
+        check!(palindrome("RaceCar"));
     }
 
     #[test]
     fn odd_length_ignores_the_middle_character() {
-        assert!(palindrome("aba"));
-        assert!(palindrome("abXba"));
+        check!(palindrome("aba"));
+        check!(palindrome("abXba"));
     }
 
     #[test]
     fn even_length_has_no_free_middle() {
-        assert!(palindrome("abba"));
-        assert!(!palindrome("abca"));
+        check!(palindrome("abba"));
+        check!(!palindrome("abca"));
     }
 
     #[test]
     fn difference_only_at_the_very_ends() {
-        assert!(!palindrome("abcdefghijklmnopqrstuvwxyZ"));
+        check!(!palindrome("abcdefghijklmnopqrstuvwxyZ"));
     }
 
     #[test]
     fn long_palindrome_at_the_length_limit() {
         let half = "abcde".repeat(100); // 500 chars
         let reversed: String = half.chars().rev().collect();
-        assert!(palindrome(&(half + &reversed)));
+        check!(palindrome(&(half + &reversed)));
     }
 }

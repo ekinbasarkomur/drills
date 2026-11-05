@@ -73,18 +73,18 @@ mod tests {
         s.push(1);
         s.push(2);
         s.push(0);
-        assert_eq!(s.get_min(), 0);
+        check_eq!(s.get_min(), 0);
         s.pop();
-        assert_eq!(s.top(), 2);
-        assert_eq!(s.get_min(), 1);
+        check_eq!(s.top(), 2);
+        check_eq!(s.get_min(), 1);
     }
 
     #[test]
     fn single_element() {
         let mut s = MinStack::new();
         s.push(5);
-        assert_eq!(s.top(), 5);
-        assert_eq!(s.get_min(), 5);
+        check_eq!(s.top(), 5);
+        check_eq!(s.get_min(), 5);
     }
 
     #[test]
@@ -93,8 +93,8 @@ mod tests {
         for v in [1, 2, 3] {
             s.push(v);
         }
-        assert_eq!(s.get_min(), 1);
-        assert_eq!(s.top(), 3);
+        check_eq!(s.get_min(), 1);
+        check_eq!(s.top(), 3);
     }
 
     #[test]
@@ -103,7 +103,7 @@ mod tests {
         for v in [3, 2, 1] {
             s.push(v);
         }
-        assert_eq!(s.get_min(), 1);
+        check_eq!(s.get_min(), 1);
     }
 
     #[test]
@@ -111,9 +111,9 @@ mod tests {
         let mut s = MinStack::new();
         s.push(5);
         s.push(1);
-        assert_eq!(s.get_min(), 1);
+        check_eq!(s.get_min(), 1);
         s.pop();
-        assert_eq!(s.get_min(), 5);
+        check_eq!(s.get_min(), 5);
     }
 
     #[test]
@@ -123,11 +123,11 @@ mod tests {
         for v in [2, 1, 1] {
             s.push(v);
         }
-        assert_eq!(s.get_min(), 1);
+        check_eq!(s.get_min(), 1);
         s.pop();
-        assert_eq!(s.get_min(), 1);
+        check_eq!(s.get_min(), 1);
         s.pop();
-        assert_eq!(s.get_min(), 2);
+        check_eq!(s.get_min(), 2);
     }
 
     #[test]
@@ -136,9 +136,9 @@ mod tests {
         for v in [0, -3, 2] {
             s.push(v);
         }
-        assert_eq!(s.get_min(), -3);
+        check_eq!(s.get_min(), -3);
         s.pop();
-        assert_eq!(s.get_min(), -3);
+        check_eq!(s.get_min(), -3);
     }
 
     #[test]
@@ -147,27 +147,27 @@ mod tests {
         s.push(1);
         s.pop();
         s.push(9);
-        assert_eq!(s.top(), 9);
-        assert_eq!(s.get_min(), 9);
+        check_eq!(s.top(), 9);
+        check_eq!(s.get_min(), 9);
     }
 
     #[test]
     fn interleaved_operations() {
         let mut s = MinStack::new();
         s.push(4);
-        assert_eq!(s.get_min(), 4);
+        check_eq!(s.get_min(), 4);
         s.push(7);
-        assert_eq!(s.get_min(), 4);
+        check_eq!(s.get_min(), 4);
         s.push(2);
-        assert_eq!(s.get_min(), 2);
+        check_eq!(s.get_min(), 2);
         s.pop();
-        assert_eq!(s.get_min(), 4);
+        check_eq!(s.get_min(), 4);
         s.push(1);
-        assert_eq!(s.get_min(), 1);
+        check_eq!(s.get_min(), 1);
         s.pop();
         s.pop();
-        assert_eq!(s.top(), 4);
-        assert_eq!(s.get_min(), 4);
+        check_eq!(s.top(), 4);
+        check_eq!(s.get_min(), 4);
     }
 
     #[test]
@@ -175,9 +175,9 @@ mod tests {
         let mut s = MinStack::new();
         s.push(i32::MAX);
         s.push(i32::MIN);
-        assert_eq!(s.get_min(), i32::MIN);
+        check_eq!(s.get_min(), i32::MIN);
         s.pop();
-        assert_eq!(s.get_min(), i32::MAX);
+        check_eq!(s.get_min(), i32::MAX);
     }
 
     #[test]
@@ -189,7 +189,7 @@ mod tests {
             s.push(i);
         }
         for i in 1..=30_000 {
-            assert_eq!(s.get_min(), i);
+            check_eq!(s.get_min(), i);
             s.pop();
         }
     }

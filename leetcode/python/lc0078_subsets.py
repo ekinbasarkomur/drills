@@ -18,8 +18,8 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert deep_sorted(Solution().subsets([1, 2, 3])) == deep_sorted([[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]])
+    check(deep_sorted(Solution().subsets([1, 2, 3])), deep_sorted([[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]), "deep_sorted(Solution().subsets([1, 2, 3]))")
 
 
 def test_example_2():
-    assert deep_sorted(Solution().subsets([0])) == deep_sorted([[], [0]])
+    check(deep_sorted(Solution().subsets([0])), deep_sorted([[], [0]]), "deep_sorted(Solution().subsets([0]))")

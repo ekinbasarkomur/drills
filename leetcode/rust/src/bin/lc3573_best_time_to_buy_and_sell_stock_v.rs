@@ -26,11 +26,11 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::maximum_profit(vec![1, 7, 9, 8, 2], 2), 14);
+        check_eq!(Solution::maximum_profit(vec![1, 7, 9, 8, 2], 2), 14);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::maximum_profit(vec![12, 16, 19, 19, 8, 1, 19, 13, 9], 3), 36);
+        check_eq!(Solution::maximum_profit(vec![12, 16, 19, 19, 8, 1, 19, 13, 9], 3), 36);
     }
 }

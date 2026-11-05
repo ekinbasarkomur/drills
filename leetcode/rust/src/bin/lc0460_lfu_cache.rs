@@ -52,13 +52,13 @@ mod tests {
         let mut obj = LFUCache::new(2);
         obj.put(1, 1);
         obj.put(2, 2);
-        assert_eq!(obj.get(1), 1);
+        check_eq!(obj.get(1), 1);
         obj.put(3, 3);
-        assert_eq!(obj.get(2), -1);
-        assert_eq!(obj.get(3), 3);
+        check_eq!(obj.get(2), -1);
+        check_eq!(obj.get(3), 3);
         obj.put(4, 4);
-        assert_eq!(obj.get(1), -1);
-        assert_eq!(obj.get(3), 3);
-        assert_eq!(obj.get(4), 4);
+        check_eq!(obj.get(1), -1);
+        check_eq!(obj.get(3), 3);
+        check_eq!(obj.get(4), 4);
     }
 }

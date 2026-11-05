@@ -27,18 +27,18 @@ mod tests {
     #[test]
     fn example_1() {
         let want: Vec<Vec<i32>> = vec![vec![1, 2, 3], vec![1, 3, 2], vec![2, 1, 3], vec![2, 3, 1], vec![3, 1, 2], vec![3, 2, 1]];
-        assert_eq!(sort_outer(Solution::permute(vec![1, 2, 3])), sort_outer(want));
+        check_eq!(sort_outer(Solution::permute(vec![1, 2, 3])), sort_outer(want));
     }
 
     #[test]
     fn example_2() {
         let want: Vec<Vec<i32>> = vec![vec![0, 1], vec![1, 0]];
-        assert_eq!(sort_outer(Solution::permute(vec![0, 1])), sort_outer(want));
+        check_eq!(sort_outer(Solution::permute(vec![0, 1])), sort_outer(want));
     }
 
     #[test]
     fn example_3() {
         let want: Vec<Vec<i32>> = vec![vec![1]];
-        assert_eq!(sort_outer(Solution::permute(vec![1])), sort_outer(want));
+        check_eq!(sort_outer(Solution::permute(vec![1])), sort_outer(want));
     }
 }

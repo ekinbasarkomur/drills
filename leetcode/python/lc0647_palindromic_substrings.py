@@ -18,8 +18,8 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().countSubstrings('abc') == 3
+    check(Solution().countSubstrings('abc'), 3, "Solution().countSubstrings('abc')")
 
 
 def test_example_2():
-    assert Solution().countSubstrings('aaa') == 6
+    check(Solution().countSubstrings('aaa'), 6, "Solution().countSubstrings('aaa')")

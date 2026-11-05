@@ -18,8 +18,8 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().validUtf8([197, 130, 1]) == True
+    check(Solution().validUtf8([197, 130, 1]), True, "Solution().validUtf8([197, 130, 1])")
 
 
 def test_example_2():
-    assert Solution().validUtf8([235, 140, 4]) == False
+    check(Solution().validUtf8([235, 140, 4]), False, "Solution().validUtf8([235, 140, 4])")

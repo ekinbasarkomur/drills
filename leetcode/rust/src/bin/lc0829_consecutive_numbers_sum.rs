@@ -26,16 +26,16 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::consecutive_numbers_sum(5), 2);
+        check_eq!(Solution::consecutive_numbers_sum(5), 2);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::consecutive_numbers_sum(9), 3);
+        check_eq!(Solution::consecutive_numbers_sum(9), 3);
     }
 
     #[test]
     fn example_3() {
-        assert_eq!(Solution::consecutive_numbers_sum(15), 4);
+        check_eq!(Solution::consecutive_numbers_sum(15), 4);
     }
 }

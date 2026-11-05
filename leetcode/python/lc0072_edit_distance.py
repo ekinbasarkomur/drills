@@ -18,8 +18,8 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().minDistance('horse', 'ros') == 3
+    check(Solution().minDistance('horse', 'ros'), 3, "Solution().minDistance('horse', 'ros')")
 
 
 def test_example_2():
-    assert Solution().minDistance('intention', 'execution') == 5
+    check(Solution().minDistance('intention', 'execution'), 5, "Solution().minDistance('intention', 'execution')")

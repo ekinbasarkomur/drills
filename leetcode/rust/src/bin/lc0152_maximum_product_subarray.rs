@@ -26,11 +26,11 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::max_product(vec![2, 3, -2, 4]), 6);
+        check_eq!(Solution::max_product(vec![2, 3, -2, 4]), 6);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::max_product(vec![-2, 0, -1]), 0);
+        check_eq!(Solution::max_product(vec![-2, 0, -1]), 0);
     }
 }

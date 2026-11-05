@@ -32,42 +32,42 @@ def min_eating_speed(piles: List[int], h: int) -> int:
 
 
 def test_example_1():
-    assert min_eating_speed([1, 4, 3, 2], 9) == 2
+    check(min_eating_speed([1, 4, 3, 2], 9), 2, "min_eating_speed([1, 4, 3, 2], 9)")
 
 
 def test_example_2():
     # h equals the pile count, so each pile must go in one hour
-    assert min_eating_speed([25, 10, 23, 4], 4) == 25
+    check(min_eating_speed([25, 10, 23, 4], 4), 25, "min_eating_speed([25, 10, 23, 4], 4)")
 
 
 def test_single_pile_single_hour():
-    assert min_eating_speed([1], 1) == 1
+    check(min_eating_speed([1], 1), 1, "min_eating_speed([1], 1)")
 
 
 def test_time_to_spare():
     # k never drops below 1
-    assert min_eating_speed([1], 10) == 1
+    check(min_eating_speed([1], 10), 1, "min_eating_speed([1], 10)")
 
 
 def test_the_classic_leetcode_case():
-    assert min_eating_speed([3, 6, 7, 11], 8) == 4
+    check(min_eating_speed([3, 6, 7, 11], 8), 4, "min_eating_speed([3, 6, 7, 11], 8)")
 
 
 def test_tight_deadline():
-    assert min_eating_speed([30, 11, 23, 4, 20], 5) == 30
+    check(min_eating_speed([30, 11, 23, 4, 20], 5), 30, "min_eating_speed([30, 11, 23, 4, 20], 5)")
 
 
 def test_one_hour_more_is_enough_to_slow_down():
-    assert min_eating_speed([30, 11, 23, 4, 20], 6) == 23
+    check(min_eating_speed([30, 11, 23, 4, 20], 6), 23, "min_eating_speed([30, 11, 23, 4, 20], 6)")
 
 
 def test_uniform_piles():
-    assert min_eating_speed([1, 1, 1, 1], 4) == 1
+    check(min_eating_speed([1, 1, 1, 1], 4), 1, "min_eating_speed([1, 1, 1, 1], 4)")
 
 
 def test_value_range_extremes():
     # one pile of a billion in one hour -- the rate must match it exactly
-    assert min_eating_speed([1000000000], 1) == 1000000000
+    check(min_eating_speed([1000000000], 1), 1000000000, "min_eating_speed([1000000000], 1)")
 
 
 def test_largest_allowed_input():
@@ -75,7 +75,7 @@ def test_largest_allowed_input():
     # per hour, so the rate has to be the pile size. Scanning k from 1
     # upwards would take 10_000 passes; binary search takes 14.
     piles = [10_000] * 10_000
-    assert min_eating_speed(piles, 10_000) == 10000
+    check(min_eating_speed(piles, 10_000), 10000, "min_eating_speed(piles, 10_000)")
 
 
 if __name__ == "__main__":

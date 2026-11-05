@@ -26,11 +26,11 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::sum_subarray_mins(vec![3, 1, 2, 4]), 17);
+        check_eq!(Solution::sum_subarray_mins(vec![3, 1, 2, 4]), 17);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::sum_subarray_mins(vec![50]), 444);
+        check_eq!(Solution::sum_subarray_mins(vec![50]), 444);
     }
 }

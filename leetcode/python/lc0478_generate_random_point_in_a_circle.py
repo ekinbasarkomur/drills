@@ -25,6 +25,6 @@ class Solution:
 
 def test_example_1():
     obj = Solution(1.0, 0.0, 0.0)
-    assert close(obj.randPoint(), [-0.02493, -0.38077])
-    assert close(obj.randPoint(), [0.82314, 0.38945])
-    assert close(obj.randPoint(), [0.36572, 0.17248])
+    check_true(close(obj.randPoint(), [-0.02493, -0.38077]), "close(obj.randPoint(), [-0.02493, -0.38077])")
+    check_true(close(obj.randPoint(), [0.82314, 0.38945]), "close(obj.randPoint(), [0.82314, 0.38945])")
+    check_true(close(obj.randPoint(), [0.36572, 0.17248]), "close(obj.randPoint(), [0.36572, 0.17248])")

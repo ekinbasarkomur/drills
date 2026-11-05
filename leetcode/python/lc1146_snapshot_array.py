@@ -32,6 +32,6 @@ class SnapshotArray:
 def test_example_1():
     obj = SnapshotArray(3)
     obj.set(0, 5)
-    assert obj.snap() == 0
+    check(obj.snap(), 0, "obj.snap()")
     obj.set(0, 6)
-    assert obj.get(0, 0) == 5
+    check(obj.get(0, 0), 5, "obj.get(0, 0)")

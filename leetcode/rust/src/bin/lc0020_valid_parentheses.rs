@@ -53,81 +53,81 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(is_valid("[]"), true);
+        check_eq!(is_valid("[]"), true);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(is_valid("([{}])"), true);
+        check_eq!(is_valid("([{}])"), true);
     }
 
     #[test]
     fn example_3() {
         // right counts, wrong order
-        assert_eq!(is_valid("[(])"), false);
+        check_eq!(is_valid("[(])"), false);
     }
 
     #[test]
     fn empty_string() {
         // nothing left open
-        assert_eq!(is_valid(""), true);
+        check_eq!(is_valid(""), true);
     }
 
     #[test]
     fn one_opening_bracket() {
-        assert_eq!(is_valid("("), false);
+        check_eq!(is_valid("("), false);
     }
 
     #[test]
     fn one_closing_bracket() {
-        assert_eq!(is_valid(")"), false);
+        check_eq!(is_valid(")"), false);
     }
 
     #[test]
     fn all_three_kinds_side_by_side() {
-        assert_eq!(is_valid("()[]{}"), true);
+        check_eq!(is_valid("()[]{}"), true);
     }
 
     #[test]
     fn mismatched_pair() {
-        assert_eq!(is_valid("(]"), false);
+        check_eq!(is_valid("(]"), false);
     }
 
     #[test]
     fn a_wrong_closer_is_not_skipped() {
         // the ']' must fail immediately; ignoring it lets ')' close the '('
-        assert_eq!(is_valid("(])"), false);
+        check_eq!(is_valid("(])"), false);
     }
 
     #[test]
     fn only_openers() {
-        assert_eq!(is_valid("(((("), false);
+        check_eq!(is_valid("(((("), false);
     }
 
     #[test]
     fn only_closers() {
-        assert_eq!(is_valid("))))"), false);
+        check_eq!(is_valid("))))"), false);
     }
 
     #[test]
     fn deeply_nested() {
-        assert_eq!(is_valid("{[()]}"), true);
+        check_eq!(is_valid("{[()]}"), true);
     }
 
     #[test]
     fn one_opener_left_over() {
-        assert_eq!(is_valid("(()"), false);
+        check_eq!(is_valid("(()"), false);
     }
 
     #[test]
     fn one_closer_too_many() {
-        assert_eq!(is_valid("())"), false);
+        check_eq!(is_valid("())"), false);
     }
 
     #[test]
     fn largest_allowed_input() {
         // 1000 brackets: 500 openers then 500 closers, the constraint's ceiling.
         let s = "(".repeat(500) + &")".repeat(500);
-        assert_eq!(is_valid(&s), true);
+        check_eq!(is_valid(&s), true);
     }
 }

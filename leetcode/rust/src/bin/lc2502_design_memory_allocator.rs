@@ -50,15 +50,15 @@ mod tests {
     #[test]
     fn example_1() {
         let mut obj = Allocator::new(10);
-        assert_eq!(obj.allocate(1, 1), 0);
-        assert_eq!(obj.allocate(1, 2), 1);
-        assert_eq!(obj.allocate(1, 3), 2);
-        assert_eq!(obj.free_memory(2), 1);
-        assert_eq!(obj.allocate(3, 4), 3);
-        assert_eq!(obj.allocate(1, 1), 1);
-        assert_eq!(obj.allocate(1, 1), 6);
-        assert_eq!(obj.free_memory(1), 3);
-        assert_eq!(obj.allocate(10, 2), -1);
-        assert_eq!(obj.free_memory(7), 0);
+        check_eq!(obj.allocate(1, 1), 0);
+        check_eq!(obj.allocate(1, 2), 1);
+        check_eq!(obj.allocate(1, 3), 2);
+        check_eq!(obj.free_memory(2), 1);
+        check_eq!(obj.allocate(3, 4), 3);
+        check_eq!(obj.allocate(1, 1), 1);
+        check_eq!(obj.allocate(1, 1), 6);
+        check_eq!(obj.free_memory(1), 3);
+        check_eq!(obj.allocate(10, 2), -1);
+        check_eq!(obj.free_memory(7), 0);
     }
 }

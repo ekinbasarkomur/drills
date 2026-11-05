@@ -27,18 +27,18 @@ mod tests {
     #[test]
     fn example_1() {
         let want: Vec<i32> = vec![1, 2, 4];
-        assert_eq!(Solution::plus_one(vec![1, 2, 3]), want);
+        check_eq!(Solution::plus_one(vec![1, 2, 3]), want);
     }
 
     #[test]
     fn example_2() {
         let want: Vec<i32> = vec![4, 3, 2, 2];
-        assert_eq!(Solution::plus_one(vec![4, 3, 2, 1]), want);
+        check_eq!(Solution::plus_one(vec![4, 3, 2, 1]), want);
     }
 
     #[test]
     fn example_3() {
         let want: Vec<i32> = vec![1, 0];
-        assert_eq!(Solution::plus_one(vec![9]), want);
+        check_eq!(Solution::plus_one(vec![9]), want);
     }
 }

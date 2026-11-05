@@ -46,11 +46,11 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::diameter_of_binary_tree(build_tree(&[Some(1), Some(2), Some(3), Some(4), Some(5)])), 3);
+        check_eq!(Solution::diameter_of_binary_tree(build_tree(&[Some(1), Some(2), Some(3), Some(4), Some(5)])), 3);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::diameter_of_binary_tree(build_tree(&[Some(1), Some(2)])), 1);
+        check_eq!(Solution::diameter_of_binary_tree(build_tree(&[Some(1), Some(2)])), 1);
     }
 }

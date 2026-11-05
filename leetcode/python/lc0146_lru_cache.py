@@ -32,23 +32,23 @@ class LRUCache:
 def test_example_1():
     c = LRUCache(2)
     c.put(1, 10)
-    assert c.get(1) == 10
+    check(c.get(1), 10, "c.get(1)")
     c.put(2, 20)
     c.put(3, 30)  # evicts key 1
-    assert c.get(2) == 20
-    assert c.get(1) == -1
+    check(c.get(2), 20, "c.get(2)")
+    check(c.get(1), -1, "c.get(1)")
 
 
 def test_missing_key_returns_minus_one():
     c = LRUCache(2)
-    assert c.get(7) == -1
+    check(c.get(7), -1, "c.get(7)")
 
 
 def test_overwriting_a_key_updates_its_value():
     c = LRUCache(2)
     c.put(1, 10)
     c.put(1, 99)
-    assert c.get(1) == 99
+    check(c.get(1), 99, "c.get(1)")
 
 
 def test_overwriting_does_not_grow_the_cache():
@@ -56,16 +56,16 @@ def test_overwriting_does_not_grow_the_cache():
     c.put(1, 10)
     c.put(1, 11)
     c.put(2, 20)
-    assert c.get(1) == 11
-    assert c.get(2) == 20
+    check(c.get(1), 11, "c.get(1)")
+    check(c.get(2), 20, "c.get(2)")
 
 
 def test_capacity_one_evicts_every_time():
     c = LRUCache(1)
     c.put(1, 10)
     c.put(2, 20)
-    assert c.get(1) == -1
-    assert c.get(2) == 20
+    check(c.get(1), -1, "c.get(1)")
+    check(c.get(2), 20, "c.get(2)")
 
 
 def test_a_get_counts_as_use_and_saves_a_key():
@@ -74,9 +74,9 @@ def test_a_get_counts_as_use_and_saves_a_key():
     c.put(2, 20)
     c.get(1)  # 2 is now the least recently used
     c.put(3, 30)
-    assert c.get(2) == -1
-    assert c.get(1) == 10
-    assert c.get(3) == 30
+    check(c.get(2), -1, "c.get(2)")
+    check(c.get(1), 10, "c.get(1)")
+    check(c.get(3), 30, "c.get(3)")
 
 
 def test_a_put_on_an_existing_key_counts_as_use():
@@ -85,8 +85,8 @@ def test_a_put_on_an_existing_key_counts_as_use():
     c.put(2, 20)
     c.put(1, 11)  # 2 is now the least recently used
     c.put(3, 30)
-    assert c.get(2) == -1
-    assert c.get(1) == 11
+    check(c.get(2), -1, "c.get(2)")
+    check(c.get(1), 11, "c.get(1)")
 
 
 def test_a_failed_get_does_not_change_the_order():
@@ -95,8 +95,8 @@ def test_a_failed_get_does_not_change_the_order():
     c.put(2, 20)
     c.get(99)  # not present
     c.put(3, 30)  # must still evict 1
-    assert c.get(1) == -1
-    assert c.get(2) == 20
+    check(c.get(1), -1, "c.get(1)")
+    check(c.get(2), 20, "c.get(2)")
 
 
 def test_filling_exactly_to_capacity_evicts_nothing():
@@ -104,17 +104,17 @@ def test_filling_exactly_to_capacity_evicts_nothing():
     c.put(1, 10)
     c.put(2, 20)
     c.put(3, 30)
-    assert c.get(1) == 10
-    assert c.get(2) == 20
-    assert c.get(3) == 30
+    check(c.get(1), 10, "c.get(1)")
+    check(c.get(2), 20, "c.get(2)")
+    check(c.get(3), 30, "c.get(3)")
 
 
 def test_value_range_extremes():
     c = LRUCache(2)
     c.put(0, 0)
     c.put(10_000, 100_000)
-    assert c.get(0) == 0
-    assert c.get(10_000) == 100_000
+    check(c.get(0), 0, "c.get(0)")
+    check(c.get(10_000), 100_000, "c.get(10_000)")
 
 
 def test_many_operations_stay_constant_time():
@@ -123,8 +123,8 @@ def test_many_operations_stay_constant_time():
     c = LRUCache(3000)
     for i in range(3000):
         c.put(i, i * 2)
-    assert c.get(0) == 0  # still present, and now most recent
+    check(c.get(0), 0, "c.get(0)")  # still present, and now most recent
     for i in range(3000, 10_000):
         c.put(i, i)
-    assert c.get(9999) == 9999  # newest survived
-    assert c.get(1) == -1  # oldest was evicted
+    check(c.get(9999), 9999, "c.get(9999)")  # newest survived
+    check(c.get(1), -1, "c.get(1)")  # oldest was evicted

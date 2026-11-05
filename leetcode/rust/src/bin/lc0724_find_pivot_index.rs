@@ -26,16 +26,16 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::pivot_index(vec![1, 7, 3, 6, 5, 6]), 3);
+        check_eq!(Solution::pivot_index(vec![1, 7, 3, 6, 5, 6]), 3);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::pivot_index(vec![1, 2, 3]), -1);
+        check_eq!(Solution::pivot_index(vec![1, 2, 3]), -1);
     }
 
     #[test]
     fn example_3() {
-        assert_eq!(Solution::pivot_index(vec![2, 1, -1]), 0);
+        check_eq!(Solution::pivot_index(vec![2, 1, -1]), 0);
     }
 }

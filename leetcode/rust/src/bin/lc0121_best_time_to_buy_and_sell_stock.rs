@@ -50,56 +50,56 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(max_profit(&[10, 1, 5, 6, 7, 1]), 6);
+        check_eq!(max_profit(&[10, 1, 5, 6, 7, 1]), 6);
     }
 
     #[test]
     fn example_2() {
         // prices only fall, so no transaction is made
-        assert_eq!(max_profit(&[10, 8, 7, 5, 2]), 0);
+        check_eq!(max_profit(&[10, 8, 7, 5, 2]), 0);
     }
 
     #[test]
     fn single_day() {
         // nothing to sell into
-        assert_eq!(max_profit(&[1]), 0);
+        check_eq!(max_profit(&[1]), 0);
     }
 
     #[test]
     fn two_days_rising() {
-        assert_eq!(max_profit(&[1, 2]), 1);
+        check_eq!(max_profit(&[1, 2]), 1);
     }
 
     #[test]
     fn two_days_falling() {
-        assert_eq!(max_profit(&[2, 1]), 0);
+        check_eq!(max_profit(&[2, 1]), 0);
     }
 
     #[test]
     fn flat_prices() {
-        assert_eq!(max_profit(&[5, 5, 5]), 0);
+        check_eq!(max_profit(&[5, 5, 5]), 0);
     }
 
     #[test]
     fn all_zeros() {
-        assert_eq!(max_profit(&[0, 0, 0]), 0);
+        check_eq!(max_profit(&[0, 0, 0]), 0);
     }
 
     #[test]
     fn buy_low_sell_high_at_the_ends() {
-        assert_eq!(max_profit(&[0, 100]), 100);
+        check_eq!(max_profit(&[0, 100]), 100);
     }
 
     #[test]
     fn the_low_comes_after_the_high() {
         // cannot sell before buying
-        assert_eq!(max_profit(&[100, 0]), 0);
+        check_eq!(max_profit(&[100, 0]), 0);
     }
 
     #[test]
     fn best_pair_is_not_the_global_min_and_max() {
         // the lowest price (0) comes after the highest (6)
-        assert_eq!(max_profit(&[3, 2, 6, 5, 0, 3]), 4);
+        check_eq!(max_profit(&[3, 2, 6, 5, 0, 3]), 4);
     }
 
     #[test]
@@ -108,6 +108,6 @@ mod tests {
         // then climbs to 98. Buy at the bottom, sell on the last day.
         let mut prices: Vec<i32> = (0..50).map(|i| 50 - i).collect();
         prices.extend((0..50).map(|i| i * 2));
-        assert_eq!(max_profit(&prices), 98);
+        check_eq!(max_profit(&prices), 98);
     }
 }

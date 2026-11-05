@@ -18,8 +18,8 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert close(Solution().medianSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3), [1.0, -1.0, -1.0, 3.0, 5.0, 6.0])
+    check_true(close(Solution().medianSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3), [1.0, -1.0, -1.0, 3.0, 5.0, 6.0]), "close(Solution().medianSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3), [1.0, -1.0, -1.0, 3.0, 5.0, 6.0])")
 
 
 def test_example_2():
-    assert close(Solution().medianSlidingWindow([1, 2, 3, 4, 2, 3, 1, 4, 2], 3), [2.0, 3.0, 3.0, 3.0, 2.0, 3.0, 2.0])
+    check_true(close(Solution().medianSlidingWindow([1, 2, 3, 4, 2, 3, 1, 4, 2], 3), [2.0, 3.0, 3.0, 3.0, 2.0, 3.0, 2.0]), "close(Solution().medianSlidingWindow([1, 2, 3, 4, 2, 3, 1, 4, 2], 3), [2.0, 3.0, 3.0, 3.0, 2.0, 3.0, 2.0])")

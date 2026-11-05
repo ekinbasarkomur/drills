@@ -18,8 +18,8 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().subarraySum([1, 1, 1], 2) == 2
+    check(Solution().subarraySum([1, 1, 1], 2), 2, "Solution().subarraySum([1, 1, 1], 2)")
 
 
 def test_example_2():
-    assert Solution().subarraySum([1, 2, 3], 3) == 2
+    check(Solution().subarraySum([1, 2, 3], 3), 2, "Solution().subarraySum([1, 2, 3], 3)")

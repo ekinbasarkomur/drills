@@ -26,11 +26,11 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::min_taps(5, vec![3, 4, 1, 1, 0, 0]), 1);
+        check_eq!(Solution::min_taps(5, vec![3, 4, 1, 1, 0, 0]), 1);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::min_taps(3, vec![0, 0, 0, 0]), -1);
+        check_eq!(Solution::min_taps(3, vec![0, 0, 0, 0]), -1);
     }
 }

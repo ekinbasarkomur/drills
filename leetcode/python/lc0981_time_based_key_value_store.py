@@ -29,8 +29,8 @@ class TimeMap:
 def test_example_1():
     obj = TimeMap()
     obj.set('foo', 'bar', 1)
-    assert obj.get('foo', 1) == 'bar'
-    assert obj.get('foo', 3) == 'bar'
+    check(obj.get('foo', 1), 'bar', "obj.get('foo', 1)")
+    check(obj.get('foo', 3), 'bar', "obj.get('foo', 3)")
     obj.set('foo', 'bar2', 4)
-    assert obj.get('foo', 4) == 'bar2'
-    assert obj.get('foo', 5) == 'bar2'
+    check(obj.get('foo', 4), 'bar2', "obj.get('foo', 4)")
+    check(obj.get('foo', 5), 'bar2', "obj.get('foo', 5)")

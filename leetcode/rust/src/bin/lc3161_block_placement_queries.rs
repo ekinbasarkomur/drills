@@ -27,12 +27,12 @@ mod tests {
     #[test]
     fn example_1() {
         let want: Vec<bool> = vec![false, true, true];
-        assert_eq!(Solution::get_results(vec![vec![1, 2], vec![2, 3, 3], vec![2, 3, 1], vec![2, 2, 2]]), want);
+        check_eq!(Solution::get_results(vec![vec![1, 2], vec![2, 3, 3], vec![2, 3, 1], vec![2, 2, 2]]), want);
     }
 
     #[test]
     fn example_2() {
         let want: Vec<bool> = vec![true, true, false];
-        assert_eq!(Solution::get_results(vec![vec![1, 7], vec![2, 7, 6], vec![1, 2], vec![2, 7, 5], vec![2, 7, 6]]), want);
+        check_eq!(Solution::get_results(vec![vec![1, 7], vec![2, 7, 6], vec![1, 2], vec![2, 7, 5], vec![2, 7, 6]]), want);
     }
 }

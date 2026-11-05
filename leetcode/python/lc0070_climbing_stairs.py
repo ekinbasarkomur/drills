@@ -18,8 +18,8 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().climbStairs(2) == 2
+    check(Solution().climbStairs(2), 2, "Solution().climbStairs(2)")
 
 
 def test_example_2():
-    assert Solution().climbStairs(3) == 3
+    check(Solution().climbStairs(3), 3, "Solution().climbStairs(3)")

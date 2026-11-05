@@ -56,8 +56,8 @@ mod tests {
     fn example_1() {
         let mut obj = SnapshotArray::new(3);
         obj.set(0, 5);
-        assert_eq!(obj.snap(), 0);
+        check_eq!(obj.snap(), 0);
         obj.set(0, 6);
-        assert_eq!(obj.get(0, 0), 5);
+        check_eq!(obj.get(0, 0), 5);
     }
 }

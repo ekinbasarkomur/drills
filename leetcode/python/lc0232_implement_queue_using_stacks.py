@@ -36,6 +36,6 @@ def test_example_1():
     obj = MyQueue()
     obj.push(1)
     obj.push(2)
-    assert obj.peek() == 1
-    assert obj.pop() == 1
-    assert obj.empty() == False
+    check(obj.peek(), 1, "obj.peek()")
+    check(obj.pop(), 1, "obj.pop()")
+    check(obj.empty(), False, "obj.empty()")

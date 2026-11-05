@@ -18,12 +18,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().countPalindromes('103301') == 2
+    check(Solution().countPalindromes('103301'), 2, "Solution().countPalindromes('103301')")
 
 
 def test_example_2():
-    assert Solution().countPalindromes('0000000') == 21
+    check(Solution().countPalindromes('0000000'), 21, "Solution().countPalindromes('0000000')")
 
 
 def test_example_3():
-    assert Solution().countPalindromes('9999900000') == 2
+    check(Solution().countPalindromes('9999900000'), 2, "Solution().countPalindromes('9999900000')")

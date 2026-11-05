@@ -43,18 +43,18 @@ mod tests {
     #[test]
     fn example_1() {
         let want: Vec<i32> = vec![1, 2, 3, 5];
-        assert_eq!(list_to_vec(&Solution::remove_nth_from_end(build_list(&[1, 2, 3, 4, 5]), 2)), want);
+        check_eq!(list_to_vec(&Solution::remove_nth_from_end(build_list(&[1, 2, 3, 4, 5]), 2)), want);
     }
 
     #[test]
     fn example_2() {
         let want: Vec<i32> = vec![];
-        assert_eq!(list_to_vec(&Solution::remove_nth_from_end(build_list(&[1]), 1)), want);
+        check_eq!(list_to_vec(&Solution::remove_nth_from_end(build_list(&[1]), 1)), want);
     }
 
     #[test]
     fn example_3() {
         let want: Vec<i32> = vec![1];
-        assert_eq!(list_to_vec(&Solution::remove_nth_from_end(build_list(&[1, 2]), 1)), want);
+        check_eq!(list_to_vec(&Solution::remove_nth_from_end(build_list(&[1, 2]), 1)), want);
     }
 }

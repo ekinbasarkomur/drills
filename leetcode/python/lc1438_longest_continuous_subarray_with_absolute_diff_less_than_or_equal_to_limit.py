@@ -18,12 +18,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().longestSubarray([8, 2, 4, 7], 4) == 2
+    check(Solution().longestSubarray([8, 2, 4, 7], 4), 2, "Solution().longestSubarray([8, 2, 4, 7], 4)")
 
 
 def test_example_2():
-    assert Solution().longestSubarray([10, 1, 2, 4, 7, 2], 5) == 4
+    check(Solution().longestSubarray([10, 1, 2, 4, 7, 2], 5), 4, "Solution().longestSubarray([10, 1, 2, 4, 7, 2], 5)")
 
 
 def test_example_3():
-    assert Solution().longestSubarray([4, 2, 2, 2, 4, 4, 2, 2], 0) == 3
+    check(Solution().longestSubarray([4, 2, 2, 2, 4, 4, 2, 2], 0), 3, "Solution().longestSubarray([4, 2, 2, 2, 4, 4, 2, 2], 0)")

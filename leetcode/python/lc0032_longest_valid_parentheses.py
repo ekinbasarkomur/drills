@@ -18,12 +18,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().longestValidParentheses('(()') == 2
+    check(Solution().longestValidParentheses('(()'), 2, "Solution().longestValidParentheses('(()')")
 
 
 def test_example_2():
-    assert Solution().longestValidParentheses(')()())') == 4
+    check(Solution().longestValidParentheses(')()())'), 4, "Solution().longestValidParentheses(')()())')")
 
 
 def test_example_3():
-    assert Solution().longestValidParentheses('') == 0
+    check(Solution().longestValidParentheses(''), 0, "Solution().longestValidParentheses('')")

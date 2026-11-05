@@ -18,12 +18,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().maximalSquare([['1', '0', '1', '0', '0'], ['1', '0', '1', '1', '1'], ['1', '1', '1', '1', '1'], ['1', '0', '0', '1', '0']]) == 4
+    check(Solution().maximalSquare([['1', '0', '1', '0', '0'], ['1', '0', '1', '1', '1'], ['1', '1', '1', '1', '1'], ['1', '0', '0', '1', '0']]), 4, "Solution().maximalSquare([['1', '0', '1', '0', '0'], ['1', '0', '1', '1', '1'], ['1', '1', '1', '1', '1'], ['1', '0', '0', '1', '0']])")
 
 
 def test_example_2():
-    assert Solution().maximalSquare([['0', '1'], ['1', '0']]) == 1
+    check(Solution().maximalSquare([['0', '1'], ['1', '0']]), 1, "Solution().maximalSquare([['0', '1'], ['1', '0']])")
 
 
 def test_example_3():
-    assert Solution().maximalSquare([['0']]) == 0
+    check(Solution().maximalSquare([['0']]), 0, "Solution().maximalSquare([['0']])")

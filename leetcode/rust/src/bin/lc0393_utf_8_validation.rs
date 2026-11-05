@@ -26,11 +26,11 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::valid_utf8(vec![197, 130, 1]), true);
+        check_eq!(Solution::valid_utf8(vec![197, 130, 1]), true);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::valid_utf8(vec![235, 140, 4]), false);
+        check_eq!(Solution::valid_utf8(vec![235, 140, 4]), false);
     }
 }

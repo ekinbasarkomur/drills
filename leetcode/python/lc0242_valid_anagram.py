@@ -37,31 +37,31 @@ def is_anagram(*args): return Solution().isAnagram(*args)  # noqa: E704
 
 
 def test_example_1():
-    assert is_anagram("racecar", "carrace") is True
+    check(is_anagram("racecar", "carrace"), True, 'is_anagram("racecar", "carrace")', op="is")
 
 
 def test_example_2():
-    assert is_anagram("jar", "jam") is False
+    check(is_anagram("jar", "jam"), False, 'is_anagram("jar", "jam")', op="is")
 
 
 def test_example_3():
-    assert is_anagram("x", "x") is True
+    check(is_anagram("x", "x"), True, 'is_anagram("x", "x")', op="is")
 
 
 def test_different_lengths():
-    assert is_anagram("ab", "abc") is False
+    check(is_anagram("ab", "abc"), False, 'is_anagram("ab", "abc")', op="is")
 
 
 def test_same_letters_different_counts():
-    assert is_anagram("aab", "abb") is False
+    check(is_anagram("aab", "abb"), False, 'is_anagram("aab", "abb")', op="is")
 
 
 def test_identical_strings():
-    assert is_anagram("anagram", "anagram") is True
+    check(is_anagram("anagram", "anagram"), True, 'is_anagram("anagram", "anagram")', op="is")
 
 
 def test_no_letters_in_common():
-    assert is_anagram("abc", "xyz") is False
+    check(is_anagram("abc", "xyz"), False, 'is_anagram("abc", "xyz")', op="is")
 
 
 if __name__ == "__main__":

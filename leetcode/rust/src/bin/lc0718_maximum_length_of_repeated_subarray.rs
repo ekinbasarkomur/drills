@@ -26,11 +26,11 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::find_length(vec![1, 2, 3, 2, 1], vec![3, 2, 1, 4, 7]), 3);
+        check_eq!(Solution::find_length(vec![1, 2, 3, 2, 1], vec![3, 2, 1, 4, 7]), 3);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::find_length(vec![0, 0, 0, 0, 0], vec![0, 0, 0, 0, 0]), 5);
+        check_eq!(Solution::find_length(vec![0, 0, 0, 0, 0], vec![0, 0, 0, 0, 0]), 5);
     }
 }

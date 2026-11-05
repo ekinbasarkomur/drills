@@ -18,8 +18,8 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().findCircleNum([[1, 1, 0], [1, 1, 0], [0, 0, 1]]) == 2
+    check(Solution().findCircleNum([[1, 1, 0], [1, 1, 0], [0, 0, 1]]), 2, "Solution().findCircleNum([[1, 1, 0], [1, 1, 0], [0, 0, 1]])")
 
 
 def test_example_2():
-    assert Solution().findCircleNum([[1, 0, 0], [0, 1, 0], [0, 0, 1]]) == 3
+    check(Solution().findCircleNum([[1, 0, 0], [0, 1, 0], [0, 0, 1]]), 3, "Solution().findCircleNum([[1, 0, 0], [0, 1, 0], [0, 0, 1]])")

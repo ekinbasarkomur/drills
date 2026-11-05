@@ -24,8 +24,8 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().diameterOfBinaryTree(build_tree([1, 2, 3, 4, 5])) == 3
+    check(Solution().diameterOfBinaryTree(build_tree([1, 2, 3, 4, 5])), 3, "Solution().diameterOfBinaryTree(build_tree([1, 2, 3, 4, 5]))")
 
 
 def test_example_2():
-    assert Solution().diameterOfBinaryTree(build_tree([1, 2])) == 1
+    check(Solution().diameterOfBinaryTree(build_tree([1, 2])), 1, "Solution().diameterOfBinaryTree(build_tree([1, 2]))")

@@ -69,56 +69,56 @@ def expect(triplets: list[list[int]]) -> list[list[int]]:
 
 
 def test_example_1():
-    assert three_sum([-1, 0, 1, 2, -1, -4]) == expect([[-1, -1, 2], [-1, 0, 1]])
+    check(three_sum([-1, 0, 1, 2, -1, -4]), expect([[-1, -1, 2], [-1, 0, 1]]), "three_sum([-1, 0, 1, 2, -1, -4])")
 
 
 def test_example_2():
-    assert three_sum([0, 1, 1]) == expect([])
+    check(three_sum([0, 1, 1]), expect([]), "three_sum([0, 1, 1])")
 
 
 def test_example_3():
-    assert three_sum([0, 0, 0]) == expect([[0, 0, 0]])
+    check(three_sum([0, 0, 0]), expect([[0, 0, 0]]), "three_sum([0, 0, 0])")
 
 
 def test_all_positive_cannot_reach_zero():
-    assert three_sum([1, 2, 3]) == expect([])
+    check(three_sum([1, 2, 3]), expect([]), "three_sum([1, 2, 3])")
 
 
 def test_all_negative_cannot_reach_zero():
-    assert three_sum([-1, -2, -3]) == expect([])
+    check(three_sum([-1, -2, -3]), expect([]), "three_sum([-1, -2, -3])")
 
 
 # Duplicate handling: the same triplet must appear exactly once.
 
 
 def test_four_zeros_yield_one_triplet():
-    assert three_sum([0, 0, 0, 0]) == expect([[0, 0, 0]])
+    check(three_sum([0, 0, 0, 0]), expect([[0, 0, 0]]), "three_sum([0, 0, 0, 0])")
 
 
 def test_a_repeated_value_inside_a_triplet():
-    assert three_sum([-2, 0, 1, 1, 2]) == expect([[-2, 0, 2], [-2, 1, 1]])
+    check(three_sum([-2, 0, 1, 1, 2]), expect([[-2, 0, 2], [-2, 1, 1]]), "three_sum([-2, 0, 1, 1, 2])")
 
 
 def test_many_repeats_many_triplets():
-    assert three_sum([-4, -2, -2, -2, 0, 1, 2, 2, 2, 3, 3, 4, 4, 6, 6]) == expect(
+    check(three_sum([-4, -2, -2, -2, 0, 1, 2, 2, 2, 3, 3, 4, 4, 6, 6]), expect(
         [[-4, -2, 6], [-4, 0, 4], [-4, 1, 3], [-4, 2, 2], [-2, -2, 4], [-2, 0, 2]]
-    )
+    ), "three_sum([-4, -2, -2, -2, 0, 1, 2, 2, 2, 3, 3, 4, 4, 6, 6])")
 
 
 def test_same_values_different_order_in_the_input():
-    assert three_sum([1, -1, 0, 2, -2, 0]) == expect([[-2, 0, 2], [-1, 0, 1]])
+    check(three_sum([1, -1, 0, 2, -2, 0]), expect([[-2, 0, 2], [-1, 0, 1]]), "three_sum([1, -1, 0, 2, -2, 0])")
 
 
 def test_value_range_extremes():
-    assert three_sum([100_000, -100_000, 0]) == expect([[-100_000, 0, 100_000]])
-    assert three_sum([-100_000, 50_000, 50_000]) == expect([[-100_000, 50_000, 50_000]])
+    check(three_sum([100_000, -100_000, 0]), expect([[-100_000, 0, 100_000]]), "three_sum([100_000, -100_000, 0])")
+    check(three_sum([-100_000, 50_000, 50_000]), expect([[-100_000, 50_000, 50_000]]), "three_sum([-100_000, 50_000, 50_000])")
 
 
 def test_largest_allowed_input():
     # 3000 elements, all 1 except three that form the only triplet.
     # An O(n^3) solution will hang here rather than fail.
     nums = [1] * 2997 + [-5, 2, 3]
-    assert three_sum(nums) == expect([[-5, 2, 3]])
+    check(three_sum(nums), expect([[-5, 2, 3]]), "three_sum(nums)")
 
 
 if __name__ == "__main__":

@@ -26,11 +26,11 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::climb_stairs(2), 2);
+        check_eq!(Solution::climb_stairs(2), 2);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::climb_stairs(3), 3);
+        check_eq!(Solution::climb_stairs(3), 3);
     }
 }

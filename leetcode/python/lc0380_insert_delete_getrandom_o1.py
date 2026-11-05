@@ -31,10 +31,10 @@ class RandomizedSet:
 
 def test_example_1():
     obj = RandomizedSet()
-    assert obj.insert(1) == True
-    assert obj.remove(2) == False
-    assert obj.insert(2) == True
+    check(obj.insert(1), True, "obj.insert(1)")
+    check(obj.remove(2), False, "obj.remove(2)")
+    check(obj.insert(2), True, "obj.insert(2)")
     obj.getRandom()
-    assert obj.remove(1) == True
-    assert obj.insert(2) == False
+    check(obj.remove(1), True, "obj.remove(1)")
+    check(obj.insert(2), False, "obj.insert(2)")
     obj.getRandom()

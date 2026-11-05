@@ -18,12 +18,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert deep_sorted(Solution().combinationSum([2, 3, 6, 7], 7)) == deep_sorted([[2, 2, 3], [7]])
+    check(deep_sorted(Solution().combinationSum([2, 3, 6, 7], 7)), deep_sorted([[2, 2, 3], [7]]), "deep_sorted(Solution().combinationSum([2, 3, 6, 7], 7))")
 
 
 def test_example_2():
-    assert deep_sorted(Solution().combinationSum([2, 3, 5], 8)) == deep_sorted([[2, 2, 2, 2], [2, 3, 3], [3, 5]])
+    check(deep_sorted(Solution().combinationSum([2, 3, 5], 8)), deep_sorted([[2, 2, 2, 2], [2, 3, 3], [3, 5]]), "deep_sorted(Solution().combinationSum([2, 3, 5], 8))")
 
 
 def test_example_3():
-    assert deep_sorted(Solution().combinationSum([2], 1)) == deep_sorted([])
+    check(deep_sorted(Solution().combinationSum([2], 1)), deep_sorted([]), "deep_sorted(Solution().combinationSum([2], 1))")

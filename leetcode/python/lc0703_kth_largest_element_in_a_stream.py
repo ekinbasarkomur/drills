@@ -30,69 +30,69 @@ class KthLargest:
 
 def test_example_1():
     s = KthLargest(3, [1, 2, 3, 3])
-    assert s.add(3) == 3
-    assert s.add(5) == 3
-    assert s.add(6) == 3
-    assert s.add(7) == 5
-    assert s.add(8) == 6
+    check(s.add(3), 3, "s.add(3)")
+    check(s.add(5), 3, "s.add(5)")
+    check(s.add(6), 3, "s.add(6)")
+    check(s.add(7), 5, "s.add(7)")
+    check(s.add(8), 6, "s.add(8)")
 
 
 def test_k_is_one_means_the_running_maximum():
     s = KthLargest(1, [])
-    assert s.add(5) == 5
-    assert s.add(3) == 5
-    assert s.add(9) == 9
+    check(s.add(5), 5, "s.add(5)")
+    check(s.add(3), 5, "s.add(3)")
+    check(s.add(9), 9, "s.add(9)")
 
 
 def test_stream_starts_empty():
     s = KthLargest(2, [])
     s.add(1)
-    assert s.add(2) == 1
-    assert s.add(3) == 2
+    check(s.add(2), 1, "s.add(2)")
+    check(s.add(3), 2, "s.add(3)")
 
 
 def test_initial_array_already_holds_k_values():
     s = KthLargest(3, [4, 5, 8, 2])
-    assert s.add(3) == 4
-    assert s.add(5) == 5
-    assert s.add(10) == 5
-    assert s.add(9) == 8
+    check(s.add(3), 4, "s.add(3)")
+    check(s.add(5), 5, "s.add(5)")
+    check(s.add(10), 5, "s.add(10)")
+    check(s.add(9), 8, "s.add(9)")
 
 
 def test_duplicates_count_separately():
     s = KthLargest(2, [3, 3])
-    assert s.add(3) == 3
-    assert s.add(4) == 3
+    check(s.add(3), 3, "s.add(3)")
+    check(s.add(4), 3, "s.add(4)")
 
 
 def test_everything_added_is_smaller():
     s = KthLargest(2, [10, 20, 30])
-    assert s.add(1) == 20
-    assert s.add(2) == 20
+    check(s.add(1), 20, "s.add(1)")
+    check(s.add(2), 20, "s.add(2)")
 
 
 def test_negative_values():
     s = KthLargest(2, [-5, -3, -1])
-    assert s.add(-4) == -3
-    assert s.add(0) == -1
+    check(s.add(-4), -3, "s.add(-4)")
+    check(s.add(0), -1, "s.add(0)")
 
 
 def test_all_values_equal():
     s = KthLargest(3, [7, 7, 7])
-    assert s.add(7) == 7
-    assert s.add(8) == 7
+    check(s.add(7), 7, "s.add(7)")
+    check(s.add(8), 7, "s.add(8)")
 
 
 def test_value_range_extremes():
     s = KthLargest(2, [-1000, 1000])
-    assert s.add(0) == 0
-    assert s.add(1000) == 1000
+    check(s.add(0), 0, "s.add(0)")
+    check(s.add(1000), 1000, "s.add(1000)")
 
 
 def test_k_equals_the_stream_length():
     s = KthLargest(3, [1, 2])
-    assert s.add(3) == 1
-    assert s.add(4) == 2
+    check(s.add(3), 1, "s.add(3)")
+    check(s.add(4), 2, "s.add(4)")
 
 
 def test_many_operations():
@@ -102,4 +102,4 @@ def test_many_operations():
     last = 0
     for i in range(1000, 0, -1):
         last = s.add(i)
-    assert last == 1
+    check(last, 1, "last")

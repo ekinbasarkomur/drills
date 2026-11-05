@@ -75,68 +75,68 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(longest(&[2, 20, 4, 10, 3, 4, 5]), 4);
+        check_eq!(longest(&[2, 20, 4, 10, 3, 4, 5]), 4);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(longest(&[0, 3, 2, 5, 4, 6, 1, 1]), 7);
+        check_eq!(longest(&[0, 3, 2, 5, 4, 6, 1, 1]), 7);
     }
 
     #[test]
     fn empty_array() {
-        assert_eq!(longest(&[]), 0);
+        check_eq!(longest(&[]), 0);
     }
 
     #[test]
     fn single_element() {
-        assert_eq!(longest(&[7]), 1);
+        check_eq!(longest(&[7]), 1);
     }
 
     #[test]
     fn all_duplicates_of_one_value() {
-        assert_eq!(longest(&[5, 5, 5, 5]), 1);
+        check_eq!(longest(&[5, 5, 5, 5]), 1);
     }
 
     #[test]
     fn no_two_numbers_are_consecutive() {
-        assert_eq!(longest(&[10, 30, 50, 70]), 1);
+        check_eq!(longest(&[10, 30, 50, 70]), 1);
     }
 
     #[test]
     fn already_sorted() {
-        assert_eq!(longest(&[1, 2, 3, 4, 5]), 5);
+        check_eq!(longest(&[1, 2, 3, 4, 5]), 5);
     }
 
     #[test]
     fn given_in_descending_order() {
-        assert_eq!(longest(&[5, 4, 3, 2, 1]), 5);
+        check_eq!(longest(&[5, 4, 3, 2, 1]), 5);
     }
 
     #[test]
     fn two_runs_and_the_longer_one_comes_second() {
-        assert_eq!(longest(&[1, 2, 3, 100, 101, 102, 103]), 4);
+        check_eq!(longest(&[1, 2, 3, 100, 101, 102, 103]), 4);
     }
 
     #[test]
     fn negative_numbers() {
-        assert_eq!(longest(&[-3, -2, -1, 0, 1]), 5);
+        check_eq!(longest(&[-3, -2, -1, 0, 1]), 5);
     }
 
     #[test]
     fn run_straddling_zero_with_a_gap() {
-        assert_eq!(longest(&[-5, -4, 100, -3, 7, -1, 0]), 3);
+        check_eq!(longest(&[-5, -4, 100, -3, 7, -1, 0]), 3);
     }
 
     #[test]
     fn value_range_extremes() {
         // watch out for overflow: num + 1 on i32::MAX would wrap
-        assert_eq!(longest(&[1_000_000_000, 999_999_999, -1_000_000_000]), 2);
+        check_eq!(longest(&[1_000_000_000, 999_999_999, -1_000_000_000]), 2);
     }
 
     #[test]
     fn duplicates_inside_a_run_do_not_inflate_it() {
-        assert_eq!(longest(&[1, 2, 2, 3, 3, 3, 4]), 4);
+        check_eq!(longest(&[1, 2, 2, 3, 3, 3, 4]), 4);
     }
 
     #[test]
@@ -156,6 +156,6 @@ mod tests {
             nums.swap(i, j);
         }
 
-        assert_eq!(longest(&nums), n);
+        check_eq!(longest(&nums), n);
     }
 }

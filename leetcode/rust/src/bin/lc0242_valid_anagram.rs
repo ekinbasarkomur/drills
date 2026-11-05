@@ -53,36 +53,36 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert!(is_anagram("racecar", "carrace"));
+        check!(is_anagram("racecar", "carrace"));
     }
 
     #[test]
     fn example_2() {
-        assert!(!is_anagram("jar", "jam"));
+        check!(!is_anagram("jar", "jam"));
     }
 
     #[test]
     fn example_3() {
-        assert!(is_anagram("x", "x"));
+        check!(is_anagram("x", "x"));
     }
 
     #[test]
     fn different_lengths() {
-        assert!(!is_anagram("ab", "abc"));
+        check!(!is_anagram("ab", "abc"));
     }
 
     #[test]
     fn same_letters_different_counts() {
-        assert!(!is_anagram("aab", "abb"));
+        check!(!is_anagram("aab", "abb"));
     }
 
     #[test]
     fn identical_strings() {
-        assert!(is_anagram("anagram", "anagram"));
+        check!(is_anagram("anagram", "anagram"));
     }
 
     #[test]
     fn no_letters_in_common() {
-        assert!(!is_anagram("abc", "xyz"));
+        check!(!is_anagram("abc", "xyz"));
     }
 }

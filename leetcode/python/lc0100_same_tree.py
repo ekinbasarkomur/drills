@@ -24,12 +24,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().isSameTree(build_tree([1, 2, 3]), build_tree([1, 2, 3])) == True
+    check(Solution().isSameTree(build_tree([1, 2, 3]), build_tree([1, 2, 3])), True, "Solution().isSameTree(build_tree([1, 2, 3]), build_tree([1, 2, 3]))")
 
 
 def test_example_2():
-    assert Solution().isSameTree(build_tree([1, 2]), build_tree([1, None, 2])) == False
+    check(Solution().isSameTree(build_tree([1, 2]), build_tree([1, None, 2])), False, "Solution().isSameTree(build_tree([1, 2]), build_tree([1, None, 2]))")
 
 
 def test_example_3():
-    assert Solution().isSameTree(build_tree([1, 2, 1]), build_tree([1, 1, 2])) == False
+    check(Solution().isSameTree(build_tree([1, 2, 1]), build_tree([1, 1, 2])), False, "Solution().isSameTree(build_tree([1, 2, 1]), build_tree([1, 1, 2]))")

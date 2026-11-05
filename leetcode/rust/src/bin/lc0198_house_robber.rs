@@ -26,11 +26,11 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::rob(vec![1, 2, 3, 1]), 4);
+        check_eq!(Solution::rob(vec![1, 2, 3, 1]), 4);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::rob(vec![2, 7, 9, 3, 1]), 12);
+        check_eq!(Solution::rob(vec![2, 7, 9, 3, 1]), 12);
     }
 }

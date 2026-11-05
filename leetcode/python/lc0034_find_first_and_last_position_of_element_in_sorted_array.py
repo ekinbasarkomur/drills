@@ -18,12 +18,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().searchRange([5, 7, 7, 8, 8, 10], 8) == [3, 4]
+    check(Solution().searchRange([5, 7, 7, 8, 8, 10], 8), [3, 4], "Solution().searchRange([5, 7, 7, 8, 8, 10], 8)")
 
 
 def test_example_2():
-    assert Solution().searchRange([5, 7, 7, 8, 8, 10], 6) == [-1, -1]
+    check(Solution().searchRange([5, 7, 7, 8, 8, 10], 6), [-1, -1], "Solution().searchRange([5, 7, 7, 8, 8, 10], 6)")
 
 
 def test_example_3():
-    assert Solution().searchRange([], 0) == [-1, -1]
+    check(Solution().searchRange([], 0), [-1, -1], "Solution().searchRange([], 0)")

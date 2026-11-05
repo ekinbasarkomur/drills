@@ -18,12 +18,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().pivotIndex([1, 7, 3, 6, 5, 6]) == 3
+    check(Solution().pivotIndex([1, 7, 3, 6, 5, 6]), 3, "Solution().pivotIndex([1, 7, 3, 6, 5, 6])")
 
 
 def test_example_2():
-    assert Solution().pivotIndex([1, 2, 3]) == -1
+    check(Solution().pivotIndex([1, 2, 3]), -1, "Solution().pivotIndex([1, 2, 3])")
 
 
 def test_example_3():
-    assert Solution().pivotIndex([2, 1, -1]) == 0
+    check(Solution().pivotIndex([2, 1, -1]), 0, "Solution().pivotIndex([2, 1, -1])")

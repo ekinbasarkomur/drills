@@ -27,12 +27,12 @@ mod tests {
     #[test]
     fn example_1() {
         let want: String = "6".to_string();
-        assert_eq!(Solution::multiply("2".to_string(), "3".to_string()), want);
+        check_eq!(Solution::multiply("2".to_string(), "3".to_string()), want);
     }
 
     #[test]
     fn example_2() {
         let want: String = "56088".to_string();
-        assert_eq!(Solution::multiply("123".to_string(), "456".to_string()), want);
+        check_eq!(Solution::multiply("123".to_string(), "456".to_string()), want);
     }
 }

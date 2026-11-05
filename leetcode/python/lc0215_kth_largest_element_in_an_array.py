@@ -18,8 +18,8 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().findKthLargest([3, 2, 1, 5, 6, 4], 2) == 5
+    check(Solution().findKthLargest([3, 2, 1, 5, 6, 4], 2), 5, "Solution().findKthLargest([3, 2, 1, 5, 6, 4], 2)")
 
 
 def test_example_2():
-    assert Solution().findKthLargest([3, 2, 3, 1, 2, 4, 5, 5, 6], 4) == 4
+    check(Solution().findKthLargest([3, 2, 3, 1, 2, 4, 5, 5, 6], 4), 4, "Solution().findKthLargest([3, 2, 3, 1, 2, 4, 5, 5, 6], 4)")

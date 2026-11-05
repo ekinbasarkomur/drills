@@ -34,9 +34,9 @@ def test_example_1():
     obj.add(1)
     obj.add(2)
     obj.add(3)
-    assert obj.search(0) == False
+    check(obj.search(0), False, "obj.search(0)")
     obj.add(4)
-    assert obj.search(1) == True
-    assert obj.erase(0) == False
-    assert obj.erase(1) == True
-    assert obj.search(1) == False
+    check(obj.search(1), True, "obj.search(1)")
+    check(obj.erase(0), False, "obj.erase(0)")
+    check(obj.erase(1), True, "obj.erase(1)")
+    check(obj.search(1), False, "obj.search(1)")

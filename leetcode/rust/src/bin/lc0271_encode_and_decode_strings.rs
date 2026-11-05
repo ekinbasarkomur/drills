@@ -74,7 +74,7 @@ mod tests {
         let original: Vec<String> = input.iter().map(|s| s.to_string()).collect();
         let encoded = codec.encode(original.clone());
         let decoded = codec.decode(encoded);
-        assert_eq!(decoded, original);
+        check_eq!(decoded, original);
     }
 
     #[test]

@@ -18,8 +18,8 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().nextGreaterElement([4, 1, 2], [1, 3, 4, 2]) == [-1, 3, -1]
+    check(Solution().nextGreaterElement([4, 1, 2], [1, 3, 4, 2]), [-1, 3, -1], "Solution().nextGreaterElement([4, 1, 2], [1, 3, 4, 2])")
 
 
 def test_example_2():
-    assert Solution().nextGreaterElement([2, 4], [1, 2, 3, 4]) == [3, -1]
+    check(Solution().nextGreaterElement([2, 4], [1, 2, 3, 4]), [3, -1], "Solution().nextGreaterElement([2, 4], [1, 2, 3, 4])")

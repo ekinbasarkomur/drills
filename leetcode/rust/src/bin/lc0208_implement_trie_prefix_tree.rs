@@ -56,10 +56,10 @@ mod tests {
     fn example_1() {
         let mut obj = Trie::new();
         obj.insert("apple".to_string());
-        assert_eq!(obj.search("apple".to_string()), true);
-        assert_eq!(obj.search("app".to_string()), false);
-        assert_eq!(obj.starts_with("app".to_string()), true);
+        check_eq!(obj.search("apple".to_string()), true);
+        check_eq!(obj.search("app".to_string()), false);
+        check_eq!(obj.starts_with("app".to_string()), true);
         obj.insert("app".to_string());
-        assert_eq!(obj.search("app".to_string()), true);
+        check_eq!(obj.search("app".to_string()), true);
     }
 }

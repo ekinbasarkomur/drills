@@ -24,12 +24,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().levelOrder(build_tree([3, 9, 20, None, None, 15, 7])) == [[3], [9, 20], [15, 7]]
+    check(Solution().levelOrder(build_tree([3, 9, 20, None, None, 15, 7])), [[3], [9, 20], [15, 7]], "Solution().levelOrder(build_tree([3, 9, 20, None, None, 15, 7]))")
 
 
 def test_example_2():
-    assert Solution().levelOrder(build_tree([1])) == [[1]]
+    check(Solution().levelOrder(build_tree([1])), [[1]], "Solution().levelOrder(build_tree([1]))")
 
 
 def test_example_3():
-    assert Solution().levelOrder(build_tree([])) == []
+    check(Solution().levelOrder(build_tree([])), [], "Solution().levelOrder(build_tree([]))")

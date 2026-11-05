@@ -18,12 +18,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert close(Solution().maxProbability(3, [[0, 1], [1, 2], [0, 2]], [0.5, 0.5, 0.2], 0, 2), 0.25)
+    check_true(close(Solution().maxProbability(3, [[0, 1], [1, 2], [0, 2]], [0.5, 0.5, 0.2], 0, 2), 0.25), "close(Solution().maxProbability(3, [[0, 1], [1, 2], [0, 2]], [0.5, 0.5, 0.2], 0, 2), 0.25)")
 
 
 def test_example_2():
-    assert close(Solution().maxProbability(3, [[0, 1], [1, 2], [0, 2]], [0.5, 0.5, 0.3], 0, 2), 0.3)
+    check_true(close(Solution().maxProbability(3, [[0, 1], [1, 2], [0, 2]], [0.5, 0.5, 0.3], 0, 2), 0.3), "close(Solution().maxProbability(3, [[0, 1], [1, 2], [0, 2]], [0.5, 0.5, 0.3], 0, 2), 0.3)")
 
 
 def test_example_3():
-    assert close(Solution().maxProbability(3, [[0, 1]], [0.5], 0, 2), 0.0)
+    check_true(close(Solution().maxProbability(3, [[0, 1]], [0.5], 0, 2), 0.0), "close(Solution().maxProbability(3, [[0, 1]], [0.5], 0, 2), 0.0)")

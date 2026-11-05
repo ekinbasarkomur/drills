@@ -30,49 +30,49 @@ def daily_temperatures(temperatures: List[int]) -> List[int]:
 
 
 def test_example_1():
-    assert daily_temperatures([30, 38, 30, 36, 35, 40, 28]) == [1, 4, 1, 2, 1, 0, 0]
+    check(daily_temperatures([30, 38, 30, 36, 35, 40, 28]), [1, 4, 1, 2, 1, 0, 0], "daily_temperatures([30, 38, 30, 36, 35, 40, 28])")
 
 
 def test_example_2():
     # it only ever gets colder
-    assert daily_temperatures([22, 21, 20]) == [0, 0, 0]
+    check(daily_temperatures([22, 21, 20]), [0, 0, 0], "daily_temperatures([22, 21, 20])")
 
 
 def test_single_day():
-    assert daily_temperatures([50]) == [0]
+    check(daily_temperatures([50]), [0], "daily_temperatures([50])")
 
 
 def test_two_days_warming():
-    assert daily_temperatures([1, 2]) == [1, 0]
+    check(daily_temperatures([1, 2]), [1, 0], "daily_temperatures([1, 2])")
 
 
 def test_two_days_cooling():
-    assert daily_temperatures([2, 1]) == [0, 0]
+    check(daily_temperatures([2, 1]), [0, 0], "daily_temperatures([2, 1])")
 
 
 def test_flat_week():
     # equal is not warmer
-    assert daily_temperatures([5, 5, 5]) == [0, 0, 0]
+    check(daily_temperatures([5, 5, 5]), [0, 0, 0], "daily_temperatures([5, 5, 5])")
 
 
 def test_the_classic_leetcode_case():
-    assert daily_temperatures([73, 74, 75, 71, 69, 72, 76, 73]) == [1, 1, 4, 2, 1, 1, 0, 0]
+    check(daily_temperatures([73, 74, 75, 71, 69, 72, 76, 73]), [1, 1, 4, 2, 1, 1, 0, 0], "daily_temperatures([73, 74, 75, 71, 69, 72, 76, 73])")
 
 
 def test_one_warm_day_resolves_everything():
-    assert daily_temperatures([1, 1, 1, 100]) == [3, 2, 1, 0]
+    check(daily_temperatures([1, 1, 1, 100]), [3, 2, 1, 0], "daily_temperatures([1, 1, 1, 100])")
 
 
 def test_the_warmest_day_is_first():
-    assert daily_temperatures([100, 1, 1, 1]) == [0, 0, 0, 0]
+    check(daily_temperatures([100, 1, 1, 1]), [0, 0, 0, 0], "daily_temperatures([100, 1, 1, 1])")
 
 
 def test_strictly_ascending():
-    assert daily_temperatures([1, 2, 3, 4, 5]) == [1, 1, 1, 1, 0]
+    check(daily_temperatures([1, 2, 3, 4, 5]), [1, 1, 1, 1, 0], "daily_temperatures([1, 2, 3, 4, 5])")
 
 
 def test_strictly_descending():
-    assert daily_temperatures([5, 4, 3, 2, 1]) == [0, 0, 0, 0, 0]
+    check(daily_temperatures([5, 4, 3, 2, 1]), [0, 0, 0, 0, 0], "daily_temperatures([5, 4, 3, 2, 1])")
 
 
 def test_largest_allowed_input():
@@ -81,7 +81,7 @@ def test_largest_allowed_input():
     temperatures = [50] * 100_000
     temperatures[99_999] = 100
     expected = [99_999 - i for i in range(100_000)]
-    assert daily_temperatures(temperatures) == expected
+    check(daily_temperatures(temperatures), expected, "daily_temperatures(temperatures)")
 
 
 if __name__ == "__main__":

@@ -18,8 +18,8 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().reorganizeString('aab') == 'aba'
+    check(Solution().reorganizeString('aab'), 'aba', "Solution().reorganizeString('aab')")
 
 
 def test_example_2():
-    assert Solution().reorganizeString('aaab') == ''
+    check(Solution().reorganizeString('aaab'), '', "Solution().reorganizeString('aaab')")

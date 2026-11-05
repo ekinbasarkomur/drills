@@ -26,16 +26,16 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::max_subarray_sum_circular(vec![1, -2, 3, -2]), 3);
+        check_eq!(Solution::max_subarray_sum_circular(vec![1, -2, 3, -2]), 3);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::max_subarray_sum_circular(vec![5, -3, 5]), 10);
+        check_eq!(Solution::max_subarray_sum_circular(vec![5, -3, 5]), 10);
     }
 
     #[test]
     fn example_3() {
-        assert_eq!(Solution::max_subarray_sum_circular(vec![-3, -2, -3]), -2);
+        check_eq!(Solution::max_subarray_sum_circular(vec![-3, -2, -3]), -2);
     }
 }

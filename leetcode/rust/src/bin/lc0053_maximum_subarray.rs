@@ -37,54 +37,54 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(max_sub_array(&[2, -3, 4, -2, 2, 1, -1, 4]), 8);
+        check_eq!(max_sub_array(&[2, -3, 4, -2, 2, 1, -1, 4]), 8);
     }
 
     #[test]
     fn example_2() {
         // the subarray must be non-empty, so 0 is not an answer
-        assert_eq!(max_sub_array(&[-1]), -1);
+        check_eq!(max_sub_array(&[-1]), -1);
     }
 
     #[test]
     fn single_positive() {
-        assert_eq!(max_sub_array(&[1]), 1);
+        check_eq!(max_sub_array(&[1]), 1);
     }
 
     #[test]
     fn single_zero() {
-        assert_eq!(max_sub_array(&[0]), 0);
+        check_eq!(max_sub_array(&[0]), 0);
     }
 
     #[test]
     fn the_classic_leetcode_case() {
-        assert_eq!(max_sub_array(&[-2, 1, -3, 4, -1, 2, 1, -5, 4]), 6);
+        check_eq!(max_sub_array(&[-2, 1, -3, 4, -1, 2, 1, -5, 4]), 6);
     }
 
     #[test]
     fn every_value_negative() {
         // take the least bad one
-        assert_eq!(max_sub_array(&[-1, -2, -3]), -1);
+        check_eq!(max_sub_array(&[-1, -2, -3]), -1);
     }
 
     #[test]
     fn a_dip_worth_crossing() {
-        assert_eq!(max_sub_array(&[5, 4, -1, 7, 8]), 23);
+        check_eq!(max_sub_array(&[5, 4, -1, 7, 8]), 23);
     }
 
     #[test]
     fn alternating_signs() {
-        assert_eq!(max_sub_array(&[1, -1, 1, -1, 1]), 1);
+        check_eq!(max_sub_array(&[1, -1, 1, -1, 1]), 1);
     }
 
     #[test]
     fn value_range_low() {
-        assert_eq!(max_sub_array(&[-10000]), -10000);
+        check_eq!(max_sub_array(&[-10000]), -10000);
     }
 
     #[test]
     fn value_range_high() {
-        assert_eq!(max_sub_array(&[10000]), 10000);
+        check_eq!(max_sub_array(&[10000]), 10000);
     }
 
     #[test]
@@ -95,6 +95,6 @@ mod tests {
         let nums: Vec<i32> = (0..100_000)
             .map(|i| if i % 2 == 0 { 10_000 } else { -9_999 })
             .collect();
-        assert_eq!(max_sub_array(&nums), 59999);
+        check_eq!(max_sub_array(&nums), 59999);
     }
 }

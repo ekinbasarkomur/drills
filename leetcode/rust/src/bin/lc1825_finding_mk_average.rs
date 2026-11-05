@@ -52,12 +52,12 @@ mod tests {
         let mut obj = MKAverage::new(3, 1);
         obj.add_element(3);
         obj.add_element(1);
-        assert_eq!(obj.calculate_mk_average(), -1);
+        check_eq!(obj.calculate_mk_average(), -1);
         obj.add_element(10);
-        assert_eq!(obj.calculate_mk_average(), 3);
+        check_eq!(obj.calculate_mk_average(), 3);
         obj.add_element(5);
         obj.add_element(5);
         obj.add_element(5);
-        assert_eq!(obj.calculate_mk_average(), 5);
+        check_eq!(obj.calculate_mk_average(), 5);
     }
 }

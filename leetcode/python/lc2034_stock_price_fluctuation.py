@@ -36,9 +36,9 @@ def test_example_1():
     obj = StockPrice()
     obj.update(1, 10)
     obj.update(2, 5)
-    assert obj.current() == 5
-    assert obj.maximum() == 10
+    check(obj.current(), 5, "obj.current()")
+    check(obj.maximum(), 10, "obj.maximum()")
     obj.update(1, 3)
-    assert obj.maximum() == 5
+    check(obj.maximum(), 5, "obj.maximum()")
     obj.update(4, 2)
-    assert obj.minimum() == 2
+    check(obj.minimum(), 2, "obj.minimum()")

@@ -26,11 +26,11 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert!(approx_eq(Solution::get_min_dist_sum(vec![vec![0, 1], vec![1, 0], vec![1, 2], vec![2, 1]]), 4.0));
+        check!(approx_eq(Solution::get_min_dist_sum(vec![vec![0, 1], vec![1, 0], vec![1, 2], vec![2, 1]]), 4.0));
     }
 
     #[test]
     fn example_2() {
-        assert!(approx_eq(Solution::get_min_dist_sum(vec![vec![1, 1], vec![3, 3]]), 2.82843));
+        check!(approx_eq(Solution::get_min_dist_sum(vec![vec![1, 1], vec![3, 3]]), 2.82843));
     }
 }

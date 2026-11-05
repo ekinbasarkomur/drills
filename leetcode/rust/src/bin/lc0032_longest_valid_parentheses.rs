@@ -26,16 +26,16 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::longest_valid_parentheses("(()".to_string()), 2);
+        check_eq!(Solution::longest_valid_parentheses("(()".to_string()), 2);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::longest_valid_parentheses(")()())".to_string()), 4);
+        check_eq!(Solution::longest_valid_parentheses(")()())".to_string()), 4);
     }
 
     #[test]
     fn example_3() {
-        assert_eq!(Solution::longest_valid_parentheses("".to_string()), 0);
+        check_eq!(Solution::longest_valid_parentheses("".to_string()), 0);
     }
 }

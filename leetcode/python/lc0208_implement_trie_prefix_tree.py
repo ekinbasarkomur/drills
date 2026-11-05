@@ -32,8 +32,8 @@ class Trie:
 def test_example_1():
     obj = Trie()
     obj.insert('apple')
-    assert obj.search('apple') == True
-    assert obj.search('app') == False
-    assert obj.startsWith('app') == True
+    check(obj.search('apple'), True, "obj.search('apple')")
+    check(obj.search('app'), False, "obj.search('app')")
+    check(obj.startsWith('app'), True, "obj.startsWith('app')")
     obj.insert('app')
-    assert obj.search('app') == True
+    check(obj.search('app'), True, "obj.search('app')")

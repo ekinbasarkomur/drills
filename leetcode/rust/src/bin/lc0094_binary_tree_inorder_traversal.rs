@@ -47,24 +47,24 @@ mod tests {
     #[test]
     fn example_1() {
         let want: Vec<i32> = vec![1, 3, 2];
-        assert_eq!(Solution::inorder_traversal(build_tree(&[Some(1), None, Some(2), Some(3)])), want);
+        check_eq!(Solution::inorder_traversal(build_tree(&[Some(1), None, Some(2), Some(3)])), want);
     }
 
     #[test]
     fn example_2() {
         let want: Vec<i32> = vec![4, 2, 6, 5, 7, 1, 3, 9, 8];
-        assert_eq!(Solution::inorder_traversal(build_tree(&[Some(1), Some(2), Some(3), Some(4), Some(5), None, Some(8), None, None, Some(6), Some(7), Some(9)])), want);
+        check_eq!(Solution::inorder_traversal(build_tree(&[Some(1), Some(2), Some(3), Some(4), Some(5), None, Some(8), None, None, Some(6), Some(7), Some(9)])), want);
     }
 
     #[test]
     fn example_3() {
         let want: Vec<i32> = vec![];
-        assert_eq!(Solution::inorder_traversal(build_tree(&[])), want);
+        check_eq!(Solution::inorder_traversal(build_tree(&[])), want);
     }
 
     #[test]
     fn example_4() {
         let want: Vec<i32> = vec![1];
-        assert_eq!(Solution::inorder_traversal(build_tree(&[Some(1)])), want);
+        check_eq!(Solution::inorder_traversal(build_tree(&[Some(1)])), want);
     }
 }

@@ -27,18 +27,18 @@ mod tests {
     #[test]
     fn example_1() {
         let want: String = "0.5".to_string();
-        assert_eq!(Solution::fraction_to_decimal(1, 2), want);
+        check_eq!(Solution::fraction_to_decimal(1, 2), want);
     }
 
     #[test]
     fn example_2() {
         let want: String = "2".to_string();
-        assert_eq!(Solution::fraction_to_decimal(2, 1), want);
+        check_eq!(Solution::fraction_to_decimal(2, 1), want);
     }
 
     #[test]
     fn example_3() {
         let want: String = "0.(012)".to_string();
-        assert_eq!(Solution::fraction_to_decimal(4, 333), want);
+        check_eq!(Solution::fraction_to_decimal(4, 333), want);
     }
 }

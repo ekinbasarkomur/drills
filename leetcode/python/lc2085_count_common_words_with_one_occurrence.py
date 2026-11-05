@@ -18,12 +18,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().countWords(['leetcode', 'is', 'amazing', 'as', 'is'], ['amazing', 'leetcode', 'is']) == 2
+    check(Solution().countWords(['leetcode', 'is', 'amazing', 'as', 'is'], ['amazing', 'leetcode', 'is']), 2, "Solution().countWords(['leetcode', 'is', 'amazing', 'as', 'is'], ['amazing', 'leetcode', 'is'])")
 
 
 def test_example_2():
-    assert Solution().countWords(['b', 'bb', 'bbb'], ['a', 'aa', 'aaa']) == 0
+    check(Solution().countWords(['b', 'bb', 'bbb'], ['a', 'aa', 'aaa']), 0, "Solution().countWords(['b', 'bb', 'bbb'], ['a', 'aa', 'aaa'])")
 
 
 def test_example_3():
-    assert Solution().countWords(['a', 'ab'], ['a', 'a', 'a', 'ab']) == 1
+    check(Solution().countWords(['a', 'ab'], ['a', 'a', 'a', 'ab']), 1, "Solution().countWords(['a', 'ab'], ['a', 'a', 'a', 'ab'])")

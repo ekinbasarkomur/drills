@@ -40,51 +40,51 @@ def two_sum(numbers: list[int], target: int) -> list[int]:
 
 
 def test_example_1():
-    assert two_sum([1, 2, 3, 4], 3) == [1, 2]
+    check(two_sum([1, 2, 3, 4], 3), [1, 2], "two_sum([1, 2, 3, 4], 3)")
 
 
 def test_example_2():
-    assert two_sum([2, 7, 11, 15], 9) == [1, 2]
+    check(two_sum([2, 7, 11, 15], 9), [1, 2], "two_sum([2, 7, 11, 15], 9)")
 
 
 def test_example_3():
-    assert two_sum([2, 3, 4], 6) == [1, 3]
+    check(two_sum([2, 3, 4], 6), [1, 3], "two_sum([2, 3, 4], 6)")
 
 
 def test_shortest_possible_input():
-    assert two_sum([-1, 0], -1) == [1, 2]
+    check(two_sum([-1, 0], -1), [1, 2], "two_sum([-1, 0], -1)")
 
 
 def test_the_two_ends_are_the_answer():
-    assert two_sum([1, 5, 6, 7, 20], 21) == [1, 5]
+    check(two_sum([1, 5, 6, 7, 20], 21), [1, 5], "two_sum([1, 5, 6, 7, 20], 21)")
 
 
 def test_the_answer_sits_in_the_middle():
-    assert two_sum([1, 4, 5, 6, 20], 11) == [3, 4]
+    check(two_sum([1, 4, 5, 6, 20], 11), [3, 4], "two_sum([1, 4, 5, 6, 20], 11)")
 
 
 def test_equal_values_next_to_each_other():
-    assert two_sum([3, 3], 6) == [1, 2]
+    check(two_sum([3, 3], 6), [1, 2], "two_sum([3, 3], 6)")
 
 
 def test_repeated_values_around_the_answer():
-    assert two_sum([2, 2, 3, 7], 10) == [3, 4]
+    check(two_sum([2, 2, 3, 7], 10), [3, 4], "two_sum([2, 2, 3, 7], 10)")
 
 
 def test_all_negative():
-    assert two_sum([-9, -7, -3, -1], -4) == [3, 4]
+    check(two_sum([-9, -7, -3, -1], -4), [3, 4], "two_sum([-9, -7, -3, -1], -4)")
 
 
 def test_crossing_zero():
-    assert two_sum([-5, -2, 0, 3, 8], 6) == [2, 5]
+    check(two_sum([-5, -2, 0, 3, 8], 6), [2, 5], "two_sum([-5, -2, 0, 3, 8], 6)")
 
 
 def test_target_is_zero():
-    assert two_sum([-4, -1, 0, 1, 5], 0) == [2, 4]
+    check(two_sum([-4, -1, 0, 1, 5], 0), [2, 4], "two_sum([-4, -1, 0, 1, 5], 0)")
 
 
 def test_value_range_extremes():
-    assert two_sum([-1000, 0, 1000], 0) == [1, 3]
+    check(two_sum([-1000, 0, 1000], 0), [1, 3], "two_sum([-1000, 0, 1000], 0)")
 
 
 def test_largest_allowed_input():
@@ -93,7 +93,7 @@ def test_largest_allowed_input():
     # grinds through the whole array.
     numbers = list(range(1000))
     # 998 + 999 is the only pair reaching 1997, and it sits at the far end
-    assert two_sum(numbers, 1997) == [999, 1000]
+    check(two_sum(numbers, 1997), [999, 1000], "two_sum(numbers, 1997)")
 
 
 if __name__ == "__main__":

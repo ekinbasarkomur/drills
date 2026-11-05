@@ -26,11 +26,11 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert!(approx_eq_vec(&Solution::median_sliding_window(vec![1, 3, -1, -3, 5, 3, 6, 7], 3), &vec![1.0, -1.0, -1.0, 3.0, 5.0, 6.0]));
+        check!(approx_eq_vec(&Solution::median_sliding_window(vec![1, 3, -1, -3, 5, 3, 6, 7], 3), &vec![1.0, -1.0, -1.0, 3.0, 5.0, 6.0]));
     }
 
     #[test]
     fn example_2() {
-        assert!(approx_eq_vec(&Solution::median_sliding_window(vec![1, 2, 3, 4, 2, 3, 1, 4, 2], 3), &vec![2.0, 3.0, 3.0, 3.0, 2.0, 3.0, 2.0]));
+        check!(approx_eq_vec(&Solution::median_sliding_window(vec![1, 2, 3, 4, 2, 3, 1, 4, 2], 3), &vec![2.0, 3.0, 3.0, 3.0, 2.0, 3.0, 2.0]));
     }
 }

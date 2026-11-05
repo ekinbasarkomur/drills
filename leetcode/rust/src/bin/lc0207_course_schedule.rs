@@ -26,11 +26,11 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::can_finish(2, vec![vec![1, 0]]), true);
+        check_eq!(Solution::can_finish(2, vec![vec![1, 0]]), true);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::can_finish(2, vec![vec![1, 0], vec![0, 1]]), false);
+        check_eq!(Solution::can_finish(2, vec![vec![1, 0], vec![0, 1]]), false);
     }
 }

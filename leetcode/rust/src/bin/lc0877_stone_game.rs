@@ -26,11 +26,11 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::stone_game(vec![5, 3, 4, 5]), true);
+        check_eq!(Solution::stone_game(vec![5, 3, 4, 5]), true);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::stone_game(vec![3, 7, 2, 3]), true);
+        check_eq!(Solution::stone_game(vec![3, 7, 2, 3]), true);
     }
 }

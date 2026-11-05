@@ -18,12 +18,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().fullJustify(['This', 'is', 'an', 'example', 'of', 'text', 'justification.'], 16) == ['This    is    an', 'example  of text', 'justification.  ']
+    check(Solution().fullJustify(['This', 'is', 'an', 'example', 'of', 'text', 'justification.'], 16), ['This    is    an', 'example  of text', 'justification.  '], "Solution().fullJustify(['This', 'is', 'an', 'example', 'of', 'text', 'justification.'], 16)")
 
 
 def test_example_2():
-    assert Solution().fullJustify(['What', 'must', 'be', 'acknowledgment', 'shall', 'be'], 16) == ['What   must   be', 'acknowledgment  ', 'shall be        ']
+    check(Solution().fullJustify(['What', 'must', 'be', 'acknowledgment', 'shall', 'be'], 16), ['What   must   be', 'acknowledgment  ', 'shall be        '], "Solution().fullJustify(['What', 'must', 'be', 'acknowledgment', 'shall', 'be'], 16)")
 
 
 def test_example_3():
-    assert Solution().fullJustify(['Science', 'is', 'what', 'we', 'understand', 'well', 'enough', 'to', 'explain', 'to', 'a', 'computer.', 'Art', 'is', 'everything', 'else', 'we', 'do'], 20) == ['Science  is  what we', 'understand      well', 'enough to explain to', 'a  computer.  Art is', 'everything  else  we', 'do                  ']
+    check(Solution().fullJustify(['Science', 'is', 'what', 'we', 'understand', 'well', 'enough', 'to', 'explain', 'to', 'a', 'computer.', 'Art', 'is', 'everything', 'else', 'we', 'do'], 20), ['Science  is  what we', 'understand      well', 'enough to explain to', 'a  computer.  Art is', 'everything  else  we', 'do                  '], "Solution().fullJustify(['Science', 'is', 'what', 'we', 'understand', 'well', 'enough', 'to', 'explain', 'to', 'a', 'computer.', 'Art', 'is', 'everything', 'else', 'we', 'do'], 20)")

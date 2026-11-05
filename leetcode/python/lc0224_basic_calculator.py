@@ -18,12 +18,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().calculate('1 + 1') == 2
+    check(Solution().calculate('1 + 1'), 2, "Solution().calculate('1 + 1')")
 
 
 def test_example_2():
-    assert Solution().calculate(' 2-1 + 2 ') == 3
+    check(Solution().calculate(' 2-1 + 2 '), 3, "Solution().calculate(' 2-1 + 2 ')")
 
 
 def test_example_3():
-    assert Solution().calculate('(1+(4+5+2)-3)+(6+8)') == 23
+    check(Solution().calculate('(1+(4+5+2)-3)+(6+8)'), 23, "Solution().calculate('(1+(4+5+2)-3)+(6+8)')")

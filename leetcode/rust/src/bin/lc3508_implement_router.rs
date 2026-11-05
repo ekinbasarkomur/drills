@@ -55,24 +55,24 @@ mod tests {
     #[test]
     fn example_1() {
         let mut obj = Router::new(3);
-        assert_eq!(obj.add_packet(1, 4, 90), true);
-        assert_eq!(obj.add_packet(2, 5, 90), true);
-        assert_eq!(obj.add_packet(1, 4, 90), false);
-        assert_eq!(obj.add_packet(3, 5, 95), true);
-        assert_eq!(obj.add_packet(4, 5, 105), true);
+        check_eq!(obj.add_packet(1, 4, 90), true);
+        check_eq!(obj.add_packet(2, 5, 90), true);
+        check_eq!(obj.add_packet(1, 4, 90), false);
+        check_eq!(obj.add_packet(3, 5, 95), true);
+        check_eq!(obj.add_packet(4, 5, 105), true);
         let want: Vec<i32> = vec![2, 5, 90];
-        assert_eq!(obj.forward_packet(), want);
-        assert_eq!(obj.add_packet(5, 2, 110), true);
-        assert_eq!(obj.get_count(5, 100, 110), 1);
+        check_eq!(obj.forward_packet(), want);
+        check_eq!(obj.add_packet(5, 2, 110), true);
+        check_eq!(obj.get_count(5, 100, 110), 1);
     }
 
     #[test]
     fn example_2() {
         let mut obj = Router::new(2);
-        assert_eq!(obj.add_packet(7, 4, 90), true);
+        check_eq!(obj.add_packet(7, 4, 90), true);
         let want: Vec<i32> = vec![7, 4, 90];
-        assert_eq!(obj.forward_packet(), want);
+        check_eq!(obj.forward_packet(), want);
         let want: Vec<i32> = vec![];
-        assert_eq!(obj.forward_packet(), want);
+        check_eq!(obj.forward_packet(), want);
     }
 }

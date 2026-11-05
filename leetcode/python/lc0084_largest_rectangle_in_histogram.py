@@ -18,8 +18,8 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().largestRectangleArea([2, 1, 5, 6, 2, 3]) == 10
+    check(Solution().largestRectangleArea([2, 1, 5, 6, 2, 3]), 10, "Solution().largestRectangleArea([2, 1, 5, 6, 2, 3])")
 
 
 def test_example_2():
-    assert Solution().largestRectangleArea([2, 4]) == 4
+    check(Solution().largestRectangleArea([2, 4]), 4, "Solution().largestRectangleArea([2, 4])")

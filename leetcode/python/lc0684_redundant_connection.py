@@ -18,8 +18,8 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().findRedundantConnection([[1, 2], [1, 3], [2, 3]]) == [2, 3]
+    check(Solution().findRedundantConnection([[1, 2], [1, 3], [2, 3]]), [2, 3], "Solution().findRedundantConnection([[1, 2], [1, 3], [2, 3]])")
 
 
 def test_example_2():
-    assert Solution().findRedundantConnection([[1, 2], [2, 3], [3, 4], [1, 4], [1, 5]]) == [1, 4]
+    check(Solution().findRedundantConnection([[1, 2], [2, 3], [3, 4], [1, 4], [1, 5]]), [1, 4], "Solution().findRedundantConnection([[1, 2], [2, 3], [3, 4], [1, 4], [1, 5]])")

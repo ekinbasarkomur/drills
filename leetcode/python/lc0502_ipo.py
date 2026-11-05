@@ -18,8 +18,8 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().findMaximizedCapital(2, 0, [1, 2, 3], [0, 1, 1]) == 4
+    check(Solution().findMaximizedCapital(2, 0, [1, 2, 3], [0, 1, 1]), 4, "Solution().findMaximizedCapital(2, 0, [1, 2, 3], [0, 1, 1])")
 
 
 def test_example_2():
-    assert Solution().findMaximizedCapital(3, 0, [1, 2, 3], [0, 1, 2]) == 6
+    check(Solution().findMaximizedCapital(3, 0, [1, 2, 3], [0, 1, 2]), 6, "Solution().findMaximizedCapital(3, 0, [1, 2, 3], [0, 1, 2])")

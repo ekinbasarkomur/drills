@@ -27,12 +27,12 @@ mod tests {
     #[test]
     fn example_1() {
         let want: Vec<i32> = vec![-1, 3, -1];
-        assert_eq!(Solution::next_greater_element(vec![4, 1, 2], vec![1, 3, 4, 2]), want);
+        check_eq!(Solution::next_greater_element(vec![4, 1, 2], vec![1, 3, 4, 2]), want);
     }
 
     #[test]
     fn example_2() {
         let want: Vec<i32> = vec![3, -1];
-        assert_eq!(Solution::next_greater_element(vec![2, 4], vec![1, 2, 3, 4]), want);
+        check_eq!(Solution::next_greater_element(vec![2, 4], vec![1, 2, 3, 4]), want);
     }
 }

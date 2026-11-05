@@ -56,7 +56,7 @@ class Solution:
 
 
 def _board(rows: list[str]) -> list[list[str]]:
-    assert len(rows) == 9 and all(len(r) == 9 for r in rows)
+    check_true(len(rows) == 9 and all(len(r) == 9 for r in rows), "len(rows) == 9 and all(len(r) == 9 for r in rows)")
     return [list(r) for r in rows]
 
 
@@ -92,29 +92,29 @@ EMPTY = ["." * 9] * 9
 
 
 def test_example_1():
-    assert _valid(EXAMPLE_1) is True
+    check(_valid(EXAMPLE_1), True, "_valid(EXAMPLE_1)", op="is")
 
 
 def test_example_2():
     # two 1's in the top-left 3x3 sub-box
-    assert _valid(EXAMPLE_2) is False
+    check(_valid(EXAMPLE_2), False, "_valid(EXAMPLE_2)", op="is")
 
 
 def test_completely_empty_board_is_valid():
-    assert _valid(EMPTY) is True
+    check(_valid(EMPTY), True, "_valid(EMPTY)", op="is")
 
 
 def test_duplicate_in_a_row():
     rows = list(EMPTY)
     rows[0] = "1.......1"
-    assert _valid(rows) is False
+    check(_valid(rows), False, "_valid(rows)", op="is")
 
 
 def test_duplicate_in_a_column_across_different_boxes():
     rows = list(EMPTY)
     rows[0] = "1........"
     rows[4] = "1........"
-    assert _valid(rows) is False
+    check(_valid(rows), False, "_valid(rows)", op="is")
 
 
 def test_duplicate_inside_a_box_only():
@@ -122,7 +122,7 @@ def test_duplicate_inside_a_box_only():
     rows = list(EMPTY)
     rows[0] = "1........"
     rows[1] = ".1......."
-    assert _valid(rows) is False
+    check(_valid(rows), False, "_valid(rows)", op="is")
 
 
 def test_same_digit_in_different_row_column_and_box_is_fine():
@@ -130,18 +130,18 @@ def test_same_digit_in_different_row_column_and_box_is_fine():
     rows[0] = "1........"
     rows[4] = "....1...."
     rows[8] = "........1"
-    assert _valid(rows) is True
+    check(_valid(rows), True, "_valid(rows)", op="is")
 
 
 def test_duplicate_in_the_last_box():
     rows = list(EMPTY)
     rows[7] = ".......9."
     rows[8] = "........9"
-    assert _valid(rows) is False
+    check(_valid(rows), False, "_valid(rows)", op="is")
 
 
 def test_a_solved_board_is_valid():
-    assert _valid([
+    check(_valid([
         "534678912",
         "672195348",
         "198342567",
@@ -151,14 +151,14 @@ def test_a_solved_board_is_valid():
         "961537284",
         "287419635",
         "345286179",
-    ]) is True
+    ]), True, '_valid([ "534678912", "672195348", "198342567", "859761423", "426853791", "713924856", "961537284", "287419635", "345286179", ])', op="is")
 
 
 def test_middle_box_duplicate():
     rows = list(EMPTY)
     rows[3] = "...7....."
     rows[5] = ".....7..."
-    assert _valid(rows) is False
+    check(_valid(rows), False, "_valid(rows)", op="is")
 
 
 if __name__ == "__main__":

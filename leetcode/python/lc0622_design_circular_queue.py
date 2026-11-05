@@ -40,12 +40,12 @@ class MyCircularQueue:
 
 def test_example_1():
     obj = MyCircularQueue(3)
-    assert obj.enQueue(1) == True
-    assert obj.enQueue(2) == True
-    assert obj.enQueue(3) == True
-    assert obj.enQueue(4) == False
-    assert obj.Rear() == 3
-    assert obj.isFull() == True
-    assert obj.deQueue() == True
-    assert obj.enQueue(4) == True
-    assert obj.Rear() == 4
+    check(obj.enQueue(1), True, "obj.enQueue(1)")
+    check(obj.enQueue(2), True, "obj.enQueue(2)")
+    check(obj.enQueue(3), True, "obj.enQueue(3)")
+    check(obj.enQueue(4), False, "obj.enQueue(4)")
+    check(obj.Rear(), 3, "obj.Rear()")
+    check(obj.isFull(), True, "obj.isFull()")
+    check(obj.deQueue(), True, "obj.deQueue()")
+    check(obj.enQueue(4), True, "obj.enQueue(4)")
+    check(obj.Rear(), 4, "obj.Rear()")

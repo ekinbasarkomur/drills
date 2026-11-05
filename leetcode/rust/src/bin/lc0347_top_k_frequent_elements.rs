@@ -60,32 +60,32 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(top_k(&[1, 2, 2, 3, 3, 3], 2), expect(&[2, 3]));
+        check_eq!(top_k(&[1, 2, 2, 3, 3, 3], 2), expect(&[2, 3]));
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(top_k(&[7, 7], 1), expect(&[7]));
+        check_eq!(top_k(&[7, 7], 1), expect(&[7]));
     }
 
     #[test]
     fn single_element() {
-        assert_eq!(top_k(&[1], 1), expect(&[1]));
+        check_eq!(top_k(&[1], 1), expect(&[1]));
     }
 
     #[test]
     fn k_equals_number_of_distinct_values() {
-        assert_eq!(top_k(&[1, 1, 2, 2, 3], 3), expect(&[1, 2, 3]));
+        check_eq!(top_k(&[1, 1, 2, 2, 3], 3), expect(&[1, 2, 3]));
     }
 
     #[test]
     fn negative_values() {
-        assert_eq!(top_k(&[-1, -1, -1, -2, -2, 5], 2), expect(&[-1, -2]));
+        check_eq!(top_k(&[-1, -1, -1, -2, -2, 5], 2), expect(&[-1, -2]));
     }
 
     #[test]
     fn extremes_of_the_value_range() {
-        assert_eq!(
+        check_eq!(
             top_k(&[1000, 1000, -1000, -1000, -1000, 7], 1),
             expect(&[-1000])
         );
@@ -93,11 +93,11 @@ mod tests {
 
     #[test]
     fn least_frequent_values_are_excluded() {
-        assert_eq!(top_k(&[4, 4, 4, 4, 9, 9, 9, 1, 1, 6], 2), expect(&[4, 9]));
+        check_eq!(top_k(&[4, 4, 4, 4, 9, 9, 9, 1, 1, 6], 2), expect(&[4, 9]));
     }
 
     #[test]
     fn every_value_appears_once_except_one() {
-        assert_eq!(top_k(&[5, 6, 7, 8, 8], 1), expect(&[8]));
+        check_eq!(top_k(&[5, 6, 7, 8, 8], 1), expect(&[8]));
     }
 }

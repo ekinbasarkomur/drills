@@ -18,12 +18,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().fractionToDecimal(1, 2) == '0.5'
+    check(Solution().fractionToDecimal(1, 2), '0.5', "Solution().fractionToDecimal(1, 2)")
 
 
 def test_example_2():
-    assert Solution().fractionToDecimal(2, 1) == '2'
+    check(Solution().fractionToDecimal(2, 1), '2', "Solution().fractionToDecimal(2, 1)")
 
 
 def test_example_3():
-    assert Solution().fractionToDecimal(4, 333) == '0.(012)'
+    check(Solution().fractionToDecimal(4, 333), '0.(012)', "Solution().fractionToDecimal(4, 333)")

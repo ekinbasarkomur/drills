@@ -138,3 +138,67 @@ pub fn sort_outer<T: Ord>(mut v: Vec<T>) -> Vec<T> {
 pub fn approx_eq_vec(a: &[f64], b: &[f64]) -> bool {
     a.len() == b.len() && a.iter().zip(b).all(|(x, y)| approx_eq(*x, *y))
 }
+
+/// The test name libtest gave this thread, to name the case in a failure.
+pub fn case_name() -> String {
+    std::thread::current()
+        .name()
+        .unwrap_or("test")
+        .rsplit("::")
+        .next()
+        .unwrap_or("test")
+        .to_string()
+}
+
+/// Breaks the line once per test, before that test's first printed result.
+/// Under `--nocapture` libtest leaves `test tests::example_1 ... ` open on its line, so
+/// without this the first result lands on it and pushes `ok` onto a line of its own;
+/// with it the name, the results and the verdict read as one block.
+pub fn start_case(case: &str) {
+    static LAST: std::sync::Mutex<Option<String>> = std::sync::Mutex::new(None);
+    let mut last = LAST.lock().unwrap_or_else(|e| e.into_inner());
+    if last.as_deref() != Some(case) {
+        println!();
+        *last = Some(case.to_string());
+    }
+}
+
+/// `check_eq!(got, want)` is `assert_eq!` that also prints on the way through,
+/// so a passing run still shows every answer. Needs `cargo test -- --nocapture`,
+/// which `make rust-<id>` already passes.
+#[macro_export]
+macro_rules! check_eq {
+    ($got:expr, $want:expr $(,)?) => {{
+        let got = $got;
+        let want = $want;
+        if got == want {
+            $crate::start_case(&$crate::case_name());
+            println!("  {}  ->  {:?}", stringify!($got), got);
+        } else {
+            panic!(
+                "{}: wrong answer\n  {}\n    got:    {:?}\n    wanted: {:?}",
+                $crate::case_name(),
+                stringify!($got),
+                got,
+                want
+            );
+        }
+    }};
+}
+
+/// `check!(expr)` is `assert!` that prints what it ran.
+#[macro_export]
+macro_rules! check {
+    ($cond:expr $(,)?) => {{
+        if $cond {
+            $crate::start_case(&$crate::case_name());
+            println!("  {}  ->  true", stringify!($cond));
+        } else {
+            panic!(
+                "{}: wrong answer\n  {}\n    got:    false\n    wanted: true",
+                $crate::case_name(),
+                stringify!($cond)
+            );
+        }
+    }};
+}

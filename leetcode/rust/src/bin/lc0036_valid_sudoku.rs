@@ -91,7 +91,7 @@ mod tests {
 
     // Boards are written as nine 9-character strings for readability.
     fn board(rows: [&str; 9]) -> Vec<Vec<char>> {
-        assert!(rows.iter().all(|r| r.len() == 9));
+        check!(rows.iter().all(|r| r.len() == 9));
         rows.iter().map(|row| row.chars().collect()).collect()
     }
 
@@ -127,25 +127,25 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert!(valid(EXAMPLE_1));
+        check!(valid(EXAMPLE_1));
     }
 
     #[test]
     fn example_2() {
         // two 1's in the top-left 3x3 sub-box
-        assert!(!valid(EXAMPLE_2));
+        check!(!valid(EXAMPLE_2));
     }
 
     #[test]
     fn completely_empty_board_is_valid() {
-        assert!(valid(EMPTY));
+        check!(valid(EMPTY));
     }
 
     #[test]
     fn duplicate_in_a_row() {
         let mut rows = EMPTY;
         rows[0] = "1.......1";
-        assert!(!valid(rows));
+        check!(!valid(rows));
     }
 
     #[test]
@@ -153,7 +153,7 @@ mod tests {
         let mut rows = EMPTY;
         rows[0] = "1........";
         rows[4] = "1........";
-        assert!(!valid(rows));
+        check!(!valid(rows));
     }
 
     #[test]
@@ -162,7 +162,7 @@ mod tests {
         let mut rows = EMPTY;
         rows[0] = "1........";
         rows[1] = ".1.......";
-        assert!(!valid(rows));
+        check!(!valid(rows));
     }
 
     #[test]
@@ -171,7 +171,7 @@ mod tests {
         rows[0] = "1........";
         rows[4] = "....1....";
         rows[8] = "........1";
-        assert!(valid(rows));
+        check!(valid(rows));
     }
 
     #[test]
@@ -179,7 +179,7 @@ mod tests {
         let mut rows = EMPTY;
         rows[7] = ".......9.";
         rows[8] = "........9";
-        assert!(!valid(rows));
+        check!(!valid(rows));
     }
 
     #[test]
@@ -187,12 +187,12 @@ mod tests {
         let mut rows = EMPTY;
         rows[3] = "...7.....";
         rows[5] = ".....7...";
-        assert!(!valid(rows));
+        check!(!valid(rows));
     }
 
     #[test]
     fn a_solved_board_is_valid() {
-        assert!(valid([
+        check!(valid([
             "534678912",
             "672195348",
             "198342567",

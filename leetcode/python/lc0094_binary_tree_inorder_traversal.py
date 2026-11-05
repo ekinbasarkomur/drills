@@ -24,16 +24,16 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().inorderTraversal(build_tree([1, None, 2, 3])) == [1, 3, 2]
+    check(Solution().inorderTraversal(build_tree([1, None, 2, 3])), [1, 3, 2], "Solution().inorderTraversal(build_tree([1, None, 2, 3]))")
 
 
 def test_example_2():
-    assert Solution().inorderTraversal(build_tree([1, 2, 3, 4, 5, None, 8, None, None, 6, 7, 9])) == [4, 2, 6, 5, 7, 1, 3, 9, 8]
+    check(Solution().inorderTraversal(build_tree([1, 2, 3, 4, 5, None, 8, None, None, 6, 7, 9])), [4, 2, 6, 5, 7, 1, 3, 9, 8], "Solution().inorderTraversal(build_tree([1, 2, 3, 4, 5, None, 8, None, None, 6, 7, 9]))")
 
 
 def test_example_3():
-    assert Solution().inorderTraversal(build_tree([])) == []
+    check(Solution().inorderTraversal(build_tree([])), [], "Solution().inorderTraversal(build_tree([]))")
 
 
 def test_example_4():
-    assert Solution().inorderTraversal(build_tree([1])) == [1]
+    check(Solution().inorderTraversal(build_tree([1])), [1], "Solution().inorderTraversal(build_tree([1]))")

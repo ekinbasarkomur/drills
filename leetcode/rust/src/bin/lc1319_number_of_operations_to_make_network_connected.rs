@@ -26,16 +26,16 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::make_connected(4, vec![vec![0, 1], vec![0, 2], vec![1, 2]]), 1);
+        check_eq!(Solution::make_connected(4, vec![vec![0, 1], vec![0, 2], vec![1, 2]]), 1);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::make_connected(6, vec![vec![0, 1], vec![0, 2], vec![0, 3], vec![1, 2], vec![1, 3]]), 2);
+        check_eq!(Solution::make_connected(6, vec![vec![0, 1], vec![0, 2], vec![0, 3], vec![1, 2], vec![1, 3]]), 2);
     }
 
     #[test]
     fn example_3() {
-        assert_eq!(Solution::make_connected(6, vec![vec![0, 1], vec![0, 2], vec![0, 3], vec![1, 2]]), -1);
+        check_eq!(Solution::make_connected(6, vec![vec![0, 1], vec![0, 2], vec![0, 3], vec![1, 2]]), -1);
     }
 }

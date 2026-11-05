@@ -18,8 +18,8 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().getSum(1, 2) == 3
+    check(Solution().getSum(1, 2), 3, "Solution().getSum(1, 2)")
 
 
 def test_example_2():
-    assert Solution().getSum(2, 3) == 5
+    check(Solution().getSum(2, 3), 5, "Solution().getSum(2, 3)")

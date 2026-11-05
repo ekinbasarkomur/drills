@@ -26,11 +26,11 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert!(approx_eq(Solution::knight_probability(3, 2, 0, 0), 0.0625));
+        check!(approx_eq(Solution::knight_probability(3, 2, 0, 0), 0.0625));
     }
 
     #[test]
     fn example_2() {
-        assert!(approx_eq(Solution::knight_probability(1, 0, 0, 0), 1.0));
+        check!(approx_eq(Solution::knight_probability(1, 0, 0, 0), 1.0));
     }
 }

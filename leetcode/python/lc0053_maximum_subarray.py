@@ -30,45 +30,45 @@ def max_sub_array(nums: List[int]) -> int:
 
 
 def test_example_1():
-    assert max_sub_array([2, -3, 4, -2, 2, 1, -1, 4]) == 8
+    check(max_sub_array([2, -3, 4, -2, 2, 1, -1, 4]), 8, "max_sub_array([2, -3, 4, -2, 2, 1, -1, 4])")
 
 
 def test_example_2():
     # the subarray must be non-empty, so 0 is not an answer
-    assert max_sub_array([-1]) == -1
+    check(max_sub_array([-1]), -1, "max_sub_array([-1])")
 
 
 def test_single_positive():
-    assert max_sub_array([1]) == 1
+    check(max_sub_array([1]), 1, "max_sub_array([1])")
 
 
 def test_single_zero():
-    assert max_sub_array([0]) == 0
+    check(max_sub_array([0]), 0, "max_sub_array([0])")
 
 
 def test_the_classic_leetcode_case():
-    assert max_sub_array([-2, 1, -3, 4, -1, 2, 1, -5, 4]) == 6
+    check(max_sub_array([-2, 1, -3, 4, -1, 2, 1, -5, 4]), 6, "max_sub_array([-2, 1, -3, 4, -1, 2, 1, -5, 4])")
 
 
 def test_every_value_negative():
     # take the least bad one
-    assert max_sub_array([-1, -2, -3]) == -1
+    check(max_sub_array([-1, -2, -3]), -1, "max_sub_array([-1, -2, -3])")
 
 
 def test_a_dip_worth_crossing():
-    assert max_sub_array([5, 4, -1, 7, 8]) == 23
+    check(max_sub_array([5, 4, -1, 7, 8]), 23, "max_sub_array([5, 4, -1, 7, 8])")
 
 
 def test_alternating_signs():
-    assert max_sub_array([1, -1, 1, -1, 1]) == 1
+    check(max_sub_array([1, -1, 1, -1, 1]), 1, "max_sub_array([1, -1, 1, -1, 1])")
 
 
 def test_value_range_low():
-    assert max_sub_array([-10000]) == -10000
+    check(max_sub_array([-10000]), -10000, "max_sub_array([-10000])")
 
 
 def test_value_range_high():
-    assert max_sub_array([10000]) == 10000
+    check(max_sub_array([10000]), 10000, "max_sub_array([10000])")
 
 
 def test_largest_allowed_input():
@@ -76,7 +76,7 @@ def test_largest_allowed_input():
     # and the best subarray is the whole array.
     # An O(n^2) solution will hang here rather than fail.
     nums = [10_000 if i % 2 == 0 else -9_999 for i in range(100_000)]
-    assert max_sub_array(nums) == 59999
+    check(max_sub_array(nums), 59999, "max_sub_array(nums)")
 
 
 if __name__ == "__main__":

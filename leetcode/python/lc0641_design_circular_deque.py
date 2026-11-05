@@ -46,12 +46,12 @@ class MyCircularDeque:
 
 def test_example_1():
     obj = MyCircularDeque(3)
-    assert obj.insertLast(1) == True
-    assert obj.insertLast(2) == True
-    assert obj.insertFront(3) == True
-    assert obj.insertFront(4) == False
-    assert obj.getRear() == 2
-    assert obj.isFull() == True
-    assert obj.deleteLast() == True
-    assert obj.insertFront(4) == True
-    assert obj.getFront() == 4
+    check(obj.insertLast(1), True, "obj.insertLast(1)")
+    check(obj.insertLast(2), True, "obj.insertLast(2)")
+    check(obj.insertFront(3), True, "obj.insertFront(3)")
+    check(obj.insertFront(4), False, "obj.insertFront(4)")
+    check(obj.getRear(), 2, "obj.getRear()")
+    check(obj.isFull(), True, "obj.isFull()")
+    check(obj.deleteLast(), True, "obj.deleteLast()")
+    check(obj.insertFront(4), True, "obj.insertFront(4)")
+    check(obj.getFront(), 4, "obj.getFront()")

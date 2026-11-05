@@ -57,11 +57,11 @@ mod tests {
         let mut obj = MyHashMap::new();
         obj.put(1, 1);
         obj.put(2, 2);
-        assert_eq!(obj.get(1), 1);
-        assert_eq!(obj.get(3), -1);
+        check_eq!(obj.get(1), 1);
+        check_eq!(obj.get(3), -1);
         obj.put(2, 1);
-        assert_eq!(obj.get(2), 1);
+        check_eq!(obj.get(2), 1);
         obj.remove(2);
-        assert_eq!(obj.get(2), -1);
+        check_eq!(obj.get(2), -1);
     }
 }

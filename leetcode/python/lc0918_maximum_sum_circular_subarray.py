@@ -18,12 +18,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().maxSubarraySumCircular([1, -2, 3, -2]) == 3
+    check(Solution().maxSubarraySumCircular([1, -2, 3, -2]), 3, "Solution().maxSubarraySumCircular([1, -2, 3, -2])")
 
 
 def test_example_2():
-    assert Solution().maxSubarraySumCircular([5, -3, 5]) == 10
+    check(Solution().maxSubarraySumCircular([5, -3, 5]), 10, "Solution().maxSubarraySumCircular([5, -3, 5])")
 
 
 def test_example_3():
-    assert Solution().maxSubarraySumCircular([-3, -2, -3]) == -2
+    check(Solution().maxSubarraySumCircular([-3, -2, -3]), -2, "Solution().maxSubarraySumCircular([-3, -2, -3])")

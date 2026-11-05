@@ -31,18 +31,18 @@ class Router:
 
 def test_example_1():
     obj = Router(3)
-    assert obj.addPacket(1, 4, 90) == True
-    assert obj.addPacket(2, 5, 90) == True
-    assert obj.addPacket(1, 4, 90) == False
-    assert obj.addPacket(3, 5, 95) == True
-    assert obj.addPacket(4, 5, 105) == True
-    assert obj.forwardPacket() == [2, 5, 90]
-    assert obj.addPacket(5, 2, 110) == True
-    assert obj.getCount(5, 100, 110) == 1
+    check(obj.addPacket(1, 4, 90), True, "obj.addPacket(1, 4, 90)")
+    check(obj.addPacket(2, 5, 90), True, "obj.addPacket(2, 5, 90)")
+    check(obj.addPacket(1, 4, 90), False, "obj.addPacket(1, 4, 90)")
+    check(obj.addPacket(3, 5, 95), True, "obj.addPacket(3, 5, 95)")
+    check(obj.addPacket(4, 5, 105), True, "obj.addPacket(4, 5, 105)")
+    check(obj.forwardPacket(), [2, 5, 90], "obj.forwardPacket()")
+    check(obj.addPacket(5, 2, 110), True, "obj.addPacket(5, 2, 110)")
+    check(obj.getCount(5, 100, 110), 1, "obj.getCount(5, 100, 110)")
 
 
 def test_example_2():
     obj = Router(2)
-    assert obj.addPacket(7, 4, 90) == True
-    assert obj.forwardPacket() == [7, 4, 90]
-    assert obj.forwardPacket() == []
+    check(obj.addPacket(7, 4, 90), True, "obj.addPacket(7, 4, 90)")
+    check(obj.forwardPacket(), [7, 4, 90], "obj.forwardPacket()")
+    check(obj.forwardPacket(), [], "obj.forwardPacket()")

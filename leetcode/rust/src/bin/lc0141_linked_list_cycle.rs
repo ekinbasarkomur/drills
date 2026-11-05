@@ -62,54 +62,54 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert!(has_cycle(&[1, 2, 3, 4], 1));
+        check!(has_cycle(&[1, 2, 3, 4], 1));
     }
 
     #[test]
     fn example_2() {
-        assert!(!has_cycle(&[1, 2], -1));
+        check!(!has_cycle(&[1, 2], -1));
     }
 
     #[test]
     fn empty_list() {
-        assert!(!has_cycle(&[], -1));
+        check!(!has_cycle(&[], -1));
     }
 
     #[test]
     fn single_node_no_cycle() {
-        assert!(!has_cycle(&[1], -1));
+        check!(!has_cycle(&[1], -1));
     }
 
     #[test]
     fn single_node_pointing_at_itself() {
-        assert!(has_cycle(&[1], 0));
+        check!(has_cycle(&[1], 0));
     }
 
     #[test]
     fn cycle_covers_the_whole_list() {
-        assert!(has_cycle(&[1, 2, 3], 0));
+        check!(has_cycle(&[1, 2, 3], 0));
     }
 
     #[test]
     fn cycle_is_just_the_last_node() {
-        assert!(has_cycle(&[1, 2, 3], 2));
+        check!(has_cycle(&[1, 2, 3], 2));
     }
 
     #[test]
     fn repeated_values_are_not_a_cycle() {
         // equal values are not the same node
-        assert!(!has_cycle(&[1, 1, 1, 1], -1));
+        check!(!has_cycle(&[1, 1, 1, 1], -1));
     }
 
     #[test]
     fn long_list_no_cycle() {
         let values: Vec<i32> = (0..1000).collect();
-        assert!(!has_cycle(&values, -1));
+        check!(!has_cycle(&values, -1));
     }
 
     #[test]
     fn long_list_with_a_late_cycle() {
         let values: Vec<i32> = (0..1000).collect();
-        assert!(has_cycle(&values, 999));
+        check!(has_cycle(&values, 999));
     }
 }

@@ -43,44 +43,44 @@ def has_cycle(values: List[int], index: int) -> bool:
 
 
 def test_example_1():
-    assert has_cycle([1, 2, 3, 4], 1) is True
+    check(has_cycle([1, 2, 3, 4], 1), True, "has_cycle([1, 2, 3, 4], 1)", op="is")
 
 
 def test_example_2():
-    assert has_cycle([1, 2], -1) is False
+    check(has_cycle([1, 2], -1), False, "has_cycle([1, 2], -1)", op="is")
 
 
 def test_empty_list():
-    assert has_cycle([], -1) is False
+    check(has_cycle([], -1), False, "has_cycle([], -1)", op="is")
 
 
 def test_single_node_no_cycle():
-    assert has_cycle([1], -1) is False
+    check(has_cycle([1], -1), False, "has_cycle([1], -1)", op="is")
 
 
 def test_single_node_pointing_at_itself():
-    assert has_cycle([1], 0) is True
+    check(has_cycle([1], 0), True, "has_cycle([1], 0)", op="is")
 
 
 def test_cycle_covers_the_whole_list():
-    assert has_cycle([1, 2, 3], 0) is True
+    check(has_cycle([1, 2, 3], 0), True, "has_cycle([1, 2, 3], 0)", op="is")
 
 
 def test_cycle_is_just_the_last_node():
-    assert has_cycle([1, 2, 3], 2) is True
+    check(has_cycle([1, 2, 3], 2), True, "has_cycle([1, 2, 3], 2)", op="is")
 
 
 def test_repeated_values_are_not_a_cycle():
     # equal values are not the same node
-    assert has_cycle([1, 1, 1, 1], -1) is False
+    check(has_cycle([1, 1, 1, 1], -1), False, "has_cycle([1, 1, 1, 1], -1)", op="is")
 
 
 def test_long_list_no_cycle():
-    assert has_cycle(list(range(1000)), -1) is False
+    check(has_cycle(list(range(1000)), -1), False, "has_cycle(list(range(1000)), -1)", op="is")
 
 
 def test_long_list_with_a_late_cycle():
-    assert has_cycle(list(range(1000)), 999) is True
+    check(has_cycle(list(range(1000)), 999), True, "has_cycle(list(range(1000)), 999)", op="is")
 
 
 if __name__ == "__main__":

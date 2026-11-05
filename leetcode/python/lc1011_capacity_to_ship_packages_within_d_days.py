@@ -18,12 +18,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().shipWithinDays([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 5) == 15
+    check(Solution().shipWithinDays([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 5), 15, "Solution().shipWithinDays([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 5)")
 
 
 def test_example_2():
-    assert Solution().shipWithinDays([3, 2, 2, 4, 1, 4], 3) == 6
+    check(Solution().shipWithinDays([3, 2, 2, 4, 1, 4], 3), 6, "Solution().shipWithinDays([3, 2, 2, 4, 1, 4], 3)")
 
 
 def test_example_3():
-    assert Solution().shipWithinDays([1, 2, 3, 1, 1], 4) == 3
+    check(Solution().shipWithinDays([1, 2, 3, 1, 1], 4), 3, "Solution().shipWithinDays([1, 2, 3, 1, 1], 4)")

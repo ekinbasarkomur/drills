@@ -36,9 +36,9 @@ def test_example_1():
     obj = AuctionSystem()
     obj.addBid(1, 7, 5)
     obj.addBid(2, 7, 6)
-    assert obj.getHighestBidder(7) == 2
+    check(obj.getHighestBidder(7), 2, "obj.getHighestBidder(7)")
     obj.updateBid(1, 7, 8)
-    assert obj.getHighestBidder(7) == 1
+    check(obj.getHighestBidder(7), 1, "obj.getHighestBidder(7)")
     obj.removeBid(2, 7)
-    assert obj.getHighestBidder(7) == 1
-    assert obj.getHighestBidder(3) == -1
+    check(obj.getHighestBidder(7), 1, "obj.getHighestBidder(7)")
+    check(obj.getHighestBidder(3), -1, "obj.getHighestBidder(3)")

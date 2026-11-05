@@ -26,11 +26,11 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::car_pooling(vec![vec![2, 1, 5], vec![3, 3, 7]], 4), false);
+        check_eq!(Solution::car_pooling(vec![vec![2, 1, 5], vec![3, 3, 7]], 4), false);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::car_pooling(vec![vec![2, 1, 5], vec![3, 3, 7]], 5), true);
+        check_eq!(Solution::car_pooling(vec![vec![2, 1, 5], vec![3, 3, 7]], 5), true);
     }
 }

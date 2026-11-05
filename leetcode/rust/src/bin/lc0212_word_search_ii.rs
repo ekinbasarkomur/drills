@@ -27,12 +27,12 @@ mod tests {
     #[test]
     fn example_1() {
         let want: Vec<String> = vec!["eat".to_string(), "oath".to_string()];
-        assert_eq!(Solution::find_words(vec![vec!['o', 'a', 'a', 'n'], vec!['e', 't', 'a', 'e'], vec!['i', 'h', 'k', 'r'], vec!['i', 'f', 'l', 'v']], vec!["oath".to_string(), "pea".to_string(), "eat".to_string(), "rain".to_string()]), want);
+        check_eq!(Solution::find_words(vec![vec!['o', 'a', 'a', 'n'], vec!['e', 't', 'a', 'e'], vec!['i', 'h', 'k', 'r'], vec!['i', 'f', 'l', 'v']], vec!["oath".to_string(), "pea".to_string(), "eat".to_string(), "rain".to_string()]), want);
     }
 
     #[test]
     fn example_2() {
         let want: Vec<String> = vec![];
-        assert_eq!(Solution::find_words(vec![vec!['a', 'b'], vec!['c', 'd']], vec!["abcb".to_string()]), want);
+        check_eq!(Solution::find_words(vec![vec!['a', 'b'], vec!['c', 'd']], vec!["abcb".to_string()]), want);
     }
 }

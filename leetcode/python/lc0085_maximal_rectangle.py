@@ -18,12 +18,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().maximalRectangle([['1', '0', '1', '0', '0'], ['1', '0', '1', '1', '1'], ['1', '1', '1', '1', '1'], ['1', '0', '0', '1', '0']]) == 6
+    check(Solution().maximalRectangle([['1', '0', '1', '0', '0'], ['1', '0', '1', '1', '1'], ['1', '1', '1', '1', '1'], ['1', '0', '0', '1', '0']]), 6, "Solution().maximalRectangle([['1', '0', '1', '0', '0'], ['1', '0', '1', '1', '1'], ['1', '1', '1', '1', '1'], ['1', '0', '0', '1', '0']])")
 
 
 def test_example_2():
-    assert Solution().maximalRectangle([['0']]) == 0
+    check(Solution().maximalRectangle([['0']]), 0, "Solution().maximalRectangle([['0']])")
 
 
 def test_example_3():
-    assert Solution().maximalRectangle([['1']]) == 1
+    check(Solution().maximalRectangle([['1']]), 1, "Solution().maximalRectangle([['1']])")

@@ -18,12 +18,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().coinChange([1, 2, 5], 11) == 3
+    check(Solution().coinChange([1, 2, 5], 11), 3, "Solution().coinChange([1, 2, 5], 11)")
 
 
 def test_example_2():
-    assert Solution().coinChange([2], 3) == -1
+    check(Solution().coinChange([2], 3), -1, "Solution().coinChange([2], 3)")
 
 
 def test_example_3():
-    assert Solution().coinChange([1], 0) == 0
+    check(Solution().coinChange([1], 0), 0, "Solution().coinChange([1], 0)")

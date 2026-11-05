@@ -18,12 +18,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().shortestSubarray([1], 1) == 1
+    check(Solution().shortestSubarray([1], 1), 1, "Solution().shortestSubarray([1], 1)")
 
 
 def test_example_2():
-    assert Solution().shortestSubarray([1, 2], 4) == -1
+    check(Solution().shortestSubarray([1, 2], 4), -1, "Solution().shortestSubarray([1, 2], 4)")
 
 
 def test_example_3():
-    assert Solution().shortestSubarray([2, -1, 2], 3) == 3
+    check(Solution().shortestSubarray([2, -1, 2], 3), 3, "Solution().shortestSubarray([2, -1, 2], 3)")

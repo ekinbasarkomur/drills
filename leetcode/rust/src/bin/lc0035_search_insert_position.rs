@@ -26,16 +26,16 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::search_insert(vec![1, 3, 5, 6], 5), 2);
+        check_eq!(Solution::search_insert(vec![1, 3, 5, 6], 5), 2);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::search_insert(vec![1, 3, 5, 6], 2), 1);
+        check_eq!(Solution::search_insert(vec![1, 3, 5, 6], 2), 1);
     }
 
     #[test]
     fn example_3() {
-        assert_eq!(Solution::search_insert(vec![1, 3, 5, 6], 7), 4);
+        check_eq!(Solution::search_insert(vec![1, 3, 5, 6], 7), 4);
     }
 }

@@ -17,10 +17,13 @@ from drills import LABEL, LANGS, LC, ROOT, files_for, is_stub  # noqa: E402
 
 def command(lang: str, path: Path) -> tuple[list[str], Path]:
     if lang == "rust":
-        return ["cargo", "test", "--quiet", "--bin", path.stem], LC / "rust"
+        # --nocapture lets check_eq! print; one thread keeps the lines in order.
+        return ["cargo", "test", "--bin", path.stem,
+                "--", "--nocapture", "--test-threads=1"], LC / "rust"
     if lang == "cpp":
         return ["make", "--no-print-directory", path.stem], LC / "cpp"
-    return ["uv", "run", "--quiet", "pytest", "-q", str(path.relative_to(LC))], LC
+    # -s keeps pytest from swallowing what the tests print on the way through.
+    return ["uv", "run", "--quiet", "pytest", "-q", "-s", "--tb=short", str(path.relative_to(LC))], LC
 
 
 def main():

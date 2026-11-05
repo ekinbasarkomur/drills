@@ -18,12 +18,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().networkDelayTime([[2, 1, 1], [2, 3, 1], [3, 4, 1]], 4, 2) == 2
+    check(Solution().networkDelayTime([[2, 1, 1], [2, 3, 1], [3, 4, 1]], 4, 2), 2, "Solution().networkDelayTime([[2, 1, 1], [2, 3, 1], [3, 4, 1]], 4, 2)")
 
 
 def test_example_2():
-    assert Solution().networkDelayTime([[1, 2, 1]], 2, 1) == 1
+    check(Solution().networkDelayTime([[1, 2, 1]], 2, 1), 1, "Solution().networkDelayTime([[1, 2, 1]], 2, 1)")
 
 
 def test_example_3():
-    assert Solution().networkDelayTime([[1, 2, 1]], 2, 2) == -1
+    check(Solution().networkDelayTime([[1, 2, 1]], 2, 2), -1, "Solution().networkDelayTime([[1, 2, 1]], 2, 2)")

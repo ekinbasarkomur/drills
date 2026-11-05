@@ -18,8 +18,8 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert close(Solution().nthPersonGetsNthSeat(1), 1.0)
+    check_true(close(Solution().nthPersonGetsNthSeat(1), 1.0), "close(Solution().nthPersonGetsNthSeat(1), 1.0)")
 
 
 def test_example_2():
-    assert close(Solution().nthPersonGetsNthSeat(2), 0.5)
+    check_true(close(Solution().nthPersonGetsNthSeat(2), 0.5), "close(Solution().nthPersonGetsNthSeat(2), 0.5)")

@@ -18,8 +18,8 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().multiply('2', '3') == '6'
+    check(Solution().multiply('2', '3'), '6', "Solution().multiply('2', '3')")
 
 
 def test_example_2():
-    assert Solution().multiply('123', '456') == '56088'
+    check(Solution().multiply('123', '456'), '56088', "Solution().multiply('123', '456')")

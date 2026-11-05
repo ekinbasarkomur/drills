@@ -52,7 +52,7 @@ def decode(*args): return Codec().decode(*args)  # noqa: E704
 
 
 def _roundtrip(strs: list[str]) -> None:
-    assert decode(encode(list(strs))) == strs
+    check(decode(encode(list(strs))), strs, "decode(encode(list(strs)))")
 
 
 def test_example_1():

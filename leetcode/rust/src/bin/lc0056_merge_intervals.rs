@@ -48,33 +48,33 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(merge(&[[1, 3], [1, 5], [6, 7]]), expect(&[[1, 5], [6, 7]]));
+        check_eq!(merge(&[[1, 3], [1, 5], [6, 7]]), expect(&[[1, 5], [6, 7]]));
     }
 
     #[test]
     fn example_2() {
         // touching at a single point still merges
-        assert_eq!(merge(&[[1, 2], [2, 3]]), expect(&[[1, 3]]));
+        check_eq!(merge(&[[1, 2], [2, 3]]), expect(&[[1, 3]]));
     }
 
     #[test]
     fn a_single_interval() {
-        assert_eq!(merge(&[[1, 4]]), expect(&[[1, 4]]));
+        check_eq!(merge(&[[1, 4]]), expect(&[[1, 4]]));
     }
 
     #[test]
     fn nothing_overlaps() {
-        assert_eq!(merge(&[[1, 4], [5, 6]]), expect(&[[1, 4], [5, 6]]));
+        check_eq!(merge(&[[1, 4], [5, 6]]), expect(&[[1, 4], [5, 6]]));
     }
 
     #[test]
     fn one_interval_swallows_the_rest() {
-        assert_eq!(merge(&[[1, 10], [2, 3], [4, 5]]), expect(&[[1, 10]]));
+        check_eq!(merge(&[[1, 10], [2, 3], [4, 5]]), expect(&[[1, 10]]));
     }
 
     #[test]
     fn input_arrives_out_of_order() {
-        assert_eq!(
+        check_eq!(
             merge(&[[5, 6], [1, 2], [3, 4]]),
             expect(&[[1, 2], [3, 4], [5, 6]])
         );
@@ -82,22 +82,22 @@ mod tests {
 
     #[test]
     fn a_zero_length_interval() {
-        assert_eq!(merge(&[[0, 0]]), expect(&[[0, 0]]));
+        check_eq!(merge(&[[0, 0]]), expect(&[[0, 0]]));
     }
 
     #[test]
     fn identical_intervals_collapse() {
-        assert_eq!(merge(&[[1, 1], [1, 1]]), expect(&[[1, 1]]));
+        check_eq!(merge(&[[1, 1], [1, 1]]), expect(&[[1, 1]]));
     }
 
     #[test]
     fn value_range_extremes() {
-        assert_eq!(merge(&[[0, 1000]]), expect(&[[0, 1000]]));
+        check_eq!(merge(&[[0, 1000]]), expect(&[[0, 1000]]));
     }
 
     #[test]
     fn a_chain_that_merges_end_to_end() {
-        assert_eq!(
+        check_eq!(
             merge(&[[1, 2], [2, 3], [3, 4], [4, 5]]),
             expect(&[[1, 5]])
         );
@@ -107,13 +107,13 @@ mod tests {
     fn largest_allowed_input_all_merge() {
         // 1000 intervals all starting at 0: they collapse to one.
         let intervals: Vec<[i32; 2]> = (0..1000).map(|i| [0, i]).collect();
-        assert_eq!(merge(&intervals), expect(&[[0, 999]]));
+        check_eq!(merge(&intervals), expect(&[[0, 999]]));
     }
 
     #[test]
     fn largest_allowed_input_none_merge() {
         // 1000 intervals with a gap between each: nothing collapses.
         let intervals: Vec<[i32; 2]> = (0..500).map(|i| [i * 2, i * 2]).collect();
-        assert_eq!(merge(&intervals).len(), 500);
+        check_eq!(merge(&intervals).len(), 500);
     }
 }

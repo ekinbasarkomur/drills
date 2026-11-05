@@ -62,8 +62,8 @@ mod tests {
         let mut obj = MyQueue::new();
         obj.push(1);
         obj.push(2);
-        assert_eq!(obj.peek(), 1);
-        assert_eq!(obj.pop(), 1);
-        assert_eq!(obj.empty(), false);
+        check_eq!(obj.peek(), 1);
+        check_eq!(obj.pop(), 1);
+        check_eq!(obj.empty(), false);
     }
 }

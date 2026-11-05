@@ -18,12 +18,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().singleNumber([2, 2, 1]) == 1
+    check(Solution().singleNumber([2, 2, 1]), 1, "Solution().singleNumber([2, 2, 1])")
 
 
 def test_example_2():
-    assert Solution().singleNumber([4, 1, 2, 1, 2]) == 4
+    check(Solution().singleNumber([4, 1, 2, 1, 2]), 4, "Solution().singleNumber([4, 1, 2, 1, 2])")
 
 
 def test_example_3():
-    assert Solution().singleNumber([1]) == 1
+    check(Solution().singleNumber([1]), 1, "Solution().singleNumber([1])")

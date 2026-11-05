@@ -18,20 +18,20 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().myAtoi('42') == 42
+    check(Solution().myAtoi('42'), 42, "Solution().myAtoi('42')")
 
 
 def test_example_2():
-    assert Solution().myAtoi('   -042') == -42
+    check(Solution().myAtoi('   -042'), -42, "Solution().myAtoi(' -042')")
 
 
 def test_example_3():
-    assert Solution().myAtoi('1337c0d3') == 1337
+    check(Solution().myAtoi('1337c0d3'), 1337, "Solution().myAtoi('1337c0d3')")
 
 
 def test_example_4():
-    assert Solution().myAtoi('0-1') == 0
+    check(Solution().myAtoi('0-1'), 0, "Solution().myAtoi('0-1')")
 
 
 def test_example_5():
-    assert Solution().myAtoi('words and 987') == 0
+    check(Solution().myAtoi('words and 987'), 0, "Solution().myAtoi('words and 987')")

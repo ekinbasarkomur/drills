@@ -33,9 +33,9 @@ def test_example_1():
     obj = MyHashMap()
     obj.put(1, 1)
     obj.put(2, 2)
-    assert obj.get(1) == 1
-    assert obj.get(3) == -1
+    check(obj.get(1), 1, "obj.get(1)")
+    check(obj.get(3), -1, "obj.get(3)")
     obj.put(2, 1)
-    assert obj.get(2) == 1
+    check(obj.get(2), 1, "obj.get(2)")
     obj.remove(2)
-    assert obj.get(2) == -1
+    check(obj.get(2), -1, "obj.get(2)")

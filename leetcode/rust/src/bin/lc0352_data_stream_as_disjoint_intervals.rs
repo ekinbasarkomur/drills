@@ -52,18 +52,18 @@ mod tests {
         let mut obj = SummaryRanges::new();
         obj.add_num(1);
         let want: Vec<Vec<i32>> = vec![vec![1, 1]];
-        assert_eq!(obj.get_intervals(), want);
+        check_eq!(obj.get_intervals(), want);
         obj.add_num(3);
         let want: Vec<Vec<i32>> = vec![vec![1, 1], vec![3, 3]];
-        assert_eq!(obj.get_intervals(), want);
+        check_eq!(obj.get_intervals(), want);
         obj.add_num(7);
         let want: Vec<Vec<i32>> = vec![vec![1, 1], vec![3, 3], vec![7, 7]];
-        assert_eq!(obj.get_intervals(), want);
+        check_eq!(obj.get_intervals(), want);
         obj.add_num(2);
         let want: Vec<Vec<i32>> = vec![vec![1, 3], vec![7, 7]];
-        assert_eq!(obj.get_intervals(), want);
+        check_eq!(obj.get_intervals(), want);
         obj.add_num(6);
         let want: Vec<Vec<i32>> = vec![vec![1, 3], vec![6, 7]];
-        assert_eq!(obj.get_intervals(), want);
+        check_eq!(obj.get_intervals(), want);
     }
 }

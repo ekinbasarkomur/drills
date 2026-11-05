@@ -18,12 +18,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().longestCommonSubsequence('abcde', 'ace') == 3
+    check(Solution().longestCommonSubsequence('abcde', 'ace'), 3, "Solution().longestCommonSubsequence('abcde', 'ace')")
 
 
 def test_example_2():
-    assert Solution().longestCommonSubsequence('abc', 'abc') == 3
+    check(Solution().longestCommonSubsequence('abc', 'abc'), 3, "Solution().longestCommonSubsequence('abc', 'abc')")
 
 
 def test_example_3():
-    assert Solution().longestCommonSubsequence('abc', 'def') == 0
+    check(Solution().longestCommonSubsequence('abc', 'def'), 0, "Solution().longestCommonSubsequence('abc', 'def')")

@@ -61,58 +61,58 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(merged(&[1, 2, 4], &[1, 3, 5]), vec![1, 1, 2, 3, 4, 5]);
+        check_eq!(merged(&[1, 2, 4], &[1, 3, 5]), vec![1, 1, 2, 3, 4, 5]);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(merged(&[], &[1, 2]), vec![1, 2]);
+        check_eq!(merged(&[], &[1, 2]), vec![1, 2]);
     }
 
     #[test]
     fn example_3() {
-        assert_eq!(merged(&[], &[]), vec![]);
+        check_eq!(merged(&[], &[]), vec![]);
     }
 
     #[test]
     fn first_list_empty() {
-        assert_eq!(merged(&[], &[5]), vec![5]);
+        check_eq!(merged(&[], &[5]), vec![5]);
     }
 
     #[test]
     fn second_list_empty() {
-        assert_eq!(merged(&[5], &[]), vec![5]);
+        check_eq!(merged(&[5], &[]), vec![5]);
     }
 
     #[test]
     fn one_list_entirely_precedes_the_other() {
-        assert_eq!(merged(&[1, 2, 3], &[4, 5, 6]), vec![1, 2, 3, 4, 5, 6]);
-        assert_eq!(merged(&[4, 5, 6], &[1, 2, 3]), vec![1, 2, 3, 4, 5, 6]);
+        check_eq!(merged(&[1, 2, 3], &[4, 5, 6]), vec![1, 2, 3, 4, 5, 6]);
+        check_eq!(merged(&[4, 5, 6], &[1, 2, 3]), vec![1, 2, 3, 4, 5, 6]);
     }
 
     #[test]
     fn perfectly_interleaved() {
-        assert_eq!(merged(&[1, 3, 5], &[2, 4, 6]), vec![1, 2, 3, 4, 5, 6]);
+        check_eq!(merged(&[1, 3, 5], &[2, 4, 6]), vec![1, 2, 3, 4, 5, 6]);
     }
 
     #[test]
     fn all_values_equal() {
-        assert_eq!(merged(&[2, 2], &[2, 2]), vec![2, 2, 2, 2]);
+        check_eq!(merged(&[2, 2], &[2, 2]), vec![2, 2, 2, 2]);
     }
 
     #[test]
     fn very_different_lengths() {
-        assert_eq!(merged(&[1], &[2, 3, 4, 5]), vec![1, 2, 3, 4, 5]);
+        check_eq!(merged(&[1], &[2, 3, 4, 5]), vec![1, 2, 3, 4, 5]);
     }
 
     #[test]
     fn negative_values() {
-        assert_eq!(merged(&[-5, -1], &[-3, 0]), vec![-5, -3, -1, 0]);
+        check_eq!(merged(&[-5, -1], &[-3, 0]), vec![-5, -3, -1, 0]);
     }
 
     #[test]
     fn value_range_extremes() {
-        assert_eq!(merged(&[-100, 100], &[0]), vec![-100, 0, 100]);
+        check_eq!(merged(&[-100, 100], &[0]), vec![-100, 0, 100]);
     }
 
     #[test]
@@ -121,6 +121,6 @@ mod tests {
         let a: Vec<i32> = (0..100).map(|i| i * 2).collect();
         let b: Vec<i32> = (0..100).map(|i| i * 2 + 1).collect();
         let expected: Vec<i32> = (0..200).collect();
-        assert_eq!(merged(&a, &b), expected);
+        check_eq!(merged(&a, &b), expected);
     }
 }

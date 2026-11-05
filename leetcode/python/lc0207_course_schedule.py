@@ -18,8 +18,8 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().canFinish(2, [[1, 0]]) == True
+    check(Solution().canFinish(2, [[1, 0]]), True, "Solution().canFinish(2, [[1, 0]])")
 
 
 def test_example_2():
-    assert Solution().canFinish(2, [[1, 0], [0, 1]]) == False
+    check(Solution().canFinish(2, [[1, 0], [0, 1]]), False, "Solution().canFinish(2, [[1, 0], [0, 1]])")

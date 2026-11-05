@@ -37,71 +37,71 @@ def palindrome(s: str) -> bool:
 
 
 def test_example_1():
-    assert palindrome("Was it a car or a cat I saw?") is True
+    check(palindrome("Was it a car or a cat I saw?"), True, 'palindrome("Was it a car or a cat I saw?")', op="is")
 
 
 def test_example_2():
-    assert palindrome("tab a cat") is False
+    check(palindrome("tab a cat"), False, 'palindrome("tab a cat")', op="is")
 
 
 def test_single_character():
-    assert palindrome("a") is True
+    check(palindrome("a"), True, 'palindrome("a")', op="is")
 
 
 def test_two_identical_characters():
-    assert palindrome("aa") is True
+    check(palindrome("aa"), True, 'palindrome("aa")', op="is")
 
 
 def test_two_different_characters():
-    assert palindrome("ab") is False
+    check(palindrome("ab"), False, 'palindrome("ab")', op="is")
 
 
 def test_nothing_alphanumeric_at_all():
     # everything is stripped, an empty string is a palindrome
-    assert palindrome(".,!?") is True
-    assert palindrome(" ") is True
+    check(palindrome(".,!?"), True, 'palindrome(".,!?")', op="is")
+    check(palindrome(" "), True, 'palindrome(" ")', op="is")
 
 
 def test_punctuation_between_the_letters():
-    assert palindrome("A man, a plan, a canal: Panama") is True
+    check(palindrome("A man, a plan, a canal: Panama"), True, 'palindrome("A man, a plan, a canal: Panama")', op="is")
 
 
 def test_digits_count_as_alphanumeric():
-    assert palindrome("12321") is True
-    assert palindrome("12345") is False
+    check(palindrome("12321"), True, 'palindrome("12321")', op="is")
+    check(palindrome("12345"), False, 'palindrome("12345")', op="is")
 
 
 def test_letters_and_digits_together():
-    assert palindrome("1a2a1") is True
+    check(palindrome("1a2a1"), True, 'palindrome("1a2a1")', op="is")
 
 
 def test_digit_against_letter_is_not_equal():
     # the classic trap: '0' and 'P' are adjacent in ASCII case arithmetic
-    assert palindrome("0P") is False
+    check(palindrome("0P"), False, 'palindrome("0P")', op="is")
 
 
 def test_case_is_ignored():
-    assert palindrome("Aa") is True
-    assert palindrome("RaceCar") is True
+    check(palindrome("Aa"), True, 'palindrome("Aa")', op="is")
+    check(palindrome("RaceCar"), True, 'palindrome("RaceCar")', op="is")
 
 
 def test_odd_length_ignores_the_middle_character():
-    assert palindrome("aba") is True
-    assert palindrome("abXba") is True
+    check(palindrome("aba"), True, 'palindrome("aba")', op="is")
+    check(palindrome("abXba"), True, 'palindrome("abXba")', op="is")
 
 
 def test_even_length_has_no_free_middle():
-    assert palindrome("abba") is True
-    assert palindrome("abca") is False
+    check(palindrome("abba"), True, 'palindrome("abba")', op="is")
+    check(palindrome("abca"), False, 'palindrome("abca")', op="is")
 
 
 def test_difference_only_at_the_very_ends():
-    assert palindrome("abcdefghijklmnopqrstuvwxyZ") is False
+    check(palindrome("abcdefghijklmnopqrstuvwxyZ"), False, 'palindrome("abcdefghijklmnopqrstuvwxyZ")', op="is")
 
 
 def test_long_palindrome_at_the_length_limit():
     half = "abcde" * 100          # 500 chars
-    assert palindrome(half + half[::-1]) is True
+    check(palindrome(half + half[::-1]), True, "palindrome(half + half[::-1])", op="is")
 
 
 if __name__ == "__main__":

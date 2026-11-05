@@ -18,12 +18,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().eraseOverlapIntervals([[1, 2], [2, 3], [3, 4], [1, 3]]) == 1
+    check(Solution().eraseOverlapIntervals([[1, 2], [2, 3], [3, 4], [1, 3]]), 1, "Solution().eraseOverlapIntervals([[1, 2], [2, 3], [3, 4], [1, 3]])")
 
 
 def test_example_2():
-    assert Solution().eraseOverlapIntervals([[1, 2], [1, 2], [1, 2]]) == 2
+    check(Solution().eraseOverlapIntervals([[1, 2], [1, 2], [1, 2]]), 2, "Solution().eraseOverlapIntervals([[1, 2], [1, 2], [1, 2]])")
 
 
 def test_example_3():
-    assert Solution().eraseOverlapIntervals([[1, 2], [2, 3]]) == 0
+    check(Solution().eraseOverlapIntervals([[1, 2], [2, 3]]), 0, "Solution().eraseOverlapIntervals([[1, 2], [2, 3]])")

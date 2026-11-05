@@ -18,12 +18,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().dieSimulator(2, [1, 1, 2, 2, 2, 3]) == 34
+    check(Solution().dieSimulator(2, [1, 1, 2, 2, 2, 3]), 34, "Solution().dieSimulator(2, [1, 1, 2, 2, 2, 3])")
 
 
 def test_example_2():
-    assert Solution().dieSimulator(2, [1, 1, 1, 1, 1, 1]) == 30
+    check(Solution().dieSimulator(2, [1, 1, 1, 1, 1, 1]), 30, "Solution().dieSimulator(2, [1, 1, 1, 1, 1, 1])")
 
 
 def test_example_3():
-    assert Solution().dieSimulator(3, [1, 1, 1, 2, 2, 3]) == 181
+    check(Solution().dieSimulator(3, [1, 1, 1, 2, 2, 3]), 181, "Solution().dieSimulator(3, [1, 1, 1, 2, 2, 3])")

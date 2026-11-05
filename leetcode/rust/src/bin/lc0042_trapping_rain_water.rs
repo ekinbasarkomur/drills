@@ -36,77 +36,77 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(trap(&[0, 2, 0, 3, 1, 0, 1, 3, 2, 1]), 9);
+        check_eq!(trap(&[0, 2, 0, 3, 1, 0, 1, 3, 2, 1]), 9);
     }
 
     #[test]
     fn the_leetcode_example() {
-        assert_eq!(trap(&[0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]), 6);
+        check_eq!(trap(&[0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]), 6);
     }
 
     #[test]
     fn tall_wall_on_the_right() {
-        assert_eq!(trap(&[4, 2, 0, 3, 2, 5]), 9);
+        check_eq!(trap(&[4, 2, 0, 3, 2, 5]), 9);
     }
 
     // Nothing can be trapped in any of these.
 
     #[test]
     fn single_bar() {
-        assert_eq!(trap(&[5]), 0);
+        check_eq!(trap(&[5]), 0);
     }
 
     #[test]
     fn two_bars() {
-        assert_eq!(trap(&[3, 4]), 0);
+        check_eq!(trap(&[3, 4]), 0);
     }
 
     #[test]
     fn strictly_ascending() {
-        assert_eq!(trap(&[1, 2, 3, 4, 5]), 0);
+        check_eq!(trap(&[1, 2, 3, 4, 5]), 0);
     }
 
     #[test]
     fn strictly_descending() {
-        assert_eq!(trap(&[5, 4, 3, 2, 1]), 0);
+        check_eq!(trap(&[5, 4, 3, 2, 1]), 0);
     }
 
     #[test]
     fn flat_ground() {
-        assert_eq!(trap(&[3, 3, 3, 3]), 0);
+        check_eq!(trap(&[3, 3, 3, 3]), 0);
     }
 
     #[test]
     fn all_zeros() {
-        assert_eq!(trap(&[0, 0, 0]), 0);
+        check_eq!(trap(&[0, 0, 0]), 0);
     }
 
     #[test]
     fn a_peak_traps_nothing() {
-        assert_eq!(trap(&[0, 100_000, 0]), 0);
+        check_eq!(trap(&[0, 100_000, 0]), 0);
     }
 
     // The real cases.
 
     #[test]
     fn one_simple_basin() {
-        assert_eq!(trap(&[5, 0, 5]), 5);
+        check_eq!(trap(&[5, 0, 5]), 5);
     }
 
     #[test]
     fn two_basins_in_a_row() {
-        assert_eq!(trap(&[2, 0, 2, 0, 2]), 4);
+        check_eq!(trap(&[2, 0, 2, 0, 2]), 4);
     }
 
     #[test]
     fn several_narrow_dips() {
-        assert_eq!(trap(&[1, 0, 1, 0, 1, 0, 1]), 3);
+        check_eq!(trap(&[1, 0, 1, 0, 1, 0, 1]), 3);
     }
 
     #[test]
     fn value_range_extremes() {
         // one basin 100_000 deep -- the running total must not overflow an i32
-        assert_eq!(trap(&[100_000, 0, 100_000]), 100_000);
+        check_eq!(trap(&[100_000, 0, 100_000]), 100_000);
     }
 
     #[test]
@@ -118,6 +118,6 @@ mod tests {
             height.push(100_000);
             height.push(0);
         }
-        assert_eq!(trap(&height), 999_900_000);
+        check_eq!(trap(&height), 999_900_000);
     }
 }

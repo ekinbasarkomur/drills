@@ -18,12 +18,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().hammingWeight(11) == 3
+    check(Solution().hammingWeight(11), 3, "Solution().hammingWeight(11)")
 
 
 def test_example_2():
-    assert Solution().hammingWeight(128) == 1
+    check(Solution().hammingWeight(128), 1, "Solution().hammingWeight(128)")
 
 
 def test_example_3():
-    assert Solution().hammingWeight(2147483645) == 30
+    check(Solution().hammingWeight(2147483645), 30, "Solution().hammingWeight(2147483645)")

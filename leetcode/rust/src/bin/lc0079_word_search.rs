@@ -26,16 +26,16 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::exist(vec![vec!['A', 'B', 'C', 'E'], vec!['S', 'F', 'C', 'S'], vec!['A', 'D', 'E', 'E']], "ABCCED".to_string()), true);
+        check_eq!(Solution::exist(vec![vec!['A', 'B', 'C', 'E'], vec!['S', 'F', 'C', 'S'], vec!['A', 'D', 'E', 'E']], "ABCCED".to_string()), true);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::exist(vec![vec!['A', 'B', 'C', 'E'], vec!['S', 'F', 'C', 'S'], vec!['A', 'D', 'E', 'E']], "SEE".to_string()), true);
+        check_eq!(Solution::exist(vec![vec!['A', 'B', 'C', 'E'], vec!['S', 'F', 'C', 'S'], vec!['A', 'D', 'E', 'E']], "SEE".to_string()), true);
     }
 
     #[test]
     fn example_3() {
-        assert_eq!(Solution::exist(vec![vec!['A', 'B', 'C', 'E'], vec!['S', 'F', 'C', 'S'], vec!['A', 'D', 'E', 'E']], "ABCB".to_string()), false);
+        check_eq!(Solution::exist(vec![vec!['A', 'B', 'C', 'E'], vec!['S', 'F', 'C', 'S'], vec!['A', 'D', 'E', 'E']], "ABCB".to_string()), false);
     }
 }

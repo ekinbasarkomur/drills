@@ -18,12 +18,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().searchInsert([1, 3, 5, 6], 5) == 2
+    check(Solution().searchInsert([1, 3, 5, 6], 5), 2, "Solution().searchInsert([1, 3, 5, 6], 5)")
 
 
 def test_example_2():
-    assert Solution().searchInsert([1, 3, 5, 6], 2) == 1
+    check(Solution().searchInsert([1, 3, 5, 6], 2), 1, "Solution().searchInsert([1, 3, 5, 6], 2)")
 
 
 def test_example_3():
-    assert Solution().searchInsert([1, 3, 5, 6], 7) == 4
+    check(Solution().searchInsert([1, 3, 5, 6], 7), 4, "Solution().searchInsert([1, 3, 5, 6], 7)")

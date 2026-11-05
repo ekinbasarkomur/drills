@@ -26,16 +26,16 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::die_simulator(2, vec![1, 1, 2, 2, 2, 3]), 34);
+        check_eq!(Solution::die_simulator(2, vec![1, 1, 2, 2, 2, 3]), 34);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::die_simulator(2, vec![1, 1, 1, 1, 1, 1]), 30);
+        check_eq!(Solution::die_simulator(2, vec![1, 1, 1, 1, 1, 1]), 30);
     }
 
     #[test]
     fn example_3() {
-        assert_eq!(Solution::die_simulator(3, vec![1, 1, 1, 2, 2, 3]), 181);
+        check_eq!(Solution::die_simulator(3, vec![1, 1, 1, 2, 2, 3]), 181);
     }
 }

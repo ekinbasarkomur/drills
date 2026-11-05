@@ -46,11 +46,11 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::kth_smallest(build_tree(&[Some(3), Some(1), Some(4), None, Some(2)]), 1), 1);
+        check_eq!(Solution::kth_smallest(build_tree(&[Some(3), Some(1), Some(4), None, Some(2)]), 1), 1);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::kth_smallest(build_tree(&[Some(5), Some(3), Some(6), Some(2), Some(4), None, None, Some(1)]), 3), 3);
+        check_eq!(Solution::kth_smallest(build_tree(&[Some(5), Some(3), Some(6), Some(2), Some(4), None, None, Some(1)]), 3), 3);
     }
 }

@@ -18,8 +18,8 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().findWords([['o', 'a', 'a', 'n'], ['e', 't', 'a', 'e'], ['i', 'h', 'k', 'r'], ['i', 'f', 'l', 'v']], ['oath', 'pea', 'eat', 'rain']) == ['eat', 'oath']
+    check(Solution().findWords([['o', 'a', 'a', 'n'], ['e', 't', 'a', 'e'], ['i', 'h', 'k', 'r'], ['i', 'f', 'l', 'v']], ['oath', 'pea', 'eat', 'rain']), ['eat', 'oath'], "Solution().findWords([['o', 'a', 'a', 'n'], ['e', 't', 'a', 'e'], ['i', 'h', 'k', 'r'], ['i', 'f', 'l', 'v']], ['oath', 'pea', 'eat', 'rain'])")
 
 
 def test_example_2():
-    assert Solution().findWords([['a', 'b'], ['c', 'd']], ['abcb']) == []
+    check(Solution().findWords([['a', 'b'], ['c', 'd']], ['abcb']), [], "Solution().findWords([['a', 'b'], ['c', 'd']], ['abcb'])")

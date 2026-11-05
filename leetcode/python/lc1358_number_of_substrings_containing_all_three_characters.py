@@ -18,12 +18,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().numberOfSubstrings('abcabc') == 10
+    check(Solution().numberOfSubstrings('abcabc'), 10, "Solution().numberOfSubstrings('abcabc')")
 
 
 def test_example_2():
-    assert Solution().numberOfSubstrings('aaacb') == 3
+    check(Solution().numberOfSubstrings('aaacb'), 3, "Solution().numberOfSubstrings('aaacb')")
 
 
 def test_example_3():
-    assert Solution().numberOfSubstrings('abc') == 1
+    check(Solution().numberOfSubstrings('abc'), 1, "Solution().numberOfSubstrings('abc')")

@@ -26,16 +26,16 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::longest_subarray(vec![8, 2, 4, 7], 4), 2);
+        check_eq!(Solution::longest_subarray(vec![8, 2, 4, 7], 4), 2);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::longest_subarray(vec![10, 1, 2, 4, 7, 2], 5), 4);
+        check_eq!(Solution::longest_subarray(vec![10, 1, 2, 4, 7, 2], 5), 4);
     }
 
     #[test]
     fn example_3() {
-        assert_eq!(Solution::longest_subarray(vec![4, 2, 2, 2, 4, 4, 2, 2], 0), 3);
+        check_eq!(Solution::longest_subarray(vec![4, 2, 2, 2, 4, 4, 2, 2], 0), 3);
     }
 }

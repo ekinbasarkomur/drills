@@ -18,12 +18,12 @@ class Solution:
 # ---------------------------------------------------------------- tests
 
 def test_example_1():
-    assert Solution().isPowerOfFour(16) == True
+    check(Solution().isPowerOfFour(16), True, "Solution().isPowerOfFour(16)")
 
 
 def test_example_2():
-    assert Solution().isPowerOfFour(5) == False
+    check(Solution().isPowerOfFour(5), False, "Solution().isPowerOfFour(5)")
 
 
 def test_example_3():
-    assert Solution().isPowerOfFour(1) == True
+    check(Solution().isPowerOfFour(1), True, "Solution().isPowerOfFour(1)")

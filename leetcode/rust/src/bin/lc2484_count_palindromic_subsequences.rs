@@ -26,16 +26,16 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::count_palindromes("103301".to_string()), 2);
+        check_eq!(Solution::count_palindromes("103301".to_string()), 2);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::count_palindromes("0000000".to_string()), 21);
+        check_eq!(Solution::count_palindromes("0000000".to_string()), 21);
     }
 
     #[test]
     fn example_3() {
-        assert_eq!(Solution::count_palindromes("9999900000".to_string()), 2);
+        check_eq!(Solution::count_palindromes("9999900000".to_string()), 2);
     }
 }

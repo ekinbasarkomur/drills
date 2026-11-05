@@ -26,11 +26,11 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::split_array(vec![7, 2, 5, 10, 8], 2), 18);
+        check_eq!(Solution::split_array(vec![7, 2, 5, 10, 8], 2), 18);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::split_array(vec![1, 2, 3, 4, 5], 2), 9);
+        check_eq!(Solution::split_array(vec![1, 2, 3, 4, 5], 2), 9);
     }
 }

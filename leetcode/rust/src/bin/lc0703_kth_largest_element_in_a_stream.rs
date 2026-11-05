@@ -44,78 +44,78 @@ mod tests {
     #[test]
     fn example_1() {
         let mut s = KthLargest::new(3, vec![1, 2, 3, 3]);
-        assert_eq!(s.add(3), 3);
-        assert_eq!(s.add(5), 3);
-        assert_eq!(s.add(6), 3);
-        assert_eq!(s.add(7), 5);
-        assert_eq!(s.add(8), 6);
+        check_eq!(s.add(3), 3);
+        check_eq!(s.add(5), 3);
+        check_eq!(s.add(6), 3);
+        check_eq!(s.add(7), 5);
+        check_eq!(s.add(8), 6);
     }
 
     #[test]
     fn k_is_one_means_the_running_maximum() {
         let mut s = KthLargest::new(1, vec![]);
-        assert_eq!(s.add(5), 5);
-        assert_eq!(s.add(3), 5);
-        assert_eq!(s.add(9), 9);
+        check_eq!(s.add(5), 5);
+        check_eq!(s.add(3), 5);
+        check_eq!(s.add(9), 9);
     }
 
     #[test]
     fn stream_starts_empty() {
         let mut s = KthLargest::new(2, vec![]);
         s.add(1);
-        assert_eq!(s.add(2), 1);
-        assert_eq!(s.add(3), 2);
+        check_eq!(s.add(2), 1);
+        check_eq!(s.add(3), 2);
     }
 
     #[test]
     fn initial_array_already_holds_k_values() {
         let mut s = KthLargest::new(3, vec![4, 5, 8, 2]);
-        assert_eq!(s.add(3), 4);
-        assert_eq!(s.add(5), 5);
-        assert_eq!(s.add(10), 5);
-        assert_eq!(s.add(9), 8);
+        check_eq!(s.add(3), 4);
+        check_eq!(s.add(5), 5);
+        check_eq!(s.add(10), 5);
+        check_eq!(s.add(9), 8);
     }
 
     #[test]
     fn duplicates_count_separately() {
         let mut s = KthLargest::new(2, vec![3, 3]);
-        assert_eq!(s.add(3), 3);
-        assert_eq!(s.add(4), 3);
+        check_eq!(s.add(3), 3);
+        check_eq!(s.add(4), 3);
     }
 
     #[test]
     fn everything_added_is_smaller() {
         let mut s = KthLargest::new(2, vec![10, 20, 30]);
-        assert_eq!(s.add(1), 20);
-        assert_eq!(s.add(2), 20);
+        check_eq!(s.add(1), 20);
+        check_eq!(s.add(2), 20);
     }
 
     #[test]
     fn negative_values() {
         let mut s = KthLargest::new(2, vec![-5, -3, -1]);
-        assert_eq!(s.add(-4), -3);
-        assert_eq!(s.add(0), -1);
+        check_eq!(s.add(-4), -3);
+        check_eq!(s.add(0), -1);
     }
 
     #[test]
     fn all_values_equal() {
         let mut s = KthLargest::new(3, vec![7, 7, 7]);
-        assert_eq!(s.add(7), 7);
-        assert_eq!(s.add(8), 7);
+        check_eq!(s.add(7), 7);
+        check_eq!(s.add(8), 7);
     }
 
     #[test]
     fn value_range_extremes() {
         let mut s = KthLargest::new(2, vec![-1000, 1000]);
-        assert_eq!(s.add(0), 0);
-        assert_eq!(s.add(1000), 1000);
+        check_eq!(s.add(0), 0);
+        check_eq!(s.add(1000), 1000);
     }
 
     #[test]
     fn k_equals_the_stream_length() {
         let mut s = KthLargest::new(3, vec![1, 2]);
-        assert_eq!(s.add(3), 1);
-        assert_eq!(s.add(4), 2);
+        check_eq!(s.add(3), 1);
+        check_eq!(s.add(4), 2);
     }
 
     #[test]
@@ -127,6 +127,6 @@ mod tests {
         for i in (1..=1000).rev() {
             last = s.add(i);
         }
-        assert_eq!(last, 1);
+        check_eq!(last, 1);
     }
 }

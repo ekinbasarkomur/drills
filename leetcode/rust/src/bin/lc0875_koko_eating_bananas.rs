@@ -39,50 +39,50 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(min_eating_speed(&[1, 4, 3, 2], 9), 2);
+        check_eq!(min_eating_speed(&[1, 4, 3, 2], 9), 2);
     }
 
     #[test]
     fn example_2() {
         // h equals the pile count, so each pile must go in one hour
-        assert_eq!(min_eating_speed(&[25, 10, 23, 4], 4), 25);
+        check_eq!(min_eating_speed(&[25, 10, 23, 4], 4), 25);
     }
 
     #[test]
     fn single_pile_single_hour() {
-        assert_eq!(min_eating_speed(&[1], 1), 1);
+        check_eq!(min_eating_speed(&[1], 1), 1);
     }
 
     #[test]
     fn time_to_spare() {
         // k never drops below 1
-        assert_eq!(min_eating_speed(&[1], 10), 1);
+        check_eq!(min_eating_speed(&[1], 10), 1);
     }
 
     #[test]
     fn the_classic_leetcode_case() {
-        assert_eq!(min_eating_speed(&[3, 6, 7, 11], 8), 4);
+        check_eq!(min_eating_speed(&[3, 6, 7, 11], 8), 4);
     }
 
     #[test]
     fn tight_deadline() {
-        assert_eq!(min_eating_speed(&[30, 11, 23, 4, 20], 5), 30);
+        check_eq!(min_eating_speed(&[30, 11, 23, 4, 20], 5), 30);
     }
 
     #[test]
     fn one_hour_more_is_enough_to_slow_down() {
-        assert_eq!(min_eating_speed(&[30, 11, 23, 4, 20], 6), 23);
+        check_eq!(min_eating_speed(&[30, 11, 23, 4, 20], 6), 23);
     }
 
     #[test]
     fn uniform_piles() {
-        assert_eq!(min_eating_speed(&[1, 1, 1, 1], 4), 1);
+        check_eq!(min_eating_speed(&[1, 1, 1, 1], 4), 1);
     }
 
     #[test]
     fn value_range_extremes() {
         // one pile of a billion in one hour -- the rate must match it exactly
-        assert_eq!(min_eating_speed(&[1000000000], 1), 1000000000);
+        check_eq!(min_eating_speed(&[1000000000], 1), 1000000000);
     }
 
     #[test]
@@ -91,6 +91,6 @@ mod tests {
         // per hour, so the rate has to be the pile size. Scanning k from 1
         // upwards would take 10_000 passes; binary search takes 14.
         let piles = vec![10_000; 10_000];
-        assert_eq!(min_eating_speed(&piles, 10_000), 10000);
+        check_eq!(min_eating_speed(&piles, 10_000), 10000);
     }
 }

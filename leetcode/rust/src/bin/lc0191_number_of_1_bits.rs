@@ -26,16 +26,16 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(Solution::hamming_weight(11), 3);
+        check_eq!(Solution::hamming_weight(11), 3);
     }
 
     #[test]
     fn example_2() {
-        assert_eq!(Solution::hamming_weight(128), 1);
+        check_eq!(Solution::hamming_weight(128), 1);
     }
 
     #[test]
     fn example_3() {
-        assert_eq!(Solution::hamming_weight(2147483645), 30);
+        check_eq!(Solution::hamming_weight(2147483645), 30);
     }
 }

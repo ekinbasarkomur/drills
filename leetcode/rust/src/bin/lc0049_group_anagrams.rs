@@ -74,7 +74,7 @@ mod tests {
 
     #[test]
     fn example_1() {
-        assert_eq!(
+        check_eq!(
             grouped(&["act", "pots", "tops", "cat", "stop", "hat"]),
             expect(&[&["hat"], &["act", "cat"], &["stop", "pots", "tops"]])
         );
@@ -82,17 +82,17 @@ mod tests {
 
     #[test]
     fn example_2() {
-        assert_eq!(grouped(&["x"]), expect(&[&["x"]]));
+        check_eq!(grouped(&["x"]), expect(&[&["x"]]));
     }
 
     #[test]
     fn example_3() {
-        assert_eq!(grouped(&[""]), expect(&[&[""]]));
+        check_eq!(grouped(&[""]), expect(&[&[""]]));
     }
 
     #[test]
     fn no_two_words_are_anagrams() {
-        assert_eq!(
+        check_eq!(
             grouped(&["abc", "de", "f"]),
             expect(&[&["abc"], &["de"], &["f"]])
         );
@@ -100,7 +100,7 @@ mod tests {
 
     #[test]
     fn everything_in_one_group() {
-        assert_eq!(
+        check_eq!(
             grouped(&["abc", "bca", "cab"]),
             expect(&[&["abc", "bca", "cab"]])
         );
@@ -108,7 +108,7 @@ mod tests {
 
     #[test]
     fn duplicates_stay_as_separate_entries() {
-        assert_eq!(
+        check_eq!(
             grouped(&["ab", "ab", "ba"]),
             expect(&[&["ab", "ab", "ba"]])
         );
@@ -117,7 +117,7 @@ mod tests {
     #[test]
     fn repeated_letters_are_not_confused() {
         // same letter set, different counts -> different groups
-        assert_eq!(
+        check_eq!(
             grouped(&["aab", "abb"]),
             expect(&[&["aab"], &["abb"]])
         );
@@ -125,6 +125,6 @@ mod tests {
 
     #[test]
     fn several_empty_strings_group_together() {
-        assert_eq!(grouped(&["", "", "a"]), expect(&[&["", ""], &["a"]]));
+        check_eq!(grouped(&["", "", "a"]), expect(&[&["", ""], &["a"]]));
     }
 }
