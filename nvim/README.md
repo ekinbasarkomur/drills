@@ -18,5 +18,11 @@ al; dosyayı kaydetmene gerek yok (`:e!` baştaki hâline döndürür).
 | [09](ders-09-git.md) | Git | hunk, blame, diff, stage | |
 | [10](ders-10-agentic-review.md) | Agentic review | `<leader>y*` ile ajana yer göster; `gg → gv → go → ghp` ile değişikliği katman katman oku | |
 
+Dersler teori + pratik; **antrenman** dosyaları sadece pratik, zamanla tekrar:
+
+| Antrenman | Ne |
+| --- | --- |
+| [hareket ve seçim](pratik-hareket-secim.md) | satır uçları, kelime, satır seçme, seçimi taşıma, karaktere zıplama, aynı kelimeye zıplama — 7 set, 50 blok |
+
 Bir ders oturduğunda tabloya ✓ koy, sonrakine geç. Haftada bir-iki ders yeter;
 amaç ezber değil, elin kendiliğinden gitmesi.
