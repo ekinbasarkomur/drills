@@ -6,7 +6,10 @@ requires-python = ">=3.11"
 dependencies = ["pandas>=2.2", "duckdb>=1.1"]
 
 [dependency-groups]
-dev = ["pytest>=8.0"]
+dev = [
+    "pandas-stubs>=2.2",
+    "pytest>=8.0",
+]
 
 [tool.pytest.ini_options]
 # python/: algorithms · pandas_track/: DataFrame problems (not pandas/: it would shadow the library) · sql/: queries, run on DuckDB (sql/conftest.py)
