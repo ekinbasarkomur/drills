@@ -1,4 +1,4 @@
-# Ders 2 — Tırnak ve parantez: ekle, değiştir, sil
+# Ders 3 — Tırnak ve parantez: ekle, değiştir, sil
 
 Ders 1'de tırnağın **içini** düzenledin (`ci"`). Bu derste tırnağın
 **kendisini** ekleyip değiştiriyorsun. Plugin: `nvim-surround`. Üç komut:
@@ -170,4 +170,4 @@ ds  +  karakter
 
 Açan parantez (`(`) boşluk koyar, kapatan (`)`) koymaz. Visual'da `S`.
 
-Oturdu mu? README'ye ✓, sıradaki Ders 3: arama ve değiştirme.
+Oturdu mu? README'ye ✓, Ders 4: arama ve değiştirme.

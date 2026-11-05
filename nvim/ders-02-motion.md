@@ -1,4 +1,4 @@
-# Ders 4 — Hareket
+# Ders 2 — Hareket
 
 Ok tuşların çalışıyor ve çalışmaya devam edecek. Bu ders "daha hızlı gitmek"
 için değil, **"komut + ne kadar"** kalıbının sağ tarafını büyütmek için:
@@ -24,6 +24,36 @@ self.items.append(x)
 ```
 
 (`w`: 7, `W`: 1 — çünkü `W` için boşluğa kadar her şey tek kelime.)
+
+### Pratik 1b — kelime antrenmanı
+
+`w` ile sona kadar git, `b` ile başa dön; say: 5 ileri, 5 geri.
+
+```
+one two three four five six
+```
+
+`3w` ile üç kelime atla: `one`'dan `four`'a.
+
+İmleç `three`'de: `e` kelimenin sonuna, `ge` bir öncekinin sonuna.
+
+```
+one two three four
+```
+
+`foo.bar.baz`'ı `W` tek parça sayar, `w` beş parça. İkisini de dene.
+
+```
+call foo.bar.baz now
+```
+
+`two`'dan `four`'a kadar sil. Hedef: `one five`.
+
+```
+one two three four five
+```
+
+Nasıl: `two`'da `d3w`, sonra fazla boşluk için `x`. Ya da `v` `2e` `l` `d`.
 
 ## 2. Satır içinde
 
@@ -57,6 +87,59 @@ compute(a, b)
 
 Nasıl: `f(`, `l` (bir sağ), `dt)` — kapatana kadar sil. (Ders 1'deki `di(`
 aynı işi yapar ve imleç nerede olursa olsun çalışır — genelde o daha iyi.)
+
+### Pratik 2c — karaktere zıplama antrenmanı
+
+Satır başında `f(` ile paranteze, `;` ile sonrakine, `,` ile geri.
+
+```
+call(a) and call(b) and call(c)
+```
+
+Virgüle **kadar** sil (virgül kalsın). Hedef: `f(, b)`
+
+```
+f(a_long_name, b)
+```
+
+Nasıl: `f(` `l` `dt,`.
+
+Virgül **dahil** sil. Hedef: `f( b)`
+
+```
+f(a_long_name, b)
+```
+
+Nasıl: `f(` `l` `df,`.
+
+Satır sonundan geriye: `L` `F"` tırnağa, `;` bir önceki tırnağa, `T"` tırnağın
+bir sağına.
+
+```
+print("hello world")
+```
+
+İkinci `=`'e tek komutla git.
+
+```
+a = 1; b = 2; c = 3
+```
+
+Nasıl: `2f=`.
+
+`:` ile `;` arasını değiştir. Hedef: `key: NEW; rest`
+
+```
+key: value; rest
+```
+
+Nasıl: `f:` `ll` `ct;` `NEW` `Esc`.
+
+Dört `x`'i `y` yap: `fx` `ry`, sonra `;` `.` üç kez.
+
+```
+x o x o x o x
+```
 
 ## 3. Satırlar arası
 
@@ -156,6 +239,17 @@ Nasıl: `# BEGIN`'e git, `d/END` + `Enter` — `# END`'in başına kadar siler,
 `# END` satırının kendisi kalır; `dd` ile onu da al. Ya da `V` ile seç, `}`
 ile paragraf sonuna, `d`.
 
+### Pratik 5b
+
+Ortadaki argümanı virgülüyle sil. Hedef: `f(a, c)`
+
+```python
+f(a, b, c)
+```
+
+Nasıl: `fb` `v` `f,` `l` `d` — `b`'den virgül ve boşluk dahil seç, sil.
+(`daw` burada `f(a, , c)` bırakır.)
+
 ## Özet
 
 ```
@@ -167,4 +261,4 @@ gg G :N      dosya
 <C-o>        geri dön
 ```
 
-Oturdu mu? README'ye ✓, Ders 5: dosya ağacı.
+Oturdu mu? README'ye ✓, Ders 3: surround.

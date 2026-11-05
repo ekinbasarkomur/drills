@@ -50,7 +50,7 @@ Bir arama 20 sonuç verdiyse hepsini tek tek açmak yerine listeye alırsın:
 | `:cfirst` / `:clast` | ilk / son |
 | `Enter` (listede) | o satıra git |
 
-Ders 3'teki grug-far da `<leader>q` ile buraya atar.
+Ders 4'teki grug-far da `<leader>q` ile buraya atar.
 
 ### Pratik 2
 

@@ -13,7 +13,7 @@ tanımlı, bir fonksiyonu kim çağırıyor, bu satırda ne hata var. Tuşların
 | `gr` | **r**eferanslar — bunu kim kullanıyor, liste |
 | `gi` | **i**mplementation (trait/interface için) |
 | `gy` | tipin tanımına git (t**y**pe) |
-| `<C-o>` | geri dön (Ders 4) |
+| `<C-o>` | geri dön (Ders 2) |
 
 `gd` başka dosyaya götürebilir; `<C-o>` her zaman geri getirir.
 

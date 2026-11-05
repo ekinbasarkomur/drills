@@ -56,6 +56,30 @@ delta
 Nasıl: `WRONG`'a git, `dd`. `delta`'ya git, `dd` (artık panoda), `alpha`'ya
 çık, `P` (büyük: üstüne).
 
+### Pratik 1c
+
+Satırı kopyala, altına yapıştır, kopyada `a`'yı `b` yap. Hedef: `a = 1` / `b = 1`.
+
+```
+a = 1
+```
+
+Nasıl: `yy` `p` `fa` `rb` — `r` tek karakteri değiştirir, insert'e girmez.
+
+### Pratik 1d — birleştir, böl
+
+İki satırı tek satır yap. Hedef: `first second`.
+
+```
+first
+second
+```
+
+Nasıl: `first`'te `J` — normal modda **J** = **j**oin. (Visual'daki `J` taşır,
+karıştırma: normal modda birleştirir.)
+
+Sonra geri böl: `fs` (second'ın s'si) `i` `Enter` `Esc`.
+
 ## 2. Kelime
 
 | Tuş | Ne yapar |
@@ -104,6 +128,28 @@ result = XXX
 Nasıl: `value`'ya git, `yiw`. `XXX`'e in, `viw` ile seç, `p`. Pano hâlâ
 `value` — bir daha `viw` + `p` yapabilirsin, eskiden olduğu gibi `XXX` ile
 takas olmaz.
+
+### Pratik 2d
+
+`three`'ü seç ve büyüt. Hedef: `one two THREE four`.
+
+```
+one two three four
+```
+
+Nasıl: `viw` `U`. (`u` küçültür, `~` tersler.)
+
+### Pratik 2e
+
+İki kelimenin yerini değiştir. Hedef: `second first`.
+
+```
+first second
+```
+
+Nasıl: `de` (first'ü kes → ` second`) `x` (baştaki boşluk; pano korunur)
+`A` ` ` `Esc` `p`. Beş adım — Vim'de kelime takası için kısa yol yok; bazen
+`ciw` ile yazmak daha hızlıdır. Bunu bilmek de pratik.
 
 ## 3. Tırnak ve parantez içi
 
@@ -184,6 +230,60 @@ call(a, b)
 Nasıl: `A` → sonuna atlar ve insert modda — ama `)` dan sonra. `$` ile sona
 git, `i` ile `)`'in önüne gir, `, c` yaz. Daha kısası: `f)` + `i`.
 
+### Pratik 4c — satır ucu antrenmanı
+
+Beşi art arda, her biri tek komut:
+
+Sona `!` ekle. Hedef: `the end is here!`
+
+```
+the end is here
+```
+
+Nasıl: `A` `!` `Esc`.
+
+Başa `# ` koy. Hedef: `# comment this`
+
+```
+comment this
+```
+
+Nasıl: `I` `# ` `Esc`.
+
+Sondaki `;`'ı sil. Hedef: `return x`
+
+```
+return x;
+```
+
+Nasıl: `L` `x`.
+
+İmleç `keep`'in `k`sinde: satır **başına** kadar sil. Hedef: `keep this`
+
+```
+remove this keep this
+```
+
+Nasıl: `dH`.
+
+İki satırın sonuna `,` ekle, ikincisini `.` ile. 
+
+```
+alpha
+beta
+```
+
+Nasıl: `A` `,` `Esc` — `j` `.`
+
+### Pratik 4d
+
+Girintili satırda `H` ile `0` farklı yere gider: `H` ilk harfe, `0` sütun 0'a.
+İmleci ortaya koy, `L` sona, `H` başa, `0` gerçek başa.
+
+```
+    indented line here
+```
+
 ## 5. Visual mod — önce seç, sonra işle
 
 Yukarıdakilerin hepsi "komut + ne kadar". Bazen önce ne kadar olduğunu
@@ -239,13 +339,115 @@ Nasıl: `first`'ün `f`'sine git, `<C-v>`, `jj` (üç satırda birer karakterlik
 sütun seçildi), `I` (büyük I — blok insert), `# ` yaz, `Esc`. Esc'ye basınca
 üç satıra birden uygulanır.
 
+### Pratik 5d — satır satır seçme
+
+Üç satırı seç ve sil. Hedef: sadece `keep`.
+
+```
+delete me
+delete me too
+and me
+keep
+```
+
+Nasıl: `V` `jj` `d`. (Ya da `3dd`.)
+
+Paragrafı seç — boş satıra kadar hepsi.
+
+```
+line one
+line two
+line three
+
+next paragraph
+```
+
+Nasıl: `vip` (**i**nner **p**aragraph). `dip` siler, `yip` kopyalar.
+
+Üç satırı kopyala, en alta yapıştır. Hedef: 6 satır.
+
+```
+a
+b
+c
+```
+
+Nasıl: `V` `jj` `y` — `G` — `p`.
+
+Satırın yarısından öbür satırın yarısına kadar seç ve sil. Hedef: `one thr`
+gibi kırık bir satır.
+
+```
+one two
+three four
+```
+
+Nasıl: `two`'da `v`, `j`, `d`. (`V` satır bütünüyle seçer, `v` karakterden.)
+
+### Pratik 5e — seçimi taşıma antrenmanı
+
+`move me`'yi en alta taşı. Hedef: a, b, c, move me.
+
+```
+move me
+a
+b
+c
+```
+
+Nasıl: `V` `J` `J` `J`. Seçim seninle gelir.
+
+İki satırı birlikte yukarı taşı. Hedef: x, y, a, b.
+
+```
+a
+b
+x
+y
+```
+
+Nasıl: `x`'te `V` `j` `K` `K`.
+
+Bloğu içeri al **ve** aşağı taşı, seçimi bırakmadan. Hedef: anchor,
+␣␣␣␣block, ␣␣␣␣block.
+
+```
+block
+block
+anchor
+```
+
+Nasıl: `V` `j` `L` `J`.
+
+`else` bloğunu `if` bloğunun üstüne çıkar.
+
+```python
+if x:
+    do_a()
+else:
+    do_b()
+```
+
+Nasıl: `else:`'de `V` `j` `K` `K`. Sonuç mantıksız ama hareket doğru.
+
+Tek satırı normal modda taşı: `dd` `p` aşağı, `dd` `k` `P` yukarı.
+
+```
+first
+second
+```
+
 ## 6. Geri alma ve tekrarlama
 
 | Tuş | Ne yapar |
 | --- | --- |
 | `u` | geri al |
-| `<C-r>` | ileri al (redo) |
+| `U` | ileri al (redo) — Shift = tersi, `p`/`P` gibi (`<C-r>` de çalışır) |
 | `.` | **son değişikliği tekrarla** — `ciw` + yazı + `Esc` tek bir değişikliktir |
+| `3u` | üç adım geri |
+
+Shift kuralı dosyanın her yerinde: `p` altına / `P` üstüne, `n` ileri / `N`
+geri, `J` aşağı / `K` yukarı, `u` geri / `U` ileri, `f` ileri / `F` geri.
 
 ### Pratik 6
 
@@ -261,6 +463,27 @@ Nasıl: ilk `foo`'da `ciw`, `bar`, `Esc`. `/foo` + `Enter` ile sonrakine git
 (ya da `*` ile imleçteki kelimeyi ara), `.` bas. `n`, `.`. Üç değişiklik, bir
 kez yazdın.
 
+### Pratik 6b — insert modda yapıştır
+
+Parantez içini al, satır sonuna yapıştır. Hedef: `f(x) x`
+
+```
+f(x)
+```
+
+Nasıl: `yi(` `A` ` ` `<C-r>"` `Esc`. `<C-r>"` insert moddayken panoyu
+yapıştırır; `<C-r>+` sistem panosunu. Terminalde (Claude'a) de aynı tuş.
+
+3. satırdaki kelimeyi 1. satırın sonuna ekle. Hedef: `header: value`.
+
+```
+header:
+filler
+value
+```
+
+Nasıl: `jj` `yiw` `gg` `A` ` ` `<C-r>"` `Esc`.
+
 ## Özet — ezberlenecek olan sadece bu
 
 ```
@@ -272,8 +495,7 @@ değiştir
 
 Sol sütundan birini, sağ sütundan birini seç; 3 × 10 = 30 komut, hepsi aynı
 mantık. `p` yapıştırır, `<leader>p` son kopyaladığını yapıştırır, `.` son
-yaptığını tekrarlar.
+yaptığını tekrarlar, `u`/`U` geri/ileri.
 
-Hepsi oturduysa README'de 01'e ✓ koy; Ders 2 `nvim-surround` — tırnak ve
-parantezleri **eklemek** ve **değiştirmek** (bu derste sadece içlerini
-düzenledik).
+Hepsi oturduysa README'de 01'e ✓ koy; Ders 2 hareket — buradaki `iw`, `L`
+sütununu büyütür.

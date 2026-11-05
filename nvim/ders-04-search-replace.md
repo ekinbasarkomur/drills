@@ -1,4 +1,4 @@
-# Ders 3 — Arama ve değiştirme
+# Ders 4 — Arama ve değiştirme
 
 Dört ölçek var; her birinin kendi aracı:
 
@@ -49,6 +49,25 @@ itemXcount
 ```
 
 İkincisi eşleşmemeli.
+
+### Pratik 1c — aynı kelimeye zıplama antrenmanı
+
+`*` ile bul, `.` ile hepsini değiştir. Hedef: her `old` → `new`.
+
+```
+old one
+not old
+old again
+```
+
+Nasıl: ilk `old`'da `*`, `ciw` `new` `Esc`, `n` `.`, `n` `.`.
+
+`*` kelime sınırı arar: `cat`'te `*` → `catalog`'u atlar. `g*` sınırsız →
+`catalog` ve `concat`'i de bulur. İkisini dene.
+
+```
+cat catalog cat concat
+```
 
 ## 2. Dosyada değiştir — `:s`
 
@@ -110,6 +129,16 @@ old three
 
 Nasıl: `:%s/old/new/gc` + `Enter`. `y`, `n`, `y`.
 
+### Pratik 2d
+
+Satırdaki tüm boşlukları `_` yap. Hedef: `a_b_c`
+
+```
+a b c
+```
+
+Nasıl: `:s/ /_/g` + `Enter`. Hareketle uğraşma, bazen `:s` daha kısa.
+
 ## 3. Projede bul
 
 | Tuş | Ne yapar |
@@ -125,7 +154,7 @@ Sonuç listesinde: `<C-j>` / `<C-k>` ile gez, `Enter` ile aç, `Esc` ile kapat.
 `drills` projesinde `transform("max")` geçen dosyaları bul.
 
 Nasıl: `<leader>fg`, `transform` yaz. Listede birini `Enter` ile aç. `<C-o>`
-ile geri dön (jumplist, Ders 4).
+ile geri dön (jumplist, Ders 2).
 
 ### Pratik 3b
 
@@ -180,4 +209,4 @@ ama akışı gör): Search `lc\*`, Replace `lc*`, `<leader>r`. Sonra
 <leader>sp                     projede değiştir
 ```
 
-Oturdu mu? README'ye ✓, Ders 4: hareket.
+Oturdu mu? README'ye ✓, Ders 5: dosya ağacı.
