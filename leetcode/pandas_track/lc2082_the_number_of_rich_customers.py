@@ -1,10 +1,13 @@
 """
 2082. The Number of Rich Customers · Easy · https://leetcode.com/problems/the-number-of-rich-customers/
-Plan: 30 Days of Pandas · Gün 16 · Statistics
+Plan: LeetCode Database · Easy
 
-Problem:
-Approach:
-Time O(?), space O(?)
+Problem: how many distinct customers have at least one bill with amount
+         strictly greater than 500; a single-row frame with column rich_count.
+Approach: keep the rows over 500, drop repeated customer_id values, count the
+          remaining rows. Alternative kept in the vault note: groupby on
+          customer_id and count the groups.
+Time O(n), space O(n)
 """
 
 from _pd import check, frame  # isort: skip
@@ -14,7 +17,8 @@ import pandas as pd
 
 
 def count_rich_customers(store: pd.DataFrame) -> pd.DataFrame:
-    return store
+    store = store[store["amount"] > 500].drop_duplicates(subset=["customer_id"])
+    return pd.DataFrame({"rich_count": [store.shape[0]]})
 
 
 # ---------------------------------------------------------------- tests
