@@ -820,6 +820,8 @@ def pandas_tests(p: Problem, code: str):
     dtypes = table_dtypes(p.meta)
     out = []
     for n, (case, want) in enumerate(ex, 1):
+        if not isinstance(case, dict) or "headers" not in case:
+            return [], "example input is not a table"
         tables = list(case["headers"].keys())
         by_norm = {norm(t): t for t in tables}
         body, args = [], []
