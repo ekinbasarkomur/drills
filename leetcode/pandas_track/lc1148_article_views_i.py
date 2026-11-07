@@ -2,9 +2,9 @@
 1148. Article Views I · Easy · https://leetcode.com/problems/article-views-i/
 Plan: 30 Days of Pandas · Gün 4 · Data Filtering
 
-Problem:
-Approach:
-Time O(?), space O(?)
+Problem: the ids of authors who viewed at least one of their own articles, unique and sorted ascending.
+Approach: mask author_id == viewer_id, then groupby(author_id).count() leaves one row per author (sorted by the group key); rename the column to id.
+Time O(n log n), space O(n)
 """
 
 # ---------------------------------------------------------------- solution

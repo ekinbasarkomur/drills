@@ -2,9 +2,9 @@
 595. Big Countries · Easy · https://leetcode.com/problems/big-countries/
 Plan: 30 Days of Pandas · Gün 1 · Data Filtering
 
-Problem:
-Approach:
-Time O(?), space O(?)
+Problem: the name, population and area of the big countries (area at least 3,000,000 km² or population at least 25,000,000).
+Approach: combine the two conditions with | into one mask, then select the three columns.
+Time O(n), space O(n)
 """
 
 # ---------------------------------------------------------------- solution

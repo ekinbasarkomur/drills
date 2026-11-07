@@ -2,9 +2,9 @@
 1757. Recyclable and Low Fat Products · Easy · https://leetcode.com/problems/recyclable-and-low-fat-products/
 Plan: 30 Days of Pandas · Gün 2 · Data Filtering
 
-Problem:
-Approach:
-Time O(?), space O(?)
+Problem: the ids of products that are both low fat and recyclable.
+Approach: combine the two conditions with & into one mask, then keep only the product_id column.
+Time O(n), space O(n)
 """
 
 from _pd import check, frame  # isort: skip
