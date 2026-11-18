@@ -21,7 +21,6 @@ def categorize_products(activities: pd.DataFrame) -> pd.DataFrame:
         group["product"].agg(num_sold="nunique", products="sum")
     ).reset_index()
     sold["products"] = sold["products"].str[:-1]
-    print(sold)
     return sold
 
 
